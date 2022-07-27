@@ -63,7 +63,14 @@ async def get_league_table(league, start_year, end_year):
             with open(f'jsons/league_table/{league}/{league}_league_table_in_{path_season}.json', 'w') as outfile:
                 json.dump(data, outfile)
             print("________________________________________________________________________________________________________________________________")
+
+
             df = pd.read_json(f'jsons/league_table/{league}/{league}_league_table_in_{path_season}.json')
+            
+            # first row contains columns problem solved
+            df.columns = df.iloc[0]
+            df = df[1:]
+            
             df.to_csv(f'dataframes/league_table/{league}/{league}_league_table_in_{path_season}.csv')
 
             print(df.head(5))
@@ -72,18 +79,6 @@ async def get_league_table(league, start_year, end_year):
 
 
 if __name__ == "__main__":
-
-    # list_of_teams = ["Manchester United", "Manchester City", "Chelsea", "Liverpool", "Arsenal", "Tottenham"]
-
-    # for year in range(2014,2023):
-    #     for i, team in enumerate(list_of_teams):
-    #         loop = asyncio.get_event_loop()
-    #         loop.run_until_complete(get_player_overall_statistics_by_league_and_year(team, year, 'epl'))
-
-    # for year in range(2014,2022):
-    #     loop = asyncio.get_event_loop()
-    #     loop.run_until_complete(get_league_table(year, 'bundesliga'))
-
     # for league, teams_list in league_teams_dict.items():
     #     print(f'{league} : {teams_list}')
 
