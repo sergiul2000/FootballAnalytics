@@ -43,19 +43,30 @@ async def get_players_team_statistics_for_choosen_teams_in_league(league, teams_
                 print(df.head(5))
 
 
-async def get_league_table(competition_year, league):
+async def get_league_table(league, start_year, end_year):
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
         understat = Understat(session)
-        data = await understat.get_league_table(league, competition_year)
-        print(data)
 
-        with open(f'jsons/league_table/{league}/{competition_year}/{league}_league_table_in_{competition_year}.json', 'w') as outfile:
-            json.dump(data, outfile)
-        print("________________________________________________________________________________________________________________________________")
-        df = pd.read_json(f'jsons/league_table/{league}/{competition_year}/{league}_league_table_in_{competition_year}.json')
-        df.to_csv(f'dataframes/league_table/{league}/{competition_year}/{league}_league_table_in_{competition_year}.csv')
+        #generate empy folders for jsons
+        create_empty_directories('jsons', 'league_table', league, start_year, end_year, False)
+        # generate empy folders for dataframes
+        create_empty_directories('dataframes', 'league_table', league, start_year, end_year, False)
 
-        print(df.head(5))
+        for year in range(start_year, end_year):
+            print(f'LEAGUE TABLE FOR {league} SEASON {year}_{year+1}')
+
+            path_season = f'season_{year}_{year+1}'
+
+            data = await understat.get_league_table(league, year)
+            print(data)
+
+            with open(f'jsons/league_table/{league}/{league}_league_table_in_{path_season}.json', 'w') as outfile:
+                json.dump(data, outfile)
+            print("________________________________________________________________________________________________________________________________")
+            df = pd.read_json(f'jsons/league_table/{league}/{league}_league_table_in_{path_season}.json')
+            df.to_csv(f'dataframes/league_table/{league}/{league}_league_table_in_{path_season}.csv')
+
+            print(df.head(5))
 
 
 
@@ -73,12 +84,18 @@ if __name__ == "__main__":
     #     loop = asyncio.get_event_loop()
     #     loop.run_until_complete(get_league_table(year, 'bundesliga'))
 
-    for league, teams_list in league_teams_dict.items():
-        print(f'{league} : {teams_list}')
+    # for league, teams_list in league_teams_dict.items():
+    #     print(f'{league} : {teams_list}')
 
+    #     loop = asyncio.get_event_loop()
+    #     loop.run_until_complete(get_players_team_statistics_for_choosen_teams_in_league(league, teams_list,2014,2022))
+
+    for league in leagues_list:
+        print(league)
         loop = asyncio.get_event_loop()
-        loop.run_until_complete(get_players_team_statistics_for_choosen_teams_in_league(league, teams_list,2014,2022))
-        
+        loop.run_until_complete(get_league_table(league,2014,2022))
+
+
 
 
 
