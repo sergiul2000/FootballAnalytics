@@ -25,13 +25,35 @@ async def get_players_team_statistics_in_given_year(team_name, competition_year,
         print(df.head(5))
 
 
+async def get_league_table(competition_year, league):
+    async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session:
+        understat = Understat(session)
+        data = await understat.get_league_table(league, competition_year)
+        print(data)
+
+        with open(f'jsons/league_table/{league}/{competition_year}/{league}_league_table_in_{competition_year}.json', 'w') as outfile:
+            json.dump(data, outfile)
+        print("________________________________________________________________________________________________________________________________")
+        df = pd.read_json(f'jsons/league_table/{league}/{competition_year}/{league}_league_table_in_{competition_year}.json')
+        df.to_csv(f'dataframes/league_table/{league}/{competition_year}/{league}_league_table_in_{competition_year}.csv')
+
+        print(df.head(5))
+
+
+
+
 if __name__ == "__main__":
 
-    list_of_teams = ["Manchester United", "Manchester City", "Chelsea", "Liverpool", "Arsenal", "Tottenham"]
+    # list_of_teams = ["Manchester United", "Manchester City", "Chelsea", "Liverpool", "Arsenal", "Tottenham"]
 
-    for year in range(2014,2023):
-        for i, team in enumerate(list_of_teams):
-            loop = asyncio.get_event_loop()
-            loop.run_until_complete(get_player_overall_statistics_by_league_and_year(team, year, 'epl'))
+    # for year in range(2014,2023):
+    #     for i, team in enumerate(list_of_teams):
+    #         loop = asyncio.get_event_loop()
+    #         loop.run_until_complete(get_player_overall_statistics_by_league_and_year(team, year, 'epl'))
+
+    for year in range(2014,2022):
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(get_league_table(year, 'bundesliga'))
+
 
 
