@@ -67,7 +67,7 @@ async def get_league_table(league, start_year, end_year):
 
             df = pd.read_json(f'jsons/league_table/{league}/{league}_league_table_in_{path_season}.json')
             
-            # first row contains columns problem solved
+            # first row contains columns problem
             df.columns = df.iloc[0]
             df = df[1:]
             
@@ -79,25 +79,14 @@ async def get_league_table(league, start_year, end_year):
 
 
 if __name__ == "__main__":
-    # for league, teams_list in league_teams_dict.items():
-    #     print(f'{league} : {teams_list}')
+    
+    for league, teams_list in league_teams_dict.items():
+        print(f'{league} : {teams_list}')
 
-    #     loop = asyncio.get_event_loop()
-    #     loop.run_until_complete(get_players_team_statistics_for_choosen_teams_in_league(league, teams_list,2014,2022))
+        loop = asyncio.get_event_loop()
+        loop.run_until_complete(get_players_team_statistics_for_choosen_teams_in_league(league, teams_list,2014,2022))
 
     for league in leagues_list:
         print(league)
         loop = asyncio.get_event_loop()
         loop.run_until_complete(get_league_table(league,2014,2022))
-
-
-
-
-
-    # loop = asyncio.get_event_loop()
-    # loop.run_until_complete(get_players_team_statistics_for_teams_in_league('Paris Saint Germain','ligue 1',2014,2022))
-
-
-
-
-
