@@ -19,12 +19,24 @@ pd.options.mode.chained_assignment = None
 
 
 def calculate_simple_linear_regression_league_table_stats(league, year):
+
+    #TO DO: hard-codeaza liga a.i. sa poti sa iti aduci datele din toate ligile
     path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
 
     df = pd.read_csv(path)
+    frames =[df]
+    for i in range(7):
+        path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year + i}_{year + 1 + i}.csv'
+        df_iterator_same_league_different_year = pd.read_csv(path)
+        frames.append(df_iterator_same_league_different_year)
+    df_result = pd.concat(frames)
+
 
     #df_to_analyze este un set de date intermediar unde luam doar cateva coloane din df care contine toate coloanele setului de date
-    df_to_analyze = df[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
+    df_to_analyze = df_result[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
+
+    #pare sa fi mers, trebuie sa il intreb pe Dan daca le pune bine impreuna
+    print(df_result)
 
     #redenumim coloanele pentru a avea nume mai sugestive
     df_to_analyze.rename(columns={'M': 'Matches',
@@ -61,7 +73,6 @@ def calculate_simple_linear_regression_league_table_stats(league, year):
     z = math.sqrt(z)
 
     print(z)
-
 
     #TO DO: antreneaza regresia pe mai multi ani si mai multe ligi. Setul de antrenament e prea mic
 
