@@ -92,7 +92,7 @@ def generate_formula_for_all_teams(league,year, gamma_coeficient):
     #print(df_to_analyze)
 
 def calculate_rmse(df_size, pythagorean_expectation, points):
-    rmse_avg = 0
+    rmse_value = 0
     # Calulam RMSE pentru gama ales
     for i in points:
         for j in pythagorean_expectation:
@@ -101,10 +101,10 @@ def calculate_rmse(df_size, pythagorean_expectation, points):
     rmse_value /= df_size  # de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
     rmse_value = math.sqrt(rmse_value)
 
+def calculate_rmse_avg():
+    ana = 0
 
 
-
-def
 
 if __name__ == '__main__':
     generate_formula_for_all_teams('la liga', 2021)
