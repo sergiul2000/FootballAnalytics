@@ -275,10 +275,6 @@ def apply_pythagorian_league_table_stats(league, year):
     # df_to_analyze['AvgGS_Int'] = df_to_analyze['AvgGA'].astype('int')
     # df_to_analyze['AvgGA_Int'] = df_to_analyze['AvgGA'].astype('int')
 
-    list_points = []
-    list_loses = []
-    list_draws = []
-    list_wins =[]
     for index,row in df_to_analyze.iterrows():
         #print(row)
         
@@ -287,25 +283,13 @@ def apply_pythagorian_league_table_stats(league, year):
         win_expectancy = int(row['Matches'] * win_expectancy)
         draw_expectancy = int(row['Matches'] * draw_expectancy) +1
         lose_expectancy = row['Matches'] - int(win_expectancy) - (int(draw_expectancy))
-        list_points.append(points)
-        list_wins.append(win_expectancy)
-        list_draws.append(draw_expectancy)
-        list_loses.append(lose_expectancy)
-        # row['Estimated_Win'] = win_expectancy
-        # row['Estimated_Draw'] = draw_expectancy
-        # row['Estimate_Loses'] = lose_expectancy
-        # row['Estimated_Points'] = points
 
-        # print(f'Actual Wins {row["Wins"]} | Estimated Wins {int(win_expectancy)}')
-        # print(f'Actual Draws {row["Draws"]} | Estimated Draws {int(draw_expectancy+1)}')
-        # print(f'Actual Loses {row["Loses"]} | Estimated Loses {lose_expectancy}')
-        # print(f'Actual Points {row["Points"]} | Estimated points {int(points)}')
+        df_to_analyze.at[index,'Estimated_Wins'] = win_expectancy
+        df_to_analyze.at[index,'Estimated_Draws'] = draw_expectancy
+        df_to_analyze.at[index,'Estimated_Loses'] = lose_expectancy
+        df_to_analyze.at[index,'Estimated_Points'] =  points
 
 
-    df_to_analyze.loc[:,'Estimated_Wins'] = list_wins
-    df_to_analyze.loc[:,'Estimated_Draws'] = list_draws
-    df_to_analyze.loc[:,'Estimated_Loses'] = list_loses
-    df_to_analyze.loc[:,'Estimated_Points'] = list_points
     df_to_analyze['Delta_Points'] = df_to_analyze['Points'] - df_to_analyze['Estimated_Points']
 
     print(df_to_analyze)
