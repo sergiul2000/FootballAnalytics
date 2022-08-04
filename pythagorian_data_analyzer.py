@@ -18,7 +18,7 @@ pd.options.mode.chained_assignment = None
     #pythagorean_expectation = pow(goals_scored, ga)
 
 
-def calculate_simple_linear_regression_league_table_stats(league, year):
+def calculate_simple_linear_regression_league_table_stats(league, year,year_to_return):
 
     #TO DO: hard-codeaza liga a.i. sa poti sa iti aduci datele din toate ligile
     path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
@@ -73,23 +73,22 @@ def calculate_simple_linear_regression_league_table_stats(league, year):
     gamma_coeficient /= set_antrenament.size #de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
     gamma_coeficient = math.sqrt(gamma_coeficient)
 
-
-    #vreau sa returnez aici din frames diect setul de date pentru a nu-l mai genera odata, dar nu stiu inca bine formula
-    return gamma_coeficient, frames[year-2015]
+    #vreau sa returnez aici din frames diect setul de date pentru a nu-l mai genera odata
+    return gamma_coeficient, frames[year_to_return-2015]
 
 
 def generate_formula_for_all_teams(league,year):
-    gamma_coeficient, df = calculate_simple_linear_regression_league_table_stats(league, 2015)
+    gamma_coeficient, df = calculate_simple_linear_regression_league_table_stats(league, 2015,year)
     print(gamma_coeficient)
-    print(df)
-    path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
-
-    df = pd.read_csv(path)
-
-    # df_to_analyze este un set de date intermediar unde luam doar cateva coloane din df care contine toate coloanele setului de date
+    #print(df)
+    # path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
+    #
+    # df = pd.read_csv(path)
+    #
+    #df_to_analyze este un set de date intermediar unde luam doar cateva coloane din df care contine toate coloanele setului de date
     df_to_analyze = df[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
 
-    # redenumim coloanele pentru a avea nume mai sugestive
+    #redenumim coloanele pentru a avea nume mai sugestive
     df_to_analyze.rename(columns={'M': 'Matches',
                                   'W': 'Wins',
                                   'D': 'Draws',
@@ -104,22 +103,20 @@ def generate_formula_for_all_teams(league,year):
     pythagorean_expectation = []
 
 
-    # for i in range(len(df_to_analyze)):
-    #     curent_row = df_to_analyze.iloc[i]
-    #     ratio_win_lose[i] = (curent_row['Wins'] + curent_row['Loses']) / curent_row['Matches']
-    #     ratio_draw[i] = 1 - ratio_win_lose[i]
-    #     average_points_per_game[i] = (3 * ratio_win_lose) + (2 * ratio_draw)
-    #     pythagorean_expectation[i] = ((pow(curent_row['GoalsScored'], gamma_coeficient)) / ( (pow(curent_row['GoalsScored'], gamma_coeficient)) +
-    #                                                                                         (pow(curent_row[
-    #                                                                                                  'GoalsReceived'],
-    #                                                                                              gamma_coeficient))) *
-    #                                   average_points_per_game[i])
-    #     print(df_to_analyze)
-    #     print('==========================\n\n')
-    #     print(pythagorean_expectation)
+    for i in range(len(df_to_analyze)):
+        curent_row = df_to_analyze.iloc[i]
+        ratio_win_lose.append( (curent_row['Wins'] + curent_row['Loses']) / curent_row['Matches'] )
+        ratio_draw.append(1 - ratio_win_lose[i])
+        average_points_per_game.append( (3 * ratio_win_lose) + (2 * ratio_draw) )
 
+        #din cauza ca gama_coeficient e prea mare, ar trebui sa ridice 100 la puterea 200
+        alpha = (pow(curent_row['GoalsScored'], gamma_coeficient))
+        pythagorean_expectation.append( (alpha / ( alpha +(pow(curent_row['GoalsReceived'],gamma_coeficient))) )*average_points_per_game[i])
+    print(df_to_analyze)
+    print('==========================\n\n')
+    print(pythagorean_expectation)
 
 
 
 if __name__ == '__main__':
-    generate_formula_for_all_teams('la liga', 2015)
+    generate_formula_for_all_teams('la liga', 2021)
