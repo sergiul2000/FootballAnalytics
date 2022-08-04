@@ -29,6 +29,7 @@ def calculate_simple_linear_regression_league_table_stats(league, year):
         path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year + i}_{year + 1 + i}.csv'
         df_iterator_same_league_different_year = pd.read_csv(path)
         frames.append(df_iterator_same_league_different_year)
+        #print(frames[i])
     df_result = pd.concat(frames)
 
 
@@ -36,7 +37,7 @@ def calculate_simple_linear_regression_league_table_stats(league, year):
     df_to_analyze = df_result[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
 
     #pare sa fi mers, trebuie sa il intreb pe Dan daca le pune bine impreuna
-    print(df_result)
+    #print(df_result)
 
     #redenumim coloanele pentru a avea nume mai sugestive
     df_to_analyze.rename(columns={'M': 'Matches',
@@ -63,18 +64,62 @@ def calculate_simple_linear_regression_league_table_stats(league, year):
     #printez punctele reale comparate cu punctele prezise de regresia lineara si se observa diferente foarte mari
     #print(df_to_analyze['Points'], points_predicted)
 
-    z=0
+    gamma_coeficient = 0
 
     for i in set_antrenament:
         for j in points_predicted:
-            z += pow((i-j), 2)
+            gamma_coeficient += pow((i-j), 2)
 
-    z /= set_antrenament.size #de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
-    z = math.sqrt(z)
+    gamma_coeficient /= set_antrenament.size #de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
+    gamma_coeficient = math.sqrt(gamma_coeficient)
 
-    print(z)
 
-    #TO DO: antreneaza regresia pe mai multi ani si mai multe ligi. Setul de antrenament e prea mic
+    #vreau sa returnez aici din frames diect setul de date pentru a nu-l mai genera odata, dar nu stiu inca bine formula
+    return gamma_coeficient, frames[year-2015]
+
+
+def generate_formula_for_all_teams(league,year):
+    gamma_coeficient, df = calculate_simple_linear_regression_league_table_stats(league, 2015)
+    print(gamma_coeficient)
+    print(df)
+    path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
+
+    df = pd.read_csv(path)
+
+    # df_to_analyze este un set de date intermediar unde luam doar cateva coloane din df care contine toate coloanele setului de date
+    df_to_analyze = df[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
+
+    # redenumim coloanele pentru a avea nume mai sugestive
+    df_to_analyze.rename(columns={'M': 'Matches',
+                                  'W': 'Wins',
+                                  'D': 'Draws',
+                                  'L': 'Loses',
+                                  'G': 'GoalsScored',
+                                  'GA': 'GoalsReceived',
+                                  'PTS': 'Points',
+                                  }, inplace=True)
+    ratio_win_lose = []
+    ratio_draw = []
+    average_points_per_game = []
+    pythagorean_expectation = []
+
+
+    # for i in range(len(df_to_analyze)):
+    #     curent_row = df_to_analyze.iloc[i]
+    #     ratio_win_lose[i] = (curent_row['Wins'] + curent_row['Loses']) / curent_row['Matches']
+    #     ratio_draw[i] = 1 - ratio_win_lose[i]
+    #     average_points_per_game[i] = (3 * ratio_win_lose) + (2 * ratio_draw)
+    #     pythagorean_expectation[i] = ((pow(curent_row['GoalsScored'], gamma_coeficient)) / ( (pow(curent_row['GoalsScored'], gamma_coeficient)) +
+    #                                                                                         (pow(curent_row[
+    #                                                                                                  'GoalsReceived'],
+    #                                                                                              gamma_coeficient))) *
+    #                                   average_points_per_game[i])
+    #     print(df_to_analyze)
+    #     print('==========================\n\n')
+    #     print(pythagorean_expectation)
+
+
+
 
 if __name__ == '__main__':
-    calculate_simple_linear_regression_league_table_stats('la liga', 2015)
+    generate_formula_for_all_teams('la liga', 2015)
