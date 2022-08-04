@@ -57,6 +57,11 @@ def calculate_simple_linear_regression_league_table_stats(league, year,year_to_r
 
     points_predicted = linear_regresor.predict(set_antrenament)
 
+    # for i in range(len(set_antrenament)):
+    #     print(set_antrenament[i],points_predicted[i], set_observat[i])
+    #     print('\n')
+
+
     #transformam punctele in intregi, deoarece nu putem avea puncte zecimale. Insa eroarea e mai mica daca lasam zecimalele
     # for i in range(len(points_predicted)):
     #     points_predicted[i] = int(points_predicted[i])
@@ -79,7 +84,8 @@ def calculate_simple_linear_regression_league_table_stats(league, year,year_to_r
 
 def generate_formula_for_all_teams(league,year):
     gamma_coeficient, df = calculate_simple_linear_regression_league_table_stats(league, 2015,year)
-    print(gamma_coeficient)
+
+    gamma_coeficient /= 100
     #print(df)
     # path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
     #
@@ -107,14 +113,16 @@ def generate_formula_for_all_teams(league,year):
         curent_row = df_to_analyze.iloc[i]
         ratio_win_lose.append( (curent_row['Wins'] + curent_row['Loses']) / curent_row['Matches'] )
         ratio_draw.append(1 - ratio_win_lose[i])
-        average_points_per_game.append( (3 * ratio_win_lose) + (2 * ratio_draw) )
+        average_points_per_game.append( ((3 * ratio_win_lose[i]) + (2 * ratio_draw[i])) )
+        # print('win rate este de ',ratio_win_lose[i])
+        # print('draw rate este de', ratio_draw[i])
+        # print('appg este de ', average_points_per_game[i])
 
         #din cauza ca gama_coeficient e prea mare, ar trebui sa ridice 100 la puterea 200
         alpha = (pow(curent_row['GoalsScored'], gamma_coeficient))
-        pythagorean_expectation.append( (alpha / ( alpha +(pow(curent_row['GoalsReceived'],gamma_coeficient))) )*average_points_per_game[i])
-    print(df_to_analyze)
-    print('==========================\n\n')
-    print(pythagorean_expectation)
+        #print()
+        pythagorean_expectation.append(  (alpha * average_points_per_game[i]) / (  (pow(alpha, gamma_coeficient)) + ( pow(df_to_analyze.iloc[i]['GoalsReceived'],gamma_coeficient) )   )  )
+        print(pythagorean_expectation[i])
 
 
 
