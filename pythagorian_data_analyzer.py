@@ -4,10 +4,8 @@ from sklearn.linear_model import LinearRegression
 from math import gamma, exp
 import pandas as pd
 from math import exp, pow
+import statistics
 
-import py
-from pyparsing import java_style_comment
-from pyrsistent import b
 pd.set_option('display.max_columns', None)
 pd.options.mode.chained_assignment = None
 
@@ -22,7 +20,13 @@ def frange(start, step, num):
         yield start
         start += step
 
-def generate_formula_for_all_teams(league,year, gamma_coeficient):
+def compute_pythagorean_expectation(df, y):
+
+    rmse = 0
+    return rmse ,df
+
+
+def generate_formula_for_all_teams(league,year):
     path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
 
     df = pd.read_csv(path)
@@ -52,6 +56,31 @@ def generate_formula_for_all_teams(league,year, gamma_coeficient):
 
     df_to_analyze['AvgGS'] = df_to_analyze['GoalsScored'] / df_to_analyze['Matches']
     df_to_analyze['AvgGA'] = df_to_analyze['GoalsReceived'] / df_to_analyze['Matches']
+
+
+
+    y_best = 0
+    rmse_min = 320000
+
+    y = 1.0
+    while y<=2.0:
+        y = round(y,2)
+        print(f'Trying for y {y}')
+        print(f'________________________________________________________________')
+
+        rmse_value,df_to_analyze = compute_pythagorian_expectation(df, y)
+
+
+        if(rmse_value<rmse_min):
+            rmse_min = rmse_value
+            y_best = y
+
+        y+=0.1
+
+    rmse_value,df_to_analyze = compute_pythagorian_expectation(df, y_best)
+
+
+
 
     #gamma_coeficient = 1.2
 
@@ -91,20 +120,22 @@ def generate_formula_for_all_teams(league,year, gamma_coeficient):
 
     #print(df_to_analyze)
 
-def calculate_rmse(df_size, pythagorean_expectation, points):
+def calculate_rmse(comparables_list, number_of_elements):
     rmse_value = 0
     # Calulam RMSE pentru gama ales
-    for i in points:
-        for j in pythagorean_expectation:
-            rmse_value += pow((i - j), 2)
+    for predicted_val, actual_val in comparables_list:
+            rmse_value += pow((predicted_val - actual_val), 2)
 
-    rmse_value /= df_size  # de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
+    rmse_value /= number_of_elements  # de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
     rmse_value = math.sqrt(rmse_value)
+    
 
-def calculate_rmse_avg():
-    ana = 0
+def calculate_rmse_avg(rmse_value):
+    return statistics.mean(rmse_value)
 
 
 
 if __name__ == '__main__':
-    generate_formula_for_all_teams('la liga', 2021)
+    #generate_formula_for_all_teams('la liga', 2021)
+
+
