@@ -17,26 +17,28 @@ pd.options.mode.chained_assignment = None
     #pythagorean_expectation var is the PE from the article
     #pythagorean_expectation = pow(goals_scored, ga)
 
+def frange(start, step, num):
+    for i in range(num):
+        yield start
+        start += step
 
-def calculate_simple_linear_regression_league_table_stats(league, year):
-
-    #TO DO: hard-codeaza liga a.i. sa poti sa iti aduci datele din toate ligile
+def generate_formula_for_all_teams(league,year, gamma_coeficient):
     path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv'
 
     df = pd.read_csv(path)
-    frames =[df]
-    for i in range(7):
-        path = f'dataframes/league_table/{league}/{league}_league_table_in_season_{year + i}_{year + 1 + i}.csv'
-        df_iterator_same_league_different_year = pd.read_csv(path)
-        frames.append(df_iterator_same_league_different_year)
-    df_result = pd.concat(frames)
+    df_to_analyze = df[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
+
+    df_to_analyze.rename(columns={'M': 'Matches',
+                                  'W': 'Wins',
+                                  'D': 'Draws',
+                                  'L': 'Loses',
+                                  'G': 'GoalsScored',
+                                  'GA': 'GoalsReceived',
+                                  'PTS': 'Points',
+                                  }, inplace=True)
 
 
-    #df_to_analyze este un set de date intermediar unde luam doar cateva coloane din df care contine toate coloanele setului de date
-    df_to_analyze = df_result[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
-
-    #pare sa fi mers, trebuie sa il intreb pe Dan daca le pune bine impreuna
-    print(df_result)
+    df_to_analyze = df[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
 
     #redenumim coloanele pentru a avea nume mai sugestive
     df_to_analyze.rename(columns={'M': 'Matches',
@@ -48,33 +50,61 @@ def calculate_simple_linear_regression_league_table_stats(league, year):
                                   'PTS': 'Points',
                                   }, inplace=True)
 
-    set_antrenament = df_to_analyze['GoalsScored'].values.reshape(-1, 1)
-    set_observat = df_to_analyze['Points'].values.reshape(-1, 1)
+    df_to_analyze['AvgGS'] = df_to_analyze['GoalsScored'] / df_to_analyze['Matches']
+    df_to_analyze['AvgGA'] = df_to_analyze['GoalsReceived'] / df_to_analyze['Matches']
 
-    linear_regresor = LinearRegression()
-    linear_regresor.fit(set_antrenament, set_observat)
+    #gamma_coeficient = 1.2
 
-    points_predicted = linear_regresor.predict(set_antrenament)
+    #print(df_to_analyze['Points'])
+    ratio_win_lose = []
+    ratio_draw = []
+    average_points_per_game = []
+    pythagorean_expectation = []
 
-    #transformam punctele in intregi, deoarece nu putem avea puncte zecimale. Insa eroarea e mai mica daca lasam zecimalele
-    # for i in range(len(points_predicted)):
-    #     points_predicted[i] = int(points_predicted[i])
+    for i in range(len(df_to_analyze)):
+        curent_row = df_to_analyze.iloc[i]
+        ratio_win_lose.append( (curent_row['Wins'] + curent_row['Loses']) / curent_row['Matches'] )
+        ratio_draw.append(1 - ratio_win_lose[i])
+        average_points_per_game.append( ((3 * ratio_win_lose[i]) + (2 * ratio_draw[i])) )
 
-    #printez punctele reale comparate cu punctele prezise de regresia lineara si se observa diferente foarte mari
-    #print(df_to_analyze['Points'], points_predicted)
 
-    z=0
+        alpha = curent_row['GoalsScored'] / curent_row['Matches']
+        alpha = pow(alpha, gamma_coeficient)
+        beta = curent_row['GoalsReceived'] / curent_row['Matches']
+        beta = pow(beta, gamma_coeficient)
+        beta = alpha + beta
 
-    for i in set_antrenament:
-        for j in points_predicted:
-            z += pow((i-j), 2)
 
-    z /= set_antrenament.size #de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
-    z = math.sqrt(z)
+        #aici inmultesc formula cu media golurilor pe meci cu APPG
+        alpha = alpha * average_points_per_game[i]
+        alpha = alpha / beta
+        alpha *= curent_row['Matches']
+        alpha = int(alpha)
+        pythagorean_expectation.append(alpha)
+        #print('PE = ', pythagorean_expectation[i])
 
-    print(z)
+    df_to_analyze['Expected Points'] = pythagorean_expectation
 
-    #TO DO: antreneaza regresia pe mai multi ani si mai multe ligi. Setul de antrenament e prea mic
+    return df_to_analyze.size, pythagorean_expectation,df_to_analyze['Points']
+
+
+
+    #print(df_to_analyze)
+
+def calculate_rmse(df_size, pythagorean_expectation, points):
+    rmse_value = 0
+    # Calulam RMSE pentru gama ales
+    for i in points:
+        for j in pythagorean_expectation:
+            rmse_value += pow((i - j), 2)
+
+    rmse_value /= df_size  # de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
+    rmse_value = math.sqrt(rmse_value)
+
+def calculate_rmse_avg():
+    ana = 0
+
+
 
 if __name__ == '__main__':
-    calculate_simple_linear_regression_league_table_stats('la liga', 2015)
+    generate_formula_for_all_teams('la liga', 2021)
