@@ -20,10 +20,45 @@ def frange(start, step, num):
         yield start
         start += step
 
-def compute_pythagorean_expectation(df, y):
+def compute_pythagorian_expectation(df_to_analyze, gamma_coeficient):
 
-    rmse = 0
-    return rmse ,df
+    ratio_win_lose = []
+    ratio_draw = []
+    average_points_per_game = []
+    pythagorean_expectation = []
+
+    for i in range(len(df_to_analyze)):
+        curent_row = df_to_analyze.iloc[i]
+        ratio_win_lose.append( (curent_row['Wins'] + curent_row['Loses']) / curent_row['Matches'] )
+        ratio_draw.append(1 - ratio_win_lose[i])
+        average_points_per_game.append( ((3 * ratio_win_lose[i]) + (2 * ratio_draw[i])) )
+
+
+        alpha = curent_row['GoalsScored'] / curent_row['Matches']
+        alpha = pow(alpha, gamma_coeficient)
+        beta = curent_row['GoalsReceived'] / curent_row['Matches']
+        beta = pow(beta, gamma_coeficient)
+        beta = alpha + beta
+
+
+        #aici inmultesc formula cu media golurilor pe meci cu APPG
+        alpha = alpha * average_points_per_game[i]
+        alpha = alpha / beta
+        alpha *= curent_row['Matches']
+        alpha = int(alpha)
+        pythagorean_expectation.append(alpha)
+        #print('PE = ', pythagorean_expectation[i])
+
+    column_name_of_each_pythagorian_expectation_with_different_y = 'Expected Points y= ' + str(gamma_coeficient)
+
+    df_to_analyze[column_name_of_each_pythagorian_expectation_with_different_y] = pythagorean_expectation
+
+    return  df_to_analyze, pythagorean_expectation
+
+def merge(list1, list2):
+
+    merged_list = [(list1[i], list2[i]) for i in range(0, len(list1))]
+    return merged_list
 
 
 def generate_formula_for_all_teams(league,year):
@@ -59,6 +94,7 @@ def generate_formula_for_all_teams(league,year):
 
 
 
+
     y_best = 0
     rmse_min = 320000
 
@@ -68,8 +104,8 @@ def generate_formula_for_all_teams(league,year):
         print(f'Trying for y {y}')
         print(f'________________________________________________________________')
 
-        rmse_value,df_to_analyze = compute_pythagorian_expectation(df, y)
-
+        df_to_analyze, pythagorian_expectation_curent_y= compute_pythagorian_expectation(df_to_analyze, y)
+        rmse_value = calculate_rmse( merge(pythagorian_expectation_curent_y, df_to_analyze['Points']), df_to_analyze.size )
 
         if(rmse_value<rmse_min):
             rmse_min = rmse_value
@@ -77,7 +113,9 @@ def generate_formula_for_all_teams(league,year):
 
         y+=0.1
 
-    rmse_value,df_to_analyze = compute_pythagorian_expectation(df, y_best)
+    rmse_min = format(rmse_min, ".2f")
+    print('Rmse_min = ', rmse_min, ' y_best = ', y_best)
+    print(df_to_analyze)
 
 
 
@@ -85,36 +123,6 @@ def generate_formula_for_all_teams(league,year):
     #gamma_coeficient = 1.2
 
     #print(df_to_analyze['Points'])
-    ratio_win_lose = []
-    ratio_draw = []
-    average_points_per_game = []
-    pythagorean_expectation = []
-
-    for i in range(len(df_to_analyze)):
-        curent_row = df_to_analyze.iloc[i]
-        ratio_win_lose.append( (curent_row['Wins'] + curent_row['Loses']) / curent_row['Matches'] )
-        ratio_draw.append(1 - ratio_win_lose[i])
-        average_points_per_game.append( ((3 * ratio_win_lose[i]) + (2 * ratio_draw[i])) )
-
-
-        alpha = curent_row['GoalsScored'] / curent_row['Matches']
-        alpha = pow(alpha, gamma_coeficient)
-        beta = curent_row['GoalsReceived'] / curent_row['Matches']
-        beta = pow(beta, gamma_coeficient)
-        beta = alpha + beta
-
-
-        #aici inmultesc formula cu media golurilor pe meci cu APPG
-        alpha = alpha * average_points_per_game[i]
-        alpha = alpha / beta
-        alpha *= curent_row['Matches']
-        alpha = int(alpha)
-        pythagorean_expectation.append(alpha)
-        #print('PE = ', pythagorean_expectation[i])
-
-    df_to_analyze['Expected Points'] = pythagorean_expectation
-
-    return df_to_analyze.size, pythagorean_expectation,df_to_analyze['Points']
 
 
 
@@ -128,6 +136,7 @@ def calculate_rmse(comparables_list, number_of_elements):
 
     rmse_value /= number_of_elements  # de verificat daca asta chiar ia dimensiunea setului, daca functioneaza ca un len
     rmse_value = math.sqrt(rmse_value)
+    return rmse_value
     
 
 def calculate_rmse_avg(rmse_value):
@@ -136,6 +145,6 @@ def calculate_rmse_avg(rmse_value):
 
 
 if __name__ == '__main__':
-    #generate_formula_for_all_teams('la liga', 2021)
+    generate_formula_for_all_teams('la liga', 2021)
 
 
