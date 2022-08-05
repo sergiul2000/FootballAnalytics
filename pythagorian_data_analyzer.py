@@ -6,7 +6,7 @@ import pandas as pd
 from math import exp, pow
 import statistics
 
-pd.set_option('display.max_columns', None)
+pd.set_option('display.max_columns', None) 
 pd.options.mode.chained_assignment = None
 
 
@@ -115,9 +115,14 @@ def generate_formula_for_all_teams(league,year):
 
     rmse_min = format(rmse_min, ".2f")
     print('Rmse_min = ', rmse_min, ' y_best = ', y_best)
+    best_y_column = f'Expected Points y= {y_best}'
+    df_to_analyze = df_to_analyze[['Team','Matches','Wins','Draws','Loses','GoalsScored','GoalsReceived', 'Points', best_y_column]]
+    df_to_analyze.rename(columns={best_y_column:'Estimated_Points_Simple'}, inplace=True)
+    df_to_analyze['Delta_Points_Simple'] = df_to_analyze['Points'] - df_to_analyze['Estimated_Points_Simple']
     print(df_to_analyze)
 
 
+    
 
 
     #gamma_coeficient = 1.2
@@ -146,5 +151,3 @@ def calculate_rmse_avg(rmse_value):
 
 if __name__ == '__main__':
     generate_formula_for_all_teams('la liga', 2021)
-
-

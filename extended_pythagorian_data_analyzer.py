@@ -287,15 +287,15 @@ def apply_pythagorian_league_table_stats(league, year):
         df_to_analyze.at[index,'Estimated_Wins'] = win_expectancy
         df_to_analyze.at[index,'Estimated_Draws'] = draw_expectancy
         df_to_analyze.at[index,'Estimated_Loses'] = lose_expectancy
-        df_to_analyze.at[index,'Estimated_Points'] =  points
+        df_to_analyze.at[index,'Estimated_Points_Extended'] =  points
 
 
-    df_to_analyze['Delta_Points'] = df_to_analyze['Points'] - df_to_analyze['Estimated_Points']
+    df_to_analyze['Delta_Points_Extended'] = df_to_analyze['Points'] - df_to_analyze['Estimated_Points_Extended']
 
     print(df_to_analyze)
 
 
-    df_to_save= df_to_analyze[['Team','Matches','Wins','Draws','Loses','GoalsScored', 'GoalsReceived', 'Points','Estimated_Wins', 'Estimated_Draws', 'Estimated_Loses', 'Estimated_Points','Delta_Points']]
+    df_to_save= df_to_analyze[['Team','Matches','Wins','Draws','Loses','GoalsScored', 'GoalsReceived', 'Points','Estimated_Wins', 'Estimated_Draws', 'Estimated_Loses', 'Estimated_Points_Extended','Delta_Points_Extended']]
     df_to_save.to_csv("initial_report.csv")
 
 
