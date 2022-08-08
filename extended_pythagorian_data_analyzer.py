@@ -1,10 +1,6 @@
-from platform import win32_edition
 import pandas as pd
 from math import exp,pow
 
-import py
-from pyparsing import java_style_comment
-from pyrsistent import b
 pd.set_option('display.max_columns', None)
 pd.options.mode.chained_assignment = None  
 
