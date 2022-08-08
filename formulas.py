@@ -121,4 +121,32 @@ def merge_lists(list1, list2):
     merged_list = [(list1[i], list2[i]) for i in range(0, len(list1))]
     return merged_list
 
+def calculate_formula_index_pos_31(games_started, minutes_per_game, team_points_per_minute, goals, expected_goals, assists, expected_assists,
+                                   goals_per_minute, goals_per_shot_on_goal, assists_per_minute, goals_per_offside_offense,
+                                   total_wins_by_zero, expected_total_wins_by_zero, fouls_commited_per_minute, expected_fouls_commited_per_minute,
+                                   yellow_cards, red_cards, total_cards_per_minute, bonus):
+    index_positives = games_started / 30
+    index_positives += (minutes_per_game / 90)
+    index_positives += team_points_per_minute
+    index_positives += (goals / expected_goals)
+    index_positives += (assists / expected_assists)
+    index_positives += goals_per_minute
+    index_positives += goals_per_shot_on_goal
+    index_positives += assists_per_minute
+    index_positives += goals_per_offside_offense
+    index_positives += (total_wins_by_zero / expected_total_wins_by_zero)
+
+    b = fouls_commited_per_minute
+    b *= expected_fouls_commited_per_minute
+    b += (yellow_cards / 10)
+    b += red_cards
+    b += total_cards_per_minute
+    index_positives -= b
+
+    index_positives += bonus
+
+    print(index_positives)
+
+    return index_positives
+
 
