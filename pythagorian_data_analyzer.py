@@ -101,8 +101,8 @@ def generate_formula_for_all_teams(league,year):
     y = 1.0
     while y<=2.0:
         y = round(y,2)
-        print(f'Trying for y {y}')
-        print(f'________________________________________________________________')
+        # print(f'Trying for y {y}')
+        # print(f'________________________________________________________________')
 
         df_to_analyze, pythagorian_expectation_curent_y= compute_pythagorian_expectation(df_to_analyze, y)
         rmse_value = calculate_rmse( merge(pythagorian_expectation_curent_y, df_to_analyze['Points']), df_to_analyze.size )
