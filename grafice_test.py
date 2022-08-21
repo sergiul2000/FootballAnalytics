@@ -150,8 +150,8 @@ def create_avg_deltas_figure(data_frame, title, y_column_name, blue_line_name, b
 
 if __name__ == '__main__':
     # create_figure('123', dx, dy1, dy2)
-    # create_estimated_points_of_one_sezon_figure(df, df['Team'], dx, estimated_simple_pyth, estimated_extended_pyth, 'Estimated points by 2 formulas', 'Points', 'Points recorded', 'Points estimated by Simple Pythagorian method',
-    #               'Points estimted by Extended Pythagorian method')
+    create_estimated_points_of_one_sezon_figure(df, df['Team'], dx, estimated_simple_pyth, estimated_extended_pyth, 'Estimated points by 2 formulas', 'Points', 'Points recorded', 'Points estimated by Simple Pythagorian method',
+                  'Points estimted by Extended Pythagorian method')
     create_avg_deltas_figure(df, 'Estimated points by 2 formulas','Points', 'Average delta points with simple pithagoryan',
                                                 'Average delta points with extended pithagoryan')
     # print(calculate_mean_deltas_of_one_year(df['Delta_Points_Simple'], df['Delta_Points_Extended']))
