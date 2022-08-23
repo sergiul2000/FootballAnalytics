@@ -66,13 +66,13 @@ def create_estimated_points_of_one_sezon_figure(data_frame, data_x_axis, data_y1
 
     # Make traces for graph
     trace1 = go.Bar(x=data_x_axis, y=data_y1_axis, xaxis='x2', yaxis='y2',
-                    marker=dict(color='#E3B5A4'),
+                    marker=dict(color='#000000'),
                     name=blue_line_name)
     trace2 = go.Bar(x=data_x_axis, y=data_y2_axis, xaxis='x2', yaxis='y2',
-                    marker=dict(color='#E85F5C'),
+                    marker=dict(color='#00008B'),
                     name=black_line_name)
     trace3 = go.Bar(x=data_x_axis, y=data_y3_axis, xaxis='x2', yaxis='y2',
-                    marker=dict(color='#773344'),
+                    marker=dict(color='#DC143C'),
                     name=amber_line_name)
 
     # Add trace data to figure
@@ -115,10 +115,10 @@ def create_avg_deltas_figure(data_frame, title, y_column_name, blue_line_name, b
 
     # Make traces for graph
     trace1 = go.Bar(x=sezons, y=array_of_simple_deltas, xaxis='x2', yaxis='y2',
-                    marker=dict(color='#E3B5A4'),
+                    marker=dict(color='#00008B'),
                     name=blue_line_name)
     trace2 = go.Bar(x=sezons, y=array_of_extended_deltas, xaxis='x2', yaxis='y2',
-                    marker=dict(color='#E85F5C'),
+                    marker=dict(color='#DC143C'),
                     name=black_line_name)
 
     # Add trace data to figure
