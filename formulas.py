@@ -62,9 +62,9 @@ def compute_points_per_game_pythagorian_estimation(limit_for_goals_iteration, al
     # 1 point for draw
     print("")
     print(f"WIN PROB {win_probability} ")
-    print(f"DRAW PROB {draw_probability*10} ")
+    print(f"DRAW PROB {draw_probability*1} ")
 
-    return (3 * win_probability) + (10 * draw_probability) , win_probability, draw_probability*10
+    return (3 * win_probability) + (1 * draw_probability) , win_probability, draw_probability*1
 
 
 def calculate_rmse(comparables_list, number_of_elements):

@@ -191,4 +191,4 @@ if __name__ == '__main__':
 
     print(f'Avg Delta Points Simple: {mean_simple_sum / number_of_seasons}')
     print(f'Avg Delta Points Extended: {mean_extended_sum / number_of_seasons}')
-    print(f'Avg Difference Between Simple and Extended: {mean_extended_sum - mean_simple_sum}')
+    print(f'Avg Difference Between Simple and Extended: {(mean_extended_sum - mean_simple_sum)/ number_of_seasons}')

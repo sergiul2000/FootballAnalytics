@@ -101,6 +101,7 @@ def create_estimated_points_of_one_sezon_figure(data_frame, data_x_axis, data_y1
 
     # Plot!
     fig.show()
+    #fig.write_image("fig1.jpeg")
 
 
 def create_avg_deltas_figure(data_frame, title, y_column_name, blue_line_name, black_line_name):
@@ -147,11 +148,33 @@ def create_avg_deltas_figure(data_frame, title, y_column_name, blue_line_name, b
 
     # Plot!
     fig.show()
+    #fig.write_image("fig1.jpeg")
 
 if __name__ == '__main__':
     # create_figure('123', dx, dy1, dy2)
-    create_estimated_points_of_one_sezon_figure(df, df['Team'], dx, estimated_simple_pyth, estimated_extended_pyth, 'Estimated points by 2 formulas', 'Points', 'Points recorded', 'Points estimated by Simple Pythagorian method',
-                  'Points estimted by Extended Pythagorian method')
+    print(df.head(5))
+    
+
+    df.rename(columns = {'Unnamed: 0':'#', 
+                        'Matches':'M', 
+                        'Wins':'W',
+                        'Draws':'D',
+                        'Wins':'W',
+                        'Loses':'L',
+                        'GoalsScored':'GS',
+                        'GoalsReceived':'GR',
+                        'Points':'PTS',
+                        'Estimated_Points_Simple':'EPTS',
+                        'Delta_Points_Simple':'D_EPTS',
+                        'Estimated_Points_Extended':'EXPTS',
+                        'Delta_Points_Extended':'D_EXPTS',
+                        }, inplace=True)  
+    df = df.drop(columns=['#', 'W','L','D'])
+    print(df.columns)
+    create_estimated_points_of_one_sezon_figure(df, df['Team'], dx, estimated_simple_pyth, estimated_extended_pyth, 'Estimated points by 2 formulas in 2014/15 season', 'Points', 'Points recorded', 'Points estimated by Simple Pythagorian method',
+                   'Points estimted by Extended Pythagorian method')
+
     create_avg_deltas_figure(df, 'Estimated points by 2 formulas','Points', 'Average delta points with simple pithagoryan',
                                                 'Average delta points with extended pithagoryan')
+
     # print(calculate_mean_deltas_of_one_year(df['Delta_Points_Simple'], df['Delta_Points_Extended']))
