@@ -8,11 +8,7 @@ from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from tqdm import tqdm
 from selenium import webdriver
-
-#  driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
-# driver.implicitly_wait(3)
-# driver.get('https:/1xbet.whoscored.com/')
-# driver.close()
+from selenium.webdriver.support.select import Select
 
 def replace_pd(df):
     mapping = {'-': 0} 
@@ -23,20 +19,51 @@ def replace_pd(df):
         replace_dict[colum] = mapping
     return df.replace(replace_dict)
 
-# def replace_Apps(df):
-    
-#     sub = list()
-#     for i in list(df['Apps']):
-#         if '(' in i :
-#             sub.append(i.split('(')[1].split(')')[0])
-#         else :
-#             sub.append('0')
-#     df['sub'] = sub
-#     df['Apps'] = list(map(lambda x: x.split('(')[0], list(df['Apps'])))
-#     df['team_name'] = list(map(lambda x: x.split(',')[0], list(df['team_name'])))
-#     return(df)        
+def crawl_players_team_stats_for_available_seasons_by_competition(team_id, competition_name):
+    dict_of_league_urls = crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_name)
 
-def crawling_player_team_stats_summary(team_id, api_delay_term=5):
+
+    for item in dict_of_league_urls.items():
+        print(item)
+        df_season_stats = crawl_player_team_stats_summary(item[1])
+        df_season_stats.to_csv(f'test/Barcelona_season_{item[0]}')
+
+
+
+def crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_name):
+    url_current_season = f'https://www.whoscored.com/Teams/{team_id}'
+    url = f'https://www.whoscored.com/Teams/{team_id}/Archive'
+    dict_of_league_competitions_urls = dict()
+    dict_of_league_competitions_urls['2022_2023'] = url_current_season
+
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    print('Installing Chrome driver')
+    driver.get(url)
+
+    dropDown = driver.find_element("id","stageId")
+    select = Select(dropDown)
+    for option in select.options:
+        #print(option.get_attribute('value'))
+        #print(option.text)
+        value = option.get_attribute('value')
+
+        
+        if competition_name in option.text:
+            season_full = option.text.split('-')[1][1:]
+            start_year = season_full.split('/')[0]
+            end_season = season_full.split('/')[1]
+            season_text = f'{start_year}_{end_season}'
+            print(season_text)
+
+            url_to_append = f'https://www.whoscored.com/Teams/{team_id}/Archive/?stageId={value}'
+            dict_of_league_competitions_urls[season_text] = url_to_append
+
+    print(dict_of_league_competitions_urls)
+    return dict_of_league_competitions_urls
+
+       
+
+def crawl_player_team_stats_summary(url, api_delay_term=5):
     """
     crawling player statistics of certain team
     
@@ -49,7 +76,8 @@ def crawling_player_team_stats_summary(team_id, api_delay_term=5):
     """
 
     # connect webdriver
-    url = "https://www.whoscored.com/Teams/" + str(team_id)
+    #url = "https://www.whoscored.com/Teams/" + str(team_id)
+    
     driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     print('Installing Chrome driver')
     driver.get(url)
@@ -119,7 +147,10 @@ def crawling_player_team_stats_summary(team_id, api_delay_term=5):
 
 if __name__ == "__main__":
     #65 barcelona | 26 liverpool
-    Barcelona = crawling_player_team_stats_summary(65, api_delay_term=5)
-    Barcelona = replace_pd(Barcelona)
-    print(Barcelona)
-    Barcelona.to_csv("Barcelona.csv")
+    # Barcelona = crawl_player_team_stats_summary(65, api_delay_term=5)
+    # Barcelona = replace_pd(Barcelona)
+    # print(Barcelona)
+    # Barcelona.to_csv("Barcelona.csv")
+
+    #crawl_all_urls_for_given_team_in_league_competitions(65, "LaLiga")
+    crawl_players_team_stats_for_available_seasons_by_competition(65, "LaLiga")
