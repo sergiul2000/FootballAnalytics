@@ -5,92 +5,97 @@ import plotly.graph_objects as go
 import time
 import numpy as np
 import pandas as pd
-import time
-import pickle
-import sys
-from tqdm import tqdm
-from selenium import webdriver
-
-#
-
-#
-driver = webdriver.Chrome('./chromedriver')
-driver.implicitly_wait(3)
-driver.get('https:/1xbet.whoscored.com/')
-driver.close()
-
-#
-def crawling_player_summary(team_id, api_delay_term=5):
-    """
-    crawling player statistics of certain team
-    
-    Args :
-        team_id : team number 
-        
-    return :
-        player statistics (dataframe)
-    
-    """
-
-    # connect webdriver
-    url = "https://www.whoscored.com/Teams/" + str(team_id)
-    driver = webdriver.Chrome('C:/Users/Infosci_center/Desktop/soccer/chromedriver')
-    driver.get(url)
-
-    # wait for getting data
-    time.sleep(api_delay_term)
-
-
-categories = ['goals','rating','games',
-              'age', 'asists']
 
 
 
-fig = go.Figure()
 
-fig.add_trace(go.Scatterpolar(
-      r=[2,3,5,4,3]
-      theta=categories,
-      fill='toself',
-      name='Product A'
-))
 
-# fig.add_trace(go.Scatterpolar(
-#       r=[2, 4, 1, 5, 3],
-#       theta=categories,
-#       fill='toself',
-#       name='Product b'
-# ))
+def radar_plot_for_one_player(player_name, player_stats):
+  
+  name_fig = f'{player_name} stats'
 
-# fig.add_trace(go.Scatterpolar(
-#       r=[3, 5, 4, 1, 2],
-#       theta=categories,
-#       fill='toself',
-#       name='Product c'
-# ))
+  categories = ['goals', 'rating', 'age', 'assists', 'start games']
+  
+  fig = go.Figure()
+  
+  fig.add_trace(go.Scatterpolar(
+      r = player_stats,
+      theta = categories,
+      fill = 'toself',
+      name = name_fig
+  ))
 
-# fig.add_trace(go.Scatterpolar(
-#       r=[4, 2, 3, 1, 5],
-#       theta=categories,
-#       fill='toself',
-#       name='Product d'
-# ))
+  fig.update_layout(
+    polar=dict(
+      radialaxis = dict(
+        visible = True,
+        range = [0, 50]
+      )),
+    showlegend = False
+  )
 
-fig.add_trace(go.Scatterpolar(
-      r=[5, 1, 2, 4, 3],
-      theta=categories,
-      fill='toself',
-      name='Product e'
-))
+  fig.update_layout(title_text = name_fig, title_x = 0.5)
 
-fig.update_layout(
-  polar=dict(
-    radialaxis=dict(
-      visible=True,
-      range=[0, 5]
-    )),
-  showlegend=False
-)
+  fig.show()
 
-fig.show()
 
+def radar_plot_for_comparing_two_players(player_name_1, player_stats_1,player_name_2, player_stats_2):
+  
+  name_fig_1= f'{player_name_1} stats'
+  name_fig_2= f'{player_name_2} stats'
+  fig_title = f'{name_fig_1} vs {name_fig_2}'
+  
+  categories = ['goals','rating','age', 'assists', 'start games']
+  
+  fig = go.Figure()
+  
+  fig.add_trace(go.Scatterpolar(
+      r = player_stats_1,
+      theta = categories,
+      fill = 'toself',
+      name = name_fig_1
+  ))
+
+  fig.add_trace(go.Scatterpolar(
+      r = player_stats_2,
+      theta = categories,
+      fill = 'toself',
+      name = name_fig_2
+  ))
+
+  fig.update_layout(
+    polar = dict(
+      radialaxis = dict(
+        visible = True,
+        range = [0, 50]
+      )),
+    showlegend=False
+  )
+
+  fig.update_layout(title_text = fig_title, title_x = 0.5)
+
+  fig.show()
+
+
+if __name__ == '__main__':
+  #radar_plot_for_one_player("JORJ STELARUL",[1,3,4,2,5])
+  barcelona = pd.read_csv('Barcelona.csv')
+  print(barcelona.head(5))
+
+  barcelona_selected = barcelona[['name', 'goals', 'rating', 'age', 'assists', 'start_games']]
+  
+
+  first_player_row = barcelona_selected.iloc[0].values.flatten().tolist()
+  print(first_player_row[1:])
+
+
+  radar_plot_for_one_player(first_player_row[0], first_player_row[1:])
+
+  second_player_row = barcelona_selected.iloc[1].values.flatten().tolist()
+  print(second_player_row[1:])
+
+
+  radar_plot_for_comparing_two_players(first_player_row[0], first_player_row[1:],second_player_row[0], second_player_row[1:])
+
+  
+  
