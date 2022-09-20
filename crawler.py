@@ -7,6 +7,9 @@ from tqdm import tqdm
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
+pd.set_option('display.max_columns', None) 
+pd.options.mode.chained_assignment = None
+
 def replace_pd(df):
     mapping = {'-': 0} 
     
@@ -129,27 +132,94 @@ def crawl_player_team_stats_summary(url, api_delay_term=5):
 
     player_summary_df['position'] = player_summary_df['position'].str.replace('"','')
 
-    for i,row in player_summary_df.iterrows():
-        print(row['games'])
-        parts = row['games'].split("(")
-        print(parts)
-        if(len(parts)==2):
-            player_summary_df.at[i,'start_games'] = parts[0]
-            print(parts[1])
-            player_summary_df.at[i,'sub_games'] = parts[1].replace(')','')
-        else:
-            player_summary_df.at[i,'start_games'] = row['games']
-            player_summary_df.at[i,'sub_games'] =  0
-    #print(row) 
-    
+
     return player_summary_df
 
-if __name__ == "__main__":
-    #65 barcelona | 26 liverpool
-    # Barcelona = crawl_player_team_stats_summary(65, api_delay_term=5)
-    # Barcelona = replace_pd(Barcelona)
-    # print(Barcelona)
-    # Barcelona.to_csv("Barcelona.csv")
 
-    #crawl_all_urls_for_given_team_in_league_competitions(65, "LaLiga")
-    crawl_players_team_stats_for_available_seasons_by_competition(65, "LaLiga")
+def crawl_player_team_stats_offensive(url, api_delay_term = 5):
+
+    driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
+    print('Installing Chrome driver')
+    driver.get(url)
+
+    # wait for getting data
+    print('Waiting for getting data')
+    time.sleep(api_delay_term)
+
+    button = driver.find_element("xpath", '//a[contains(@href,"#team-squad-archive-stats-offensive")]')
+    print(button)
+
+    driver.execute_script("arguments[0].click();", button);
+    ## print resultant page title
+    print("Page title is: ")
+    print(driver.title)
+
+    time.sleep(api_delay_term)
+
+    
+    # make pandas dataframe
+    player_offensive_df = pd.DataFrame(columns = [ 
+        "player_number", "name", "age", "position", "tall", "weight", "games", "start_games", "sub_games",
+        "mins", "goals", "assists", "shot_per_game", "key_passes_per_game", "fouled",
+        "offsides_per_game", "dispossessed_per_game", "bad_control_per_game", "rating"
+        ])
+
+    
+    elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
+
+    print('Fetching Player Table')
+
+    for element in elements:
+
+        games = element.find_elements("css selector","td")[4].text
+
+        parts = games.split("(")
+        #print(parts)
+        if(len(parts)==2):
+            start_games = parts[0]
+            #print(parts[1])
+            sub_games = parts[1].replace(')','')
+        else:
+            start_games = games
+            sub_games =  0
+
+        player_dict = { 
+            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
+            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
+            "age": element.find_elements("class name","player-meta-data")[0].text,
+            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
+            "tall": element.find_elements("css selector","td")[2].text,
+            "weight": element.find_elements("css selector","td")[3].text,
+            "games": element.find_elements("css selector","td")[4].text,
+            "start_games": start_games,
+            "sub_games": sub_games,
+            "mins": element.find_elements("css selector","td")[5].text,
+            "goals": element.find_elements("css selector","td")[6].text,
+            "assists": element.find_elements("css selector","td")[7].text,
+            "shot_per_game": element.find_elements("css selector","td")[8].text,
+            "key_passes_per_game": element.find_elements("css selector","td")[9].text,
+            "fouled": element.find_elements("css selector","td")[10].text,
+            "offsides_per_game": element.find_elements("css selector","td")[11].text,
+            "dispossessed_per_game": element.find_elements("css selector","td")[12].text,
+            "bad_control_per_game": element.find_elements("css selector","td")[13].text,
+            "rating": element.find_elements("css selector","td")[14].text,
+        }
+
+
+        #print(f'Populating CSV with {player_dict}')
+        player_offensive_df.loc[len(player_offensive_df)] = player_dict
+
+
+    player_offensive_df = replace_pd(player_offensive_df)
+    
+
+    print('Close Webdriver')
+    driver.close()
+    return player_offensive_df
+
+
+if __name__ == "__main__":
+    df = crawl_player_team_stats_offensive("https://www.whoscored.com/Teams/13/Archive")
+    print(df)
+    df.to_csv('ceva.csv')
+    #crawl_players_team_stats_for_available_seasons_by_competition(65, "LaLiga")
