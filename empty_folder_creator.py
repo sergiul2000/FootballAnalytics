@@ -1,8 +1,8 @@
 import os 
 
 def generate_empty_folder(path):
-    print(f'CREATING DIR WIH PATH  {path}')
-    print("________________________________________________________________________________________________________________________________")
+    # print(f'CREATING DIR WIH PATH  {path}')
+    # print("________________________________________________________________________________________________________________________________")
 
     if not os.path.exists(path):
         os.mkdir(path)
@@ -25,7 +25,7 @@ def create_empty_directories(file_type, statistic, league_name, year_start, year
     generate_empty_folder(path_league)
     if need_year:
         for year in range(year_start, year_end):
-            path_season =f'season_{year}_{year+1}'
+            path_season = f'season_{year}_{year+1}'
             
             path_season = os.path.join(path_league, path_season)
             # generate folder for specific season
