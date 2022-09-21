@@ -49,17 +49,20 @@ def crawl_chosen_stats_between_years(league, teams_details, start_year, end_year
         print(f'URLS {team} {code}')
         print(dict_of_league_urls)
 
+        is_current_season = True
         for item in dict_of_league_urls.items():
             print(item)
             
             match stat:
                 case 'summary':
-                    df_season_stats = crawl_player_team_stats_summary(item[1])
+                    df_season_summary_stats = crawl_player_team_stats_summary(item[1])
                     
-                    save_stats_csv(df_season_stats,'summary',league, team, season_start_year = int(item[0].split('_')[1]))
+                    save_stats_csv(df_season_summary_stats,'summary',league, team, season_start_year = int(item[0].split('_')[1]))
                 case 'offensive':
-                    #To Be Implemented
-                    print('2')
+                    df_season_offensive_stats = crawl_player_team_stats_offensive(item[1], is_current_season)
+                    is_current_season = False
+
+                    save_stats_csv(df_season_offensive_stats,'offensive',league, team, season_start_year = int(item[0].split('_')[1]))
                 case 'defensive':
                     #To Be Implemented
                     print('3')
@@ -70,16 +73,6 @@ def crawl_chosen_stats_between_years(league, teams_details, start_year, end_year
                     #To Be Implemented
                     print('nada')      
 
-
-def crawl_players_team_stats_for_available_seasons_by_competition(team_id, competition_name):
-
-    dict_of_league_urls = crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_name)
-
-    for item in dict_of_league_urls.items():
-        print(item)
-        df_season_stats = crawl_player_team_stats_summary(item[1])
-    
-        df_season_stats.to_csv(f'test/Barcelona_season_{item[0]}.csv')
 
 
 def transform_competition_name(competition_name):
@@ -142,7 +135,7 @@ def crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_na
     #print(dict_of_league_competitions_urls)
     return dict_of_league_competitions_urls
 
-def establish_driver_connection(url, statistic='summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term=10):
+def establish_driver_connection(url, statistic='summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term = 5):
 
     driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
     print('Installing Chrome driver')
@@ -166,7 +159,7 @@ def establish_driver_connection(url, statistic='summary', button_xpath = '//a[co
 
     return driver
 
-def crawl_player_team_stats_summary(url, api_delay_term=5):
+def crawl_player_team_stats_summary(url):
     """
     Crawling summary statistics of certain team
     
@@ -274,9 +267,12 @@ def crawl_player_team_stats_summary(url, api_delay_term=5):
 
 
 
-def crawl_player_team_stats_offensive(url, api_delay_term = 5):
+def crawl_player_team_stats_offensive(url, is_current_season = False):
 
-    driver = establish_driver_connection(url, 'offensive', '//a[contains(@href,"#team-squad-archive-stats-offensive")]')
+    if(is_current_season):
+        driver = establish_driver_connection(url, 'offensive', '//a[contains(@href,"#team-squad-stats-offensive")]')
+    else:    
+        driver = establish_driver_connection(url, 'offensive', '//a[contains(@href,"#team-squad-archive-stats-offensive")]')
     
     # make pandas dataframe
     player_offensive_df = pd.DataFrame(columns = [ 
@@ -330,7 +326,7 @@ def crawl_player_team_stats_offensive(url, api_delay_term = 5):
         #print(f'Populating CSV with {player_dict}')
         player_offensive_df.loc[len(player_offensive_df)] = player_dict
 
-
+    # Replace - with 0 among stats
     player_offensive_df = replace_pd(player_offensive_df)
     
 
@@ -341,14 +337,23 @@ def crawl_player_team_stats_offensive(url, api_delay_term = 5):
 
     return player_offensive_df
 
-def crawl_player_team_stats_defensive(url):
-    driver = establish_driver_connection(url, 'defensive', '//a[contains(@href,"#team-squad-archive-stats-defensive")]')
+def crawl_player_team_stats_defensive(url, is_current_season = False):
+    if is_current_season:
+        driver = establish_driver_connection(url, 'defensive', '//a[contains(@href,"#team-squad-stats-defensive")]')
+    else:
+        driver = establish_driver_connection(url, 'defensive', '//a[contains(@href,"#team-squad-archive-stats-defensive")]')
 
-def crawl_player_team_stats_passing(url):
-    driver = establish_driver_connection(url, 'passing', '//a[contains(@href,"#team-squad-archive-stats-passing")]')
+def crawl_player_team_stats_passing(url, is_current_season = False):
+    if is_current_season:
+        driver = establish_driver_connection(url, 'passing', '//a[contains(@href,"#team-squad-stats-passing")]')
+    else:
+        driver = establish_driver_connection(url, 'passing', '//a[contains(@href,"#team-squad-archive-stats-passing")]')
 
-def crawl_player_team_stats_detailed(url):
-    driver = establish_driver_connection(url, 'detailed', '//a[contains(@href,"#team-squad-archive-stats-detailed")]')
+def crawl_player_team_stats_detailed(url, is_current_season = False):
+    if is_current_season:
+        driver = establish_driver_connection(url, 'detailed', '//a[contains(@href,"#team-squad-stats-detailed")]')
+    else:
+        driver = establish_driver_connection(url, 'detailed', '//a[contains(@href,"#team-squad-archive-stats-detailed")]')
 
 
 def correction_of_all_dataframes(statistic = 'summary'):
@@ -371,7 +376,8 @@ def correction_of_all_dataframes(statistic = 'summary'):
                 csv.drop(['Unnamed: 0'], axis = 1)
                 column_names =["player_number","name","age","position","tall","weight","games","start_games","sub_games","mins","goals","assists","yellow_cards","red_cards","shots_per_game","pass_success_percentage","aerials_won","man_of_the_match","rating"]
                 csv = csv.reindex(columns = column_names)
-                
+                # End of Correction
+
                 #csv = replace_pd(csv)
 
                 csv.to_csv(file)
@@ -386,7 +392,7 @@ if __name__ == "__main__":
 
     # print(csv.head(5))
 
-    # pd = crawl_player_team_stats_offensive("https://www.whoscored.com/Teams/13/Archive")
+    # pd = crawl_player_team_stats_offensive("https://www.whoscored.com/Teams/32/Archive" , False)
 
     # pd.to_csv("ceva.csv")
 
@@ -398,9 +404,14 @@ if __name__ == "__main__":
     #     print(league, '->', teams_details)
     #     crawl_chosen_stats_between_years(league, teams_details, 2009, 2023)
 
+    # What to modify for each type of statistic
+    for league, teams_details in whoscored_teams_dict.items():
+        print(league, '->', teams_details)
+        crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat="offensive")
+
 
     # Correction already modified in code
-    correction_of_all_dataframes('summary')
+    # correction_of_all_dataframes('summary')
                 
     
 
