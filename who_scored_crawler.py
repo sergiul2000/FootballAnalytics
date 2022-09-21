@@ -14,6 +14,7 @@ from selenium import webdriver
 from selenium.webdriver.support.select import Select
 from empty_folder_creator import create_empty_directories
 from os import walk
+import os 
 
 
 
@@ -135,7 +136,7 @@ def crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_na
     #print(dict_of_league_competitions_urls)
     return dict_of_league_competitions_urls
 
-def establish_driver_connection(url, statistic='summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term = 5):
+def establish_driver_connection(url, statistic='summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term = 3):
 
     driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
     print('Installing Chrome driver')
@@ -143,6 +144,11 @@ def establish_driver_connection(url, statistic='summary', button_xpath = '//a[co
 
     # wait for getting data
     print('Waiting for getting data')
+
+    time.sleep(api_delay_term)
+    if driver.find_elements("class name","css-1wc0q5e"):
+        print("COOKIE ISSUE SOLVING")
+        driver.find_element("class name","css-1wc0q5e").click()
 
     time.sleep(api_delay_term)
 
@@ -158,6 +164,17 @@ def establish_driver_connection(url, statistic='summary', button_xpath = '//a[co
         time.sleep(api_delay_term)
 
     return driver
+
+def remove_nan_values_added_while_scrapping(df):
+
+    print('Removing Nan Added Rows')
+
+    df.to_csv("for_fix.csv")
+    df = pd.read_csv("for_fix.csv")
+    df = df.dropna().reset_index(drop=True)
+    os.remove("for_fix.csv")
+
+    return df
 
 def crawl_player_team_stats_summary(url):
     """
@@ -263,9 +280,9 @@ def crawl_player_team_stats_summary(url):
     # Replace - with 0 among stats
     player_summary_df = replace_pd(player_summary_df)
     
+    player_summary_df = remove_nan_values_added_while_scrapping(player_summary_df)
+
     return player_summary_df
-
-
 
 def crawl_player_team_stats_offensive(url, is_current_season = False):
 
@@ -333,7 +350,9 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
     print('Close Webdriver')
     driver.close()
 
-    print(player_offensive_df)
+    player_offensive_df = remove_nan_values_added_while_scrapping(player_offensive_df)
+
+    #print(player_offensive_df)
 
     return player_offensive_df
 
@@ -342,6 +361,68 @@ def crawl_player_team_stats_defensive(url, is_current_season = False):
         driver = establish_driver_connection(url, 'defensive', '//a[contains(@href,"#team-squad-stats-defensive")]')
     else:
         driver = establish_driver_connection(url, 'defensive', '//a[contains(@href,"#team-squad-archive-stats-defensive")]')
+
+    # make pandas dataframe
+    player_defensive_df = pd.DataFrame(columns = [ 
+        "player_number", "name", "age", "position", "tall", "weight", 
+        "games", "start_games", "sub_games",
+        "mins", "tackles_per_game", "interceptions_per_game", "fouls_per_game", "offsides_won_per_game",
+        "clearances_per_game", "dribbled_past_per_game", "outfielder_blocks_per_game", "own_goals","rating"
+        ])
+
+    elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
+
+    print('Fetching Player Table')
+
+    for element in elements:
+
+        games = element.find_elements("css selector","td")[4].text
+
+        parts = games.split("(")
+        #print(parts)
+        if(len(parts)==2):
+            start_games = parts[0]
+            #print(parts[1])
+            sub_games = parts[1].replace(')','')
+        else:
+            start_games = games
+            sub_games =  0
+        
+        player_dict = { 
+            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
+            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
+            "age": element.find_elements("class name","player-meta-data")[0].text,
+            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
+            "tall": element.find_elements("css selector","td")[2].text,
+            "weight": element.find_elements("css selector","td")[3].text,
+            "games": element.find_elements("css selector","td")[4].text,
+            "start_games": start_games,
+            "sub_games": sub_games,
+            "mins": element.find_elements("css selector","td")[5].text,
+            "tackles_per_game": element.find_elements("css selector","td")[6].text,
+            "interceptions_per_game": element.find_elements("css selector","td")[7].text,
+            "fouls_per_game": element.find_elements("css selector","td")[8].text,
+            "offsides_won_per_game": element.find_elements("css selector","td")[9].text,
+            "clearances_per_game": element.find_elements("css selector","td")[10].text,
+            "dribbled_past_per_game": element.find_elements("css selector","td")[11].text,
+            "outfielder_blocks_per_game": element.find_elements("css selector","td")[12].text,
+            "own_goals": element.find_elements("css selector","td")[13].text,
+            "rating": element.find_elements("css selector","td")[14].text,
+        }
+
+        #print(f'Populating CSV with {player_dict}')
+        player_defensive_df.loc[len(player_defensive_df)] = player_dict
+
+    # Replace - with 0 among stats
+    player_defensive_df = replace_pd(player_defensive_df)
+
+    print('Close Webdriver')
+    driver.close()
+
+    #print(player_defensive_df)
+    player_defensive_df = remove_nan_values_added_while_scrapping(player_defensive_df)
+
+    return player_defensive_df
 
 def crawl_player_team_stats_passing(url, is_current_season = False):
     if is_current_season:
@@ -367,9 +448,9 @@ def correction_of_all_dataframes(statistic = 'summary'):
             filenames = [f'{path}/{filename}' for filename in filenames]
 
             print(filenames)
-            for file in filenames:
-                print(f'File {file}')
-                csv = pd.read_csv(file)
+            for file_name in filenames:
+                print(f'File {file_name}')
+                csv = pd.read_csv(file_name)
 
                 # Correction
                 csv.rename(columns = {'yel':'yellow_cards','red':'red_cards','spg':'shots_per_game','ps':'pass_success_percentage','aw':'aerials_won','motm':'man_of_the_match'}, inplace=True)
@@ -380,7 +461,7 @@ def correction_of_all_dataframes(statistic = 'summary'):
 
                 #csv = replace_pd(csv)
 
-                csv.to_csv(file)
+                csv.to_csv(file_name)
                 
 
 if __name__ == "__main__":
@@ -391,23 +472,20 @@ if __name__ == "__main__":
     # csv = csv.reindex(columns = column_names)
 
     # print(csv.head(5))
+    # Test crawler
+    df = crawl_player_team_stats_offensive("https://www.whoscored.com/Teams/65/Archive" , False)
 
-    # pd = crawl_player_team_stats_offensive("https://www.whoscored.com/Teams/32/Archive" , False)
-
-    # pd.to_csv("ceva.csv")
+    df.to_csv("ceva.csv")
 
     # pd = crawl_player_team_stats_summary("https://www.whoscored.com/Teams/13/Archive")
     # pd.to_csv("ceva.csv")
 
+
     # What to modify for each type of statistic
     # for league, teams_details in whoscored_teams_dict.items():
     #     print(league, '->', teams_details)
-    #     crawl_chosen_stats_between_years(league, teams_details, 2009, 2023)
-
-    # What to modify for each type of statistic
-    for league, teams_details in whoscored_teams_dict.items():
-        print(league, '->', teams_details)
-        crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat="offensive")
+    #     #crawl_chosen_stats_between_years(league, teams_details, 2009, 2023)
+    #     crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat="offensive")
 
 
     # Correction already modified in code

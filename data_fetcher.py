@@ -41,7 +41,7 @@ async def get_fixtures_in_league_for_season(league, start_year, end_year):
 
                 #fixtures_json_parser.test()
 
-                fixtures_json_parser.generate_fixtures_and_clean_sheets_dataframes(f'jsons/fixtures/{league}/{league}_fixtures_in_{path_season}.json', f'dataframes/fixtures/{league}/{league}_fixtures_in_{path_season}.json', f'dataframes/clean_sheets/{league}/{league}_clean_sheets_in_{path_season}.json')
+                fixtures_json_parser.generate_fixtures_and_clean_sheets_dataframes(f'jsons/fixtures/{league}/{league}_fixtures_in_{path_season}.json', f'dataframes/fixtures/{league}/{league}_fixtures_in_{path_season}.csv', f'dataframes/clean_sheets/{league}/{league}_clean_sheets_in_{path_season}.csv')
                 
 
 

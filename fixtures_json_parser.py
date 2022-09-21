@@ -1,6 +1,8 @@
 import json
 import pandas as pd
 import numpy as np
+from constants import leagues_list 
+from os import walk, rename
 
 def generate_fixtures_and_clean_sheets_dataframes(path_to_json, path_to_fixtures, path_to_clean_sheets):
     #json_file_path = "jsons/fixtures/epl/epl_fixtures_in_season_2018_2019.json"
@@ -48,4 +50,38 @@ def generate_fixtures_and_clean_sheets_dataframes(path_to_json, path_to_fixtures
 
     fixtures_df.to_csv(path_to_fixtures)
     clean_sheets_df.to_csv(path_to_clean_sheets)
+
+
+def correction_of_all_dataframes(statistic = 'clean_sheets'):
+    """
+        Due to bad naming instead of .csv the files had .json
+        This function rename thus changing the type of the files automatically
+    """
+    for league in leagues_list:
+        # paths = []
+        print(f'LEAGUE {league}')
+        for year in range(2014,2021):
+            print(f'Year {year}')
+            path = f'dataframes/{statistic}/{league}' 
+
+            filenames = next(walk(path), (None, None, []))[2]
+            filenames = [f'{path}/{filename}' for filename in filenames]
+
+            filenames = next(walk(path), (None, None, []))[2]
+            filenames = [f'{path}/{filename}' for filename in filenames]
+
+            print(filenames)
+            for file_name in filenames:
+                print(f'File {file_name}')
+                new_file_name = file_name.replace('json', 'csv')
+
+                # Correction
+                rename(file_name, new_file_name)
+                # End of Correction
+
+                #csv = replace_pd(csv)
+
+
+if __name__ == '__main__':
+    correction_of_all_dataframes("fixtures")
 
