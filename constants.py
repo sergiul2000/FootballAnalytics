@@ -1,3 +1,7 @@
+from contextlib import AsyncExitStack
+from turtle import left, right
+
+
 leagues_list = ['epl', # Premier League
            'bundesliga',
            'la liga',
@@ -64,3 +68,28 @@ whoscored_teams_dict = {
             "Atalanta"  : 300,
            }
 }
+
+player_position_dict = {
+    'playing_role':
+    {
+        "AM" : "Attacking Midfielder",
+        "FW" : "Forward",
+        "D" : "Defender",
+        "M" : "Midfielder",
+        "GK" : "Goalkeeper",
+        "DMC" : "Defensive Midfielder",
+        "Midfielder" : "Midfielder",
+        "Forward" : "Forward",
+        "Defender" : "Defender",
+    },
+
+    'field_position':
+    {
+        "CLR" : "Central Left Right" ,
+        "CL" : "Central Left",
+        "CR" : "Central Right",
+        "LR" : "Left Right",
+        "C" : "Central",
+        "L" : "Left",
+        "R" : "Right", 
+    }
