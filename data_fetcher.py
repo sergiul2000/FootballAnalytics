@@ -46,8 +46,6 @@ async def get_fixtures_in_league_for_season(league, start_year, end_year):
 
 
 
-
-
 async def get_players_team_statistics_for_choosen_teams_in_league(league, teams_list, start_year, end_year):
     async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(ssl=False)) as session: 
         understat = Understat(session)

@@ -65,8 +65,10 @@ def crawl_chosen_stats_between_years(league, teams_details, start_year, end_year
 
                     save_stats_csv(df_season_offensive_stats,'offensive',league, team, season_start_year = int(item[0].split('_')[1]))
                 case 'defensive':
-                    #To Be Implemented
-                    print('3')
+                    df_season_defensive_stats = crawl_player_team_stats_defensive(item[1], is_current_season)
+                    is_current_season = False
+
+                    save_stats_csv(df_season_defensive_stats,'defensive',league, team, season_start_year = int(item[0].split('_')[1]))
                 case 'detailed':
                     #To Be Implemented
                     print('4')
@@ -136,8 +138,25 @@ def crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_na
     #print(dict_of_league_competitions_urls)
     return dict_of_league_competitions_urls
 
-def establish_driver_connection(url, statistic='summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term = 3):
+def establish_driver_connection(url, statistic = 'summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term = 1):
+    """
+    This function establishes connection through a driver object to a specific url of whoscored.
+    This also bypasses the accept cookie buttons to unfreeze the next click of the button.
+    Also it clicks on the specific button that gets to a specific statistics table.
 
+    Args :
+        url : Start url to make connection with a specific part of the website
+
+        statistic : It may be "summary" or "offensive" or "defensive" or "passing"
+
+        button_xpath : This helps to identify the selection button to the specific statistics table
+
+        api_delay_term : Delays the actions in order to wait for the website to load
+
+    return :
+        driver : The driver to the page that has already the specific statitics table loaded.
+
+    """
     driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
     print('Installing Chrome driver')
     driver.get(url)
@@ -166,6 +185,15 @@ def establish_driver_connection(url, statistic='summary', button_xpath = '//a[co
     return driver
 
 def remove_nan_values_added_while_scrapping(df):
+    """
+    This takes a dataframe that might be faulty after the scrapping with a lot of nan values and removes the 
+
+    Args:
+        df : Dataframe with faulty rows
+
+    return: 
+        df: Modified dataframe without a nan rows 
+    """
 
     print('Removing Nan Added Rows')
 
@@ -182,7 +210,6 @@ def crawl_player_team_stats_summary(url):
     
     Args :
         url : URL to Scrape  
-        api_delay_term : Delay time for the scrapper to wait until scrapping data
         
     return :
         player summary statistics (dataframe)
@@ -293,18 +320,25 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
     
     # make pandas dataframe
     player_offensive_df = pd.DataFrame(columns = [ 
-        "player_number", "name", "age", "position", "tall", "weight", 
+        "player_number", "name", 
+        "age", "position", "tall", "weight", 
         "games", "start_games", "sub_games",
-        "mins", "goals", "assists", "shot_per_game", "key_passes_per_game", "fouled",
-        "offsides_per_game", "dispossessed_per_game", "bad_control_per_game", "rating"
+        "mins", "goals", "assists", 
+        "shot_per_game", "key_passes_per_game", "dribbles_per_game",
+        "fouled", "offsides_per_game", "dispossessed_per_game", 
+        "bad_control_per_game", 
+        "rating"
         ])
 
     
     elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
+    print(f"Number of Elements {len(elements)}")
 
     print('Fetching Player Table')
 
     for element in elements:
+        #print(f' Size of an element {len(element.find_elements("css selector","td"))}')
+        if(len(element.find_elements("css selector","td")) < 16): continue 
 
         games = element.find_elements("css selector","td")[4].text
 
@@ -318,6 +352,8 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
             start_games = games
             sub_games =  0
 
+        #print(f' Rating {element.find_elements("css selector","td")[15].text}')
+        
         player_dict = { 
             "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
             "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
@@ -333,11 +369,12 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
             "assists": element.find_elements("css selector","td")[7].text,
             "shot_per_game": element.find_elements("css selector","td")[8].text,
             "key_passes_per_game": element.find_elements("css selector","td")[9].text,
-            "fouled": element.find_elements("css selector","td")[10].text,
-            "offsides_per_game": element.find_elements("css selector","td")[11].text,
-            "dispossessed_per_game": element.find_elements("css selector","td")[12].text,
-            "bad_control_per_game": element.find_elements("css selector","td")[13].text,
-            "rating": element.find_elements("css selector","td")[14].text,
+            "dribbles_per_game": element.find_elements("css selector","td")[10].text,
+            "fouled": element.find_elements("css selector","td")[11].text,
+            "offsides_per_game": element.find_elements("css selector","td")[12].text,
+            "dispossessed_per_game": element.find_elements("css selector","td")[13].text,
+            "bad_control_per_game": element.find_elements("css selector","td")[14].text,
+            "rating": element.find_elements("css selector","td")[15].text,
         }
 
         #print(f'Populating CSV with {player_dict}')
@@ -346,6 +383,7 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
     # Replace - with 0 among stats
     player_offensive_df = replace_pd(player_offensive_df)
     
+    #print(player_offensive_df)
 
     print('Close Webdriver')
     driver.close()
@@ -371,10 +409,12 @@ def crawl_player_team_stats_defensive(url, is_current_season = False):
         ])
 
     elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
+    #print(f"Number of Elements {len(elements)}")
 
     print('Fetching Player Table')
 
     for element in elements:
+        if(len(element.find_elements("css selector","td")) < 15): continue 
 
         games = element.find_elements("css selector","td")[4].text
 
@@ -473,19 +513,21 @@ if __name__ == "__main__":
 
     # print(csv.head(5))
     # Test crawler
-    df = crawl_player_team_stats_offensive("https://www.whoscored.com/Teams/65/Archive" , False)
+    #("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
+    #("https://www.whoscored.com/Teams/65", True)
 
-    df.to_csv("ceva.csv")
+    # df = crawl_player_team_stats_defensive("https://www.whoscored.com/Teams/65",True)
+
+    # df.to_csv("ceva.csv")
 
     # pd = crawl_player_team_stats_summary("https://www.whoscored.com/Teams/13/Archive")
     # pd.to_csv("ceva.csv")
 
-
     # What to modify for each type of statistic
-    # for league, teams_details in whoscored_teams_dict.items():
-    #     print(league, '->', teams_details)
-    #     #crawl_chosen_stats_between_years(league, teams_details, 2009, 2023)
-    #     crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat="offensive")
+    for league, teams_details in whoscored_teams_dict.items():
+        print(league, '->', teams_details)
+        #crawl_chosen_stats_between_years(league, teams_details, 2009, 2023)
+        crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat="offensive")
 
 
     # Correction already modified in code
