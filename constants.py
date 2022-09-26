@@ -94,3 +94,74 @@ player_position_dict = {
         "R" : "Right", 
     }
 }
+
+# generic stat : stat_subcategory : ([circumstances] , [specific stat])
+whoscored_detailed_options = {
+
+    "defensive": {
+        "Tackles" : ([], (["tackles_won", "player_gets_dribble_past", "tackles_attempts"])),
+        "Interceptions" : ([], (["total_interceptions"])),
+        "Fouls" : ([], (["fouled", "fouls_commited"])),
+        "Cards" : ([], (["yellow_cards", "red_card"])),
+        "Offsides" : ([], (["caught_offside"])),
+        "Clearances" : ([], (["clearances"])),
+        "Blocks" : ([], (["shots_blocked", "crosses_blocked", "passes_blocked"])),
+        "Saves" : ([], (["total_saves", "six_yard_box_saves", "penalty_area_saves", "saves_from_outside_the_box"])),
+    },
+
+    "offensive" : {
+        "Shots" : (["Zones", "Situations", "Accuracy", "Body Part"], 
+                    (
+                    ["total_shots", "box_shots_from_outside_penalty_area", "inside_six_yard_box_shots", "inside_the_penalty_area_shots"],
+                    ["total_shots", "open_play_shots", "counter_attack_shots", "set_pieces_shots", "penalties_taken"],
+                    ["total_shots", "off_target_shots", "on_post_shots", "on_target_shots", "blocked_shots"],
+                    ["total_shots", "right_foot_shots", "left_foot_shots", "headers_shots", "other_body_part_shots"],
+                    )
+                ),
+        "Goals" : (["Zones", "Situations", "Body Part"], 
+                   (
+                   ["total_goals", "inside_six_yard_box_goals", "inside_penalty_area_goals", "outside_penalty_area_goals"],
+                   ["total_goals", "open_play_goals", "counter_attack_goals", "set_piece_goals", "penalties_scored", "own_goals", "normal_goals"],
+                   ["total_goals", "right_foot_goals", "left_foot_goals", "headers_goals", "other_goals"],
+                   )
+                ),
+        "Dribbles" : ([], (["unsuccesful_dribbles", "succesful_dribbles", "total_dribbles"])),
+        "Possesion Loss" : ([], (["unsuccessful_touches", "dispossessed"])),
+        "Aerial" : ([], (["total_aerials", "won_aerials", "lost_aerials"])),
+    },
+
+    "passing" : {
+        "Passes" : (["Length", "Type"], 
+                    ( 
+                    ["total_passes", "accurate_long_ball_passes", "inaccurate_long_ball_passses", "accurate_short_passes", "inaccurate_short_passes"], 
+                    ["accurate_cross_passes", "inaccurate_cross_passes", "accurate_corner_passes", "inaccurate_corner_passes", "accurate_freekicks", "innaccurate_freekicks"]
+                    ) 
+                    ),
+        "Key Passes" : (["Length", "Type"], 
+                        (
+                        ["total_key_passes", "long_passes", "short_passes"], 
+                        ["cross_passes", "throughball_passes", "freekick_passes", "throwin_passes", "other_passes"]
+                        )
+                       ),
+        "Assists" : ([], (["cross_assist", "corner_assist", "throughball_assist", "freekick_assist", "throwin_assist", "other_assists", "total_assists"])),
+    }
+
+}
+
+
+for category, subcategory_mapping in whoscored_detailed_options.items():
+    print(f" BIG STAT {category}")
+    for subcategory, conditions  in subcategory_mapping.items():
+
+        #print(condition)
+        if(conditions[0]==[]):
+            #print(conditions)
+            print(f'None -> {conditions[1]}')
+
+        else:
+            #print(conditions)
+            characteristics = conditions[0]
+            index_columns = 0
+            for characteristic in  characteristics:
+                print(f'{characteristic} -> {conditions[1][index_columns]}')
+                index_columns +=1
