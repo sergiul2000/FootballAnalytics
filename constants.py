@@ -110,7 +110,7 @@ whoscored_detailed_options = {
     },
 
     "offensive" : {
-        "Shots" : (["Zones", "Situations", "Accuracy", "Body Part"], 
+        "Shots" : (["Zones", "Situations", "Accuracy", "Body Parts"], 
                     (
                     ["total_shots", "box_shots_from_outside_penalty_area", "inside_six_yard_box_shots", "inside_the_penalty_area_shots"],
                     ["total_shots", "open_play_shots", "counter_attack_shots", "set_pieces_shots", "penalties_taken"],
@@ -118,7 +118,7 @@ whoscored_detailed_options = {
                     ["total_shots", "right_foot_shots", "left_foot_shots", "headers_shots", "other_body_part_shots"],
                     )
                 ),
-        "Goals" : (["Zones", "Situations", "Body Part"], 
+        "Goals" : (["Zones", "Situations", "Body Parts"], 
                    (
                    ["total_goals", "inside_six_yard_box_goals", "inside_penalty_area_goals", "outside_penalty_area_goals"],
                    ["total_goals", "open_play_goals", "counter_attack_goals", "set_piece_goals", "penalties_scored", "own_goals", "normal_goals"],
@@ -126,7 +126,7 @@ whoscored_detailed_options = {
                    )
                 ),
         "Dribbles" : ([], (["unsuccesful_dribbles", "succesful_dribbles", "total_dribbles"])),
-        "Possesion Loss" : ([], (["unsuccessful_touches", "dispossessed"])),
+        "Possession loss" : ([], (["unsuccessful_touches", "dispossessed"])),
         "Aerial" : ([], (["total_aerials", "won_aerials", "lost_aerials"])),
     },
 
@@ -149,19 +149,38 @@ whoscored_detailed_options = {
 }
 
 
-for category, subcategory_mapping in whoscored_detailed_options.items():
-    print(f" BIG STAT {category}")
-    for subcategory, conditions  in subcategory_mapping.items():
+# for category, subcategory_mapping in whoscored_detailed_options.items():
+#     print(f" BIG STAT {category}")
+#     for subcategory, conditions  in subcategory_mapping.items():
 
-        #print(condition)
-        if(conditions[0]==[]):
-            #print(conditions)
-            print(f'None -> {conditions[1]}')
+#         #print(condition)
+#         if(conditions[0]==[]):
+#             #print(conditions)
+#             print(f'None -> {conditions[1]}')
 
-        else:
-            #print(conditions)
-            characteristics = conditions[0]
-            index_columns = 0
-            for characteristic in  characteristics:
-                print(f'{characteristic} -> {conditions[1][index_columns]}')
-                index_columns +=1
+#         else:
+#             #print(conditions)
+#             characteristics = conditions[0]
+#             index_columns = 0
+#             for characteristic in  characteristics:
+#                 print(f'{characteristic} -> {conditions[1][index_columns]}')
+#                 index_columns +=1
+
+# category = 'passing'
+# subcategory_mapping = whoscored_detailed_options[category]
+# for subcategory, conditions  in subcategory_mapping.items():
+
+#     print(subcategory)
+#     if(conditions[0]==[]):
+#         #print(conditions)
+#         columns = conditions[1]
+#         print(f'None -> {columns}')
+
+#     else:
+#         #print(conditions)
+#         characteristics = conditions[0]
+#         columns = conditions[1]
+#         index_columns = 0
+#         for characteristic in  characteristics:
+#             print(f'{characteristic} -> {columns[index_columns]}')
+#             index_columns +=1

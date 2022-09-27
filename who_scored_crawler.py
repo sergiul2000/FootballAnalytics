@@ -1,3 +1,4 @@
+from operator import is_
 from re import X
 from constants import whoscored_teams_dict, whoscored_detailed_options
 
@@ -274,6 +275,7 @@ def crawl_player_team_stats_summary(url):
             "pass_success_percentage": element.find_elements("css selector","td")[11].text,
             "aerials_won_per_game": element.find_elements("css selector","td")[12].text,
             "man_of_the_match": element.find_elements("css selector","td")[13].text, 
+
             "rating": element.find_elements("css selector","td")[14].text,  
         }
 
@@ -341,6 +343,7 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
             "offsides_per_game": element.find_elements("css selector","td")[12].text,
             "dispossessed_per_game": element.find_elements("css selector","td")[13].text,
             "bad_control_per_game": element.find_elements("css selector","td")[14].text,
+
             "rating": element.find_elements("css selector","td")[15].text,
         }
 
@@ -394,6 +397,7 @@ def crawl_player_team_stats_defensive(url, is_current_season = False):
             "start_games": start_games,
             "sub_games": sub_games,
             "mins": element.find_elements("css selector","td")[5].text,
+
             "tackles_per_game": element.find_elements("css selector","td")[6].text,
             "interceptions_per_game": element.find_elements("css selector","td")[7].text,
             "fouls_per_game": element.find_elements("css selector","td")[8].text,
@@ -402,6 +406,7 @@ def crawl_player_team_stats_defensive(url, is_current_season = False):
             "dribbled_past_per_game": element.find_elements("css selector","td")[11].text,
             "outfielder_blocks_per_game": element.find_elements("css selector","td")[12].text,
             "own_goals": element.find_elements("css selector","td")[13].text,
+
             "rating": element.find_elements("css selector","td")[14].text,
         }
 
@@ -452,8 +457,8 @@ def crawl_player_team_stats_passing(url, is_current_season = False):
             "games": element.find_elements("css selector","td")[4].text,
             "start_games": start_games,
             "sub_games": sub_games,
-            
             "mins": element.find_elements("css selector","td")[5].text,
+
             "total_assists": element.find_elements("css selector","td")[6].text,
             "key_passes_per_game": element.find_elements("css selector","td")[7].text,
             "passes_per_game": element.find_elements("css selector","td")[8].text, 
@@ -461,7 +466,7 @@ def crawl_player_team_stats_passing(url, is_current_season = False):
             "crosses_per_game": element.find_elements("css selector","td")[10].text, 
             "long_ball_per_game": element.find_elements("css selector","td")[11].text,
             "through_balls_per_game": element.find_elements("css selector","td")[12].text, 
-            
+
             "rating": element.find_elements("css selector","td")[13].text,
         }
 
@@ -479,7 +484,7 @@ def crawl_player_team_stats_passing(url, is_current_season = False):
     return player_passing_df
 
 
-def establish_driver_connection_for_detailed_section(url, xpath_for_current_or_archive, stats_selection = "Shots", is_circumstance_needed = True, circumstance_selection_text = 'Zones', stats_period_selection = 'Total', api_delay_term = 5):
+def establish_driver_connection_for_detailed_section(url, xpath_for_current_or_archive, stats_selection = "Shots", is_circumstance_needed = True, circumstance_selection_text = 'Zones', stats_period_selection = 'Total', api_delay_term = 1):
     driver = establish_driver_connection(url, 'detailed', xpath_for_current_or_archive)
 
     select = Select(driver.find_element("id","category"))
@@ -491,12 +496,12 @@ def establish_driver_connection_for_detailed_section(url, xpath_for_current_or_a
     select.select_by_visible_text(stats_selection)
     time.sleep(api_delay_term)
 
-    # Zones, Situations, Accuracy, Body Part
+    # Zones, Situations, Accuracy, Body Part, Lenght, Type
     if is_circumstance_needed:
         print(f"Circumstance Option {circumstance_selection_text}")
         select = Select(driver.find_element("id","subcategory"))
         select.select_by_visible_text(circumstance_selection_text)
-    time.sleep(api_delay_term)
+        time.sleep(api_delay_term)
 
 
     select = Select(driver.find_element("id","statsAccumulationType"))
@@ -615,23 +620,88 @@ def crawl_player_team_stats_detailed_shots_zones(url, is_current_season = False)
 
     return player_detailed_shots_zones_df  
 
-def crawl_player_team_stats_detailed_shots_situation(url, is_current_season = False):
-    if is_current_season:
-        driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-stats-detailed")]',"Situations")
-    else:
-        driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-archive-stats-detailed")]', "Situations")
 
-     # make pandas dataframe
-    player_detailed_shots_situation_df =  create_crawler_empty_df(["total_shots_per_game", "shots_from_open_play_per_game", "shots_from_counters_play_per_game", "shots_from_set_pieces_play_per_game", "penalties_taken_per_game"], are_sub_games_existent = False)
-    
-    # player_detailed_shots_selection_df = pd.DataFrame(columns = [ 
-    #     "player_number", "name", "age", "position", "tall", "weight", "games", "mins",
+def crawl_player_team_stats_detailed(url, category = "offensive", is_current_season = False):
+    subcategory_mapping = whoscored_detailed_options[category]
 
-    #     "total_shots_per_game", "outside_the_penalty_area_shots_per_game", "six_yard_box_shots_per_game", "penalty_area_shots_per_game",
+    list_df = []
 
-    #     "rating"
-    #     ])
-    print(player_detailed_shots_situation_df)
+    for subcategory, conditions  in subcategory_mapping.items():
+
+        print(subcategory)
+        if(conditions[0]==[]):
+            #print(conditions)
+            columns = conditions[1]
+            print(f'None -> {columns}')
+            if is_current_season:
+                driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-stats-detailed")]', subcategory, is_circumstance_needed = False, stats_period_selection = 'Total')
+            else:
+                driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-archive-stats-detailed")]', subcategory, is_circumstance_needed = False, stats_period_selection = 'Total')
+            
+            player_detailed_df =  create_crawler_empty_df(columns, are_sub_games_existent = False)
+            elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
+            print('Fetching Player Table')
+            for element in elements:
+                player_dict = create_dictionary_row_for_crawler(element, columns, False)
+
+                player_detailed_df.loc[len(player_detailed_df)] = player_dict
+
+            print('Close Webdriver')
+            driver.close()
+
+            # Replace - with 0 among stats
+            player_detailed_df = replace_pd(player_detailed_df)
+            # Remove Nan value rows
+            player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
+            list_df.append(player_detailed_df)
+        else:
+            #print(conditions)
+            characteristics = conditions[0]
+            columns = conditions[1]
+            index_columns = 0
+            for characteristic in  characteristics:
+                print(f'{characteristic} -> {columns[index_columns]}')
+                if is_current_season:
+                    driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-stats-detailed")]', subcategory, is_circumstance_needed = True, circumstance_selection_text = characteristic, stats_period_selection = 'Total')
+                else:
+                    driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-archive-stats-detailed")]', subcategory, is_circumstance_needed = True, circumstance_selection_text = characteristic, stats_period_selection = 'Total')
+                
+                player_detailed_df =  create_crawler_empty_df(columns[index_columns], are_sub_games_existent = False)
+                elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
+                print('Fetching Player Table')
+                for element in elements:
+                    player_dict = create_dictionary_row_for_crawler(element, columns[index_columns], False)
+
+                    player_detailed_df.loc[len(player_detailed_df)] = player_dict
+
+                print('Close Webdriver')
+                driver.close()
+
+                # Replace - with 0 among stats
+                player_detailed_df = replace_pd(player_detailed_df)
+                # Remove Nan value rows
+                player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
+
+                list_df.append(player_detailed_df)    
+
+
+
+                index_columns +=1
+
+    player_detailed_df = 0
+    for df in list_df:
+        print(df.head(5))
+        if player_detailed_df ==0:
+            player_detailed_df = df
+        else:
+            df = df.drop(['name','age','position','tall','weight','games','mins','rating'],axis=1)
+            player_detailed_df.merge(df, left_on = 'player_number', right_on = 'player_number')
+    print("SUGI PULA DACA NU MERGI")
+    print(player_detailed_df)
+
+
+
+
 
 
 
@@ -668,7 +738,7 @@ def correction_of_all_dataframes(statistic = 'summary'):
 
 if __name__ == "__main__":
 
-    establish_driver_connection_for_detailed_section('https://www.whoscored.com/Teams/65','//a[contains(@href,"#team-squad-stats-detailed")]', "Goals", True,"Situations", "Per 90 mins", 5)
+    #establish_driver_connection_for_detailed_section('https://www.whoscored.com/Teams/65','//a[contains(@href,"#team-squad-stats-detailed")]', "Goals", True,"Situations", "Per 90 mins", 5)
     
 
     # print(csv.head(5))
@@ -676,7 +746,7 @@ if __name__ == "__main__":
     #("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
     #("https://www.whoscored.com/Teams/65", True)
 
-    df = crawl_player_team_stats_detailed_shots_situation("https://www.whoscored.com/Teams/65", True)
+    df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65","offensive", True)
     #df = crawl_player_team_stats_detailed_shots_zones("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
 
     #df.to_csv("test_result.csv")
@@ -685,8 +755,6 @@ if __name__ == "__main__":
     # pd.to_csv("test_results.csv")
 
     # What to modify for each type of statistic
-
-
     # put instead of stat offensive, deffensive, passing and detailed_zones_shots last one in Progress
     # for league, teams_details in whoscored_teams_dict.items():
     #     print(league, '->', teams_details)
