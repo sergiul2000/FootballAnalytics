@@ -509,6 +509,9 @@ def establish_driver_connection_for_detailed_section(url, xpath_for_current_or_a
     print(f"Stats Period {stats_period_selection}")
     # Total, Per game, Per 90 minutes, Total
     select.select_by_visible_text(stats_period_selection)
+    button = driver.find_element("class name", "search-button")
+
+    driver.execute_script("arguments[0].click();", button);
     time.sleep(api_delay_term)
 
 
@@ -625,7 +628,7 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
     subcategory_mapping = whoscored_detailed_options[category]
 
     list_df = []
-
+    index= 0 
     for subcategory, conditions  in subcategory_mapping.items():
 
         print(subcategory)
@@ -653,6 +656,10 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
             player_detailed_df = replace_pd(player_detailed_df)
             # Remove Nan value rows
             player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
+
+            player_detailed_df.to_csv(f"detailed_{index}.csv")
+            index += 1
+
             list_df.append(player_detailed_df)
         else:
             #print(conditions)
@@ -681,6 +688,9 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
                 player_detailed_df = replace_pd(player_detailed_df)
                 # Remove Nan value rows
                 player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
+                
+                player_detailed_df.to_csv(f"detailed_{index}.csv")
+                index += 1
 
                 list_df.append(player_detailed_df)    
 
@@ -694,11 +704,18 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
         if player_detailed_df ==0:
             player_detailed_df = df
         else:
-            df = df.drop(['name','age','position','tall','weight','games','mins','rating'],axis=1)
-            player_detailed_df.merge(df, left_on = 'player_number', right_on = 'player_number')
-    print("SUGI PULA DACA NU MERGI")
-    print(player_detailed_df)
+            if 'total_shots' in df.columns:
+                df = df.drop(['total_shots'], axis = 1)
+            if 'total_goals' in df.columns:
+                df = df.drop(['total_goals'], axis = 1)
+            df = df.drop(['Unnamed: 0','name','age','position','tall','weight','games','mins','rating'],axis=1)
 
+            player_detailed_df = pd.merge(player_detailed_df, df,on = ['player_number'])
+            player_detailed_df  = player_detailed_df[player_detailed_df.columns.drop(list(player_detailed_df.filter(regex="Unnamed")))]
+    print('Final')
+    print(player_detailed_df)
+    print(player_detailed_df.columns)
+    return player_detailed_df
 
 
 
@@ -747,9 +764,10 @@ if __name__ == "__main__":
     #("https://www.whoscored.com/Teams/65", True)
 
     df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65","offensive", True)
+    
     #df = crawl_player_team_stats_detailed_shots_zones("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
 
-    #df.to_csv("test_result.csv")
+    df.to_csv("test_result.csv")
 
     # pd = crawl_player_team_stats_summary("https://www.whoscored.com/Teams/13/Archive")
     # pd.to_csv("test_results.csv")
