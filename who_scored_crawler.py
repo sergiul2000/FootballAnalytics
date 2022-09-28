@@ -75,11 +75,26 @@ def crawl_chosen_stats_between_years(league, teams_details, start_year, end_year
                     is_current_season = False
 
                     save_stats_csv(df_season_passing_stats,'passing',league, team, season_start_year = int(item[0].split('_')[1]))
-                case 'detailed_zones_shots':
-                    df_detailed_shots_zones = crawl_player_team_stats_detailed_shots_zones(item[1], is_current_season)
+                # case 'detailed_zones_shots':
+                #     df_detailed_shots_zones = crawl_player_team_stats_detailed_shots_zones(item[1], is_current_season)
+                #     is_current_season = False
+                #     save_stats_csv(df_detailed_shots_zones,'detailed_zones_shots',league, team, season_start_year = int(item[0].split('_')[1]))
+                case 'detailed_offensive':
+                    df_detailed_offensive = crawl_player_team_stats_detailed(item[1], "offensive", is_current_season)
                     is_current_season = False
 
-                    save_stats_csv(df_detailed_shots_zones,'detailed_zones_shots',league, team, season_start_year = int(item[0].split('_')[1]))
+                    save_stats_csv(df_detailed_offensive,'detailed_offensive',league, team, season_start_year = int(item[0].split('_')[1]))                
+                case 'detailed_defensive':
+                    df_detailed_defensive = crawl_player_team_stats_detailed(item[1], "defensive", is_current_season)
+                    is_current_season = False
+
+                    save_stats_csv(df_detailed_defensive,'detailed_defensive',league, team, season_start_year = int(item[0].split('_')[1]))                
+                case 'detailed_passing':
+                    df_detailed_passing = crawl_player_team_stats_detailed(item[1], "passing", is_current_season)
+                    is_current_season = False
+
+                    save_stats_csv(df_detailed_passing,'detailed_passing',league, team, season_start_year = int(item[0].split('_')[1]))                
+                      
                 case _:
                     #To Be Implemented
                     print('nada')      
@@ -657,7 +672,7 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
             # Remove Nan value rows
             player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
 
-            player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{index}.csv")
+            player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{category}_{index}.csv")
             index += 1
 
             list_df.append(player_detailed_df)
@@ -689,7 +704,7 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
                 # Remove Nan value rows
                 player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
                 
-                player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{index}.csv")
+                player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{category}_{index}.csv")
                 index += 1
 
                 list_df.append(player_detailed_df)    
@@ -700,7 +715,7 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
 
     player_detailed_df = None
     for df in list_df:
-        print(df.head(5))
+        #print(df.head(5))
         if player_detailed_df is None:
             player_detailed_df = df
         else:
@@ -716,10 +731,6 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
     print(player_detailed_df)
     print(player_detailed_df.columns)
     return player_detailed_df
-
-
-
-
 
 
 
@@ -755,35 +766,25 @@ def correction_of_all_dataframes(statistic = 'summary'):
 
 if __name__ == "__main__":
 
-    #establish_driver_connection_for_detailed_section('https://www.whoscored.com/Teams/65','//a[contains(@href,"#team-squad-stats-detailed")]', "Goals", True,"Situations", "Per 90 mins", 5)
+    # CREAZA FISIER  INTAI test_detail_scrapper 
+    # verifica pentru defensive passing grija ca sunt Total nu Per game stats in cazul asta de baza
+    df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65","passing", True)
     
-
-    # print(csv.head(5))
-    # Test crawler
-    #("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
-    #("https://www.whoscored.com/Teams/65", True)
-
-    # test for offensive, defensive and passing
-    # CREAZA FISIER  INATAI test_detail_scrapper 
-    # verifica pentru passing si defensivee grija ca sunt Total nu Per game stats for now
-    df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65","defensive", True)
-    
-    #df = crawl_player_team_stats_detailed_shots_zones("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
+    # once first is run incearca sa comentezi linia 770 si sa o decomentezi pe 773
+    #df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65/Archive/?stageID=19895","passing", False)
 
     df.to_csv("detail_scrapper_df.csv")
 
-    # pd = crawl_player_team_stats_summary("https://www.whoscored.com/Teams/13/Archive")
-    # pd.to_csv("test_results.csv")
+    # ONCE DONE
 
     # What to modify for each type of statistic
-    # put instead of stat offensive, deffensive, passing and detailed_zones_shots last one in Progress
+    # put instead of stat offensive, deffensive, passing and detailed_offensive, detailed_defensive, detailed_passing
+    # George offensive, passing, detailed_offensive
+    # Sergiu defensive, detailed_defensive, detailed_passing
+    # modificiati doar la stat si decomentati 786- 789
+
     # for league, teams_details in whoscored_teams_dict.items():
     #     print(league, '->', teams_details)
-    #     crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat = "detailed_zones_shots")
+    #     crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat = "detailed_offensive")
 
-
-    # Correction already modified in code
-    # correction_of_all_dataframes('summary')
-                
-    
 
