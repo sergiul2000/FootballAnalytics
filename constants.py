@@ -140,7 +140,7 @@ whoscored_detailed_options = {
         "Key passes" : (["Length", "Type"], 
                         (
                         ["total_key_passes", "long_passes", "short_passes"], 
-                        ["cross_passes", "throughball_passes", "freekick_passes", "throwin_passes", "other_passes"]
+                        ["cross_passes", "corner_passes", "throughball_passes", "freekick_passes", "throwin_passes", "other_passes"]
                         )
                        ),
         "Assists" : ([], (["cross_assist", "corner_assist", "throughball_assist", "freekick_assist", "throwin_assist", "other_assists", "total_assists"])),
