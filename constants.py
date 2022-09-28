@@ -100,7 +100,7 @@ whoscored_detailed_options = {
 
     "defensive": {
         "Tackles" : ([], (["tackles_won", "player_gets_dribble_past", "tackles_attempts"])),
-        "Interceptions" : ([], (["total_interceptions"])),
+        "Interception" : ([], (["total_interceptions"])),
         "Fouls" : ([], (["fouled", "fouls_commited"])),
         "Cards" : ([], (["yellow_cards", "red_card"])),
         "Offsides" : ([], (["caught_offside"])),
@@ -137,7 +137,7 @@ whoscored_detailed_options = {
                     ["accurate_cross_passes", "inaccurate_cross_passes", "accurate_corner_passes", "inaccurate_corner_passes", "accurate_freekicks", "innaccurate_freekicks"]
                     ) 
                     ),
-        "Key Passes" : (["Length", "Type"], 
+        "Key passes" : (["Length", "Type"], 
                         (
                         ["total_key_passes", "long_passes", "short_passes"], 
                         ["cross_passes", "throughball_passes", "freekick_passes", "throwin_passes", "other_passes"]

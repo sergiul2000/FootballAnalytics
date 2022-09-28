@@ -558,7 +558,7 @@ def create_dictionary_row_for_crawler(element, list_of_extra_entries, are_sub_ga
         table_data_index += 1
 
     player_dict["rating"] = element.find_elements("css selector","td")[table_data_index].text
-    print(player_dict)
+    #print(player_dict)
 
     return player_dict
 
@@ -657,7 +657,7 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
             # Remove Nan value rows
             player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
 
-            player_detailed_df.to_csv(f"detailed_{index}.csv")
+            player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{index}.csv")
             index += 1
 
             list_df.append(player_detailed_df)
@@ -689,7 +689,7 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
                 # Remove Nan value rows
                 player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
                 
-                player_detailed_df.to_csv(f"detailed_{index}.csv")
+                player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{index}.csv")
                 index += 1
 
                 list_df.append(player_detailed_df)    
@@ -698,10 +698,10 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
 
                 index_columns +=1
 
-    player_detailed_df = 0
+    player_detailed_df = None
     for df in list_df:
         print(df.head(5))
-        if player_detailed_df ==0:
+        if player_detailed_df is None:
             player_detailed_df = df
         else:
             if 'total_shots' in df.columns:
@@ -763,11 +763,14 @@ if __name__ == "__main__":
     #("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
     #("https://www.whoscored.com/Teams/65", True)
 
-    df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65","offensive", True)
+    # test for offensive, defensive and passing
+    # CREAZA FISIER  INATAI test_detail_scrapper 
+    # verifica pentru passing si defensivee grija ca sunt Total nu Per game stats for now
+    df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65","defensive", True)
     
     #df = crawl_player_team_stats_detailed_shots_zones("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
 
-    df.to_csv("test_result.csv")
+    df.to_csv("detail_scrapper_df.csv")
 
     # pd = crawl_player_team_stats_summary("https://www.whoscored.com/Teams/13/Archive")
     # pd.to_csv("test_results.csv")
