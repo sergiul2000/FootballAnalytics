@@ -16,6 +16,12 @@ league_teams_dict = {'epl' : ["Manchester United", "Manchester City", "Chelsea",
            'serie a' : ["Juventus", "Inter", "AC Milan", "Napoli", "Roma", "Atalanta"]
            }
 
+who_scored_simple_columns = {
+    'summary' : ["goals", "assists", "yellow_cards", "red_cards", "shots_per_game", "pass_success_percentage", "aerials_won_per_game", "man_of_the_match"],
+    'defensive' : ["tackles_per_game", "interceptions_per_game", "fouls_per_game", "offsides_won_per_game","clearances_per_game", "dribbled_past_per_game", "outfielder_blocks_per_game", "own_goals"],
+    'offensive' : ["goals", "assists", "shot_per_game", "key_passes_per_game", "dribbles_per_game", "fouled_per_game", "offsides_per_game", "dispossessed_per_game", "bad_control_per_game"],
+    'passing' : ["total_assists", "key_passes_per_game", "passes_per_game", "pass_success_percentage", "crosses_per_game", "long_ball_per_game", "through_balls_per_game"],
+}
 
 whoscored_teams_dict = {
            'epl' : 
@@ -69,7 +75,7 @@ whoscored_teams_dict = {
            }
 }
 
-player_position_dict = {
+whoscored_player_position_dict = {
     'playing_role':
     {
         "AM" : "Attacking Midfielder",
