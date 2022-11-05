@@ -158,6 +158,17 @@ whoscored_detailed_options = {
 
 }
 
+# realative path
+whoscored_summary_relative_path = 'dataframes/player_summary_stats'
+whoscored_offensive_relative_path  = 'dataframes/player_offensive_stats'
+whoscored_defensive_relative_path  = 'dataframes/player_defensive_stats'
+whoscored_passing_relative_path  = 'dataframes/player_passing_stats'
+
+understat_clean_sheets_relative_path  = 'dataframes/clean_sheets'
+understat_league_table_relative_path  = 'dataframes/league_table'
+understat_player_team_stats_relative_path  = 'dataframes/player_team_stats'
+
+
 
 # for category, subcategory_mapping in whoscored_detailed_options.items():
 #     print(f" BIG STAT {category}")
