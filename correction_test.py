@@ -79,7 +79,8 @@ for league, team_details in whoscored_teams_dict.items():
 
                 # Crawl again
                 df_detailed_passing = crawl_player_team_stats_detailed(url, "passing", is_current_season)
-                save_stats_csv(df_detailed_passing,'passing',league, team_name, season_start_year = year)                
+                
+                save_stats_csv(df_detailed_passing,'detailed_passing',league, team_name, season_start_year = year)                
 
 
 
