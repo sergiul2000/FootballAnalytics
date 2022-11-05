@@ -1,6 +1,5 @@
-from contextlib import AsyncExitStack
-from turtle import left, right
 
+# UNDERSTAT CONSTANTS
 
 leagues_list = ['epl', # Premier League
            'bundesliga',
@@ -16,6 +15,11 @@ league_teams_dict = {'epl' : ["Manchester United", "Manchester City", "Chelsea",
            'serie a' : ["Juventus", "Inter", "AC Milan", "Napoli", "Roma", "Atalanta"]
            }
 
+
+# WHOSCORED CONSTANTS
+
+API_DELAY_FOR_YOUR_PC = 0.5
+
 who_scored_simple_columns = {
     'summary' : ["goals", "assists", "yellow_cards", "red_cards", "shots_per_game", "pass_success_percentage", "aerials_won_per_game", "man_of_the_match"],
     'defensive' : ["tackles_per_game", "interceptions_per_game", "fouls_per_game", "offsides_won_per_game","clearances_per_game", "dribbled_past_per_game", "outfielder_blocks_per_game", "own_goals"],
@@ -24,6 +28,16 @@ who_scored_simple_columns = {
 }
 
 whoscored_teams_dict = {
+           'la liga' : 
+           {
+            "Real Madrid"       : 52, 
+            "Barcelona"         : 65, 
+            "Atletico Madrid"   : 63, 
+            "Sevilla"           : 67, 
+            "Valencia"          : 55, 
+            "Villarreal"        : 839,
+            },
+
            'epl' : 
            {
             "Manchester United" : 32, 
@@ -43,16 +57,6 @@ whoscored_teams_dict = {
             "Eintracht Frankfurt"    : 45,
             "Wolfsburg"              : 33,
            },
-
-           'la liga' : 
-           {
-            "Real Madrid"       : 52, 
-            "Barcelona"         : 65, 
-            "Atletico Madrid"   : 63, 
-            "Sevilla"           : 67, 
-            "Valencia"          : 55, 
-            "Villarreal"        : 839,
-            },
 
            'ligue 1' : 
            {

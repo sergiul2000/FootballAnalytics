@@ -1,6 +1,6 @@
 from operator import is_
 from re import X
-from constants import whoscored_teams_dict, whoscored_detailed_options
+from constants import whoscored_teams_dict, whoscored_detailed_options, who_scored_simple_columns, API_DELAY_FOR_YOUR_PC
 
 import time
 import pandas as pd
@@ -9,45 +9,75 @@ pd.options.mode.chained_assignment = None
 
 import time
 from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-from tqdm import tqdm
+#from webdriver_manager.safari 
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
+
+#for stale element reference
+from selenium.common.exceptions import NoSuchElementException, StaleElementReferenceException
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+
 from empty_folder_creator import create_empty_directories
-from os import walk
+from os import stat, walk
 import os 
 
+# used to map time of operations
+import time
+import logging
+logger = logging.getLogger('my_module_name')
 
+driver_connection_counter = 0
+driver_connection_time_sum = 0
+driver_connection_time_average = 0
+
+fetching_data_counter = 0
+fetching_data_time_sum = 0
+fetching_data_time_average = 0
 
 def replace_pd(df):
+    # start process    
+    now = time.time()
+
     mapping = {'-': 0} 
-    
     replace_dict = {}
-    
     for colum in df.columns:
         replace_dict[colum] = mapping
+    
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 4] - Replace - with 0 took {difference} seconds")
+    logging.info(f"[TIME LOG 4] - Replace - with 0 took {difference} seconds")
+
     return df.replace(replace_dict)
-
-
 
 def save_stats_csv(df, stat, league, team, season_start_year):
     print('Saving CSV to File')
     team = team.replace(' ','_')
     filename = f'dataframes/whoscored_player_{stat}_stats/{league}/season_{season_start_year}_{season_start_year+1}/{team}_{stat}_stats_in_season_{season_start_year}_{season_start_year+1}.csv'
-
-    print(filename)
+    
+    print(f'FILENAME {filename}')
     df.to_csv(filename)
 
-
 def crawl_chosen_stats_between_years(league, teams_details, start_year, end_year, stat='summary'):
+    # start of the whole process
+    global driver_connection_counter, driver_connection_time_sum, driver_connection_time_average
+    global fetching_data_counter, fetching_data_time_sum, fetching_data_time_average
+
+    now_total = time.time()
+    logging.basicConfig(filename = f'debugger_logs/debugger_time_crawling_for_{stat}.log', encoding='utf-8', level=logging.INFO, filemode = 'a')
 
     create_empty_directories('dataframes', f'whoscored_player_{stat}_stats', league, start_year, end_year, True)
 
-    for team, code in teams_details.items():
-
-       # print(team, '->', code)
-
-        dict_of_league_urls = crawl_all_urls_for_given_team_in_league_competitions(code, league, last_season_year= 2022)
+    for team, code in teams_details.items():       
+        dict_of_league_urls = crawl_all_urls_for_given_team_in_league_competitions(code, league, first_season_year = start_year, last_season_year = end_year)
+        
         print(f'URLS {team} {code}')
         print(dict_of_league_urls)
 
@@ -75,10 +105,6 @@ def crawl_chosen_stats_between_years(league, teams_details, start_year, end_year
                     is_current_season = False
 
                     save_stats_csv(df_season_passing_stats,'passing',league, team, season_start_year = int(item[0].split('_')[1]))
-                # case 'detailed_zones_shots':
-                #     df_detailed_shots_zones = crawl_player_team_stats_detailed_shots_zones(item[1], is_current_season)
-                #     is_current_season = False
-                #     save_stats_csv(df_detailed_shots_zones,'detailed_zones_shots',league, team, season_start_year = int(item[0].split('_')[1]))
                 case 'detailed_offensive':
                     df_detailed_offensive = crawl_player_team_stats_detailed(item[1], "offensive", is_current_season)
                     is_current_season = False
@@ -97,38 +123,70 @@ def crawl_chosen_stats_between_years(league, teams_details, start_year, end_year
                       
                 case _:
                     #To Be Implemented
-                    print('nada')      
+                    print('nada')
+
+    # end of the whole process
+    later_total = time.time()
+    # compute the whole process time
+    difference_total = float(later_total - now_total)
+
+    driver_connection_time_average += float(driver_connection_time_sum) / float(driver_connection_counter)
+    fetching_data_time_average += float(fetching_data_time_sum) / float(fetching_data_counter)
+
+    print(f"[TIME LOG DRIVER CONNECTION Average Time for {stat.upper()} in league {league.upper()}] - On Average the Process for league {league} took {float(driver_connection_time_sum) / float(driver_connection_counter)} seconds per team")
+    logging.info(f"[TIME LOG DRIVER CONNECTION Average Time for {stat.upper()} in league {league.upper()}] - On Average the Process for league {league} took {float(driver_connection_time_sum) / float(driver_connection_counter)} seconds per team")
+    
+    print(f"[TIME LOG FETCHING DATA Average Time for {stat.upper()} in league {league.upper()}] - On Average the Process for league {league} took {float(fetching_data_time_sum) / float(fetching_data_counter)} seconds per team")
+    logging.info(f"[TIME LOG FETCHING DATA Average Time for {stat.upper()} in league {league.upper()}] - On Average the Process for league {league} took {float(fetching_data_time_sum) / float(fetching_data_counter)} seconds per team")
+
+    print(f"[TIME LOG FINAL Crawling for {stat.upper()} for league {league.upper()}] - Whole Process took for league {league} took {difference_total} seconds")
+    logging.info(f"[TIME LOG FINAL Crawling for {stat.upper()} for league {league.upper()}] - Whole Process took for league {league} took {difference_total} seconds")   
+
 
 def transform_competition_name(competition_name):
     match competition_name:
         case 'epl':
             competition_text = 'Premier League'
-            season_text_start = 'epl_'
+            season_text_start = 'epl'
         case 'bundesliga':
             competition_text = 'Bundesliga'
-            season_text_start = 'bundesliga_'
+            season_text_start = 'bundesliga'
         case 'la liga':
             competition_text = 'LaLiga'
-            season_text_start = 'la liga_'
+            season_text_start = 'la liga'
         case 'ligue 1':
             competition_text = 'Ligue 1'
-            season_text_start = 'ligue 1_'
+            season_text_start = 'ligue 1'
         case 'serie a':
             competition_text = 'Serie A'
-            season_text_start = 'seria a_'
+            season_text_start = 'seria a'
         case _:
-            competition_text = 'ChampionsLeague'
-            season_text_start = 'champions league_'
+            competition_text = 'Champions League'
+            season_text_start = 'champions league'
 
     return competition_text,season_text_start
 
-def crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_name, last_season_year):
-    url_current_season = f'https://www.whoscored.com/Teams/{team_id}'
-    url = f'https://www.whoscored.com/Teams/{team_id}/Archive'
+def crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_name, first_season_year = 2009, last_season_year = 2023):
+    # start of the process  
+    now = time.time()
     dict_of_league_competitions_urls = dict()
-    dict_of_league_competitions_urls[f'{competition_name}_{last_season_year}_{last_season_year+1}'] = url_current_season
 
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+    if last_season_year > 2023:
+        last_season_year = 2023
+    if last_season_year == 2023:
+        last_season_year -= 1
+        url_current_season = f'https://www.whoscored.com/Teams/{team_id}'
+        dict_of_league_competitions_urls[f'{competition_name}_{last_season_year}_{last_season_year+1}'] = url_current_season
+
+
+
+    url = f'https://www.whoscored.com/Teams/{team_id}/Archive'
+    
+
+
+    driver = webdriver.Chrome(executable_path = 'exe_dependencies/chromedriver')
+    #driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
+
     print('Installing Chrome driver')
     driver.get(url)
 
@@ -146,19 +204,29 @@ def crawl_all_urls_for_given_team_in_league_competitions(team_id, competition_na
         if competition_text in option.text:
             season_full = option.text.split('-')[1][1:]
             start_year = season_full.split('/')[0]
-            end_season = season_full.split('/')[1]
-            season_text = f'{start_year}_{end_season}'
-            season_text = f'{season_text_start}{season_text}'
+            end_year = season_full.split('/')[1]
+            season_text = f'{start_year}_{end_year}'
+            season_text = f'{season_text_start}_{season_text}'
             #print(season_text)
-
-            url_to_append = f'https://www.whoscored.com/Teams/{team_id}/Archive/?stageId={value}'
-            dict_of_league_competitions_urls[season_text] = url_to_append
+            if int(start_year) >= first_season_year:
+                if int(end_year)<= last_season_year:
+                    url_to_append = f'https://www.whoscored.com/Teams/{team_id}/Archive/?stageId={value}'
+                    dict_of_league_competitions_urls[season_text] = url_to_append
 
    # print("DICT COMPETITIONS URLS:")
     #print(dict_of_league_competitions_urls)
-    return dict_of_league_competitions_urls
+    # end of the process
+    later = time.time()
+    difference = float(later - now)
 
-def establish_driver_connection(url, statistic = 'summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term = 1):
+    print(f"[TIME LOG CRAWL URL] - Crawling All URLS took {difference} seconds")
+    logging.info(f"[TIME LOG CRAWL URL] - Crawling All URLS took {difference} seconds")    
+    
+    return dict_of_league_competitions_urls
+    
+
+driver_installed_singleton = None
+def establish_driver_connection(url, statistic = 'summary', button_xpath = '//a[contains(@href,"#team-squad-archive-stats-offensive")]', api_delay_term = API_DELAY_FOR_YOUR_PC):
     """
     This function establishes connection through a driver object to a specific url of whoscored.
     This also bypasses the accept cookie buttons to unfreeze the next click of the button.
@@ -177,7 +245,32 @@ def establish_driver_connection(url, statistic = 'summary', button_xpath = '//a[
         driver : The driver to the page that has already the specific statitics table loaded.
 
     """
-    driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
+    global driver_installed_singleton, driver_connection_counter, driver_connection_time_sum
+    # NEVER EVER Try open Chrome Silently
+    # THEY WILL BAN YOU 
+    #CHROME_PATH = '/Applications/Google Chrome.app'
+    #CHROMEDRIVER_PATH = '/exe_dependencies/chromedriver.exe'
+    # WINDOW_SIZE = "1920,1080"
+
+    # chrome_options = Options()
+    # chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+    #chrome_options.binary_location = CHROME_PATH
+
+    #driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()), chrome_options = chrome_options)
+    # Classical
+    # start of the process
+    now = time.time()
+
+    #driver = webdriver.Chrome(service = Service(ChromeDriverManager().install()))
+    #driver = webdriver.Chrome(service = Service(ChromeDriverManager(os_type = "mac64_m1").install()))
+    
+    driver = webdriver.Chrome(executable_path = 'exe_dependencies/chromedriver')
+    # if driver_installed_singleton == None: 
+    #     driver_installed_singleton = webdriver.Chrome(executable_path = 'exe_dependencies/chromedriver')
+    # driver = driver_installed_singleton
+
+    #driver = webdriver.Chrome(ChromeDriverManager().install())
     print('Installing Chrome driver')
     driver.get(url)
 
@@ -201,6 +294,17 @@ def establish_driver_connection(url, statistic = 'summary', button_xpath = '//a[
         # print(driver.title)
 
         time.sleep(api_delay_term)
+    
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 1] - Establishing Driver Connection took {difference} seconds")
+    logging.info(f"[TIME LOG 1] - Establishing Driver Connection took {difference} seconds")
+
+    driver_connection_counter += 1
+    driver_connection_time_sum += difference
 
     return driver
 
@@ -214,6 +318,8 @@ def remove_nan_values_added_while_scrapping(df):
     return: 
         df: Modified dataframe without a nan rows 
     """
+    # start process    
+    now = time.time()
 
     print('Removing Nan Added Rows')
 
@@ -222,12 +328,23 @@ def remove_nan_values_added_while_scrapping(df):
     df = df.dropna().reset_index(drop=True)
     os.remove("for_fix.csv")
 
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 5] - Remove Nan rows took {difference} seconds")
+    logging.info(f"[TIME LOG 5] - Remove Nan rows took {difference} seconds")
+
     return df
 
 def get_start_and_sub_games(element):
     """
         Separate start_number_of_game (sub_number_of_game) intro start_number_of_game and sub_number_of_game
     """
+    #start of the process
+    #now = time.time()
+
     games = element.find_elements("css selector","td")[4].text
 
     parts = games.split("(")
@@ -237,7 +354,80 @@ def get_start_and_sub_games(element):
     else:
         start_games = games
         sub_games = 0
+
+    #end of the process
+    #later = time.time()
+    #compute process time
+    #difference = float(later - now)
+
+    #print(f"[TIME LOG 4] - Creating Get {difference} seconds")
+    #logging.info(f"[TIME LOG 4] - Creating Get {difference} seconds")
+
     return start_games, sub_games
+
+def create_crawler_empty_df(list_of_extra_columns, are_sub_games_existent = False):
+    # start of the process
+    now = time.time()
+
+    list_of_columns =["player_number", "name", "age", "position", "tall", "weight", "games"]
+    list_of_columns.extend(["start_games", "sub_games", "mins"] if are_sub_games_existent else ["mins"]) 
+    
+    list_of_columns.extend(list_of_extra_columns)
+    list_of_columns.append('rating')
+
+    #print(list_of_columns)
+
+    empty_df = pd.DataFrame(columns = list_of_columns)
+    #print(empty_df)
+
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 2] - Creating Empty Dataframe took {difference} seconds")
+    logging.info(f"[TIME LOG 2] - Creating Empty Dataframe took {difference} seconds")
+
+    return empty_df
+
+def create_dictionary_row_for_crawler(element, list_of_extra_columns, are_sub_games_existent = False):
+    #start of the process
+    #now = time.time()
+
+    player_dict = { 
+            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
+            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
+            "age": element.find_elements("class name","player-meta-data")[0].text,
+            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
+            "tall": element.find_elements("css selector","td")[2].text,
+            "weight": element.find_elements("css selector","td")[3].text,
+            "games": element.find_elements("css selector","td")[4].text,
+    }
+    
+    if are_sub_games_existent:
+        start_games,sub_games = get_start_and_sub_games(element)
+        player_dict["start_games"] = start_games
+        player_dict["sub_games"] = sub_games
+    
+    player_dict["mins"] = element.find_elements("css selector","td")[5].text 
+    
+    table_data_index = 6
+    for entry in list_of_extra_columns:
+        player_dict[entry] = element.find_elements("css selector","td")[table_data_index].text 
+        table_data_index += 1
+
+    player_dict["rating"] = element.find_elements("css selector","td")[table_data_index].text
+    #print(player_dict)
+    
+    #end of the process
+    #later = time.time()
+    #compute process time
+    #difference = int(later - now)
+
+    #print(f"[TIME LOG 3] - Creating Player Dictionary took {difference} seconds")
+    #logging.info(f"[TIME LOG 3] - Creating Player Dictionary took {difference} seconds")
+
+    return player_dict
 
 def crawl_player_team_stats_summary(url):
     """
@@ -250,53 +440,35 @@ def crawl_player_team_stats_summary(url):
         player summary statistics (dataframe)
     
     """
+    # start of all process
+    now_total = time.time()
+    
+    logging.basicConfig(filename='debugger_logs/debugger_time_summary.log', encoding='utf-8', level=logging.INFO, filemode="a")
+
     driver = establish_driver_connection(url)
     
-    # make pandas dataframe     
-    player_summary_df = pd.DataFrame(columns=[
-        "player_number", "name", "age", "position", "tall", "weight", "games", "start_games", "sub_games", "mins", 
-        "goals", "assists", "yellow_cards", "red_cards", 
-        "shots_per_game", "pass_success_percentage", "aerials_won_per_game", "man_of_the_match", 
-        "rating"
-        ])
-    
-    # get player summay datas
-    #elements = driver.find_elements_by_css_selector("#player-table-statistics-body tr")
+    player_summary_df =  create_crawler_empty_df(list_of_extra_columns = who_scored_simple_columns['summary'], are_sub_games_existent = True)
+
     elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
 
     print('Fetching Player Table')
 
+    # start process    
+    now = time.time()
+
     for element in elements:
+        player_dict = create_dictionary_row_for_crawler(element, list_of_extra_columns = who_scored_simple_columns['summary'], are_sub_games_existent = True)
         
-        start_games,sub_games = get_start_and_sub_games(element)
-        
-        player_dict = { 
-            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
-            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
-            "age": element.find_elements("class name","player-meta-data")[0].text,
-            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
-            "tall": element.find_elements("css selector","td")[2].text,
-            "weight": element.find_elements("css selector","td")[3].text,
-            "games": element.find_elements("css selector","td")[4].text,
-            "start_games": start_games,
-            "sub_games": sub_games,
-            "mins": element.find_elements("css selector","td")[5].text,
-
-            "goals": element.find_elements("css selector","td")[6].text,
-            "assists": element.find_elements("css selector","td")[7].text,
-            "yellow_cards": element.find_elements("css selector","td")[8].text,
-            "red_cards": element.find_elements("css selector","td")[9].text,
-            "shots_per_game": element.find_elements("css selector","td")[10].text,
-            "pass_success_percentage": element.find_elements("css selector","td")[11].text,
-            "aerials_won_per_game": element.find_elements("css selector","td")[12].text,
-            "man_of_the_match": element.find_elements("css selector","td")[13].text, 
-
-            "rating": element.find_elements("css selector","td")[14].text,  
-        }
-
-        #print(f'Populating CSV with {player_dict}')
         player_summary_df.loc[len(player_summary_df)] = player_dict
-       
+
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 3 SUMMARY] - Fetching Player Data took {difference} seconds")
+    logging.info(f"[TIME LOG 3 SUMMARY] - Fetching Player Data took {difference} seconds")    
+
     # close webdriver
     print('Close Webdriver')
     driver.close()
@@ -306,22 +478,31 @@ def crawl_player_team_stats_summary(url):
     # Remove NaN values rows
     player_summary_df = remove_nan_values_added_while_scrapping(player_summary_df)
 
+    # end of the whole process
+    later_total = time.time()
+    # compute time of the whole process time
+    difference_total = float(later_total - now_total)
+
+    print(f"[TIME LOG FINAL SUMMARY] - Whole Process took {difference_total} seconds")
+    logging.info(f"[TIME LOG FINAL SUMMARY] - Whole Process took {difference_total} seconds")    
+
+    print("[LOG SUMMARY] - Summary Fetching Done")
+    logging.info("[LOG SUMMARY] - Summary Fetching Done")  
+
+
     return player_summary_df
 
 def crawl_player_team_stats_offensive(url, is_current_season = False):
+    # start of the whole process
+    now_total = time.time()
+    logging.basicConfig(filename='debugger_logs/debugger_time_offensive.log', encoding='utf-8', level=logging.INFO, filemode = 'a')
 
     if(is_current_season):
         driver = establish_driver_connection(url, 'offensive', '//a[contains(@href,"#team-squad-stats-offensive")]')
     else:    
         driver = establish_driver_connection(url, 'offensive', '//a[contains(@href,"#team-squad-archive-stats-offensive")]')
     
-    # make pandas dataframe
-    player_offensive_df = pd.DataFrame(columns = [ 
-        "player_number", "name", "age", "position", "tall", "weight", "games", "start_games", "sub_games", "mins", 
-        "goals", "assists", "shot_per_game", "key_passes_per_game", "dribbles_per_game",
-        "fouled_per_game", "offsides_per_game", "dispossessed_per_game", "bad_control_per_game", 
-        "rating"
-        ])
+    player_offensive_df =  create_crawler_empty_df(list_of_extra_columns = who_scored_simple_columns['offensive'], are_sub_games_existent = True)
 
     
     elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
@@ -329,42 +510,23 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
 
     print('Fetching Player Table')
 
+    # start process    
+    now = time.time()
+
     for element in elements:
-        #print(f' Size of an element {len(element.find_elements("css selector","td"))}')
         if(len(element.find_elements("css selector","td")) < 16): continue 
 
-        start_games,sub_games = get_start_and_sub_games(element)
+        player_dict = create_dictionary_row_for_crawler(element, list_of_extra_columns = who_scored_simple_columns['offensive'], are_sub_games_existent = True)
 
-        #print(f' Rating {element.find_elements("css selector","td")[15].text}')
-        
-        player_dict = { 
-            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
-            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
-            "age": element.find_elements("class name","player-meta-data")[0].text,
-            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
-            "tall": element.find_elements("css selector","td")[2].text,
-            "weight": element.find_elements("css selector","td")[3].text,
-            "games": element.find_elements("css selector","td")[4].text,
-            "start_games": start_games,
-            "sub_games": sub_games,
-            "mins": element.find_elements("css selector","td")[5].text,
-
-            "goals": element.find_elements("css selector","td")[6].text,
-            "assists": element.find_elements("css selector","td")[7].text,
-            "shot_per_game": element.find_elements("css selector","td")[8].text,
-            "key_passes_per_game": element.find_elements("css selector","td")[9].text,
-            "dribbles_per_game": element.find_elements("css selector","td")[10].text,
-            "fouled_per_game": element.find_elements("css selector","td")[11].text,
-            "offsides_per_game": element.find_elements("css selector","td")[12].text,
-            "dispossessed_per_game": element.find_elements("css selector","td")[13].text,
-            "bad_control_per_game": element.find_elements("css selector","td")[14].text,
-
-            "rating": element.find_elements("css selector","td")[15].text,
-        }
-
-        #print(f'Populating CSV with {player_dict}')
         player_offensive_df.loc[len(player_offensive_df)] = player_dict
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
 
+    print(f"[TIME LOG 3 OFFENSIVE] - Fetching Player Data took {difference} seconds")
+    logging.info(f"[TIME LOG 3 OFFENSIVE] - Fetching Player Data took {difference} seconds")    
+    
     print('Close Webdriver')
     driver.close()
     
@@ -373,134 +535,145 @@ def crawl_player_team_stats_offensive(url, is_current_season = False):
     # Remove NaN values rows
     player_offensive_df = remove_nan_values_added_while_scrapping(player_offensive_df)
 
+    # end of the whole process
+    later_total = time.time()
+    # compute the whole process time
+    difference_total = float(later_total - now_total)
+
+    print(f"[TIME LOG FINAL OFFENSIVE] - Whole Process took {difference_total} seconds")
+    logging.info(f"[TIME LOG FINAL OFFENSIVE] - Whole Process took {difference_total} seconds") 
+
+    print("[LOG OFFENSIVE] - Offensive Fetching Done")
+    logging.info("[LOG OFFENSIVE] - Offensive Fetching Done") 
+
     return player_offensive_df
 
 def crawl_player_team_stats_defensive(url, is_current_season = False):
+    # start of the whole process
+    now_total = time.time()
+    logging.basicConfig(filename='debugger_logs/debugger_time_defensive.log', encoding='utf-8', level=logging.INFO, filemode = 'a')
+
     if is_current_season:
         driver = establish_driver_connection(url, 'defensive', '//a[contains(@href,"#team-squad-stats-defensive")]')
     else:
         driver = establish_driver_connection(url, 'defensive', '//a[contains(@href,"#team-squad-archive-stats-defensive")]')
-
-    # make pandas dataframe
-    player_defensive_df = pd.DataFrame(columns = [ 
-        "player_number", "name", "age", "position", "tall", "weight", "games", "start_games", "sub_games", "mins", 
-        "tackles_per_game", "interceptions_per_game", 
-        "fouls_per_game", "offsides_won_per_game",
-        "clearances_per_game", "dribbled_past_per_game", 
-        "outfielder_blocks_per_game", "own_goals",
-        "rating"
-        ])
+    
+    player_defensive_df =  create_crawler_empty_df(list_of_extra_columns = who_scored_simple_columns['defensive'], are_sub_games_existent = True)
 
     elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
-    #print(f"Number of Elements {len(elements)}")
 
     print('Fetching Player Table')
+
+    # start process    
+    now = time.time()
 
     for element in elements:
         if(len(element.find_elements("css selector","td")) < 15): continue 
 
-        start_games,sub_games = get_start_and_sub_games(element)    
         
-        player_dict = { 
-            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
-            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
-            "age": element.find_elements("class name","player-meta-data")[0].text,
-            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
-            "tall": element.find_elements("css selector","td")[2].text,
-            "weight": element.find_elements("css selector","td")[3].text,
-            "games": element.find_elements("css selector","td")[4].text,
-            "start_games": start_games,
-            "sub_games": sub_games,
-            "mins": element.find_elements("css selector","td")[5].text,
+        player_dict = create_dictionary_row_for_crawler(element, list_of_extra_columns = who_scored_simple_columns['defensive'], are_sub_games_existent = True)
 
-            "tackles_per_game": element.find_elements("css selector","td")[6].text,
-            "interceptions_per_game": element.find_elements("css selector","td")[7].text,
-            "fouls_per_game": element.find_elements("css selector","td")[8].text,
-            "offsides_won_per_game": element.find_elements("css selector","td")[9].text,
-            "clearances_per_game": element.find_elements("css selector","td")[10].text,
-            "dribbled_past_per_game": element.find_elements("css selector","td")[11].text,
-            "outfielder_blocks_per_game": element.find_elements("css selector","td")[12].text,
-            "own_goals": element.find_elements("css selector","td")[13].text,
-
-            "rating": element.find_elements("css selector","td")[14].text,
-        }
-
-        #print(f'Populating CSV with {player_dict}')
         player_defensive_df.loc[len(player_defensive_df)] = player_dict
 
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 3 DEFENSIVE] - Fetching Player Data took {difference} seconds")
+    logging.info(f"[TIME LOG 3 DEFENSIVE] - Fetching Player Data took {difference} seconds")    
+    
     print('Close Webdriver')
     driver.close()
+    
 
     # Replace - with 0 among stats
     player_defensive_df = replace_pd(player_defensive_df)
     # Remove NaN values rows
     player_defensive_df = remove_nan_values_added_while_scrapping(player_defensive_df)
 
+    # end of the whole process
+    later_total = time.time()
+    # compute the whole process time
+    difference_total = float(later_total - now_total)
+
+    print(f"[TIME LOG FINAL OFFENSIVE] - Whole Process took {difference_total} seconds")
+    logging.info(f"[TIME LOG FINAL OFFENSIVE] - Whole Process took {difference_total} seconds") 
+
+    print("[LOG OFFENSIVE] - Offensive Fetching Done")
+    logging.info("[LOG OFFENSIVE] - Offensive Fetching Done") 
+
     return player_defensive_df
 
-def crawl_player_team_stats_passing(url, is_current_season = False):
+def crawl_player_team_stats_passing(url, is_current_season = False):    
+    # start of the whole process
+    now_total = time.time()
+    logging.basicConfig(filename='debugger_logs/debugger_time_passing.log', encoding='utf-8', level=logging.INFO, filemode = 'a')
+        
     if is_current_season:
         driver = establish_driver_connection(url, 'passing', '//a[contains(@href,"#team-squad-stats-passing")]')
     else:
         driver = establish_driver_connection(url, 'passing', '//a[contains(@href,"#team-squad-archive-stats-passing")]')
-
-    # make pandas dataframe
-    player_passing_df = pd.DataFrame(columns = [ 
-        "player_number", "name", "age", "position", "tall", "weight", "games", "start_games", "sub_games", "mins", 
-        "total_assists", "key_passes_per_game", "passes_per_game",
-        "pass_success_percentage", "crosses_per_game", "long_ball_per_game", "through_balls_per_game", 
-        "rating"
-        ])
+        
+    player_passing_df =  create_crawler_empty_df(list_of_extra_columns = who_scored_simple_columns['passing'], are_sub_games_existent = True)
 
     elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
     #print(f"Number of Elements {len(elements)}")
 
     print('Fetching Player Table')
 
+    # start process    
+    now = time.time()
+
     for element in elements:
         if(len(element.find_elements("css selector","td")) < 14): continue 
 
-        start_games,sub_games = get_start_and_sub_games(element)
-        
-        player_dict = { 
-            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
-            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
-            "age": element.find_elements("class name","player-meta-data")[0].text,
-            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
-            "tall": element.find_elements("css selector","td")[2].text,
-            "weight": element.find_elements("css selector","td")[3].text,
-            "games": element.find_elements("css selector","td")[4].text,
-            "start_games": start_games,
-            "sub_games": sub_games,
-            "mins": element.find_elements("css selector","td")[5].text,
+        player_dict = create_dictionary_row_for_crawler(element, list_of_extra_columns = who_scored_simple_columns['passing'], are_sub_games_existent = True)
 
-            "total_assists": element.find_elements("css selector","td")[6].text,
-            "key_passes_per_game": element.find_elements("css selector","td")[7].text,
-            "passes_per_game": element.find_elements("css selector","td")[8].text, 
-            "pass_success_percentage": element.find_elements("css selector","td")[9].text, 
-            "crosses_per_game": element.find_elements("css selector","td")[10].text, 
-            "long_ball_per_game": element.find_elements("css selector","td")[11].text,
-            "through_balls_per_game": element.find_elements("css selector","td")[12].text, 
-
-            "rating": element.find_elements("css selector","td")[13].text,
-        }
-
-        #print(f'Populating CSV with {player_dict}')
         player_passing_df.loc[len(player_passing_df)] = player_dict
 
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 3 PASSING] - Fetching Player Data took {difference} seconds")
+    logging.info(f"[TIME LOG 3 PASSING] - Fetching Player Data took {difference} seconds")    
+    
     print('Close Webdriver')
     driver.close()
+    
 
     # Replace - with 0 among stats
     player_passing_df = replace_pd(player_passing_df)
     # Remove Nan value rows
     player_passing_df = remove_nan_values_added_while_scrapping(player_passing_df)
+    
+    # end of the whole process
+    later_total = time.time()
+    # compute the whole process time
+    difference_total = float(later_total - now_total)
+
+    print(f"[TIME LOG FINAL PASSING] - Whole Process took {difference_total} seconds")
+    logging.info(f"[TIME LOG FINAL PASSING] - Whole Process took {difference_total} seconds") 
+
+    print("[LOG PASSING] - Offensive Fetching Done")
+    logging.info("[LOG PASSING] - Offensive Fetching Done") 
 
     return player_passing_df
 
 
-def establish_driver_connection_for_detailed_section(url, xpath_for_current_or_archive, stats_selection = "Shots", is_circumstance_needed = True, circumstance_selection_text = 'Zones', stats_period_selection = 'Total', api_delay_term = 1):
-    driver = establish_driver_connection(url, 'detailed', xpath_for_current_or_archive)
+
+driver_singleton = None
+#keep connection alive and switch between categories to be read
+def establish_driver_connection_for_detailed_section(url, xpath_for_current_or_archive, stats_selection = "Shots", is_circumstance_needed = True, circumstance_selection_text = 'Zones', stats_period_selection = 'Total', api_delay_term = API_DELAY_FOR_YOUR_PC):
+    global driver_singleton
+    # start of the process
+    now = time.time()
+
+    if driver_singleton == None: 
+        driver_singleton = establish_driver_connection(url, 'detailed', xpath_for_current_or_archive)
+    driver = driver_singleton
 
     select = Select(driver.find_element("id","category"))
 
@@ -529,123 +702,32 @@ def establish_driver_connection_for_detailed_section(url, xpath_for_current_or_a
     driver.execute_script("arguments[0].click();", button);
     time.sleep(api_delay_term)
 
+    # end of the process
+    later = time.time()
+    # compute process time
+    difference = float(later - now)
+
+    print(f"[TIME LOG 1.1] - Establishing Detailed Driver Connection took {difference} seconds")
+    logging.info(f"[TIME LOG 1.1] - Establishing Detailed Driver Connection took {difference} seconds")
+
+
 
     return driver 
 
 
-def create_crawler_empty_df(list_of_extra_columns, are_sub_games_existent = False):
-
-    list_of_columns =["player_number", "name", "age", "position", "tall", "weight", "games"]
-    list_of_columns.extend(["start_games", "sub_games", "mins"] if are_sub_games_existent else ["mins"]) 
-    
-    list_of_columns.extend(list_of_extra_columns)
-    list_of_columns.append('rating')
-
-    #print(list_of_columns)
-
-    empty_df = pd.DataFrame(columns = list_of_columns)
-    #print(empty_df)
-
-    return empty_df
-
-
-def create_dictionary_row_for_crawler(element, list_of_extra_entries, are_sub_games_existent = False):
-    player_dict = { 
-            "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
-            "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
-            "age": element.find_elements("class name","player-meta-data")[0].text,
-            "position": element.find_elements("class name","player-meta-data")[1].text[1:],
-            "tall": element.find_elements("css selector","td")[2].text,
-            "weight": element.find_elements("css selector","td")[3].text,
-            "games": element.find_elements("css selector","td")[4].text,
-    }
-    
-    if are_sub_games_existent:
-        start_games,sub_games = get_start_and_sub_games(element)
-        player_dict["start_games"] = start_games
-        player_dict["sub_games"] = sub_games
-    
-    player_dict["mins"] = element.find_elements("css selector","td")[5].text 
-    
-    table_data_index = 6
-    for entry in list_of_extra_entries:
-        player_dict[entry] = element.find_elements("css selector","td")[table_data_index].text 
-        table_data_index += 1
-
-    player_dict["rating"] = element.find_elements("css selector","td")[table_data_index].text
-    #print(player_dict)
-
-    return player_dict
-
-
-def crawl_player_team_stats_detailed_shots_zones(url, is_current_season = False):
-    if is_current_season:
-        driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-stats-detailed")]')
-    else:
-        driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-archive-stats-detailed")]')
-
-     # make pandas dataframe
-
-    player_detailed_shots_zones_df =  create_crawler_empty_df(["total_shots_per_game", "outside_the_penalty_area_shots_per_game", "six_yard_box_shots_per_game", "penalty_area_shots_per_game"], are_sub_games_existent = False)
-    # player_detailed_shots_zones_df = pd.DataFrame(columns = [ 
-    #     "player_number", "name", "age", "position", "tall", "weight", "games", "mins",
-
-    #     "total_shots_per_game", "outside_the_penalty_area_shots_per_game", "six_yard_box_shots_per_game", "penalty_area_shots_per_game",
-
-    #     "rating"
-    #     ])
-
-    elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
-    #print(f"Number of Elements {len(elements)}")
-
-    print('Fetching Player Table')
-
-    for element in elements:
-        if(len(element.find_elements("css selector","td")) >11): continue 
-        #print(f'Name {element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text}  CELLS {len(element.find_elements("css selector","td"))}')
-        
-
-        player_dict = create_dictionary_row_for_crawler(element, ["total_shots_per_game", "outside_the_penalty_area_shots_per_game", "six_yard_box_shots_per_game", "penalty_area_shots_per_game"], False)
-
-        # player_dict = { 
-        #     "player_number": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].get_attribute("href").split("/")[4],
-        #     "name": element.find_elements("css selector","td")[0].find_elements("css selector","a")[0].find_elements("css selector","span")[0].text,
-        #     "age": element.find_elements("class name","player-meta-data")[0].text,
-        #     "position": element.find_elements("class name","player-meta-data")[1].text[1:],
-        #     "tall": element.find_elements("css selector","td")[2].text,
-        #     "weight": element.find_elements("css selector","td")[3].text,
-        #     "games": element.find_elements("css selector","td")[4].text,
-        #     "mins": element.find_elements("css selector","td")[5].text,
-
-        #     "total_shots_per_game": element.find_elements("css selector","td")[6].text,
-        #     "outside_the_penalty_area_shots_per_game": element.find_elements("css selector","td")[7].text,
-        #     "six_yard_box_shots_per_game": element.find_elements("css selector","td")[8].text, 
-        #     "penalty_area_shots_per_game": element.find_elements("css selector","td")[9].text,
-
-        #     "rating": element.find_elements("css selector","td")[10].text,
-        # }
-
-        # print(f'Populating CSV with {player_dict}')
-        player_detailed_shots_zones_df.loc[len(player_detailed_shots_zones_df)] = player_dict
-
-    print('Close Webdriver')
-    driver.close()
-
-    # Replace - with 0 among stats
-    player_detailed_shots_zones_df = replace_pd(player_detailed_shots_zones_df)
-    # Remove Nan value rows
-    player_detailed_shots_zones_df = remove_nan_values_added_while_scrapping(player_detailed_shots_zones_df)
-
-    return player_detailed_shots_zones_df  
-
-
 def crawl_player_team_stats_detailed(url, category = "offensive", is_current_season = False):
+    global driver_singleton
+    global fetching_data_counter, fetching_data_time_sum
+
     subcategory_mapping = whoscored_detailed_options[category]
 
     list_df = []
-    index= 0 
+    index = 0 
+    
+    # start of the whole process
+    now_total = time.time()
+    
     for subcategory, conditions  in subcategory_mapping.items():
-
         print(subcategory)
         if(conditions[0]==[]):
             #print(conditions)
@@ -657,23 +739,41 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
                 driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-archive-stats-detailed")]', subcategory, is_circumstance_needed = False, stats_period_selection = 'Total')
             
             player_detailed_df =  create_crawler_empty_df(columns, are_sub_games_existent = False)
+
+            # TRIAL TO BY BY PASS STALE STATE
+            ignored_exceptions = (NoSuchElementException,StaleElementReferenceException,)
+            elements = WebDriverWait(driver, 2.0, ignored_exceptions = ignored_exceptions)\
+                .until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "#player-table-statistics-body tr")))
+
             elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
+            
+            # start process    
+            now = time.time()
+            
             print('Fetching Player Table')
             for element in elements:
                 player_dict = create_dictionary_row_for_crawler(element, columns, False)
 
                 player_detailed_df.loc[len(player_detailed_df)] = player_dict
 
-            print('Close Webdriver')
-            driver.close()
+            # end of the process
+            later = time.time()
+            # compute process time
+            difference = float(later - now)
+
+            print(f"[TIME LOG 3 DETAILED {category.upper()} | {subcategory.upper()}] - Fetching Player Data took {difference} seconds")
+            logging.info(f"[TIME LOG 3 DETAILED {category.upper()} | {subcategory.upper()}] - Fetching Player Data took {difference} seconds")  
+
+            fetching_data_counter += 1
+            fetching_data_time_sum += difference
 
             # Replace - with 0 among stats
             player_detailed_df = replace_pd(player_detailed_df)
             # Remove Nan value rows
             player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
 
-            player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{category}_{index}.csv")
-            index += 1
+            #player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{category}_{index}.csv")
+            #index += 1
 
             list_df.append(player_detailed_df)
         else:
@@ -689,33 +789,49 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
                     driver = establish_driver_connection_for_detailed_section(url, '//a[contains(@href,"#team-squad-archive-stats-detailed")]', subcategory, is_circumstance_needed = True, circumstance_selection_text = characteristic, stats_period_selection = 'Total')
                 
                 player_detailed_df =  create_crawler_empty_df(columns[index_columns], are_sub_games_existent = False)
+                
+                # TRIAL TO BY BY PASS STALE STATE
+                ignored_exceptions = (NoSuchElementException,StaleElementReferenceException,)
+                elements = WebDriverWait(driver, 2.0, ignored_exceptions = ignored_exceptions)\
+                    .until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR, "#player-table-statistics-body tr")))
+
                 elements = driver.find_elements("css selector","#player-table-statistics-body tr") 
                 print('Fetching Player Table')
+                
+                # start process    
+                now = time.time()
+            
                 for element in elements:
                     player_dict = create_dictionary_row_for_crawler(element, columns[index_columns], False)
 
                     player_detailed_df.loc[len(player_detailed_df)] = player_dict
+                # end of the process
+                later = time.time()
+                # compute process time
+                difference = float(later - now)
 
-                print('Close Webdriver')
-                driver.close()
+                print(f"[TIME LOG 3 DETAILED {category.upper()} | {subcategory.upper()} - {characteristic.upper()} ] - Fetching Player Data took {difference} seconds")
+                logging.info(f"[TIME LOG 3 DETAILED {category.upper()} | {subcategory.upper()} - {characteristic.upper()}] - Fetching Player Data took {difference} seconds")  
+
+                fetching_data_counter += 1
+                fetching_data_time_sum += difference
 
                 # Replace - with 0 among stats
                 player_detailed_df = replace_pd(player_detailed_df)
                 # Remove Nan value rows
                 player_detailed_df = remove_nan_values_added_while_scrapping(player_detailed_df)
                 
-                player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{category}_{index}.csv")
-                index += 1
+                #player_detailed_df.to_csv(f"test_detail_scrapper/detailed_{category}_{index}.csv")
+                #index += 1
 
                 list_df.append(player_detailed_df)    
 
-
-
                 index_columns +=1
 
+    #print("AJUNGE AICI 1")
     player_detailed_df = None
     for df in list_df:
-        #print(df.head(5))
+        print(df.head(5))
         if player_detailed_df is None:
             player_detailed_df = df
         else:
@@ -727,11 +843,26 @@ def crawl_player_team_stats_detailed(url, category = "offensive", is_current_sea
 
             player_detailed_df = pd.merge(player_detailed_df, df,on = ['player_number'])
             player_detailed_df  = player_detailed_df[player_detailed_df.columns.drop(list(player_detailed_df.filter(regex="Unnamed")))]
-    print('Final')
-    print(player_detailed_df)
-    print(player_detailed_df.columns)
-    return player_detailed_df
+    #print('FINAL DF')
+    #print(player_detailed_df)
+    #print(player_detailed_df.columns)
+    
+    #driver.close()
+    driver_singleton.close()
+    driver_singleton = None
 
+    # end of the whole process
+    later_total = time.time()
+    # compute the whole process time
+    difference_total = float(later_total - now_total)
+
+    print(f"[TIME LOG FINAL DETAILED {category.upper()}] - Whole Process took {difference_total} seconds")
+    logging.info(f"[TIME LOG FINAL DETAILED {category.upper()}] - Whole Process took {difference_total} seconds") 
+
+    print(f"[LOG DETAILED {category.upper()}] - {category.capitalize()} Fetching Done")
+    logging.info(f"[LOG DETAILED {category.upper()}] - {category.capitalize()} Fetching Done") 
+
+    return player_detailed_df
 
 
 def correction_of_all_dataframes(statistic = 'summary'):
@@ -768,23 +899,34 @@ if __name__ == "__main__":
 
     # CREAZA FISIER  INTAI test_detail_scrapper 
     # verifica pentru defensive passing grija ca sunt Total nu Per game stats in cazul asta de baza
-    df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65","passing", True)
+    #df = crawl_player_team_stats_summary("https://www.whoscored.com/Teams/65")
+    #df = crawl_player_team_stats_summary("https://www.whoscored.com/Teams/65/Archive/?stageID=19895")
+    #df = crawl_player_team_stats_passing("https://www.whoscored.com/Teams/65/Archive/?stageID=19895", False)
     
-    # once first is run incearca sa comentezi linia 770 si sa o decomentezi pe 773
-    #df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/65/Archive/?stageID=19895","passing", False)
+    #df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/26/Archive/?stageID=5476","offensive", False)
+    
+    # once first is run incearca sa comentezi linia 770 si sa o decomentezi pe 773 
+    # 775 824 834
+    df = crawl_player_team_stats_detailed("https://www.whoscored.com/Teams/67/Archive/?stageId=3218","passing", False)
 
     df.to_csv("detail_scrapper_df.csv")
+    #df.to_csv("scrapper_df.csv")
 
     # ONCE DONE
 
     # What to modify for each type of statistic
     # put instead of stat offensive, deffensive, passing and detailed_offensive, detailed_defensive, detailed_passing
-    # George offensive, passing, detailed_offensive
+    # George passing, detailed_offensive
     # Sergiu defensive, detailed_defensive, detailed_passing
-    # modificiati doar la stat si decomentati 786- 789
+    # modificati doar la stat si decomentati 786- 789
+
 
     # for league, teams_details in whoscored_teams_dict.items():
     #     print(league, '->', teams_details)
-    #     crawl_chosen_stats_between_years(league, teams_details, 2009, 2023, stat = "detailed_offensive")
-
+    #     crawl_chosen_stats_between_years(league, teams_details, 2020, 2023, stat = "detailed_passing")
+    
+    # for team, code in whoscored_teams_dict['la liga'].items():
+    #     dict_of_league_urls = crawl_all_urls_for_given_team_in_league_competitions(code, "la liga", last_season_year = 2022 , first_season_year = 2001)
+    #     print(f'{team} : {dict_of_league_urls}')
+    #     break
 
