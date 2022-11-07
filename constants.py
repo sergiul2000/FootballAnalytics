@@ -93,6 +93,19 @@ whoscored_player_position_dict = {
         "Defender" : "Defender",
     },
 
+    'simplified_role':
+    {
+        "AM" : "Midfielder",
+        "FW" : "Forward",
+        "D" : "Defender",
+        "M" : "Midfielder",
+        "GK" : "Goalkeeper",
+        "DMC" : "Midfielder",
+        "Midfielder" : "Midfielder",
+        "Forward" : "Forward",
+        "Defender" : "Defender",
+    },
+
     'field_position':
     {
         "CLR" : "Central Left Right" ,
