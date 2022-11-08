@@ -69,7 +69,12 @@ def data_unification(league,team,year_start, year_end,):
 
 
     # Position processing
-    print(df_result['position'])
+
+    #df_result['main_position'] = df.apply(lambda row: row.Cost - (row.Cost * 0.1), axis = 1)
+
+    df_result['mapped_position'], df_result['number_of_position'] = zip(*df_result['position'].map(map_position))
+
+    df['rating_mls_formula'] = df.apply(lambda x: apply_mls_rating_formula(a = x['a'], b = x['b'], c = x['c']), axis=1)
 
     #df_result = df_result.drop(['Unnamed: 0','name','age','position','tall','weight','games','mins','rating'],axis=1)
     print(df_result.head(30))
@@ -79,6 +84,8 @@ def data_unification(league,team,year_start, year_end,):
 
 
 def map_position(positions_string):
+    positions_string = positions_string.replace(' ','')
+    print(f'POSITION TO MAP {positions_string}')
 
     positions = positions_string.split(',')
 
@@ -95,6 +102,7 @@ def map_position(positions_string):
             # Just in case
             field_positions = position.split('(')[1]
             field_positions = field_positions.replace(')','')
+            # Check if left right central are different positions
             number_of_positions_played += len(field_positions)-1
             
             field_positions = ' '+field_position_map[field_positions]
@@ -110,8 +118,61 @@ def map_position(positions_string):
 
     return mapped_positions_string, number_of_positions_played
 
-def apply_basic_rating_formula(df):
-    return
+def apply_mls_rating_formula(position, games_started, games_sub, minutes_played, points, goals, xGoals, assists, xAssists, shots, offsides_per_game, clean_sheets, total_fouls, yellow_cards, red_cards, number_of_positions_played):
+    
+    # Positive term  computation
+    games_started_ratio = games_started / 30
+    minutes_played_ratio = minutes_played / ((games_started + games_sub) * 30)
+    points_per_minute_played = points / minutes_played
+
+    match position.split(' ')[0]:
+        case 'Forward':
+            goals_scaled = goals / 3
+            assists_scaled = assists / 2
+            team_total_clean_sheets_scaled = clean_sheets / 30
+            fouls_commited_per_minute_scaled = total_fouls / minutes_played
+        case 'Midfielder':
+            goals_scaled = goals / 1
+            assists_scaled = assists / 3
+            team_total_clean_sheets_scaled = clean_sheets / 20
+            fouls_commited_per_minute_scaled = (total_fouls / minutes_played) * 1.5
+        case 'Defender':
+            goals_scaled = goals 
+            assists_scaled = assists 
+            team_total_clean_sheets_scaled = clean_sheets / 10
+            fouls_commited_per_minute_scaled = (total_fouls / minutes_played) * 2
+
+    goals_term = goals_scaled / xGoals
+    assist_term = assists_scaled / xAssists
+
+    goals_per_minute_played = goals / minutes_played
+    #find shots on goal
+    goals_on_goal = goals / shots
+
+    assists_per_minute = assists / minutes_played
+    goals_per_offsides = goals / (offsides_per_game * (games_started + games_sub))
+    team_total_clean_sheets_scaled /= clean_sheets * ((minutes_played / 90 )/ (games_started + games_sub)) # XTShot pos - X Total team clean sheets | until then 30%
+
+    # Positive term merge
+    positive_term = games_started_ratio + minutes_played_ratio + points_per_minute_played + goals_term + \
+                     assist_term + goals_per_minute_played + goals_on_goal + \
+                     assists_per_minute + goals_per_offsides + team_total_clean_sheets_scaled
+    
+
+    # Negative term computation
+    expected_fouls_commited_per_minute = total_fouls * ((minutes_played / 90 )/ (games_started + games_sub)) 
+    yellow_cards_scaled = yellow_cards / 10
+    card_per_minute = (yellow_cards+red_cards)/minutes_played
 
 
-#df = data_unification('bundesliga','Bayer Leverkusen', 2014,2015)
+    # Negative term merge
+    negative_term = (fouls_commited_per_minute_scaled* expected_fouls_commited_per_minute) +\
+                     yellow_cards_scaled + red_cards + card_per_minute 
+
+    bonus = 0.5 if number_of_positions_played > 1 else 0
+
+
+    return positive_term - negative_term + bonus
+
+
+df = data_unification('bundesliga','Bayer Leverkusen', 2014,2015)
