@@ -1,3 +1,4 @@
+from ctypes import pointer
 from math import gamma
 import pandas as pd
 from constants import *
@@ -32,7 +33,8 @@ def data_unification(league,team,year_start, year_end,):
 
     # from offensive 
     # games, position, start_games, sub_games, mins, goals, assists, shot_per_game, offsides_per_game
-    df_result = df_offensive [['name','position', 'start_games','sub_games', 'mins', 'goals', 'assists', 'shot_per_game', 'offsides_per_game']]
+    df_result = df_offensive [['name', 'position', 'start_games', 'sub_games', 'mins', 'goals', 'assists', 'shot_per_game', 'offsides_per_game', 'rating']]
+    df_result['total_shots'] = df_result['shot_per_game'] * (df_result['start_games'] +  df_result['sub_games'])
 
     #df_result = df_result.drop( ['Unnamed: 0', 'player_number', 'age', 'tall', 'weight','key_passes_per_game', 'dribbles_per_game', 'fouled_per_game', 'dispossessed_per_game', 'bad_control_per_game' ], axis = 1)
 
@@ -64,7 +66,7 @@ def data_unification(league,team,year_start, year_end,):
     # player_name, xG, xGA
     df_player_stats = df_player_stats[["player_name", "xG", "xA"]]
     df_result = pd.merge(df_result, df_player_stats, left_on='name', right_on='player_name')
-
+    df_result = df_result.drop(['player_name'],axis=1)
     df_result = df_result[df_result.columns.drop(list(df_result.filter(regex = "Unnamed")))]
 
 
@@ -72,20 +74,34 @@ def data_unification(league,team,year_start, year_end,):
 
     #df_result['main_position'] = df.apply(lambda row: row.Cost - (row.Cost * 0.1), axis = 1)
 
-    df_result['mapped_position'], df_result['number_of_position'] = zip(*df_result['position'].map(map_position))
+    df_result['mapped_position'], df_result['number_of_positions'] = zip(*df_result['position'].map(map_position))
 
-    df['rating_mls_formula'] = df.apply(lambda x: apply_mls_rating_formula(a = x['a'], b = x['b'], c = x['c']), axis=1)
+    #position, games_started, games_sub, minutes_played, points, goals,
+    # xGoals, assists, xAssists, shots,
+    # offsides_per_game, clean_sheets,
+    # total_fouls, yellow_cards, red_cards, number_of_positions_played
+    df_result['rating_mls_formula'] = df_result.apply(lambda x: apply_mls_rating_formula( \
+                                    position = x['mapped_position'],games_started = x['start_games'], games_sub = x['sub_games'], \
+                                    minutes_played = x['mins'], points = x['points'], goals = x['goals'],\
+                                    xGoals = x['xG'], assists = x['assists'], xAssists = x['xA'], shots = x['total_shots'],\
+                                    offsides_per_game = x['offsides_per_game'], clean_sheets = x['clean_sheets'],\
+                                    total_fouls = x['total_fouls'], yellow_cards = x['yellow_cards'], red_cards = x['red_cards'],\
+                                    number_of_positions_played = x['number_of_positions']\
+                                    ), axis=1)
+
+    df_result = df_result.sort_values(by = 'rating_mls_formula', ascending = False)
 
     #df_result = df_result.drop(['Unnamed: 0','name','age','position','tall','weight','games','mins','rating'],axis=1)
     print(df_result.head(30))
     print(df_result.columns)
+    print(df_result.to_csv('test_rating_Leverkusen.csv'))
 
     return df_result
 
 
 def map_position(positions_string):
     positions_string = positions_string.replace(' ','')
-    print(f'POSITION TO MAP {positions_string}')
+    #print(f'POSITION TO MAP {positions_string}')
 
     positions = positions_string.split(',')
 
@@ -93,7 +109,7 @@ def map_position(positions_string):
     mapped_positions = []
 
     for position in positions:
-        print(position)
+        #print(position)
         if '(' in position:
 
             playing_role = position.split('(')[0]
@@ -118,14 +134,35 @@ def map_position(positions_string):
 
     return mapped_positions_string, number_of_positions_played
 
-def apply_mls_rating_formula(position, games_started, games_sub, minutes_played, points, goals, xGoals, assists, xAssists, shots, offsides_per_game, clean_sheets, total_fouls, yellow_cards, red_cards, number_of_positions_played):
+def apply_mls_rating_formula(position, games_started, games_sub, minutes_played, points, goals, xGoals,\
+                            assists, xAssists, shots, offsides_per_game, clean_sheets,\
+                            total_fouls, yellow_cards, red_cards, number_of_positions_played\
+                            ):
     
     # Positive term  computation
     games_started_ratio = games_started / 30
     minutes_played_ratio = minutes_played / ((games_started + games_sub) * 30)
     points_per_minute_played = points / minutes_played
 
-    match position.split(' ')[0]:
+
+    goals_scaled = 0
+    assists_scaled = 0
+    team_total_clean_sheets_scaled = 0
+    fouls_commited_per_minute_scaled = 0
+
+
+    #print(f'POSITION PREDEFINED {position}')
+
+    if ' ' in position:
+        position = position.split(' ')[0]
+
+    #print(f'POSITION REDEFINED {position}')
+
+    if(position == 'GK'):
+        print('GK 1')
+        return 1
+
+    match position:
         case 'Forward':
             goals_scaled = goals / 3
             assists_scaled = assists / 2
@@ -141,16 +178,38 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
             assists_scaled = assists 
             team_total_clean_sheets_scaled = clean_sheets / 10
             fouls_commited_per_minute_scaled = (total_fouls / minutes_played) * 2
+        case _:
+            print('GK 2')
+            goals_scaled = goals 
+            assists_scaled = assists 
+            team_total_clean_sheets_scaled = clean_sheets / 10
+            fouls_commited_per_minute_scaled = (total_fouls / minutes_played) * 2
 
-    goals_term = goals_scaled / xGoals
-    assist_term = assists_scaled / xAssists
+    if xGoals == 0:
+        goals_term = 0
+    else:
+        goals_term = goals_scaled / xGoals
+    
+    if xAssists == 0:
+        assist_term = 0
+    else :
+        assist_term = assists_scaled / xAssists
 
-    goals_per_minute_played = goals / minutes_played
+    if minutes_played == 0:
+        goals_per_minute_played = 0
+    else :
+        goals_per_minute_played = goals / minutes_played
     #find shots on goal
-    goals_on_goal = goals / shots
+    if shots == 0 :
+        goals_on_goal = 0
+    else :
+     goals_on_goal = goals / shots
 
     assists_per_minute = assists / minutes_played
-    goals_per_offsides = goals / (offsides_per_game * (games_started + games_sub))
+    if((games_started + games_sub) == 0 ) or (offsides_per_game == 0):
+        goals_per_offsides = 0
+    else:
+        goals_per_offsides = goals / (offsides_per_game * (games_started + games_sub))
     team_total_clean_sheets_scaled /= clean_sheets * ((minutes_played / 90 )/ (games_started + games_sub)) # XTShot pos - X Total team clean sheets | until then 30%
 
     # Positive term merge
@@ -176,3 +235,4 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
 
 
 df = data_unification('bundesliga','Bayer Leverkusen', 2014,2015)
+df.to_csv("sugi_pule_sergiu.csv")
