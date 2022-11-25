@@ -91,6 +91,10 @@ def data_unification(league,team,year_start, year_end,):
 
     df_result = df_result.sort_values(by = 'rating_mls_formula', ascending = False)
 
+    cols_at_end = ['rating', 'rating_mls_formula']
+    df_result = df_result[[c for c in df_result if c not in cols_at_end] 
+        + [c for c in cols_at_end if c in df_result]]
+
     #df_result = df_result.drop(['Unnamed: 0','name','age','position','tall','weight','games','mins','rating'],axis=1)
     print(df_result.head(30))
     print(df_result.columns)
@@ -159,7 +163,7 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
     #print(f'POSITION REDEFINED {position}')
 
     if(position == 'GK'):
-        print('GK 1')
+        #print('GK 1')
         return 1
 
     match position:
@@ -179,7 +183,7 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
             team_total_clean_sheets_scaled = clean_sheets / 10
             fouls_commited_per_minute_scaled = (total_fouls / minutes_played) * 2
         case _:
-            print('GK 2')
+            #print('GK 2')
             goals_scaled = goals 
             assists_scaled = assists 
             team_total_clean_sheets_scaled = clean_sheets / 10
@@ -199,11 +203,12 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
         goals_per_minute_played = 0
     else :
         goals_per_minute_played = goals / minutes_played
+
     #find shots on goal
     if shots == 0 :
         goals_on_goal = 0
     else :
-     goals_on_goal = goals / shots
+     goals_on_goal = goals / (shots*0.3)
 
     assists_per_minute = assists / minutes_played
     if((games_started + games_sub) == 0 ) or (offsides_per_game == 0):
@@ -235,4 +240,4 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
 
 
 df = data_unification('bundesliga','Bayer Leverkusen', 2014,2015)
-df.to_csv("sugi_pule_sergiu.csv")
+df.to_csv("leverskusen_2014_2015_rating.csv")
