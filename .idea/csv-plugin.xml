@@ -3,14 +3,7 @@
   <component name="CsvFileAttributes">
     <option name="attributeMap">
       <map>
-        <entry key="\dataframes\player_team_stats\epl\season_2014_2015\Arsenal_epl_players_stats_in_season_2014_2015.csv">
-          <value>
-            <Attribute>
-              <option name="separator" value="," />
-            </Attribute>
-          </value>
-        </entry>
-        <entry key="\initial_report.csv">
+        <entry key="\leverskusen_2014_2015_rating.csv">
           <value>
             <Attribute>
               <option name="separator" value="," />
