@@ -1,6 +1,11 @@
-from ctypes import pointer
-from math import gamma
 import pandas as pd
+pd.set_option('display.max_columns', None) 
+pd.options.mode.chained_assignment = None
+
+import time
+import logging
+logger = logging.getLogger('my_module_name')
+
 from constants import *
 
 playing_role_map = whoscored_player_position_dict['playing_role']
@@ -8,6 +13,8 @@ field_position_map = whoscored_player_position_dict['field_position']
 simplified_position_map = whoscored_player_position_dict['simplified_role']
 
 def data_unification(league,team,year_start, year_end,):
+    logging.basicConfig(filename = f'debugger_logs/mls_formula_logs.log', encoding='utf-8', level=logging.INFO, filemode = 'w')
+
     # Path generation for whoscored and understat dataframes
     # whoscored: offensive, defensive, summary,
     # understat: clean_sheet, player_team_stats
@@ -81,6 +88,7 @@ def data_unification(league,team,year_start, year_end,):
     # offsides_per_game, clean_sheets,
     # total_fouls, yellow_cards, red_cards, number_of_positions_played
     df_result['rating_mls_formula'] = df_result.apply(lambda x: apply_mls_rating_formula( \
+                                    name = x['name'],\
                                     position = x['mapped_position'],games_started = x['start_games'], games_sub = x['sub_games'], \
                                     minutes_played = x['mins'], points = x['points'], goals = x['goals'],\
                                     xGoals = x['xG'], assists = x['assists'], xAssists = x['xA'], shots = x['total_shots'],\
@@ -104,6 +112,7 @@ def data_unification(league,team,year_start, year_end,):
 
 
 def map_position(positions_string):
+
     positions_string = positions_string.replace(' ','')
     #print(f'POSITION TO MAP {positions_string}')
 
@@ -138,12 +147,16 @@ def map_position(positions_string):
 
     return mapped_positions_string, number_of_positions_played
 
-def apply_mls_rating_formula(position, games_started, games_sub, minutes_played, points, goals, xGoals,\
+def apply_mls_rating_formula(name, position, games_started, games_sub, minutes_played, points, goals, xGoals,\
                             assists, xAssists, shots, offsides_per_game, clean_sheets,\
                             total_fouls, yellow_cards, red_cards, number_of_positions_played\
                             ):
-    
     # Positive term  computation
+
+    print(f'Name {name} | {position}')
+    logging.info(f'Name {name} | {position}')
+    
+
     games_started_ratio = games_started / 30
     minutes_played_ratio = minutes_played / ((games_started + games_sub) * 30)
     points_per_minute_played = points / minutes_played
@@ -183,7 +196,8 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
             team_total_clean_sheets_scaled = clean_sheets / 10
             fouls_commited_per_minute_scaled = (total_fouls / minutes_played) * 2
         case _:
-            #print('GK 2')
+            # GOALKEEPER
+            #print('GK')
             goals_scaled = goals 
             assists_scaled = assists 
             team_total_clean_sheets_scaled = clean_sheets / 10
@@ -218,6 +232,16 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
     team_total_clean_sheets_scaled /= clean_sheets * ((minutes_played / 90 )/ (games_started + games_sub)) # XTShot pos - X Total team clean sheets | until then 30%
 
     # Positive term merge
+    print('POSITIVE TERM')
+    logging.info('POSITIVE TERM')
+    print(f'Games_started_ratio {round(games_started_ratio,2)} Minutes_played_ratio {round(minutes_played_ratio,2)} Points_per_minute_played {round(points_per_minute_played,2)} Goal_term {round(goals_term,2)}')
+    logging.info(f'Games_started_ratio {round(games_started_ratio,2)} Minutes_played_ratio {round(minutes_played_ratio,2)} Points_per_minute_played {round(points_per_minute_played,2)} Goal_term {round(goals_term,2)}')
+    print(f'Assist_term {round(assist_term,2)} Goals_per_minute_played {round(goals_per_minute_played,2)} Goal_on_goal {round(goals_on_goal,2)}')
+    logging.info(f'Assist_term {round(assist_term,2)} Goals_per_minute_played {round(goals_per_minute_played,2)} Goal_on_goal {round(goals_on_goal,2)}')
+    print(f'Assists_per_minute {round(assists_per_minute,2)} Goals_per_offsides {round(goals_per_offsides,2)} Teams_total_clean_sheets_scaled {round(team_total_clean_sheets_scaled,2)}')
+    logging.info(f'Assists_per_minute {round(assists_per_minute,2)} Goals_per_offsides {round(goals_per_offsides,2)} Teams_total_clean_sheets_scaled {round(team_total_clean_sheets_scaled,2)}')
+
+
     positive_term = games_started_ratio + minutes_played_ratio + points_per_minute_played + goals_term + \
                      assist_term + goals_per_minute_played + goals_on_goal + \
                      assists_per_minute + goals_per_offsides + team_total_clean_sheets_scaled
@@ -230,11 +254,22 @@ def apply_mls_rating_formula(position, games_started, games_sub, minutes_played,
 
 
     # Negative term merge
+    print('NEGATIVE TERM')
+    logging.info('NEGATIVE TERM')
+    print(f'Fouls_commited_per_minute_scaled {round(fouls_commited_per_minute_scaled,2)} Expected_fouls_commited_per_minute {round(expected_fouls_commited_per_minute,2)} MUL {round(fouls_commited_per_minute_scaled * expected_fouls_commited_per_minute,2)}')
+    logging.info(f'Fouls_commited_per_minute_scaled {round(fouls_commited_per_minute_scaled,2)} Expected_fouls_commited_per_minute {round(expected_fouls_commited_per_minute,2)} MUL {round(fouls_commited_per_minute_scaled * expected_fouls_commited_per_minute,2)}')
+    print(f'Yellow_cards_scaled {round(yellow_cards_scaled,2)} Red_cards {round(red_cards,2)} Card_per_minute {round(card_per_minute,2)}')
+    logging.info(f'Yellow_cards_scaled {round(yellow_cards_scaled,2)} Red_cards {round(red_cards,2)} Card_per_minute {round(card_per_minute,2)}')
+
     negative_term = (fouls_commited_per_minute_scaled* expected_fouls_commited_per_minute) +\
                      yellow_cards_scaled + red_cards + card_per_minute 
 
     bonus = 0.5 if number_of_positions_played > 1 else 0
-
+    
+    print(f'Pos {round(positive_term,2)} Neg {round(negative_term,2)} Bonus {round(bonus,2)}')
+    logging.info(f'Pos {round(positive_term,2)} Neg {round(negative_term,2)} Bonus {round(bonus,2)}')
+    print()
+    logging.info("________________________________________________________________________________________________________________________________")
 
     return positive_term - negative_term + bonus
 
