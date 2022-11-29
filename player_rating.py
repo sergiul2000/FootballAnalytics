@@ -186,7 +186,7 @@ def apply_mls_rating_formula(name, position, games_started, games_sub, minutes_p
             team_total_clean_sheets_scaled = clean_sheets / 30
             fouls_commited_per_minute_scaled = total_fouls / minutes_played
         case 'Midfielder':
-            goals_scaled = goals / 1
+            goals_scaled = goals / 2
             assists_scaled = assists / 3
             team_total_clean_sheets_scaled = clean_sheets / 20
             fouls_commited_per_minute_scaled = (total_fouls / minutes_played) * 1.5
