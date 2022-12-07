@@ -86,9 +86,22 @@ print(DT_regressor.score(X_test, y_test))
 
 #plot_prediction_vs_true_values(y_test, y_pred_test, 'test')
 
-plot_prediction_vs_true_values(y_train, y_pred, 'train')
-plot_prediction_vs_true_values(y_test, y_test, 'test')
+DT_regressor.plot_tree(y_pred)
+DT_regressor.plot_tree(y_pred_test)
+
+
+#plot_prediction_vs_true_values(y_train, y_pred, 'train')
+#plot_prediction_vs_true_values(y_test, y_test, 'test')
 plt.show()
+
+# TODO: K-fold Validation 
+# TODO: Polynomial Regressor
+# TODO: RandomForest Regressor
+# TODO: XGBoost Regressor
+# TODO: Plot each regressor both for train and for test
+
+
+
 
 # we use linear regression as a base!!! ** sometimes misunderstood **
 # regression_model = LinearRegression()
