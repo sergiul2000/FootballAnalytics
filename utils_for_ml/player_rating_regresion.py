@@ -52,7 +52,8 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 20, tes
 
 # poly_model.fit(poly_x_values, y_train)
 
-DT_regressor = DecisionTreeRegressor(max_depth = 20).fit(X_train, y_train)
+#HYPER PARAMETER TUNNING PE ASTA
+DT_regressor = DecisionTreeRegressor(max_depth = 20, min_samples_leaf = 20, ccp_alpha=0.0001).fit(X_train, y_train)
 y_pred = DT_regressor.predict(X_train)  # Predictions on Train Data
 # print(y_pred)
 # print(df['rating'])
@@ -86,8 +87,8 @@ print(DT_regressor.score(X_test, y_test))
 
 #plot_prediction_vs_true_values(y_test, y_pred_test, 'test')
 
-DT_regressor.plot_tree(y_pred)
-DT_regressor.plot_tree(y_pred_test)
+# DT_regressor.plot_prediction_vs_true_values(y_pred)
+# DT_regressor.plot_prediction_vs_true_values(y_pred_test)
 
 
 #plot_prediction_vs_true_values(y_train, y_pred, 'train')
