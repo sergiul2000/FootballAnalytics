@@ -1,8 +1,9 @@
-from sklearn.preprocessing import PolynomialFeatures
+# from sklearn import __all__
+# from sklearn.preprocessing import PolynomialFeatures
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, accuracy_score
 from sklearn.model_selection import train_test_split
-from sklearn.tree import DecisionTreeRegressor
+# from sklearn.tree import DecisionTreeRegressor
 import math
 
 # dataframes
@@ -12,6 +13,7 @@ import numpy as np
 # visualization
 import matplotlib.pyplot as plt
 # import xgboost as xgb
+from sklearn.tree import DecisionTreeRegressor
 
 
 def plot_prediction_vs_true_values(y_true, y_pred, title='train'):
@@ -94,7 +96,22 @@ DT_regressor.plot_tree(y_pred_test)
 #plot_prediction_vs_true_values(y_test, y_test, 'test')
 plt.show()
 
-# TODO: K-fold Validation 
+# TODO: K-fold Validation
+# import numpy as np
+from sklearn.model_selection import KFold, train_test_split
+
+# X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
+# y = np.array([1, 2, 3, 4])
+# kf = KFold(n_splits=2)
+# kf.get_n_splits(X)
+#
+# print(kf)
+# KFold(n_splits=2, random_state=None, shuffle=False)
+# for i, (train_index, test_index) in enumerate(kf.split(X)):
+#     print(f"Fold {i}:")
+#     print(f"  Train: index={train_index}")
+#     print(f"  Test:  index={test_index}")
+
 # TODO: Polynomial Regressor
 # TODO: RandomForest Regressor
 # TODO: XGBoost Regressor
