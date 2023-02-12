@@ -1,8 +1,14 @@
 # from sklearn import __all__
-# from sklearn.preprocessing import PolynomialFeatures
+from sklearn.preprocessing import PolynomialFeatures
+from sklearn.model_selection import KFold, train_test_split
 from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, accuracy_score
 from sklearn.model_selection import train_test_split
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.model_selection import cross_val_score
+from numpy import mean
+from numpy import absolute
+from numpy import sqrt
 # from sklearn.tree import DecisionTreeRegressor
 import math
 
@@ -17,15 +23,15 @@ from sklearn.tree import DecisionTreeRegressor
 
 
 def plot_prediction_vs_true_values(y_true, y_pred, title='train'):
-    #On Train
-    plt.figure(figsize=(10,10))
-    plt.scatter(y_true, y_pred, c = 'crimson')
+    # On Train
+    plt.figure(figsize=(10, 10))
+    plt.scatter(y_true, y_pred, c='crimson')
     plt.yscale('log')
     plt.xscale('log')
 
     p1 = max(max(y_pred), max(y_true))
     p2 = min(min(y_pred), min(y_true))
-    
+
     plt.xlabel('True Values', fontsize=15)
     plt.ylabel('Predictions', fontsize=15)
     plt.axis('equal')
@@ -36,13 +42,14 @@ def plot_prediction_vs_true_values(y_true, y_pred, title='train'):
 df = pd.read_csv('utils_for_ml/unified_teams.csv')
 # print(df.sample(n=15))
 
-X = df[
+x = df[
     ['start_games', 'sub_games', 'mins', 'goals', 'assists', 'shot_per_game', 'offsides_per_game', 'total_shots',
      'fouls_per_game', 'total_fouls', 'yellow_cards', 'red_cards', 'clean_sheets', 'points', 'xG',
      'xA']].values  # ,'mapped_position','number_of_positions']].values
 y = df['rating'].values
 
-X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 20, test_size = 0.25, shuffle = True)
+x_train, x_test, y_train, y_test = train_test_split(
+    x, y, random_state=20, test_size=0.25, shuffle=True)
 
 
 # degree = 3
@@ -54,99 +61,149 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, random_state = 20, tes
 
 # poly_model.fit(poly_x_values, y_train)
 
-#HYPER PARAMETER TUNNING PE ASTA
-DT_regressor = DecisionTreeRegressor(max_depth = 20, min_samples_leaf = 20, ccp_alpha=0.0001).fit(X_train, y_train)
-y_pred = DT_regressor.predict(X_train)  # Predictions on Train Data
+# HYPER PARAMETER TUNNING PE ASTA
+
+############################################################################################################
+# Decision Tree
+DT_regressor = DecisionTreeRegressor(
+    max_depth=20, min_samples_leaf=20, ccp_alpha=0.0001).fit(x_train, y_train)
+y_pred_dt = DT_regressor.predict(x_train)  # Predictions on Train Data
 # print(y_pred)
 # print(df['rating'])
 
-#On Train
-mean_squared_error(y_train, y_pred, squared=False)
-MSE = np.square(np.subtract(y_train,y_pred)).mean()
+# On Train
+mean_squared_error(y_train, y_pred_dt, squared=False)
+MSE = np.square(np.subtract(y_train, y_pred_dt)).mean()
 
 RMSE = math.sqrt(MSE)
 print(f'RMSE for Decision Tree Regresor on Train: {RMSE}')
 
 print('Accuracy on train')
-print(DT_regressor.score(X_train, y_train))
+print(DT_regressor.score(x_train, y_train))
 
-#plot_prediction_vs_true_values(y_train, y_pred, 'train')
+# plot_prediction_vs_true_values(y_train, y_pred, 'train')
 
 
-#On test
-y_pred_test = DT_regressor.predict(X_test)  # Predictions on Testing data
+# On test
+y_pred_test = DT_regressor.predict(x_test)  # Predictions on Testing data
 
-mean_squared_error(y_test, y_pred_test, squared = False)
-MSE = np.square(np.subtract(y_test,y_pred_test)).mean()
+mean_squared_error(y_test, y_pred_test, squared=False)
+MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 
 RMSE = math.sqrt(MSE)
-print(f'RMSE for Decision Tree Regresor on Train: {RMSE}')
+print(f'RMSE for Decision Tree Regresor on Test: {RMSE}')
 
 print('Accuracy on test')
-print(DT_regressor.score(X_test, y_test))
+print(DT_regressor.score(x_test, y_test))
+print()
 
-
-
-#plot_prediction_vs_true_values(y_test, y_pred_test, 'test')
+plot_prediction_vs_true_values(y_test, y_pred_test, 'test')
 
 # DT_regressor.plot_prediction_vs_true_values(y_pred)
 # DT_regressor.plot_prediction_vs_true_values(y_pred_test)
 
 
-#plot_prediction_vs_true_values(y_train, y_pred, 'train')
-#plot_prediction_vs_true_values(y_test, y_test, 'test')
-plt.show()
+# plot_prediction_vs_true_values(y_train, y_pred, 'train')
+# plot_prediction_vs_true_values(y_test, y_test, 'test')
+# plt.show()
 
-# TODO: K-fold Validation
-# import numpy as np
-from sklearn.model_selection import KFold, train_test_split
-
-# X = np.array([[1, 2], [3, 4], [1, 2], [3, 4]])
-# y = np.array([1, 2, 3, 4])
-# kf = KFold(n_splits=2)
-# kf.get_n_splits(X)
-#
-# print(kf)
-# KFold(n_splits=2, random_state=None, shuffle=False)
-# for i, (train_index, test_index) in enumerate(kf.split(X)):
-#     print(f"Fold {i}:")
-#     print(f"  Train: index={train_index}")
-#     print(f"  Test:  index={test_index}")
-
+# Done TODO: K-fold Validation
 # TODO: Polynomial Regressor
-# TODO: RandomForest Regressor
+# Done TODO: RandomForest Regressor
 # TODO: XGBoost Regressor
 # TODO: Plot each regressor both for train and for test
 
 
+############################################################################################################
+# RandomForest
+RF_regressor = RandomForestRegressor(n_estimators=100, random_state=0)
+
+RF_regressor.fit(x_train, y_train)
+
+Y_pred_rf = RF_regressor.predict(x_train)
 
 
-# we use linear regression as a base!!! ** sometimes misunderstood **
-# regression_model = LinearRegression()
+mean_squared_error(y_train, Y_pred_rf, squared=False)
+MSE = np.square(np.subtract(y_train, Y_pred_rf)).mean()
 
-# regression_model.fit(poly_x_values, y_values)
+RMSE = math.sqrt(MSE)
+print(f'RMSE for Random Forest on Train: {RMSE}')
 
-# y_pred = regression_model.predict(poly_x_values)
 
-# regression_model.coef_
+print('Accuracy on train')
+print(RF_regressor.score(x_train, y_train))
 
-# mean_squared_error(y_values, y_pred, squared=False)
 
-# check our accuracy for each degree, the lower the error the better!
-# number_degrees = [1,2,3,4,5,6,7]
-# plt_mean_squared_error = []
-# for degree in number_degrees:
+# On test
+y_pred_test = RF_regressor.predict(x_test)  # Predictions on Testing data
 
-#    poly_model = PolynomialFeatures(degree=degree)
+mean_squared_error(y_test, y_pred_test, squared=False)
+MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 
-#    poly_x_values = poly_model.fit_transform(x_values)
-#    poly_model.fit(poly_x_values, y_values)
+RMSE = math.sqrt(MSE)
+print(f'RMSE for Decision Tree Regresor on Test: {RMSE}')
 
-#    regression_model = LinearRegression()
-#    regression_model.fit(poly_x_values, y_values)
-#    y_pred = regression_model.predict(poly_x_values)
+print('Accuracy on test')
+print(RF_regressor.score(x_test, y_test))
+print()
 
-#    plt_mean_squared_error.append(mean_squared_error(y_values, y_pred, squared=False))
+############################################################################################################
+# K-fold Validation
 
-# plt.scatter(number_degrees,plt_mean_squared_error, color="green")
-# plt.plot(number_degrees,plt_mean_squared_error, color="red")
+# define cross-validation method to use
+crossValidation = KFold(n_splits=10, random_state=1, shuffle=True)
+
+# use k-fold CV to evaluate model
+score_dt = cross_val_score(DT_regressor, x, y, scoring='neg_mean_squared_error',
+                           cv=crossValidation, n_jobs=-1)
+score_rf = cross_val_score(RF_regressor, x, y, scoring='neg_mean_squared_error',
+                           cv=crossValidation, n_jobs=-1)
+
+# view RMSE
+RMSE = sqrt(mean(absolute(score_dt)))
+print(f'RMSE for K-fold validation with Decision Tree model: {RMSE}')
+RMSE = sqrt(mean(absolute(score_rf)))
+print(f'RMSE for K-fold validation with Random forest model: {RMSE}')
+
+
+############################################################################################################
+# Polynomial Regressor
+
+
+lin = LinearRegression()
+lin.fit(x_train, y_train)
+
+poly = PolynomialFeatures(degree=4)
+X_poly_train = poly.fit_transform(x_train)
+
+poly.fit(X_poly_train, y_train)
+P_Regressor = LinearRegression()
+P_Regressor.fit(X_poly_train, y_train)
+
+y_pred_pr = P_Regressor.predict(X_poly_train)
+
+mean_squared_error(y_train, y_pred_pr, squared=False)
+MSE = np.square(np.subtract(y_train, y_pred_pr)).mean()
+
+RMSE = math.sqrt(MSE)
+print(f'RMSE for Polinomyal regressor on Train: {RMSE}')
+
+
+print('Accuracy on train')
+
+# de aici nu mai merge
+# print(P_Regressor.score(poly.fit_transform(x_train), poly.fit_transform(y_train)))
+
+
+# # On test
+# y_pred_test = P_Regressor.predict(x_test)  # Predictions on Testing data
+
+# mean_squared_error(y_test, y_pred_test, squared=False)
+# MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
+
+# RMSE = math.sqrt(MSE)
+# print(f'RMSE for Polynomial Regresor on Test: {RMSE}')
+
+# print('Accuracy on test')
+# print(P_Regressor.score(x_test, y_test))
+# print()
