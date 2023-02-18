@@ -245,12 +245,13 @@ my_logger.print_logs_in_file(f'RMSE for Polinomyal regressor on Train: {RMSE}')
 
 my_logger.print_logs_in_file('Accuracy on train')
 
-# linia asta inca nu merge
 my_logger.print_logs_in_file(str(P_Regressor.score(X_poly_train, y_train)))
 
 
+# linia asta inca nu merge
 # plot_polynomial_regression(
 #     y_test, y_test, 'train Polynomial regressor')
+
 # On test
 
 X_poly_test = poly.fit_transform(x_test)
