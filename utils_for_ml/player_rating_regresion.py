@@ -1,4 +1,6 @@
 # from sklearn import __all__
+from xgboost import XGBRegressor
+from sklearn import ensemble
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.model_selection import KFold, train_test_split
 from sklearn.linear_model import LinearRegression
@@ -21,8 +23,10 @@ import matplotlib.pyplot as plt
 # import xgboost as xgb
 from sklearn.tree import DecisionTreeRegressor
 
+from my_logger import logger
 
-def plot_prediction_vs_true_values(y_true, y_pred, title='train'):
+
+def plot_prediction_vs_true_values(y_true, y_pred, title):
     # On Train
     plt.figure(figsize=(10, 10))
     plt.scatter(y_true, y_pred, c='crimson')
@@ -35,9 +39,27 @@ def plot_prediction_vs_true_values(y_true, y_pred, title='train'):
     plt.xlabel('True Values', fontsize=15)
     plt.ylabel('Predictions', fontsize=15)
     plt.axis('equal')
-    plt.title(f"TrueVSPred for {title}")
+    plt.title(f"True VS Pred for {title}")
     plt.plot([p1, p2], [p1, p2], 'b-')
+    plt.show()
 
+
+def plot_polynomial_regression(y_true, y_pred, title):
+    plt.scatter(y_true, y_pred, color='blue')
+
+    lin2 = LinearRegression()
+    plt.plot(y_pred, lin2.predict(poly.fit_transform(y_true)), color='red')
+    plt.title('Polynomial Regression')
+    plt.xlabel('True values')
+    plt.ylabel('Predicted values')
+
+    plt.show()
+
+
+my_logger = logger(
+    'D:\\aaLicenta\\licenta\FootballAnalytics\\utils_for_ml\\logs_of_player_rating_regresion.txt')
+
+my_logger.print_logs_in_file('start')
 
 df = pd.read_csv('utils_for_ml/unified_teams.csv')
 # print(df.sample(n=15))
@@ -76,12 +98,14 @@ mean_squared_error(y_train, y_pred_dt, squared=False)
 MSE = np.square(np.subtract(y_train, y_pred_dt)).mean()
 
 RMSE = math.sqrt(MSE)
-print(f'RMSE for Decision Tree Regresor on Train: {RMSE}')
+my_logger.print_logs_in_file(
+    f'RMSE for Decision Tree Regresor on Train: {RMSE}')
 
-print('Accuracy on train')
-print(DT_regressor.score(x_train, y_train))
+my_logger.print_logs_in_file('Accuracy on train')
+my_logger.print_logs_in_file(str(DT_regressor.score(x_train, y_train)))
 
-# plot_prediction_vs_true_values(y_train, y_pred, 'train')
+plot_prediction_vs_true_values(
+    y_train, y_pred_dt, 'train Decision Tree regressor')
 
 
 # On test
@@ -91,13 +115,15 @@ mean_squared_error(y_test, y_pred_test, squared=False)
 MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 
 RMSE = math.sqrt(MSE)
-print(f'RMSE for Decision Tree Regresor on Test: {RMSE}')
+my_logger.print_logs_in_file(
+    f'RMSE for Decision Tree Regresor on Test: {RMSE}')
 
-print('Accuracy on test')
-print(DT_regressor.score(x_test, y_test))
-print()
+my_logger.print_logs_in_file('Accuracy on test')
+my_logger.print_logs_in_file(str(DT_regressor.score(x_test, y_test)))
+my_logger.print_logs_in_file('')
 
-plot_prediction_vs_true_values(y_test, y_pred_test, 'test')
+plot_prediction_vs_true_values(
+    y_test, y_pred_test, 'test Decision Tree regressor')
 
 # DT_regressor.plot_prediction_vs_true_values(y_pred)
 # DT_regressor.plot_prediction_vs_true_values(y_pred_test)
@@ -108,10 +134,10 @@ plot_prediction_vs_true_values(y_test, y_pred_test, 'test')
 # plt.show()
 
 # Done TODO: K-fold Validation
-# TODO: Polynomial Regressor
+# Done (without plotting) TODO: Polynomial Regressor
 # Done TODO: RandomForest Regressor
-# TODO: XGBoost Regressor
-# TODO: Plot each regressor both for train and for test
+# Done TODO: XGBoost Regressor
+# Done TODO: Plot each regressor both for train and for test
 
 
 ############################################################################################################
@@ -127,12 +153,14 @@ mean_squared_error(y_train, Y_pred_rf, squared=False)
 MSE = np.square(np.subtract(y_train, Y_pred_rf)).mean()
 
 RMSE = math.sqrt(MSE)
-print(f'RMSE for Random Forest on Train: {RMSE}')
+my_logger.print_logs_in_file(f'RMSE for Random Forest on Train: {RMSE}')
 
 
-print('Accuracy on train')
-print(RF_regressor.score(x_train, y_train))
+my_logger.print_logs_in_file('Accuracy on train')
+my_logger.print_logs_in_file(str(RF_regressor.score(x_train, y_train)))
 
+plot_prediction_vs_true_values(
+    y_train, y_pred_dt, 'train Radnom Forest regressor')
 
 # On test
 y_pred_test = RF_regressor.predict(x_test)  # Predictions on Testing data
@@ -141,11 +169,108 @@ mean_squared_error(y_test, y_pred_test, squared=False)
 MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 
 RMSE = math.sqrt(MSE)
-print(f'RMSE for Decision Tree Regresor on Test: {RMSE}')
+my_logger.print_logs_in_file(
+    f'RMSE for Random Forest on Test: {RMSE}')
 
-print('Accuracy on test')
-print(RF_regressor.score(x_test, y_test))
-print()
+my_logger.print_logs_in_file('Accuracy on test')
+my_logger.print_logs_in_file(str(RF_regressor.score(x_test, y_test)))
+my_logger.print_logs_in_file('')
+
+plot_prediction_vs_true_values(
+    y_train, y_pred_dt, 'test Radnom Forest regressor')
+
+############################################################################################################
+# XGBoost
+# cu 100 de estimatoare merge cel mai bine
+XGB_Regressor = XGBRegressor(n_estimators=100, max_depth=7,
+                             eta=0.1, subsample=0.7, colsample_bytree=0.8).fit(x_train, y_train)
+y_pred_xgb = XGB_Regressor.predict(x_train)  # Predictions on Train Data
+
+
+# On Train
+mean_squared_error(y_train, y_pred_xgb, squared=False)
+MSE = np.square(np.subtract(y_train, y_pred_xgb)).mean()
+
+RMSE = math.sqrt(MSE)
+my_logger.print_logs_in_file(
+    f'RMSE for XGBoost Regresor on Train: {RMSE}')
+
+my_logger.print_logs_in_file('Accuracy on train')
+my_logger.print_logs_in_file(str(XGB_Regressor.score(x_train, y_train)))
+
+plot_prediction_vs_true_values(y_train, y_pred_xgb, 'train XGBoost regressor')
+
+
+# On test
+y_pred_test = XGB_Regressor.predict(x_test)  # Predictions on Testing data
+
+mean_squared_error(y_test, y_pred_test, squared=False)
+MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
+
+RMSE = math.sqrt(MSE)
+my_logger.print_logs_in_file(
+    f'RMSE for XGBoost Regresor on Test: {RMSE}')
+
+my_logger.print_logs_in_file('Accuracy on test')
+my_logger.print_logs_in_file(str(XGB_Regressor.score(x_test, y_test)))
+my_logger.print_logs_in_file('')
+
+plot_prediction_vs_true_values(y_test, y_pred_test, 'test XGBoost regressor')
+
+
+############################################################################################################
+# Polynomial Regressor
+
+
+# lin = LinearRegression()
+# lin.fit(x_train, y_train)
+
+# On train
+
+poly = PolynomialFeatures(degree=4)
+X_poly_train = poly.fit_transform(x_train)
+poly.fit(X_poly_train, y_train)
+
+P_Regressor = LinearRegression()
+P_Regressor.fit(X_poly_train, y_train)
+
+y_pred_pr = P_Regressor.predict(X_poly_train)
+
+mean_squared_error(y_train, y_pred_pr, squared=False)
+MSE = np.square(np.subtract(y_train, y_pred_pr)).mean()
+
+RMSE = math.sqrt(MSE)
+my_logger.print_logs_in_file(f'RMSE for Polinomyal regressor on Train: {RMSE}')
+
+
+my_logger.print_logs_in_file('Accuracy on train')
+
+# linia asta inca nu merge
+my_logger.print_logs_in_file(str(P_Regressor.score(X_poly_train, y_train)))
+
+
+# plot_polynomial_regression(
+#     y_test, y_test, 'train Polynomial regressor')
+# On test
+
+X_poly_test = poly.fit_transform(x_test)
+poly.fit(X_poly_test, y_test)
+
+
+P_Regressor.fit(X_poly_test, y_test)
+
+y_pred_test = P_Regressor.predict(X_poly_test)  # Predictions on Testing data
+
+mean_squared_error(y_test, y_pred_test, squared=False)
+MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
+
+RMSE = math.sqrt(MSE)
+my_logger.print_logs_in_file(f'RMSE for Polynomial Regresor on Test: {RMSE}')
+
+my_logger.print_logs_in_file('Accuracy on test')
+my_logger.print_logs_in_file(str(P_Regressor.score(X_poly_test, y_test)))
+# print()
+
 
 ############################################################################################################
 # K-fold Validation
@@ -158,52 +283,20 @@ score_dt = cross_val_score(DT_regressor, x, y, scoring='neg_mean_squared_error',
                            cv=crossValidation, n_jobs=-1)
 score_rf = cross_val_score(RF_regressor, x, y, scoring='neg_mean_squared_error',
                            cv=crossValidation, n_jobs=-1)
+score_xgb = cross_val_score(XGB_Regressor, x, y, scoring='neg_mean_squared_error',
+                            cv=crossValidation, n_jobs=-1)
 
 # view RMSE
 RMSE = sqrt(mean(absolute(score_dt)))
-print(f'RMSE for K-fold validation with Decision Tree model: {RMSE}')
+my_logger.print_logs_in_file(
+    f'RMSE for K-fold validation with Decision Tree model: {RMSE}')
 RMSE = sqrt(mean(absolute(score_rf)))
-print(f'RMSE for K-fold validation with Random forest model: {RMSE}')
+my_logger.print_logs_in_file(
+    f'RMSE for K-fold validation with Random Forest model: {RMSE}')
+RMSE = sqrt(mean(absolute(score_xgb)))
+my_logger.print_logs_in_file(
+    f'RMSE for K-fold validation with XGBoost Tree model: {RMSE}')
+my_logger.print_logs_in_file("")
 
 
-############################################################################################################
-# Polynomial Regressor
-
-
-lin = LinearRegression()
-lin.fit(x_train, y_train)
-
-poly = PolynomialFeatures(degree=4)
-X_poly_train = poly.fit_transform(x_train)
-
-poly.fit(X_poly_train, y_train)
-P_Regressor = LinearRegression()
-P_Regressor.fit(X_poly_train, y_train)
-
-y_pred_pr = P_Regressor.predict(X_poly_train)
-
-mean_squared_error(y_train, y_pred_pr, squared=False)
-MSE = np.square(np.subtract(y_train, y_pred_pr)).mean()
-
-RMSE = math.sqrt(MSE)
-print(f'RMSE for Polinomyal regressor on Train: {RMSE}')
-
-
-print('Accuracy on train')
-
-# de aici nu mai merge
-# print(P_Regressor.score(poly.fit_transform(x_train), poly.fit_transform(y_train)))
-
-
-# # On test
-# y_pred_test = P_Regressor.predict(x_test)  # Predictions on Testing data
-
-# mean_squared_error(y_test, y_pred_test, squared=False)
-# MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
-
-# RMSE = math.sqrt(MSE)
-# print(f'RMSE for Polynomial Regresor on Test: {RMSE}')
-
-# print('Accuracy on test')
-# print(P_Regressor.score(x_test, y_test))
-# print()
+my_logger.print_logs_in_file('end')
