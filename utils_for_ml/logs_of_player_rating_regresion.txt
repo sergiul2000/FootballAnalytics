@@ -526,3 +526,399 @@ Sat Feb 18 17:58:36 2023:  0.7552567761409552
 Sat Feb 18 17:58:58 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
 Sat Feb 18 17:58:58 2023:  Accuracy on train
 Sat Feb 18 17:58:58 2023:  0.9061148088445842
+Sun Feb 19 12:17:09 2023:  start
+Sun Feb 19 12:17:09 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106237
+Sun Feb 19 12:17:09 2023:  Accuracy on train
+Sun Feb 19 12:17:10 2023:  0.7293608912774722
+Sun Feb 19 12:17:19 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Sun Feb 19 12:17:19 2023:  Accuracy on test
+Sun Feb 19 12:17:19 2023:  0.6348435877001917
+
+Sun Feb 19 12:17:23 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Feb 19 12:17:23 2023:  Accuracy on train
+Sun Feb 19 12:17:23 2023:  0.9594172404304578
+Sun Feb 19 12:17:27 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Feb 19 12:17:27 2023:  Accuracy on test
+Sun Feb 19 12:17:27 2023:  0.7193175532687953
+
+Sun Feb 19 12:17:29 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Feb 19 12:17:29 2023:  Accuracy on train
+Sun Feb 19 12:17:29 2023:  0.9106224139134262
+Sun Feb 19 12:17:39 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Feb 19 12:17:39 2023:  Accuracy on test
+Sun Feb 19 12:17:39 2023:  0.7552567761409552
+
+Sun Feb 19 12:18:02 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Feb 19 12:18:02 2023:  Accuracy on train
+Sun Feb 19 12:18:02 2023:  0.9061148088445842
+Sun Feb 19 12:18:04 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Feb 19 12:18:04 2023:  Accuracy on test
+Sun Feb 19 12:18:04 2023:  0.9075364261285997
+Sun Feb 19 12:18:16 2023:  RMSE for K-fold validation with Decision Tree model: 0.24248805390073463
+Sun Feb 19 12:18:16 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Feb 19 12:18:16 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Feb 19 12:18:16 2023:  end
+Sun Feb 19 12:18:19 2023:  start
+Sun Feb 19 12:18:19 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106235
+Sun Feb 19 12:18:19 2023:  Accuracy on train
+Sun Feb 19 12:18:19 2023:  0.7293608912774723
+Sun Feb 19 12:26:08 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Sun Feb 19 12:26:08 2023:  Accuracy on test
+Sun Feb 19 12:26:08 2023:  0.6348435877001917
+
+Sun Feb 19 12:26:11 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Feb 19 12:26:11 2023:  Accuracy on train
+Sun Feb 19 12:26:11 2023:  0.9594172404304578
+Sun Feb 19 12:26:12 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Feb 19 12:26:12 2023:  Accuracy on test
+Sun Feb 19 12:26:12 2023:  0.7193175532687953
+
+Sun Feb 19 12:26:13 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Feb 19 12:26:13 2023:  Accuracy on train
+Sun Feb 19 12:26:13 2023:  0.9106224139134262
+Sun Feb 19 12:26:14 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Feb 19 12:26:14 2023:  Accuracy on test
+Sun Feb 19 12:26:14 2023:  0.7552567761409552
+
+Sun Feb 19 12:26:34 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Feb 19 12:26:34 2023:  Accuracy on train
+Sun Feb 19 12:26:34 2023:  0.9061148088445842
+Sun Feb 19 12:26:35 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Feb 19 12:26:35 2023:  Accuracy on test
+Sun Feb 19 12:26:35 2023:  0.9075364261285997
+Sun Feb 19 12:26:47 2023:  RMSE for K-fold validation with Decision Tree model: 0.24240427897174815
+Sun Feb 19 12:26:47 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Feb 19 12:26:47 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Feb 19 12:26:47 2023:  end
+Sun Feb 19 14:12:57 2023:  start
+Sun Feb 19 14:12:58 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106237
+Sun Feb 19 14:12:58 2023:  Accuracy on train
+Sun Feb 19 14:12:58 2023:  0.7293608912774722
+Sun Feb 19 14:13:00 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Sun Feb 19 14:13:00 2023:  Accuracy on test
+Sun Feb 19 14:13:00 2023:  0.6348435877001917
+
+Sun Feb 19 14:13:02 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Feb 19 14:13:02 2023:  Accuracy on train
+Sun Feb 19 14:13:02 2023:  0.9594172404304578
+Sun Feb 19 14:13:03 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Feb 19 14:13:03 2023:  Accuracy on test
+Sun Feb 19 14:13:03 2023:  0.7193175532687953
+
+Sun Feb 19 14:13:04 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Feb 19 14:13:04 2023:  Accuracy on train
+Sun Feb 19 14:13:04 2023:  0.9106224139134262
+Sun Feb 19 14:13:06 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Feb 19 14:13:06 2023:  Accuracy on test
+Sun Feb 19 14:13:06 2023:  0.7552567761409552
+
+Sun Feb 19 14:13:27 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Feb 19 14:13:27 2023:  Accuracy on train
+Sun Feb 19 14:13:27 2023:  0.9061148088445842
+Sun Feb 19 14:13:29 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Feb 19 14:13:29 2023:  Accuracy on test
+Sun Feb 19 14:13:29 2023:  0.9075364261285997
+Sun Feb 19 14:13:42 2023:  RMSE for K-fold validation with Decision Tree model: 0.24240427897174818
+Sun Feb 19 14:13:42 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Feb 19 14:13:42 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Feb 19 14:13:42 2023:  end
+Sun Feb 19 14:25:47 2023:  start
+Sun Feb 19 14:25:47 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106237
+Sun Feb 19 14:25:47 2023:  Accuracy on train
+Sun Feb 19 14:25:47 2023:  0.7293608912774722
+Sun Feb 19 14:25:49 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661516
+Sun Feb 19 14:25:49 2023:  Accuracy on test
+Sun Feb 19 14:25:49 2023:  0.6348435877001919
+
+Sun Feb 19 14:25:52 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Feb 19 14:25:52 2023:  Accuracy on train
+Sun Feb 19 14:25:52 2023:  0.9594172404304578
+Sun Feb 19 14:25:53 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Feb 19 14:25:53 2023:  Accuracy on test
+Sun Feb 19 14:25:53 2023:  0.7193175532687953
+
+Sun Feb 19 14:25:55 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Feb 19 14:25:55 2023:  Accuracy on train
+Sun Feb 19 14:25:55 2023:  0.9106224139134262
+Sun Feb 19 14:25:57 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Feb 19 14:25:57 2023:  Accuracy on test
+Sun Feb 19 14:25:57 2023:  0.7552567761409552
+
+Sun Feb 19 14:26:17 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Feb 19 14:26:17 2023:  Accuracy on train
+Sun Feb 19 14:26:17 2023:  0.9061148088445842
+Sun Feb 19 14:26:19 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Feb 19 14:26:19 2023:  Accuracy on test
+Sun Feb 19 14:26:19 2023:  0.9075364261285997
+Sun Feb 19 14:27:49 2023:  start
+Sun Feb 19 14:27:49 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106237
+Sun Feb 19 14:27:49 2023:  Accuracy on train
+Sun Feb 19 14:27:49 2023:  0.7293608912774722
+Sun Feb 19 14:27:51 2023:  RMSE for Decision Tree Regresor on Test: 0.25070331236615173
+Sun Feb 19 14:27:51 2023:  Accuracy on test
+Sun Feb 19 14:27:51 2023:  0.6348435877001914
+
+Sun Feb 19 14:27:53 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Feb 19 14:27:53 2023:  Accuracy on train
+Sun Feb 19 14:27:53 2023:  0.9594172404304578
+Sun Feb 19 14:27:54 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Feb 19 14:27:54 2023:  Accuracy on test
+Sun Feb 19 14:27:54 2023:  0.7193175532687953
+
+Sun Feb 19 14:27:56 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Feb 19 14:27:56 2023:  Accuracy on train
+Sun Feb 19 14:27:56 2023:  0.9106224139134262
+Sun Feb 19 14:27:57 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Feb 19 14:27:57 2023:  Accuracy on test
+Sun Feb 19 14:27:57 2023:  0.7552567761409552
+
+Sun Feb 19 14:28:17 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Feb 19 14:28:17 2023:  Accuracy on train
+Sun Feb 19 14:28:17 2023:  0.9061148088445842
+Sun Feb 19 14:28:19 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Feb 19 14:28:19 2023:  Accuracy on test
+Sun Feb 19 14:28:19 2023:  0.9075364261285997
+Sun Feb 19 14:28:32 2023:  RMSE for K-fold validation with Decision Tree model: 0.2424880539007346
+Sun Feb 19 14:28:32 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Feb 19 14:28:32 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Feb 19 14:28:32 2023:  end
+Tue Feb 28 12:57:51 2023:  start
+Tue Feb 28 12:57:51 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106237
+Tue Feb 28 12:57:51 2023:  Accuracy on train
+Tue Feb 28 12:57:51 2023:  0.7293608912774722
+Tue Feb 28 12:59:48 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Tue Feb 28 12:59:48 2023:  Accuracy on test
+Tue Feb 28 12:59:48 2023:  0.6348435877001917
+
+Tue Feb 28 13:00:07 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Tue Feb 28 13:00:07 2023:  Accuracy on train
+Tue Feb 28 13:00:07 2023:  0.9594172404304578
+Tue Feb 28 13:00:36 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Tue Feb 28 13:00:36 2023:  Accuracy on test
+Tue Feb 28 13:00:36 2023:  0.7193175532687953
+
+Tue Feb 28 13:00:41 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Tue Feb 28 13:00:41 2023:  Accuracy on train
+Tue Feb 28 13:00:41 2023:  0.9106224139134262
+Tue Feb 28 13:00:50 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Tue Feb 28 13:00:50 2023:  Accuracy on test
+Tue Feb 28 13:00:50 2023:  0.7552567761409552
+
+Tue Feb 28 13:01:31 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Tue Feb 28 13:01:31 2023:  Accuracy on train
+Tue Feb 28 13:01:31 2023:  0.9061148088445842
+Tue Feb 28 13:01:33 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Tue Feb 28 13:01:33 2023:  Accuracy on test
+Tue Feb 28 13:01:33 2023:  0.9075364261285997
+Tue Feb 28 13:01:48 2023:  RMSE for K-fold validation with Decision Tree model: 0.24240427897174815
+Tue Feb 28 13:01:48 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Tue Feb 28 13:01:48 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Tue Feb 28 13:01:48 2023:  end
+Sat Mar  4 11:16:28 2023:  start
+Sat Mar  4 11:16:29 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106235
+Sat Mar  4 11:16:29 2023:  Accuracy on train
+Sat Mar  4 11:16:29 2023:  0.7293608912774723
+Sat Mar  4 11:16:31 2023:  RMSE for Decision Tree Regresor on Test: 0.25070331236615173
+Sat Mar  4 11:16:31 2023:  Accuracy on test
+Sat Mar  4 11:16:31 2023:  0.6348435877001914
+
+Sat Mar  4 11:16:37 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sat Mar  4 11:16:37 2023:  Accuracy on train
+Sat Mar  4 11:16:37 2023:  0.9594172404304578
+Sat Mar  4 11:16:39 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sat Mar  4 11:16:39 2023:  Accuracy on test
+Sat Mar  4 11:16:39 2023:  0.7193175532687953
+
+Sat Mar  4 11:16:41 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sat Mar  4 11:16:41 2023:  Accuracy on train
+Sat Mar  4 11:16:41 2023:  0.9106224139134262
+Sat Mar  4 11:16:45 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sat Mar  4 11:16:45 2023:  Accuracy on test
+Sat Mar  4 11:16:45 2023:  0.7552567761409552
+
+Sat Mar  4 11:17:08 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sat Mar  4 11:17:08 2023:  Accuracy on train
+Sat Mar  4 11:17:08 2023:  0.9061148088445842
+Sat Mar  4 11:17:10 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sat Mar  4 11:17:10 2023:  Accuracy on test
+Sat Mar  4 11:17:10 2023:  0.9075364261285997
+Sat Mar  4 11:17:21 2023:  RMSE for K-fold validation with Decision Tree model: 0.2424880539007346
+Sat Mar  4 11:17:21 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sat Mar  4 11:17:21 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sat Mar  4 11:17:21 2023:  end
+Sun Mar  5 11:17:46 2023:  start
+Sun Mar  5 11:17:46 2023:  RMSE for Decision Tree Regresor on Train: 0.2115506355110624
+Sun Mar  5 11:17:46 2023:  Accuracy on train
+Sun Mar  5 11:17:46 2023:  0.7293608912774721
+Sun Mar  5 11:17:57 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Sun Mar  5 11:17:57 2023:  Accuracy on test
+Sun Mar  5 11:17:57 2023:  0.6348435877001917
+
+Sun Mar  5 11:18:00 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Mar  5 11:18:00 2023:  Accuracy on train
+Sun Mar  5 11:18:00 2023:  0.9594172404304578
+Sun Mar  5 11:18:04 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Mar  5 11:18:04 2023:  Accuracy on test
+Sun Mar  5 11:18:04 2023:  0.7193175532687953
+
+Sun Mar  5 11:18:06 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Mar  5 11:18:06 2023:  Accuracy on train
+Sun Mar  5 11:18:06 2023:  0.9106224139134262
+Sun Mar  5 11:18:08 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Mar  5 11:18:08 2023:  Accuracy on test
+Sun Mar  5 11:18:08 2023:  0.7552567761409552
+
+Sun Mar  5 11:18:29 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Mar  5 11:18:29 2023:  Accuracy on train
+Sun Mar  5 11:18:29 2023:  0.9061148088445842
+Sun Mar  5 11:18:31 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Mar  5 11:18:31 2023:  Accuracy on test
+Sun Mar  5 11:18:31 2023:  0.9075364261285997
+
+Sun Mar  5 11:19:04 2023:  RMSE for K-fold validation with Decision Tree model: 0.24240427897174818
+Sun Mar  5 11:19:04 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Mar  5 11:19:04 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Mar  5 11:19:04 2023:  end
+Sun Mar  5 11:20:04 2023:  start
+Sun Mar  5 11:20:04 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106237
+Sun Mar  5 11:20:04 2023:  Accuracy on train
+Sun Mar  5 11:20:04 2023:  0.7293608912774722
+Sun Mar  5 11:20:06 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661516
+Sun Mar  5 11:20:06 2023:  Accuracy on test
+Sun Mar  5 11:20:06 2023:  0.6348435877001919
+
+Sun Mar  5 11:20:09 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Mar  5 11:20:09 2023:  Accuracy on train
+Sun Mar  5 11:20:09 2023:  0.9594172404304578
+Sun Mar  5 11:20:13 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Mar  5 11:20:13 2023:  Accuracy on test
+Sun Mar  5 11:20:13 2023:  0.7193175532687953
+
+Sun Mar  5 11:20:16 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Mar  5 11:20:16 2023:  Accuracy on train
+Sun Mar  5 11:20:16 2023:  0.9106224139134262
+Sun Mar  5 11:20:21 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Mar  5 11:20:21 2023:  Accuracy on test
+Sun Mar  5 11:20:21 2023:  0.7552567761409552
+
+Sun Mar  5 11:20:45 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Mar  5 11:20:45 2023:  Accuracy on train
+Sun Mar  5 11:20:45 2023:  0.9061148088445842
+Sun Mar  5 11:20:51 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Mar  5 11:20:51 2023:  Accuracy on test
+Sun Mar  5 11:20:51 2023:  0.9075364261285997
+
+Sun Mar  5 11:21:11 2023:  RMSE for K-fold validation with Decision Tree model: 0.24248805390073458
+Sun Mar  5 11:21:11 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Mar  5 11:21:11 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Mar  5 11:21:11 2023:  end
+Sun Mar  5 11:22:17 2023:  start
+Sun Mar  5 11:22:17 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106235
+Sun Mar  5 11:22:17 2023:  Accuracy on train
+Sun Mar  5 11:22:17 2023:  0.7293608912774723
+Sun Mar  5 11:22:21 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Sun Mar  5 11:22:21 2023:  Accuracy on test
+Sun Mar  5 11:22:21 2023:  0.6348435877001917
+
+Sun Mar  5 11:22:24 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Mar  5 11:22:24 2023:  Accuracy on train
+Sun Mar  5 11:22:24 2023:  0.9594172404304578
+Sun Mar  5 11:22:28 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Mar  5 11:22:28 2023:  Accuracy on test
+Sun Mar  5 11:22:29 2023:  0.7193175532687953
+
+Sun Mar  5 11:22:31 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Mar  5 11:22:31 2023:  Accuracy on train
+Sun Mar  5 11:22:31 2023:  0.9106224139134262
+Sun Mar  5 11:22:33 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Mar  5 11:22:33 2023:  Accuracy on test
+Sun Mar  5 11:22:33 2023:  0.7552567761409552
+
+Sun Mar  5 11:22:58 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Mar  5 11:22:58 2023:  Accuracy on train
+Sun Mar  5 11:22:58 2023:  0.9061148088445842
+Sun Mar  5 11:23:13 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Mar  5 11:23:13 2023:  Accuracy on test
+Sun Mar  5 11:23:13 2023:  0.9075364261285997
+
+Sun Mar  5 11:23:27 2023:  RMSE for K-fold validation with Decision Tree model: 0.24248805390073458
+Sun Mar  5 11:23:27 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Mar  5 11:23:27 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Mar  5 11:23:27 2023:  end
+Sun Mar  5 11:35:25 2023:  start
+Sun Mar  5 11:35:25 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106235
+Sun Mar  5 11:35:25 2023:  Accuracy on train
+Sun Mar  5 11:35:25 2023:  0.7293608912774723
+Sun Mar  5 11:35:27 2023:  RMSE for Decision Tree Regresor on Test: 0.25070331236615173
+Sun Mar  5 11:35:27 2023:  Accuracy on test
+Sun Mar  5 11:35:27 2023:  0.6348435877001914
+
+Sun Mar  5 11:35:35 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Sun Mar  5 11:35:35 2023:  Accuracy on train
+Sun Mar  5 11:35:35 2023:  0.9594172404304578
+Sun Mar  5 11:35:38 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Sun Mar  5 11:35:38 2023:  Accuracy on test
+Sun Mar  5 11:35:38 2023:  0.7193175532687953
+
+Sun Mar  5 11:35:40 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Sun Mar  5 11:35:40 2023:  Accuracy on train
+Sun Mar  5 11:35:40 2023:  0.9106224139134262
+Sun Mar  5 11:35:42 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Sun Mar  5 11:35:42 2023:  Accuracy on test
+Sun Mar  5 11:35:42 2023:  0.7552567761409552
+
+Sun Mar  5 11:36:04 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Sun Mar  5 11:36:04 2023:  Accuracy on train
+Sun Mar  5 11:36:04 2023:  0.9061148088445842
+Sun Mar  5 11:36:13 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Sun Mar  5 11:36:13 2023:  Accuracy on test
+Sun Mar  5 11:36:13 2023:  0.9075364261285997
+
+Sun Mar  5 11:36:32 2023:  RMSE for K-fold validation with Decision Tree model: 0.2424880539007346
+Sun Mar  5 11:36:32 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Sun Mar  5 11:36:32 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Sun Mar  5 11:36:32 2023:  end
+Tue Mar  7 14:23:58 2023:  start
+Tue Mar  7 14:23:58 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106235
+Tue Mar  7 14:23:58 2023:  Accuracy on train
+Tue Mar  7 14:23:58 2023:  0.7293608912774723
+Tue Mar  7 14:24:10 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Tue Mar  7 14:24:10 2023:  Accuracy on test
+Tue Mar  7 14:24:10 2023:  0.6348435877001917
+
+Tue Mar  7 14:24:17 2023:  RMSE for Random Forest on Train: 0.08191998131870136
+Tue Mar  7 14:24:17 2023:  Accuracy on train
+Tue Mar  7 14:24:17 2023:  0.9594172404304578
+Tue Mar  7 14:24:20 2023:  RMSE for Random Forest on Test: 0.21980027585092984
+Tue Mar  7 14:24:20 2023:  Accuracy on test
+Tue Mar  7 14:24:20 2023:  0.7193175532687953
+
+Tue Mar  7 14:24:23 2023:  RMSE for XGBoost Regresor on Train: 0.1215719457381123
+Tue Mar  7 14:24:23 2023:  Accuracy on train
+Tue Mar  7 14:24:23 2023:  0.9106224139134262
+Tue Mar  7 14:24:43 2023:  RMSE for XGBoost Regresor on Test: 0.20524658721824987
+Tue Mar  7 14:24:43 2023:  Accuracy on test
+Tue Mar  7 14:24:43 2023:  0.7552567761409552
+
+Tue Mar  7 14:25:08 2023:  RMSE for Polinomyal regressor on Train: 0.12459987437917196
+Tue Mar  7 14:25:08 2023:  Accuracy on train
+Tue Mar  7 14:25:08 2023:  0.9061148088445842
+Tue Mar  7 14:25:13 2023:  RMSE for Polynomial Regresor on Test: 0.1261554288089076
+Tue Mar  7 14:25:13 2023:  Accuracy on test
+Tue Mar  7 14:25:13 2023:  0.9075364261285997
+
+Tue Mar  7 14:25:48 2023:  RMSE for K-fold validation with Decision Tree model: 0.24248805390073458
+Tue Mar  7 14:25:48 2023:  RMSE for K-fold validation with Random Forest model: 0.2179772213339207
+Tue Mar  7 14:25:48 2023:  RMSE for K-fold validation with XGBoost Tree model: 0.204997960724125
+
+Tue Mar  7 14:25:48 2023:  end

@@ -160,7 +160,7 @@ my_logger.print_logs_in_file('Accuracy on train')
 my_logger.print_logs_in_file(str(RF_regressor.score(x_train, y_train)))
 
 plot_prediction_vs_true_values(
-    y_train, y_pred_dt, 'train Radnom Forest regressor')
+    y_train, y_pred_dt, 'train Random Forest regressor')
 
 # On test
 y_pred_test = RF_regressor.predict(x_test)  # Predictions on Testing data
@@ -177,7 +177,7 @@ my_logger.print_logs_in_file(str(RF_regressor.score(x_test, y_test)))
 my_logger.print_logs_in_file('')
 
 plot_prediction_vs_true_values(
-    y_train, y_pred_dt, 'test Radnom Forest regressor')
+    y_train, y_pred_dt, 'test Random Forest regressor')
 
 ############################################################################################################
 # XGBoost
@@ -244,13 +244,10 @@ my_logger.print_logs_in_file(f'RMSE for Polinomyal regressor on Train: {RMSE}')
 
 
 my_logger.print_logs_in_file('Accuracy on train')
-
 my_logger.print_logs_in_file(str(P_Regressor.score(X_poly_train, y_train)))
 
-
-# linia asta inca nu merge
-# plot_polynomial_regression(
-#     y_test, y_test, 'train Polynomial regressor')
+plot_prediction_vs_true_values(
+    y_train, y_pred_pr, 'train polynomial regressor')
 
 # On test
 
@@ -270,7 +267,11 @@ my_logger.print_logs_in_file(f'RMSE for Polynomial Regresor on Test: {RMSE}')
 
 my_logger.print_logs_in_file('Accuracy on test')
 my_logger.print_logs_in_file(str(P_Regressor.score(X_poly_test, y_test)))
-# print()
+
+my_logger.print_logs_in_file('')
+
+plot_prediction_vs_true_values(
+    y_test, y_pred_test, 'test polynomial regressor')
 
 
 ############################################################################################################

@@ -1,0 +1,276 @@
+DROP TABLE IF EXISTS public.league_table_extended;
+DROP TABLE IF EXISTS public.league_table;
+DROP TABLE IF EXISTS public.player_summary_stats;
+DROP TABLE IF EXISTS public.player_defensive_stats;
+DROP TABLE IF EXISTS public.player_passing_stats;
+DROP TABLE IF EXISTS public.player_offensive_stats;
+DROP TABLE IF EXISTS public.rosters;
+DROP TABLE IF EXISTS public.fixtures;
+DROP TABLE IF EXISTS public.player;
+DROP TABLE IF EXISTS public.team;
+DROP TABLE IF EXISTS public.league;
+
+
+
+CREATE TABLE IF NOT EXISTS public.league
+(
+    league_name character varying COLLATE pg_catalog."default",
+    CONSTRAINT league_pkey PRIMARY KEY (league_name)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.league
+    OWNER to postgres;
+
+
+
+CREATE TABLE IF NOT EXISTS public.team
+(
+    team_name character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT team_pkey PRIMARY KEY (team_name)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.team
+    OWNER to postgres;
+
+
+
+CREATE TABLE IF NOT EXISTS public.league_table
+(
+    league_name character varying COLLATE pg_catalog."default",
+    team_name character varying COLLATE pg_catalog."default",
+    year_start integer,
+    year_end integer,
+    matches integer,
+    wins integer,
+    draws integer,
+    loses integer,
+    goals integer,
+    goals_against integer,
+    points integer,
+    CONSTRAINT league_table_pkey PRIMARY KEY (team_name,year_start,year_end),
+	CONSTRAINT fk_league FOREIGN KEY (league_name)
+        REFERENCES public.league (league_name) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_team_league FOREIGN KEY (team_name)
+        REFERENCES public.team (team_name) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.league_table
+    OWNER to postgres;
+
+
+    
+CREATE TABLE IF NOT EXISTS public.league_table_extended
+(
+    team_name character varying COLLATE pg_catalog."default",
+    year_start integer,
+    year_end integer,
+    xgoals double precision,
+    npx_goals double precision,
+    xassists double precision,
+    npx_goals_against double precision,
+    npx_goals_difference double precision,
+    ppda double precision,
+    oppda double precision,
+    dc integer,
+    odc integer,
+    xpoints double precision,
+    CONSTRAINT league_table_extended_key PRIMARY KEY (team_name,year_start,year_end),
+	CONSTRAINT fk_league_table_extended FOREIGN KEY (team_name,year_start,year_end)
+        REFERENCES public.league_table (team_name,year_start,year_end) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.league_table_extended
+    OWNER to postgres;
+
+
+
+CREATE TABLE IF NOT EXISTS public.player
+(
+    id integer NOT NULL,
+	name character varying COLLATE pg_catalog."default" NOT NULL,
+	position character varying COLLATE pg_catalog."default" NOT NULL,
+    height integer,
+    weight integer,
+    CONSTRAINT player_pk PRIMARY KEY (id)
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.player
+    OWNER to postgres;
+
+	
+
+CREATE TABLE IF NOT EXISTS public.rosters
+(
+    team_name character varying COLLATE pg_catalog."default",
+    id_player integer,
+    year_start integer,
+    year_end integer,
+    CONSTRAINT rosters_pkey PRIMARY KEY (id_player,year_start,year_end),
+    CONSTRAINT fk_player FOREIGN KEY (id_player)
+        REFERENCES public.player (id) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_team_player FOREIGN KEY (team_name)
+        REFERENCES public.team (team_name) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.rosters
+    OWNER to postgres;
+
+
+
+CREATE TABLE IF NOT EXISTS public.player_defensive_stats
+(
+    id integer NOT NULL,
+    year_start integer,
+    year_end integer,
+    tackles_per_game double precision,
+    interceptions_per_game double precision,
+    fouls_per_game double precision,
+    offsides_won_per_game double precision,
+    clearances_per_game double precision,
+    dribbled_past_per_game double precision,
+    outfielder_blocks_per_game double precision,
+    own_goal integer,
+    CONSTRAINT player_defensive_stats_pkey PRIMARY KEY (id,year_start,year_end),
+    CONSTRAINT fk_player_defensive_stats FOREIGN KEY (id,year_start,year_end)
+        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.player_defensive_stats
+    OWNER to postgres;
+
+    
+
+CREATE TABLE IF NOT EXISTS public.player_passing_stats
+(
+    id integer NOT NULL,
+    year_start integer,
+    year_end integer,
+    key_passes_per_game double precision,
+    passes_per_game double precision,
+    crosses_per_game double precision,
+    long_ball_per_game double precision,
+    through_balls_per_game double precision,
+    CONSTRAINT player_passing_stats_pkey PRIMARY KEY (id,year_start,year_end),
+    CONSTRAINT fk_player_passing_stats FOREIGN KEY (id,year_start,year_end)
+        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.player_passing_stats
+    OWNER to postgres;
+
+
+
+CREATE TABLE IF NOT EXISTS public.player_offensive_stats
+(
+    id integer,
+    year_start integer,
+    year_end integer, 
+    key_passes_per_game double precision, 
+    dribbles_per_game double precision,
+    fouled_per_game double precision,
+    offsides_per_game double precision,
+    dispossessed_per_game double precision,
+    bad_control_per_game double precision,
+    CONSTRAINT player_offensive_stats_pkey PRIMARY KEY (id,year_start,year_end),
+    CONSTRAINT fk_player_offensive_stats FOREIGN KEY (id,year_start,year_end)
+        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.player_offensive_stats
+    OWNER to postgres;
+
+
+    
+CREATE TABLE IF NOT EXISTS public.player_summary_stats
+(
+    id integer,
+    year_start integer,
+    year_end integer,
+    games character varying COLLATE pg_catalog."default", 
+    start_games integer, 
+    sub_games integer,
+    mins integer,
+    goals integer,
+    assists integer,
+    yellow_cards integer,
+    red_cards integer,
+    shot_per_game double precision,
+    pass_success_percentage double precision,
+    aerials_won double precision,
+    man_of_the_match integer,
+    who_scored_rating double precision,
+    CONSTRAINT player_summary_stats_pkey PRIMARY KEY (id,year_start,year_end),
+    CONSTRAINT fk_player_summary_stats FOREIGN KEY (id,year_start,year_end)
+        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.player_summary_stats
+    OWNER to postgres;
+
+
+
+CREATE TABLE IF NOT EXISTS public.fixtures
+(
+    match_id integer NOT NULL,
+    home_team character varying COLLATE pg_catalog."default",
+    away_team character varying COLLATE pg_catalog."default",
+    home_goals integer,
+    away_goals integer,
+    datetime date,
+    --half_time_home_team_goals integer,
+    --half_time_away_team_goals integer,
+    --round_or_return_match  boolean,--0 is round (tur), 1 is return (retur)
+    CONSTRAINT fixtures_pkey PRIMARY KEY (match_id),
+    CONSTRAINT fk_home_team FOREIGN KEY (home_team)
+        REFERENCES public.team (team_name) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION,
+    CONSTRAINT fk_away_team_fixture FOREIGN KEY (away_team)
+        REFERENCES public.team (team_name) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.fixtures
+    OWNER to postgres;
+	
