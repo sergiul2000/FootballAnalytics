@@ -51,6 +51,16 @@ CREATE TABLE IF NOT EXISTS public.league_table
     goals integer,
     goals_against integer,
     points integer,
+    xgoals double precision,
+    npx_goals double precision,
+    xassists double precision,
+    npx_goals_against double precision,
+    npx_goals_difference double precision,
+    ppda double precision,
+    oppda double precision,
+    dc integer,
+    odc integer,
+    xpoints double precision,
     CONSTRAINT league_table_pkey PRIMARY KEY (team_name,year_start,year_end),
 	CONSTRAINT fk_league FOREIGN KEY (league_name)
         REFERENCES public.league (league_name) MATCH SIMPLE
@@ -66,36 +76,7 @@ TABLESPACE pg_default;
 
 ALTER TABLE IF EXISTS public.league_table
     OWNER to postgres;
-
-
     
-CREATE TABLE IF NOT EXISTS public.league_table_extended
-(
-    team_name character varying COLLATE pg_catalog."default",
-    year_start integer,
-    year_end integer,
-    xgoals double precision,
-    npx_goals double precision,
-    xassists double precision,
-    npx_goals_against double precision,
-    npx_goals_difference double precision,
-    ppda double precision,
-    oppda double precision,
-    dc integer,
-    odc integer,
-    xpoints double precision,
-    CONSTRAINT league_table_extended_key PRIMARY KEY (team_name,year_start,year_end),
-	CONSTRAINT fk_league_table_extended FOREIGN KEY (team_name,year_start,year_end)
-        REFERENCES public.league_table (team_name,year_start,year_end) MATCH SIMPLE
-        ON UPDATE NO ACTION
-        ON DELETE NO ACTION
-)
-
-TABLESPACE pg_default;
-
-ALTER TABLE IF EXISTS public.league_table_extended
-    OWNER to postgres;
-
 
 
 CREATE TABLE IF NOT EXISTS public.player
