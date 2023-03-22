@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS public.league_table_extended;
+
 DROP TABLE IF EXISTS public.league_table;
 DROP TABLE IF EXISTS public.player_summary_stats;
 DROP TABLE IF EXISTS public.player_defensive_stats;
@@ -39,7 +39,7 @@ ALTER TABLE IF EXISTS public.team
 
 
 CREATE TABLE IF NOT EXISTS public.league_table
-(
+(    
     league_name character varying COLLATE pg_catalog."default",
     team_name character varying COLLATE pg_catalog."default",
     year_start integer,
@@ -60,7 +60,6 @@ CREATE TABLE IF NOT EXISTS public.league_table
     oppda double precision,
     dc integer,
     odc integer,
-    xpoints double precision,
     CONSTRAINT league_table_pkey PRIMARY KEY (team_name,year_start,year_end),
 	CONSTRAINT fk_league FOREIGN KEY (league_name)
         REFERENCES public.league (league_name) MATCH SIMPLE
@@ -83,6 +82,7 @@ CREATE TABLE IF NOT EXISTS public.player
 (
     id integer NOT NULL,
 	name character varying COLLATE pg_catalog."default" NOT NULL,
+    age integer,
 	position character varying COLLATE pg_catalog."default" NOT NULL,
     height integer,
     weight integer,
@@ -102,7 +102,7 @@ CREATE TABLE IF NOT EXISTS public.rosters
     id_player integer,
     year_start integer,
     year_end integer,
-    CONSTRAINT rosters_pkey PRIMARY KEY (id_player,year_start,year_end),
+    CONSTRAINT rosters_pkey PRIMARY KEY (team_name,id_player,year_start,year_end),
     CONSTRAINT fk_player FOREIGN KEY (id_player)
         REFERENCES public.player (id) MATCH SIMPLE
         ON UPDATE NO ACTION
@@ -122,6 +122,7 @@ ALTER TABLE IF EXISTS public.rosters
 
 CREATE TABLE IF NOT EXISTS public.player_defensive_stats
 (
+    team_name character varying COLLATE pg_catalog."default",
     id integer NOT NULL,
     year_start integer,
     year_end integer,
@@ -133,9 +134,9 @@ CREATE TABLE IF NOT EXISTS public.player_defensive_stats
     dribbled_past_per_game double precision,
     outfielder_blocks_per_game double precision,
     own_goal integer,
-    CONSTRAINT player_defensive_stats_pkey PRIMARY KEY (id,year_start,year_end),
-    CONSTRAINT fk_player_defensive_stats FOREIGN KEY (id,year_start,year_end)
-        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+    CONSTRAINT player_defensive_stats_pkey PRIMARY KEY (team_name,id,year_start,year_end),
+    CONSTRAINT fk_player_defensive_stats FOREIGN KEY (team_name,id,year_start,year_end)
+        REFERENCES public.rosters (team_name,id_player,year_start,year_end) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -149,6 +150,7 @@ ALTER TABLE IF EXISTS public.player_defensive_stats
 
 CREATE TABLE IF NOT EXISTS public.player_passing_stats
 (
+    team_name character varying COLLATE pg_catalog."default",
     id integer NOT NULL,
     year_start integer,
     year_end integer,
@@ -157,9 +159,9 @@ CREATE TABLE IF NOT EXISTS public.player_passing_stats
     crosses_per_game double precision,
     long_ball_per_game double precision,
     through_balls_per_game double precision,
-    CONSTRAINT player_passing_stats_pkey PRIMARY KEY (id,year_start,year_end),
-    CONSTRAINT fk_player_passing_stats FOREIGN KEY (id,year_start,year_end)
-        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+    CONSTRAINT player_passing_stats_pkey PRIMARY KEY (team_name,id,year_start,year_end),
+    CONSTRAINT fk_player_passing_stats FOREIGN KEY (team_name,id,year_start,year_end)
+        REFERENCES public.rosters (team_name,id_player,year_start,year_end) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -173,18 +175,18 @@ ALTER TABLE IF EXISTS public.player_passing_stats
 
 CREATE TABLE IF NOT EXISTS public.player_offensive_stats
 (
+    team_name character varying COLLATE pg_catalog."default",
     id integer,
     year_start integer,
     year_end integer, 
-    key_passes_per_game double precision, 
     dribbles_per_game double precision,
     fouled_per_game double precision,
     offsides_per_game double precision,
     dispossessed_per_game double precision,
     bad_control_per_game double precision,
-    CONSTRAINT player_offensive_stats_pkey PRIMARY KEY (id,year_start,year_end),
-    CONSTRAINT fk_player_offensive_stats FOREIGN KEY (id,year_start,year_end)
-        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+    CONSTRAINT player_offensive_stats_pkey PRIMARY KEY (team_name,id,year_start,year_end),
+    CONSTRAINT fk_player_offensive_stats FOREIGN KEY (team_name,id,year_start,year_end)
+        REFERENCES public.rosters (team_name,id_player,year_start,year_end) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )
@@ -198,6 +200,7 @@ ALTER TABLE IF EXISTS public.player_offensive_stats
     
 CREATE TABLE IF NOT EXISTS public.player_summary_stats
 (
+    team_name character varying COLLATE pg_catalog."default",
     id integer,
     year_start integer,
     year_end integer,
@@ -214,9 +217,9 @@ CREATE TABLE IF NOT EXISTS public.player_summary_stats
     aerials_won double precision,
     man_of_the_match integer,
     who_scored_rating double precision,
-    CONSTRAINT player_summary_stats_pkey PRIMARY KEY (id,year_start,year_end),
-    CONSTRAINT fk_player_summary_stats FOREIGN KEY (id,year_start,year_end)
-        REFERENCES public.rosters (id_player,year_start,year_end) MATCH SIMPLE
+    CONSTRAINT player_summary_stats_pkey PRIMARY KEY (team_name,id,year_start,year_end),
+    CONSTRAINT fk_player_summary_stats FOREIGN KEY (team_name,id,year_start,year_end)
+        REFERENCES public.rosters (team_name,id_player,year_start,year_end) MATCH SIMPLE
         ON UPDATE NO ACTION
         ON DELETE NO ACTION
 )

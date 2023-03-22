@@ -14,18 +14,18 @@ def walk_through_league_tables():  # path_to_league_table):
     for league in dict_of_files:
         # print(league, '->', dict_of_files[league])
         for season_item in dict_of_files[league]:
-            
+
             split_parts = str(season_item).split('/')
             print(split_parts)
             year_start = split_parts[-1].split('_')[-2]
-            year_end = split_parts[-1].split('_')[-1].replace('.csv','')
+            year_end = split_parts[-1].split('_')[-1].replace('.csv', '')
 # Check 2013 2014 they all have missing values so it is not a problem, we just skip them
-            if year_start == '2013': 
+            if year_start == '2013':
                 continue
 
             print(f'{league} | {year_start} | {year_end}')
 
-            if(non_None_df == False):
+            if (non_None_df == False):
                 df = pd.read_csv(season_item)
                 df['league'] = league
                 df['year_start'] = year_start
@@ -72,7 +72,5 @@ def walk_through_files(type_of_file):
     return list_of_files
 
 
-
 # print(walk_through_files("league_table"))
 walk_through_league_tables()
-
