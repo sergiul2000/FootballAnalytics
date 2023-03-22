@@ -47,7 +47,7 @@ def walk_through_league_tables():  # path_to_league_table):
             # print(list_of_files[league])
     df_total = pd.concat(frames)
     df_total.to_csv('./converted_files/league_table.csv')
-    print(df_total)
+    # print(df_total)
     # return
 
 
@@ -93,7 +93,7 @@ def walk_through_fixtures():  # path_to_league_table):
             # print(list_of_files[league])
     df_total = pd.concat(frames)
     df_total.to_csv('./converted_files/fixtures.csv')
-    print(df_total)
+    # print(df_total)
     # return
 
 
@@ -249,7 +249,7 @@ def walk_through_player_offensive_stats():
                 df_iterator_players.insert(3, 'Year_end', str(year_end))
 
                 df_iterator_players = df_iterator_players.drop(columns=["games", "start_games", "sub_games", "name", "age",
-                                                                        "goals", "assists", "key_passes_per_game"
+                                                                        "goals", "assists", "key_passes_per_game",
                                                                         "shot_per_game",
                                                                         "tall", "position", "weight",
                                                                         "mins"])  # , "rating"])
@@ -337,12 +337,12 @@ def walk_through_understat_files(type_of_file):
 
 def main():
     # print(walk_through_files("league_table"))
-    # walk_through_league_tables()
-    # walk_through_league_tables_for_teams()
-    # walk_through_rosters_players_and_player_summary()
-    # walk_through_player_defensive_stats()
-    # walk_through_player_offensive_stats()
-    # walk_through_player_passing_stats()
+    walk_through_league_tables()
+    walk_through_league_tables_for_teams()
+    walk_through_rosters_players_and_player_summary()
+    walk_through_player_defensive_stats()
+    walk_through_player_offensive_stats()
+    walk_through_player_passing_stats()
     walk_through_fixtures()
 
 
