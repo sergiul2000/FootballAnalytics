@@ -225,11 +225,13 @@ def compute_points_per_game_pythagorian_estimation(limit_for_goals_iteration, al
 
 
 def apply_pythagorian_league_table_stats(league, year):
-    path = f'dataframes/understat/league_table/{league}/{league}_league_table_in_season_{year}_{year+1}.csv'
+    # path = f'dataframes/understat/league_table/{league}/{league}_league_table_in_season_{year}_{year+1}.csv'
+    path = f'./converted_files/league_table.csv'
 
     df = pd.read_csv(path)
     # print(df.head(5))
-    df_to_analyze = df[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
+    df_to_analyze = df[['Team', 'Year_start', 'Year_end',
+                        'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
 
     df_to_analyze.rename(columns={'M': 'Matches',
                                   'W': 'Wins',
@@ -300,9 +302,10 @@ def apply_pythagorian_league_table_stats(league, year):
 
     print(df_to_analyze)
 
-    df_to_save = df_to_analyze[['Team', 'Matches', 'Wins', 'Draws', 'Loses', 'GoalsScored', 'GoalsReceived', 'Points',
+    df_to_save = df_to_analyze[['Team', 'Year_start', 'Year_end', 'Matches', 'Wins', 'Draws', 'Loses', 'GoalsScored', 'GoalsReceived', 'Points',
                                 'Estimated_Wins', 'Estimated_Draws', 'Estimated_Loses', 'Estimated_Points_Extended', 'Delta_Points_Extended']]
-    df_to_save.to_csv("initial_report.csv")
+    # df_to_save.to_csv("initial_report.csv")
+    df_to_save.to_csv(f"./converted_files/extended_pythagorian.csv")
 
     # df_to_analyze['Win_Pythagorean'] = sum(exp(total_goal) for total_goal in range(0, df_to_analyze['AvgGS_Int']))
     # df_to_analyze['Draw_Pythagorean'] =

@@ -30,12 +30,14 @@ def walk_through_league_tables():  # path_to_league_table):
             year_start = mo.group()
             year_end = int(year_start)+1
             # print(year_start)
-            df_iterator = pd.read_csv(filename_with_path, usecols=range(1, 18))
+            df_iterator = pd.read_csv(
+                filename_with_path, usecols=range(1, 18))
             df_iterator.insert(0, 'League', league)
             df_iterator.insert(2, 'Year_start', year_start)
             df_iterator.insert(3, 'Year_end', str(year_end))
             # print()
-            frames.append(df_iterator)
+            if year_start != '2013':
+                frames.append(df_iterator)
 
             # print(df)
             # print()
@@ -164,6 +166,7 @@ def walk_through_rosters_players_and_player_summary():
                                                                         "mins", "goals", "assists", "yellow_cards", "red_cards",
                                                                         "shots_per_game", "pass_success_percentage", "aerials_won",
                                                                         "man_of_the_match", "rating"])
+                # df_iterator_players['position'] = df_iterator_players['position']
 
                 frames_player_summary.append(df_player_summary)
                 frames_players.append(df_iterator_players)

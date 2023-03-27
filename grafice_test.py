@@ -4,9 +4,11 @@ import plotly.figure_factory as ff
 from formulas import *
 
 path = f'dataframes/pythagorian_league_table/la liga/la liga_pythagorian_league_table_in_season_2014_2015.csv'
+# path = f'converted_files/league_table.csv'
 
 df = pd.read_csv(path)
-df = df.drop(columns=['AvgGS', 'AvgGA', 'Estimated_Wins_Extended', 'Estimated_Draws_Extended', 'Estimated_Loses_Extended'])
+df = df.drop(columns=['AvgGS', 'AvgGA', 'Estimated_Wins_Extended',
+             'Estimated_Draws_Extended', 'Estimated_Loses_Extended'])
 
 # df = compute_pythagorian_expectation('la liga', 2021)
 
@@ -22,20 +24,20 @@ def calculate_array_of_deltas_for_all_sezons():
 
     for i in range(2014, 2022):
         path = f'dataframes/pythagorian_league_table/la liga/la liga_pythagorian_league_table_in_season_{i}_{i+1}.csv'
-        df_for_array =  pd.read_csv(path)
+        df_for_array = pd.read_csv(path)
         df_for_array = df_for_array.drop(columns=['AvgGS', 'AvgGA', 'Estimated_Wins_Extended', 'Estimated_Draws_Extended',
-                              'Estimated_Loses_Extended'])
+                                                  'Estimated_Loses_Extended'])
 
         estimated_simple_pyth_local = df_for_array['Delta_Points_Simple']
         estimated_extended_pyth_local = df_for_array['Delta_Points_Extended']
-        a, b = calculate_mean_deltas_of_one_year(estimated_simple_pyth_local, estimated_extended_pyth_local)
+        a, b = calculate_mean_deltas_of_one_year(
+            estimated_simple_pyth_local, estimated_extended_pyth_local)
         array_deltas_of_all_years_simple.append(a)
         array_deltas_of_all_years_extended.append(b)
 
         j += 1
 
     return array_deltas_of_all_years_simple, array_deltas_of_all_years_extended
-
 
 
 def calculate_mean_deltas_of_one_year(delta_points_simple, delta_points_extended):
@@ -52,8 +54,8 @@ def calculate_mean_deltas_of_one_year(delta_points_simple, delta_points_extended
     avg_delta_points_simple /= 19
     avg_delta_points_extended /= 19
 
-    avg_delta_points_simple = round(avg_delta_points_simple,2)
-    avg_delta_points_extended = round(avg_delta_points_extended,2)
+    avg_delta_points_simple = round(avg_delta_points_simple, 2)
+    avg_delta_points_extended = round(avg_delta_points_extended, 2)
 
     return avg_delta_points_simple, avg_delta_points_extended
 
@@ -62,7 +64,6 @@ def create_estimated_points_of_one_sezon_figure(data_frame, data_x_axis, data_y1
 
     # Initialize a figure with ff.create_table(table_data)
     fig = ff.create_table(data_frame, height_constant=60)
-
 
     # Make traces for graph
     trace1 = go.Bar(x=data_x_axis, y=data_y1_axis, xaxis='x2', yaxis='y2',
@@ -76,7 +77,7 @@ def create_estimated_points_of_one_sezon_figure(data_frame, data_x_axis, data_y1
                     name=amber_line_name)
 
     # Add trace data to figure
-    fig.add_traces([trace1, trace2,trace3])
+    fig.add_traces([trace1, trace2, trace3])
 
     # initialize xaxis2 and yaxis2
     fig['layout']['xaxis2'] = {}
@@ -101,18 +102,18 @@ def create_estimated_points_of_one_sezon_figure(data_frame, data_x_axis, data_y1
 
     # Plot!
     fig.show()
-    #fig.write_image("fig1.jpeg")
+    # fig.write_image("fig1.jpeg")
 
 
 def create_avg_deltas_figure(data_frame, title, y_column_name, blue_line_name, black_line_name):
-    sezons = ['2014-2015', '2015-2016', '2016-2017', '2017-2018', '2018-2019', '2019-2020', '2020-2021', '2021-2022']
+    sezons = ['2014-2015', '2015-2016', '2016-2017', '2017-2018',
+              '2018-2019', '2019-2020', '2020-2021', '2021-2022']
     array_of_simple_deltas, array_of_extended_deltas = calculate_array_of_deltas_for_all_sezons()
     # print(array_of_simple_deltas)
     # print(array_of_extended_deltas)
 
     # Initialize a figure with ff.create_table(table_data)
     fig = ff.create_table(data_frame, height_constant=60)
-
 
     # Make traces for graph
     trace1 = go.Bar(x=sezons, y=array_of_simple_deltas, xaxis='x2', yaxis='y2',
@@ -148,33 +149,34 @@ def create_avg_deltas_figure(data_frame, title, y_column_name, blue_line_name, b
 
     # Plot!
     fig.show()
-    #fig.write_image("fig1.jpeg")
+    # fig.write_image("fig1.jpeg")
+
 
 if __name__ == '__main__':
     # create_figure('123', dx, dy1, dy2)
     print(df.head(5))
-    
 
-    df.rename(columns = {'Unnamed: 0':'#', 
-                        'Matches':'M', 
-                        'Wins':'W',
-                        'Draws':'D',
-                        'Wins':'W',
-                        'Loses':'L',
-                        'GoalsScored':'GS',
-                        'GoalsReceived':'GR',
-                        'Points':'PTS',
-                        'Estimated_Points_Simple':'EPTS',
-                        'Delta_Points_Simple':'D_EPTS',
-                        'Estimated_Points_Extended':'EXPTS',
-                        'Delta_Points_Extended':'D_EXPTS',
-                        }, inplace=True)  
-    df = df.drop(columns=['#', 'W','L','D'])
+    df.rename(columns={'Unnamed: 0': '#',
+                       'Matches': 'M',
+                       'Wins': 'W',
+                       'Draws': 'D',
+                       'Wins': 'W',
+                       'Loses': 'L',
+                       'GoalsScored': 'GS',
+                       'GoalsReceived': 'GR',
+                       'Points': 'PTS',
+                       'Estimated_Points_Simple': 'EPTS',
+                       'Delta_Points_Simple': 'D_EPTS',
+                       'Estimated_Points_Extended': 'EXPTS',
+                       'Delta_Points_Extended': 'D_EXPTS',
+                       }, inplace=True)
+    df = df.drop(columns=['#', 'W', 'L', 'D'])
     print(df.columns)
+    # df.to_csv(f'converted_files/pythagorian.csv')
     create_estimated_points_of_one_sezon_figure(df, df['Team'], dx, estimated_simple_pyth, estimated_extended_pyth, 'Estimated points by 2 formulas in 2014/15 season', 'Points', 'Points recorded', 'Points estimated by Simple Pythagorian method',
-                   'Points estimted by Extended Pythagorian method')
+                                                'Points estimted by Extended Pythagorian method')
 
-    create_avg_deltas_figure(df, 'Estimated points by 2 formulas','Points', 'Average delta points with simple pithagoryan',
-                                                'Average delta points with extended pithagoryan')
+    create_avg_deltas_figure(df, 'Estimated points by 2 formulas', 'Points', 'Average delta points with simple pithagoryan',
+                             'Average delta points with extended pithagoryan')
 
     # print(calculate_mean_deltas_of_one_year(df['Delta_Points_Simple'], df['Delta_Points_Extended']))

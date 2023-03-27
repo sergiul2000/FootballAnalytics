@@ -63,6 +63,7 @@ my_logger.print_logs_in_file('start')
 
 df = pd.read_csv('utils_for_ml/unified_teams.csv')
 # print(df.sample(n=15))
+df_player_rating_predictions = pd.DataFrame()
 
 x = df[
     ['start_games', 'sub_games', 'mins', 'goals', 'assists', 'shot_per_game', 'offsides_per_game', 'total_shots',
@@ -72,6 +73,13 @@ y = df['rating'].values
 
 x_train, x_test, y_train, y_test = train_test_split(
     x, y, random_state=20, test_size=0.25, shuffle=True)
+
+df_player_rating_predictions['Test points'] = y_test
+# df_player_rating_predictions['name'] = x_test['name'].values
+# print(x_test)
+
+df_names = df['name'][-1129:]
+df_player_rating_predictions['name'] = df_names.values
 
 
 # degree = 3
@@ -124,6 +132,7 @@ my_logger.print_logs_in_file('')
 
 plot_prediction_vs_true_values(
     y_test, y_pred_test, 'test Decision Tree regressor')
+df_player_rating_predictions["Decision tree points"] = y_pred_test
 
 # DT_regressor.plot_prediction_vs_true_values(y_pred)
 # DT_regressor.plot_prediction_vs_true_values(y_pred_test)
@@ -177,7 +186,9 @@ my_logger.print_logs_in_file(str(RF_regressor.score(x_test, y_test)))
 my_logger.print_logs_in_file('')
 
 plot_prediction_vs_true_values(
-    y_train, y_pred_dt, 'test Random Forest regressor')
+    y_test, y_pred_test, 'test Random Forest regressor')
+
+df_player_rating_predictions["Random forest points"] = y_pred_test
 
 ############################################################################################################
 # XGBoost
@@ -218,6 +229,7 @@ my_logger.print_logs_in_file('')
 plot_prediction_vs_true_values(y_test, y_pred_test, 'test XGBoost regressor')
 
 
+df_player_rating_predictions["XGBoost points"] = y_pred_test
 ############################################################################################################
 # Polynomial Regressor
 
@@ -274,6 +286,7 @@ plot_prediction_vs_true_values(
     y_test, y_pred_test, 'test polynomial regressor')
 
 
+df_player_rating_predictions["Polynomial points"] = y_pred_test
 ############################################################################################################
 # K-fold Validation
 
@@ -302,3 +315,6 @@ my_logger.print_logs_in_file("")
 
 
 my_logger.print_logs_in_file('end')
+
+df_player_rating_predictions.to_csv(
+    './converted_files/player_rating_predictors.csv')
