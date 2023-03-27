@@ -1,4 +1,6 @@
 
+DROP TABLE IF EXISTS public.simple_pythagorian;
+DROP TABLE IF EXISTS public.extended_pythagorian;
 DROP TABLE IF EXISTS public.league_table;
 DROP TABLE IF EXISTS public.player_summary_stats;
 DROP TABLE IF EXISTS public.player_defensive_stats;
@@ -76,7 +78,63 @@ TABLESPACE pg_default;
 ALTER TABLE IF EXISTS public.league_table
     OWNER to postgres;
     
+    
 
+
+CREATE TABLE IF NOT EXISTS public.extended_pythagorian
+(    
+    team_name character varying COLLATE pg_catalog."default",
+    year_start integer,
+    year_end integer,
+    matches integer,
+    wins integer,
+    draws integer,
+    loses integer,
+    goals integer,
+    goals_against integer,
+    points integer,
+    expected_wins integer,
+    expected_draws integer,
+    expected_loses integer,
+    expected_points integer,
+    delta_points_extended integer,
+    CONSTRAINT extended_pythagorian_pkey PRIMARY KEY (team_name,year_start,year_end),
+	CONSTRAINT fk_league_table_extended_pythagorian FOREIGN KEY (team_name,year_start,year_end)
+        REFERENCES public.league_table (team_name,year_start,year_end) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.extended_pythagorian
+    OWNER to postgres;
+    
+
+    
+CREATE TABLE IF NOT EXISTS public.simple_pythagorian
+(    
+    team_name character varying COLLATE pg_catalog."default",
+    year_start integer,
+    year_end integer,
+    matches integer,
+    wins integer,
+    draws integer,
+    loses integer,
+    goals integer,
+    goals_against integer,
+    points integer,
+    expected_points integer,
+    delta_points_extended integer,
+    CONSTRAINT simple_pythagorian_pkey PRIMARY KEY (team_name,year_start,year_end),
+	CONSTRAINT fk_league_table_simple_pythagorian FOREIGN KEY (team_name,year_start,year_end)
+        REFERENCES public.league_table (team_name,year_start,year_end) MATCH SIMPLE
+        ON UPDATE NO ACTION
+        ON DELETE NO ACTION
+)
+TABLESPACE pg_default;
+
+ALTER TABLE IF EXISTS public.simple_pythagorian
+    OWNER to postgres;
 
 CREATE TABLE IF NOT EXISTS public.player
 (

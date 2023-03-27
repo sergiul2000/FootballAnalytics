@@ -1,0 +1,3118 @@
+,Unnamed: 0,player_number,name,age,position,tall,weight
+0,0,8040,Cesc Fàbregas,35," M(CL),FW",180,77
+1,1,4564,Robin van Persie,39," AM(C),FW",183,71
+2,2,18214,Abou Diaby,36, M(C),191,75
+3,3,10599,Alexandre Song,35, M(C),185,74
+4,4,27550,Kieran Gibbs,32," D(L),M(L)",181,73
+5,5,6042,Gaël Clichy,37, D(L),176,65
+6,6,10209,Thomas Vermaelen,36, D(CL),183,80
+7,7,4599,Andrey Arshavin,41, AM(LR),172,69
+8,8,22649,Denílson,34, M(C),182,70
+9,9,24366,Armand Traore,32," D(L),M(L)",185,81
+10,10,13298,Samir Nasri,35, M(CLR),175,75
+11,11,1554,William Gallas,45, D(C),181,69
+12,12,958,Sol Campbell,48, D(L),188,88
+13,13,19471,Bacary Sagna,39, D(CR),176,72
+14,14,8039,Emmanuel Eboué,39, D(R),178,72
+15,15,13819,Nicklas Bendtner,34, FW,193,84
+16,16,845,Tomas Rosicky,41, M(CR),178,65
+17,17,26820,Aaron Ramsey,31, M(CLR),178,76
+18,18,21682,Vito Mannone,34, GK,188,77
+19,19,82231,Craig Eastmond,31, M(C),173,75
+20,20,523,Mikaël Silvestre,45, D(C),184,85
+21,21,13796,Theo Walcott,33," M(CLR),FW",176,68
+22,22,7412,Eduardo da Silva,39," M(C),FW",177,72
+23,23,8041,Manuel Almunia,45, GK,191,86
+24,24,11680,Johan Djourou,35, D(C),191,87
+25,25,32860,Fran Mérida,32, AM(C),177,74
+26,26,20973,Lukasz Fabianski,37, GK,190,83
+27,27,32858,Henri Lansbury,31, M(C),183,78
+28,28,25165,Carlos Vela,33," M(CLR),FW",177,77
+29,29,42686,Jack Wilshere,30, M(CLR),172,68
+0,0,4384,Didier Drogba,44, FW,189,91
+1,1,48,Frank Lampard,44, M(C),184,89
+2,2,1563,Florent Malouda,42, M(CL),184,73
+3,3,1832,Michael Essien,39," D(R),DMC",183,78
+4,4,527,Nicolas Anelka,43, FW,185,77
+5,5,15338,Branislav Ivanovic,38, D(CR),185,80
+6,6,2351,Deco,45, M(C),175,69
+7,7,342,Ashley Cole,41," D(L),M(L)",176,66
+8,8,10685,José Bosingwa,40, D(CLR),183,75
+9,9,10132,Alex,40, D(C),188,92
+10,10,70,John Terry,41, D(C),187,90
+11,11,6666,Ricardo Carvalho,44, D(C),183,79
+12,12,255,Michael Ballack,45," D(C),M(C),FW",189,88
+13,13,15464,John Obi Mikel,35, M(C),188,83
+14,14,7252,Yuri Zhirkov,39," D(L),M(CL)",180,75
+15,15,487,Joe Cole,40, M(LR),175,63
+16,16,7010,Paulo Ferreira,43, D(R),181,76
+17,17,6775,Petr Cech,40, GK,196,90
+18,18,8028,Salomon Kalou,37," AM(CLR),FW",185,79
+19,19,3574,Juliano Belletti,46, Defender,174,69
+20,20,27551,Sam Hutchinson,33," D(C),DMC",182,73
+21,21,78221,Patrick van Aanholt,32," D(L),M(L)",176,74
+22,22,38128,Nemanja Matic,34, DMC,194,85
+23,23,80881,Jeffrey Bruma,30, D(C),190,88
+24,24,10874,Ross Turnbull,37, GK,193,85
+25,25,23736,Daniel Sturridge,33," M(R),FW",188,76
+26,26,14115,Henrique Hilário,46, Goalkeeper,189,85
+27,27,70291,Gaël Kakuta,31," M(CLR),FW",173,64
+28,28,80882,Fabio Borini,31," M(CLR),FW",180,73
+29,29,179,Andriy Shevchenko,45, M(C),183,72
+0,0,4056,Fernando Torres,38, FW,186,79
+1,1,4574,Glen Johnson,38," D(CLR),M(R)",182,78
+2,2,17,Steven Gerrard,42, M(C),185,82
+3,3,3061,Sotirios Kyrgiakos,43," D(L),DMC",193,88
+4,4,31451,Lucas Leiva,35," D(C),M(C)",179,74
+5,5,7415,Javier Mascherano,38," D(C),M(C)",174,73
+6,6,26817,Emiliano Insúa,33," D(CL),M(L)",180,79
+7,7,4445,Maxi Rodríguez,41," M(CL),FW",180,75
+8,8,7398,Daniel Agger,37, D(C),188,79
+9,9,7516,Dirk Kuyt,42," M(CLR),FW",184,77
+10,10,4490,Yossi Benayoun,42, M(R),178,70
+11,11,4958,Albert Riera,40," D(L),M(L)",188,83
+12,12,1329,Jamie Carragher,44, D(C),185,76
+13,13,2987,Pepe Reina,40, GK,188,92
+14,14,19840,Martin Skrtel,37, D(C),191,81
+15,15,9989,Alberto Aquilani,38, M(C),185,81
+16,16,78559,Daniel Ayala,31, D(C),190,81
+17,17,24457,David N'Gog,33, FW,190,76
+18,18,12158,Ryan Babel,35," M(LR),FW",185,79
+19,19,2940,Fábio Aurélio,42," D(C),FW",178,75
+20,20,44687,Martin Kelly,32, D(CLR),191,77
+21,21,23167,Nabil El Zhar,36, M(CLR),171,66
+22,22,5450,Philipp Degen,39, D(R),185,81
+23,23,5035,Andrey Voronin,43," AM(C),FW",174,81
+24,24,6175,Andrea Dossena,41," D(L),M(L)",181,77
+25,25,67296,Dani Pacheco,31, Midfielder,170,70
+26,26,86594,Jack Robinson,29," D(CL),M(L)",168,64
+27,27,44068,Jay Spearing,33, M(C),171,71
+28,28,67483,Nathan Eccleston,31, Forward,177,65
+29,29,23244,Stephen Darby,33, Defender,183,75
+0,0,831,Richard Dunne,42, D(C),188,89
+1,1,14167,Carlos Tevez,38," AM(CL),FW",173,75
+2,2,188,Gareth Barry,41, M(C),185,87
+3,3,6363,Emmanuel Adebayor,38, FW,191,82
+4,4,3817,Kolo Touré,41, D(C),183,74
+5,5,10136,Vincent Kompany,36, D(C),193,85
+6,6,14269,Adam Johnson,35, M(CLR),175,63
+7,7,1982,Craig Bellamy,43, AM(R),175,68
+8,8,14244,Pablo Zabaleta,37," D(R),DMC,M(R)",176,74
+9,9,31212,Marton Fülöp,39, GK,196,92
+10,10,341,Patrick Vieira,46," D(C),DMC",192,82
+11,11,8137,Joleon Lescott,40, D(CL),190,89
+12,12,836,Wayne Bridge,42, D(L),178,69
+13,13,14168,Micah Richards,34, D(CR),180,83
+14,14,2703,Shaun Wright-Phillips,40, M(LR),168,64
+15,15,4608,Nigel de Jong,37, M(C),174,72
+16,16,3987,Benjani,44, FW,188,78
+17,17,6210,Javier Garrido,37, D(CL),180,76
+18,18,14169,Stephen Ireland,36, M(C),173,67
+19,19,2910,Martin Petrov,43," M(CL),FW",180,77
+20,20,11669,Nedum Onuoha,35, D(CR),183,94
+21,21,1034,Shay Given,46, GK,185,84
+22,22,14247,Robinho,38," AM(CLR),FW",172,60
+23,23,130,Sylvinho,48, D(C),173,66
+24,24,954,Roque Santa Cruz,41, FW,191,93
+25,25,43073,Gunnar Nielsen,35, GK,191,85
+26,26,83032,Dedryck Boyata,31, D(C),188,84
+27,27,83211,Abdisalam Abdulkadir Ibrahim,31, M(C),185,71
+28,28,85465,Alex Nimely,31, Forward,180,74
+29,29,83394,Greg Cunningham,31," D(CL),M(L)",183,77
+30,30,22606,Michael Johnson,34, Midfielder,183,80
+0,0,3859,Wayne Rooney,36," M(CLR),FW",176,83
+1,1,4092,Rafael,32," D(LR),M(R)",172,78
+2,2,9685,Nemanja Vidic,40, D(C),189,84
+3,3,31856,Ritchie De Laet,33, D(CLR),186,77
+4,4,19104,Nani,35," M(CLR),FW",178,66
+5,5,18296,Antonio Valencia,37," D(R),M(R)",180,83
+6,6,77,Ryan Giggs,48, M(CL),180,68
+7,7,6410,Patrice Evra,41," D(CL),M(L)",174,75
+8,8,2213,Dimitar Berbatov,41," AM(C),FW",188,79
+9,9,22079,Jonny Evans,34, D(CL),188,77
+10,10,5835,Darren Fletcher,38, M(C),183,83
+11,11,7884,Tomasz Kuszczak,40, GK,191,84
+12,12,11,Paul Scholes,47, M(C),168,70
+13,13,1019,Wes Brown,42, D(C),185,77
+14,14,3101,Edwin van der Sar,51, GK,197,84
+15,15,2115,Michael Carrick,41," D(C),M(C)",188,74
+16,16,119,Gary Neville,47, D(R),180,79
+17,17,928,Rio Ferdinand,43, D(C),189,82
+18,18,30395,Darron Gibson,34, M(C),183,90
+19,19,3203,Park Ji-Sung,41, M(CLR),175,72
+20,20,21723,Anderson,34, M(CR),176,69
+21,21,11530,Ben Foster,39, GK,193,79
+22,22,3841,John O'Shea,41, D(C),191,75
+23,23,44031,Fábio,32," D(LR),M(R)",172,66
+24,24,71330,Federico Macheda,31, FW,185,77
+25,25,7,Michael Owen,42, FW,173,70
+26,26,26013,Mame Diouf,34," M(LR),FW",185,79
+27,27,22818,Gabriel Obertan,33," M(CLR),FW",186,79
+28,28,39308,Danny Welbeck,31," AM(CLR),FW",185,73
+29,29,553,Owen Hargreaves,41, Midfielder,180,74
+0,0,13812,Gareth Bale,33," M(CLR),FW",185,81
+1,1,4905,Michael Dawson,38, D(C),188,76
+2,2,8194,Tom Huddlestone,35, DMC,188,80
+3,3,24711,Danny Rose,32," D(L),M(L)",173,72
+4,4,7411,Niko Kranjcar,38, M(CL),186,84
+5,5,5625,Aaron Lennon,35, M(LR),165,63
+6,6,11580,Benoit Assou-Ekotto,38, D(L),178,70
+7,7,20874,Luka Modric,37, M(C),172,66
+8,8,2813,Carlo Cudicini,49, GK,185,74
+9,9,3807,Peter Crouch,41, FW,201,75
+10,10,10133,Heurelho Gomes,41, GK,191,91
+11,11,562,Ledley King,41," D(L),DMC",188,82
+12,12,6162,David Bentley,38, D(C),175,68
+13,13,31549,Wilson Palacios,38, M(C),178,71
+14,14,22040,Vedran Corluka,36, D(C),192,84
+15,15,2837,Jermain Defoe,39," AM(R),FW",171,65
+16,16,19247,Sebastien Bassong,36, D(C),187,73
+17,17,14805,Younes Kaboul,36, D(C),193,87
+18,18,112,Jonathan Woodgate,42, D(C),188,80
+19,19,69778,Kyle Walker,32," D(CR),M(R)",178,70
+20,20,7336,Roman Pavlyuchenko,40, FW,188,80
+21,21,3837,Jermaine Jenas,39, M(C),180,73
+22,22,88,Robbie Keane,42, FW,176,73
+23,23,6434,Alan Hutton,37, D(LR),185,72
+24,24,8180,Ben Alnwick,35, GK,188,81
+25,25,23,Eidur Gudjohnsen,44," AM(C),FW",185,82
+26,26,28112,Giovani dos Santos,33," AM(CLR),FW",174,71
+27,27,14171,Jamie O'Hara,35, M(C),180,72
+28,28,36849,Jake Livermore,32," D(C),DMC",181,91
+29,29,34131,Kyle Naughton,33," D(CLR),M(R)",180,73
+10,10,30051,Laurent Koscielny,37, D(C),186,75
+13,13,6236,Marouane Chamakh,38," AM(C),FW",185,70
+14,14,73379,Wojciech Szczesny,32, GK,195,90
+15,15,3929,Sébastien Squillaci,42, D(C),185,80
+18,18,628,Jens Lehmann,52, GK,190,87
+26,26,74342,Jay Emmanuel-Thomas,31," AM(C),FW",191,86
+7,7,27586,David Luiz,35," D(C),DMC",189,84
+10,10,28191,Ramires,35, M(CR),180,73
+14,14,22846,Ryan Bertrand,33," D(CL),M(L)",179,85
+21,21,92324,Josh McEachran,29, M(C),178,66
+1,1,22221,Luis Suárez,35," AM(CLR),FW",182,86
+3,3,10111,Raul Meireles,39, M(C),179,65
+15,15,94030,Jon Flanagan,29, D(LR),181,79
+16,16,23383,Andy Carroll,33, FW,193,79
+17,17,1653,Christian Poulsen,42, M(C),182,79
+20,20,1103,Paul Konchesky,41, D(L),178,69
+21,21,72738,Danny Wilson,30," D(C),DMC",187,79
+25,25,21712,Milan Jovanovic,41, AM(L),183,73
+27,27,40027,Jonjo Shelvey,30, M(C),184,80
+3,3,14053,Yaya Touré,39, M(C),188,90
+4,4,14102,David Silva,36," M(CLR),FW",170,67
+10,10,8786,Joe Hart,35, GK,196,91
+11,11,23589,Jérôme Boateng,34, D(CR),192,90
+12,12,12267,Aleksandar Kolarov,36," D(CL),M(L)",187,81
+13,13,33799,Mario Balotelli,32, FW,189,88
+15,15,4511,James Milner,36," D(LR),M(CLR)",175,70
+16,16,24845,Edin Dzeko,36, FW,193,80
+21,21,16696,Jô,35, FW,189,86
+23,23,44524,Ryan McGivern,32, Defender,183,84
+24,24,98050,Reece Wabara,30, D(LR),182,79
+25,25,98850,Abdul Razak,29, DMC,180,80
+10,10,71345,Chris Smalling,32, D(CR),194,81
+19,19,35003,Chicharito,34, FW,175,73
+26,26,89883,Bebé,32," AM(LR),FW",190,83
+1,1,4343,Rafael van der Vaart,39, M(C),176,74
+13,13,68890,Sandro,33, M(C),187,82
+15,15,3553,Steven Pienaar,40, M(CL),170,69
+1,1,1443,Mikel Arteta,40, M(C),183,64
+2,2,27487,André Santos,39," D(L),M(CL)",180,73
+5,5,106454,Li Ke,29," D(R),DMC",175,65
+10,10,69738,Francis Coquelin,31, M(CLR),176,74
+12,12,17740,Gervinho,35," M(LR),FW",179,66
+15,15,6292,Per Mertesacker,37, D(C),198,90
+16,16,84146,Alex Oxlade Chamberlain,29, M(CLR),180,70
+18,18,5,Thierry Henry,45," AM(L),FW",188,84
+22,22,69740,Emmanuel Frimpong,30, M(C),178,67
+24,24,96128,Ignasi Miquel,29, D(C),188,82
+26,26,91879,Carl Jenkinson,30, D(R),185,77
+27,27,21064,Park Chu-Young,37, FW,182,75
+0,0,25363,Juan Mata,34, AM(CLR),170,63
+7,7,11981,Gary Cahill,36, D(C),193,86
+19,19,90780,Oriol Romeu,30, DMC,183,83
+24,24,78498,Romelu Lukaku,29," AM(R),FW",190,93
+0,0,11774,Bradley Jones,40, GK,194,76
+3,3,8327,Charlie Adam,36, M(C),185,83
+10,10,14230,José Enrique,36," D(L),M(L)",184,76
+12,12,71268,Sebastián Coates,31, D(C),196,94
+14,14,68659,Jordan Henderson,32," D(C),M(CLR)",182,67
+15,15,5641,Stewart Downing,38," D(L),M(CLR)",180,64
+23,23,14252,Doni,42, GK,194,91
+25,25,97692,Raheem Sterling,27," M(CLR),FW",170,69
+1,1,14260,Sergio Agüero,34," AM(CL),FW",173,70
+18,18,77564,Stefan Savic,31, D(C),187,81
+20,20,2239,David Pizarro,43, M(C),170,65
+8,8,68651,Ben Amos,32, GK,180,70
+9,9,8166,Ashley Young,37," D(LR),M(LR)",175,65
+13,13,81726,Phil Jones,30," D(CR),DMC",180,71
+16,16,79554,David de Gea,31, GK,192,76
+20,20,10620,Anders Lindegaard,38, GK,193,80
+25,25,69956,Tom Cleverley,33, M(CLR),175,67
+26,26,97752,Paul Pogba,29, M(CL),191,84
+27,27,107942,Ezekiel Fryers,30, D(CL),185,75
+29,29,107940,Will Keane,29," AM(C),FW",188,78
+4,4,270,Scott Parker,41, M(C),180,70
+14,14,110,Louis Saha,44," AM(L),FW",185,69
+16,16,3426,Brad Friedel,51, GK,191,92
+20,20,69877,Adam Smith,31," D(LR),M(LR)",180,78
+21,21,99588,Cameron Lancaster,29, Forward,184,74
+23,23,13311,Ryan Nelsen,44, D(C),185,77
+0,0,4522,Santi Cazorla,37, M(CLR),168,65
+4,4,23072,Nacho Monreal,36," D(CL),M(L)",179,72
+6,6,24444,Olivier Giroud,35, FW,192,93
+10,10,6040,Lukas Podolski,37," AM(CLR),FW",182,80
+24,24,119501,Serge Gnabry,27," AM(CLR),FW",176,77
+0,0,33404,Eden Hazard,31," M(CLR),FW",175,74
+8,8,41065,Oscar,31, M(CLR),179,70
+10,10,25931,César Azpilicueta,33," D(CLR),M(R)",178,76
+11,11,101964,Lucas Piazón,28," AM(CLR),FW",182,75
+15,15,21457,Demba Ba,37," AM(C),FW",189,90
+16,16,33064,Victor Moses,31, M(CLR),177,79
+21,21,122945,Nathan Aké,27," D(CL),DMC",180,75
+22,22,23205,Marko Marin,33, M(CLR),170,64
+3,3,80767,Philippe Coutinho,30, M(CLR),172,68
+11,11,101763,Andre Wisdom,29," D(CR),M(R)",186,78
+12,12,105797,Jordon Ibe,26, M(CLR),176,81
+13,13,14176,Nuri Sahin,34, M(C),180,73
+17,17,23444,Joe Allen,32, M(C),168,62
+20,20,105591,Suso,28," AM(CLR),FW",177,70
+26,26,97710,Conor Coady,29," D(CR),DMC",185,73
+27,27,29762,Oussama Assaidi,34," AM(L),FW",177,69
+6,6,106530,Karim Rekik,27, D(CL),186,84
+10,10,91200,Matija Nastasic,29, D(C),188,83
+14,14,8007,Maicon,41, D(R),184,77
+15,15,12378,Javi García,35," D(C),DMC",187,82
+21,21,33833,Jack Rodwell,31," D(C),M(C)",188,70
+23,23,12779,Scott Sinclair,33," M(LR),FW",175,64
+3,3,38147,Alexander Büttner,33," D(L),M(L)",174,75
+11,11,42862,Shinji Kagawa,33, M(CL),175,68
+16,16,90211,Nick Powell,28," AM(CLR),FW",183,65
+1,1,21778,Jan Vertonghen,35, D(CL),189,79
+3,3,12187,Mousa Dembélé,35, M(CR),185,87
+9,9,76499,Steven Caulker,30, D(C),191,76
+10,10,16369,Clint Dempsey,39," M(CL),FW",186,78
+16,16,25604,Hugo Lloris,35, GK,188,82
+17,17,69346,Gylfi Sigurdsson,33," M(CLR),FW",186,79
+19,19,41004,Lewis Holtby,32, M(CLR),176,72
+21,21,90907,Tom Carroll,30, M(CL),177,71
+22,22,71522,Andros Townsend,31," AM(LR),FW",181,77
+25,25,83532,Harry Kane,29," AM(C),FW",188,86
+27,27,80734,Iago Falque,32," AM(CLR),FW",172,70
+5,5,13756,Mesut Özil,33, M(CLR),180,76
+19,19,6321,Mathieu Flamini,38, M(C),178,67
+20,20,3777,Kim Källström,40, M(C),185,87
+23,23,97376,Ryo Miyaichi,29, M(LR),183,78
+24,24,83304,Yaya Sanogo,29, FW,191,74
+26,26,122294,Chuba Akpom,26, FW,183,70
+5,5,29463,Willian,34, AM(CLR),174,76
+7,7,1594,Samuel Eto'o,41," M(CL),FW",179,75
+11,11,3852,Mark Schwarzer,49, GK,194,95
+16,16,77461,André Schürrle,31," M(CLR),FW",184,73
+17,17,108226,Mohamed Salah,30," AM(CLR),FW",175,71
+18,18,86509,Tomás Kalas,29, D(CR),183,80
+22,22,73084,Kevin De Bruyne,31," M(CLR),FW",181,68
+27,27,149102,John Swift,27, M(CL),182,73
+28,28,85470,Marco van Ginkel,29, M(C),180,67
+10,10,29575,Mamadou Sakho,32, D(C),187,83
+11,11,35958,Aly Cissokho,35," D(L),M(L)",181,75
+16,16,52197,Simon Mignolet,34, GK,193,87
+20,20,85077,Luis Alberto,29," AM(CL),FW",182,70
+21,21,91242,Iago Aspas,35," AM(CR),FW",176,67
+23,23,142352,João Teixeira,29, AM(CLR),167,64
+24,24,141414,Brad Smith,28," D(L),M(L)",178,70
+3,3,19119,Fernandinho,37," D(CR),DMC",179,67
+4,4,5840,Martín Demichelis,41, D(C),184,80
+9,9,9446,Jesús Navas,36," D(R),M(R)",172,60
+15,15,23757,Álvaro Negredo,37, FW,186,71
+16,16,29072,Stevan Jovetic,32," AM(CL),FW",183,79
+20,20,43948,Costel Pantilimon,35, GK,203,90
+0,0,145271,James Wilson,26," AM(CR),FW",183,73
+6,6,22738,Marouane Fellaini,34, M(C),194,85
+12,12,130334,Adnan Januzaj,27, AM(CLR),186,76
+16,16,140887,Tom Lawrence,28," AM(CLR),FW",180,75
+29,29,85059,Wilfried Zaha,29," AM(LR),FW",180,66
+0,0,69344,Christian Eriksen,30," M(CLR),FW",182,76
+4,4,76921,Vlad Chiriches,32, D(CR),184,75
+9,9,33590,Etienne Capoue,34," D(C),M(CL)",189,80
+11,11,36399,Paulinho,34, M(CR),181,81
+17,17,34302,Nacer Chadli,33," M(CLR),FW",187,80
+18,18,137521,Nabil Bentaleb,27, M(C),187,78
+21,21,18275,Roberto Soldado,37, FW,180,74
+24,24,75830,Erik Lamela,30," AM(CLR),FW",181,79
+26,26,141399,Milos Veljkovic,26," D(C),DMC",188,85
+27,27,107848,Alex Pritchard,29," AM(CLR),FW",171,62
+0,0,25244,Alexis Sánchez,33," M(CLR),FW",169,62
+5,5,76810,Gabriel Paulista,31, D(CR),185,72
+7,7,11367,Mathieu Debuchy,37," D(CR),M(R)",176,76
+10,10,125211,Héctor Bellerín,27," D(R),M(R)",178,74
+14,14,36745,David Ospina,34, GK,183,80
+16,16,124316,Calum Chambers,27," D(CR),DMC",182,66
+22,22,102248,Emiliano Martínez,30, GK,195,88
+27,27,95977,Joel Campbell,30," AM(LR),FW",178,71
+28,28,255169,Ainsley Maitland-Niles,25," D(LR),M(CLR)",177,71
+3,3,24248,Diego Costa,33, FW,188,83
+11,11,22152,Filipe Luís,37, D(L),181,77
+12,12,73798,Thibaut Courtois,30, GK,200,96
+15,15,106086,Kurt Zouma,27, D(CR),190,96
+16,16,23054,Loïc Rémy,35," M(LR),FW",185,80
+19,19,44868,Juan Cuadrado,34," D(R),M(CLR),FW",179,72
+20,20,255777,Ruben Loftus-Cheek,26, M(CLR),191,88
+22,22,127119,Isaiah Brown,25," AM(CL),FW",182,70
+23,23,130331,Andreas Christensen,26," D(C),DMC",187,82
+5,5,111212,Emre Can,28," D(CLR),DMC",186,86
+7,7,29106,Dejan Lovren,33, D(C),188,84
+10,10,21683,Adam Lallana,34, M(CLR),172,73
+11,11,109227,Javier Manquillo,28," D(LR),M(R)",178,76
+15,15,113275,Alberto Moreno,30," D(L),M(L)",171,65
+16,16,105577,Lazar Markovic,28, AM(CLR),175,65
+21,21,8409,Rickie Lambert,40, FW,188,77
+24,24,274630,Jerome Sinclair,26," AM(LR),FW",173,79
+8,8,68852,Eliaquim Mangala,31, D(C),188,84
+14,14,31958,Fernando,35, DMC,183,76
+15,15,42705,Wilfried Bony,33, FW,182,88
+20,20,34749,Willy Caballero,40, GK,186,81
+22,22,244564,José Ángel Pozo,26, AM(C),171,67
+2,2,71174,Ander Herrera,33, M(C),182,71
+4,4,70050,Marcos Rojo,32, D(CL),186,82
+7,7,70033,Daley Blind,32," D(CL),DMC,M(L)",180,72
+12,12,23110,Ángel Di María,34," M(CLR),FW",180,75
+14,14,9484,Víctor Valdés,40, GK,183,78
+15,15,118244,Luke Shaw,27," D(CL),M(L)",185,75
+17,17,244565,Patrick McNair,27," D(CR),M(C)",183,72
+18,18,107941,Michael Keane,29, D(CR),191,82
+20,20,18701,Radamel Falcao,36, FW,177,72
+24,24,137795,Tyler Blackett,28," D(CL),M(L)",188,76
+28,28,243254,Andreas Pereira,26, M(CLR),178,71
+29,29,109000,Jesse Lingard,29," AM(CLR),FW",175,62
+32,32,107945,Tom Thorpe,29, D(C),185,89
+0,0,29908,Federico Fazio,35, D(C),195,85
+9,9,117973,Eric Dier,28," D(CR),DMC",188,88
+11,11,19270,Michel Vorm,38, GK,183,84
+14,14,69878,Ryan Mason,31, DMC,175,68
+15,15,103837,Ben Davies,29," D(CL),M(L)",181,76
+20,20,83303,Benjamin Stambouli,32," D(CR),M(C)",180,82
+26,26,126958,DeAndre Yedlin,29," D(R),M(R)",172,75
+15,15,136824,Alexander Iwobi,26, M(CLR),180,75
+16,16,125209,Mohamed Elneny,30, DMC,179,72
+4,4,44055,Pedro,35," M(CLR),FW",169,65
+11,11,109807,Bertrand Traoré,27," AM(R),FW",181,73
+12,12,23122,Asmir Begovic,35, GK,199,101
+13,13,114845,Abdul Rahman Baba,28," D(L),M(L)",180,72
+16,16,132838,Kenedy,26," D(L),M(LR)",182,77
+17,17,23158,Alexandre Pato,33," M(CLR),FW",175,72
+22,22,131999,Matt Miazga,27, D(C),191,84
+25,25,312919,Jake Clarke-Salter,24, D(C),188,70
+26,26,317507,Fikayo Tomori,24, D(CR),185,75
+27,27,317506,Tammy Abraham,24, FW,190,80
+2,2,96182,Roberto Firmino,30," M(CLR),FW",181,76
+11,11,107846,Kevin Stewart,29, DMC,181,73
+13,13,136451,Joe Gomez,25, D(CLR),188,77
+14,14,68312,Christian Benteke,31, FW,190,83
+15,15,69375,Nathaniel Clyne,31," D(LR),M(R)",175,67
+17,17,99165,Danny Ward,29, GK,191,88
+18,18,141513,Cameron Brannagan,26, M(C),180,71
+20,20,257539,Sheyi Ojo,25, AM(CLR),177,64
+21,21,124688,Divock Origi,27," AM(LR),FW",185,75
+24,24,91762,Danny Ings,30," AM(C),FW",178,73
+26,26,141437,Jordan Rossiter,25, DMC,178,68
+28,28,296522,Connor Randall,26, D(LR),180,76
+29,29,295964,Sergi Canós,25, M(LR),177,75
+32,32,69179,Ádám Bogdán,34, GK,193,82
+33,33,297409,Pedro Chirivella,25, DMC,178,66
+0,0,75691,Nicolás Otamendi,34, D(C),183,81
+14,14,300495,Bersant Celina,26," AM(CLR),FW",181,60
+17,17,27213,Fabian Delph,32," D(L),M(CL)",174,60
+22,22,289253,Kelechi Iheanacho,25," AM(C),FW",185,82
+23,23,295950,Manu García,24, M(CL),169,65
+24,24,136462,Patrick Roberts,25," AM(CR),FW",168,58
+1,1,122366,Anthony Martial,26," AM(LR),FW",181,76
+6,6,300299,Marcus Rashford,24," AM(CLR),FW",180,70
+8,8,29544,Morgan Schneiderlin,32, DMC,181,75
+9,9,23220,Matteo Darmian,32," D(CLR),M(LR)",182,70
+10,10,145385,Guillermo Varela,29, D(LR),173,70
+12,12,303379,Donald Love,27," D(LR),M(CR)",178,72
+14,14,4567,Bastian Schweinsteiger,38," D(C),M(C)",183,79
+17,17,312739,Timothy Fosu-Mensah,24, D(CR),185,80
+18,18,136454,Cameron Borthwick-Jackson,25," D(CL),M(CL)",183,78
+24,24,110154,Memphis Depay,28," AM(CL),FW",176,78
+25,25,33831,Sergio Romero,35, GK,192,87
+31,31,302386,James Weir,27, M(C),177,71
+3,3,131519,Dele Alli,26," M(CL),FW",188,76
+4,4,83078,Kieran Trippier,32," D(LR),M(R)",178,71
+7,7,69933,Toby Alderweireld,33, D(CR),186,81
+12,12,101550,Kevin Wimmer,29, D(CL),187,85
+15,15,91909,Son Heung-Min,30," M(CLR),FW",183,78
+19,19,121849,Clinton N'Jie,29," AM(LR),FW",176,73
+22,22,136455,Josh Onomah,25, M(CL),185,70
+2,2,80921,Shkodran Mustafi,30, D(CR),184,82
+11,11,288795,Rob Holding,27, D(CR),189,81
+12,12,89401,Granit Xhaka,29," D(L),M(C)",186,80
+26,26,135663,Lucas Pérez,34," AM(CR),FW",180,82
+1,1,84008,Marcos Alonso,31," D(CL),M(L)",188,84
+3,3,114075,N'Golo Kanté,31, DMC,168,68
+18,18,97803,Michy Batshuayi,28, FW,184,76
+19,19,92729,Nathaniel Chalobah,27, DMC,187,80
+21,21,315543,Ola Aina,25," D(CLR),M(LR)",184,82
+2,2,109915,Sadio Mané,30," AM(CLR),FW",175,69
+6,6,74341,Joël Matip,31, D(C),195,90
+9,9,33568,Georginio Wijnaldum,31, M(CLR),175,69
+13,13,10839,Ragnar Klavan,36, D(C),187,85
+16,16,107176,Loris Karius,29, GK,189,87
+18,18,244779,Marko Grujic,26, DMC,191,86
+19,19,318871,Trent Alexander-Arnold,23," D(R),M(R)",175,69
+20,20,330818,Ben Woodburn,22, AM(CL),174,72
+22,22,327852,Ovie Ejaria,24, M(CL),183,75
+2,2,279379,Gabriel Jesus,25," AM(LR),FW",175,73
+9,9,77464,Ilkay Gündogan,31, M(C),180,80
+10,10,144711,Leroy Sané,26," M(CLR),FW",183,80
+14,14,101374,John Stones,28, D(CR),188,70
+17,17,91267,Nolito,35, AM(CL),175,65
+22,22,14199,Claudio Bravo,39, GK,184,80
+24,24,280663,Aleix García,25, DMC,173,68
+0,0,338496,Josh Harrop,26, AM(CL),177,71
+2,2,136457,Demetri Mitchell,25," D(L),M(R)",181,71
+4,4,3281,Zlatan Ibrahimovic,40, FW,195,95
+7,7,243814,Eric Bailly,28, D(CR),187,77
+16,16,28421,Henrikh Mkhitaryan,33," M(CLR),FW",177,75
+19,19,312584,Joel Pereira,26, GK,188,70
+23,23,299271,Axel Tuanzebe,24, D(CR),186,75
+24,24,336915,Scott McTominay,25," D(C),DMC",193,88
+28,28,338497,Angel Gomes,22," M(CL),FW",161,61
+5,5,71714,Victor Wanyama,31, DMC,188,80
+15,15,320639,Filip Lesniak,26, Midfielder,176,70
+17,17,29595,Moussa Sissoko,33, M(CR),187,83
+18,18,143990,Harry Winks,26, DMC,178,65
+19,19,133381,Vincent Janssen,28, FW,184,79
+21,21,134887,Georges-Kévin Nkoudou,27, AM(LR),172,75
+4,4,44120,Pierre-Emerick Aubameyang,33," M(CLR),FW",187,80
+8,8,73078,Alexandre Lacazette,31," M(CLR),FW",175,73
+12,12,110260,Sead Kolasinac,29," D(CL),DMC,M(L)",183,85
+24,24,342564,Reiss Nelson,22, M(LR),175,71
+25,25,351127,Konstantinos Mavropanos,24, D(C),194,94
+28,28,345845,Eddie Nketiah,23, FW,175,72
+29,29,342563,Joe Willock,23, M(C),179,71
+6,6,91213,Álvaro Morata,29," AM(L),FW",190,84
+7,7,104010,Antonio Rüdiger,29, D(CR),190,85
+9,9,135211,Tiemoué Bakayoko,28, DMC,185,77
+16,16,101955,Emerson,28," D(L),M(L)",176,63
+18,18,141312,Davide Zappacosta,30," D(LR),M(LR)",185,70
+19,19,75138,Danny Drinkwater,32, DMC,178,79
+21,21,350088,Callum Hudson-Odoi,21, M(CLR),182,76
+22,22,92547,Ross Barkley,28, M(CLR),189,76
+23,23,303172,Charly Musonda,25, AM(LR),173,66
+24,24,322418,Ethan Ampadu,22," D(C),DMC",183,78
+25,25,280766,Jérémie Boga,25," AM(CLR),FW",172,68
+3,3,95408,Virgil van Dijk,31, D(C),193,92
+7,7,115726,Andrew Robertson,28," D(L),M(L)",178,64
+20,20,136459,Dominic Solanke,25, FW,187,80
+8,8,273257,Oleksandr Zinchenko,25," D(L),M(CLR)",175,64
+9,9,122117,Aymeric Laporte,28, D(CL),191,86
+13,13,88300,Danilo,31," D(CLR),DMC",184,78
+15,15,105962,Benjamin Mendy,28," D(L),DMC,M(L)",185,85
+17,17,136741,Bernardo Silva,28," M(CLR),FW",173,64
+19,19,121774,Ederson,29, GK,188,86
+22,22,331254,Phil Foden,22," AM(CLR),FW",171,70
+23,23,317541,Brahim Díaz,23, AM(CLR),171,59
+24,24,347340,Lukas Nmecha,23," AM(CR),FW",185,80
+20,20,100008,Victor Lindelöf,28, D(CR),187,80
+1,1,104732,Paulo Gazzaniga,30, GK,196,90
+3,3,83683,Serge Aurier,29," D(CLR),M(R)",176,76
+4,4,313672,Kyle Walker-Peters,25," D(LR),M(R)",173,62
+11,11,322655,Davinson Sánchez,26, D(C),187,81
+20,20,92508,Lucas Moura,30," AM(CLR),FW",172,72
+22,22,13361,Fernando Llorente,37, FW,193,90
+8,8,22210,Sokratis Papastathopoulos,34, D(CR),186,85
+11,11,248109,Lucas Torreira,26, DMC,166,65
+14,14,92173,Bernd Leno,30, GK,189,82
+19,19,328983,Mattéo Guendouzi,23, M(C),185,68
+24,24,15302,Stephan Lichtsteiner,38," D(R),M(R)",182,72
+25,25,106525,Denis Suárez,28, M(CLR),176,69
+27,27,367185,Bukayo Saka,21," D(L),M(CLR)",178,65
+7,7,19729,Gonzalo Higuaín,34, FW,186,89
+8,8,106968,Jorginho,30, DMC,180,65
+14,14,93894,Mateo Kovacic,28, M(CL),178,78
+16,16,113880,Kepa Arrizabalaga,27, GK,189,84
+8,8,115916,Fabinho,28," D(CR),DMC",188,78
+11,11,114147,Alisson,29, GK,191,91
+13,13,243510,Naby Keïta,27, M(C),172,64
+14,14,76304,Xherdan Shaqiri,30, M(CLR),169,72
+22,22,355358,Rafael Camacho,22, M(LR),175,68
+14,14,104749,Riyad Mahrez,31," AM(CLR),FW",179,67
+14,14,353418,Diogo Dalot,23," D(LR),M(R)",183,76
+19,19,114397,Fred,29, M(C),169,64
+21,21,367782,Mason Greenwood,20," AM(R),FW",181,70
+26,26,365244,Tahith Chong,22," AM(CLR),FW",185,75
+27,27,367781,James Garner,21, M(C),186,78
+9,9,335107,Juan Foyth,24," D(CR),DMC",179,69
+24,24,364215,Oliver Skipp,22, DMC,175,70
+27,27,329492,Luke Amos,25, M(C),179,70
+0,0,239872,Nicolas Pépé,27," AM(LR),FW",183,73
+3,3,141032,Pablo Marí,29, D(C),193,87
+8,8,144890,Dani Ceballos,26, M(CL),179,70
+14,14,297403,Kieran Tierney,25," D(CL),M(L)",178,70
+18,18,69945,Cédric Soares,31," D(LR),M(R)",172,67
+23,23,380706,Gabriel Martinelli,21," AM(L),FW",178,75
+27,27,363686,Emile Smith Rowe,22, AM(CL),182,79
+2,2,302692,Christian Pulisic,24," M(CLR),FW",172,69
+5,5,343346,Mason Mount,23, M(CLR),178,70
+8,8,361330,Reece James,22," D(CR),DMC,M(R)",182,82
+18,18,386979,Tariq Lamptey,21," D(R),M(R)",0,0
+22,22,381255,Billy Gilmour,21, DMC,166,60
+24,24,384133,Faustino Anjorin,20, Midfielder,185,73
+26,26,393407,Armando Broja,21, FW,191,0
+13,13,386969,Neco Williams,21," D(R),M(LR)",183,72
+17,17,355354,Curtis Jones,21, AM(C),185,75
+21,21,73399,Adrián,35, GK,190,80
+22,22,262838,Takumi Minamino,27," AM(CLR),FW",174,68
+23,23,363982,Harvey Elliott,19, AM(CR),170,0
+5,5,128967,João Cancelo,28," D(LR),M(R)",182,74
+7,7,303139,Rodri,26, DMC,191,82
+15,15,255089,Angeliño,25," D(L),M(L)",175,69
+18,18,368091,Eric García,21, D(C),182,76
+22,22,386856,Tommy Doyle,20, AM(C),0,0
+0,0,123761,Bruno Fernandes,28, M(CLR),179,69
+3,3,331924,Aaron Wan-Bissaka,24," D(R),M(R)",183,72
+5,5,99487,Harry Maguire,29, D(C),194,100
+13,13,384143,Brandon Williams,22," D(L),M(L)",171,63
+14,14,302313,Daniel James,24," AM(LR),FW",171,76
+24,24,31376,Odion Ighalo,33," AM(C),FW",181,73
+3,3,384063,Japhet Tanganga,23, D(CR),184,76
+13,13,321389,Tanguy Ndombélé,25, M(C),181,76
+17,17,303908,Giovani Lo Celso,26," M(CR),FW",177,68
+18,18,279425,Steven Bergwijn,24," AM(CLR),FW",178,78
+22,22,322611,Ryan Sessegnon,22," D(L),M(LR)",178,70
+23,23,361726,Gedson Fernandes,23, M(CR),183,71
+27,27,384064,Troy Parrott,20," AM(CLR),FW",185,73
+0,0,81523,Mathew Ryan,30, GK,184,82
+9,9,238940,Thomas Partey,29," D(R),M(CR)",185,77
+11,11,334087,Gabriel Magalhães,24, D(C),190,78
+12,12,247454,Martin Ødegaard,23, AM(CR),178,68
+19,19,141841,Rúnar Rúnarsson,27, GK,186,78
+3,3,299272,Ben Chilwell,25," D(L),M(L)",178,77
+6,6,28550,Thiago Silva,37, D(C),183,79
+12,12,130903,Timo Werner,26," AM(CLR),FW",180,75
+16,16,115868,Hakim Ziyech,29, M(CLR),180,65
+19,19,326413,Kai Havertz,23," M(CR),FW",188,83
+20,20,321390,Édouard Mendy,30, GK,197,86
+1,1,381527,Nathaniel Phillips,25, D(C),190,0
+2,2,74939,Thiago,31, M(C),174,70
+5,5,322176,Caoimhín Kelleher,23, GK,178,74
+8,8,235755,Diogo Jota,25," AM(CLR),FW",178,68
+13,13,356743,Ozan Kabak,22, D(C),187,86
+14,14,401782,Rhys Williams,21, D(C),195,0
+26,26,301455,Kostas Tsimikas,26, D(L),178,77
+10,10,8155,Scott Carson,37, GK,188,85
+11,11,313171,Rúben Dias,25, D(C),186,76
+16,16,349760,Ferran Torres,22," AM(LR),FW",184,77
+22,22,145473,Zack Steffen,27, GK,191,86
+23,23,401254,Liam Delap,19, FW,0,0
+6,6,125793,Alex Telles,29," D(L),M(L)",181,71
+8,8,413211,Anthony Elanga,20, AM(LR),178,0
+12,12,386634,Amad Diallo,20, AM(R),173,72
+15,15,24328,Edinson Cavani,35," AM(LR),FW",184,71
+16,16,304008,Dean Henderson,25, GK,188,85
+22,22,275035,Donny van de Beek,25, M(C),184,76
+25,25,416207,Hannibal Mejbri,19, Midfielder,177,0
+26,26,410512,Shola Shoretire,18, Forward,170,0
+27,27,413631,William Fish,19, Defender,185,0
+4,4,101859,Pierre-Emile Højbjerg,27, M(C),187,84
+8,8,94042,Matt Doherty,30," D(LR),M(LR)",185,80
+9,9,362275,Sergio Reguilón,25," D(L),M(L)",178,68
+15,15,302312,Joe Rodon,24, D(C),180,70
+20,20,363077,Carlos Vinícius,27, FW,190,86
+23,23,407154,Dane Scarlett,18, FW,180,76
+4,4,377283,Takehiro Tomiyasu,23, D(CR),188,70
+5,5,322036,Ben White,24," D(CR),DMC",186,78
+13,13,316858,Aaron Ramsdale,24, GK,188,77
+16,16,349102,Albert Sambi Lokonga,22, DMC,173,67
+20,20,379790,Nuno Tavares,22," D(L),M(L)",183,75
+25,25,384065,Folarin Balogun,21, FW,178,66
+7,7,353292,Trevoh Chalobah,23," D(CR),DMC",190,75
+20,20,322747,Malang Sarr,23, D(CL),182,73
+24,24,112161,Saúl Ñíguez,27," D(CL),M(CLR)",184,76
+2,2,377168,Luis Díaz,25, AM(L),178,65
+13,13,345957,Ibrahima Konaté,23, D(C),194,95
+25,25,425568,Tyler Morton,19, DMC,0,0
+26,26,408662,Kaide Gordon,17, Forward,0,0
+9,9,113069,Jack Grealish,27," AM(CL),FW",175,68
+22,22,395692,Cole Palmer,20, Midfielder,182,0
+23,23,425574,CJ Egan-Riley,19, Defender,0,0
+24,24,425576,James McAtee,19, Midfielder,0,0
+25,25,416803,Kayky,19, Forward,175,68
+0,0,5583,Cristiano Ronaldo,37," M(L),FW",187,83
+9,9,93206,Raphaël Varane,29, D(C),191,81
+10,10,346300,Jadon Sancho,22, AM(CLR),180,76
+27,27,437022,Alejandro Garnacho,18, Midfielder,180,80
+2,2,303657,Rodrigo Bentancur,25, M(C),187,72
+3,3,355855,Dejan Kulusevski,22," AM(CR),FW",186,80
+7,7,323663,Cristian Romero,24, D(C),185,79
+8,8,328512,Emerson Royal,23," D(R),M(R)",181,79
+23,23,368519,Bryan Gil,21, AM(CLR),175,60
+0,0,4173,Arjen Robben,38," M(CLR),FW",180,80
+2,2,37099,Thomas Müller,33," M(CLR),FW",185,76
+3,3,584,Mark van Bommel,45," D(C),DMC,M(R)",187,85
+4,4,2179,Daniel Van Buyten,44, D(C),197,96
+5,5,9016,Franck Ribéry,39," AM(CL),FW",170,72
+6,6,5570,Philipp Lahm,38," D(R),DMC",170,66
+8,8,3467,Ivica Olic,43," AM(LR),FW",182,85
+9,9,6255,Mario Gomez,37, FW,189,89
+10,10,70097,Diego Contento,32," D(L),M(L)",177,74
+11,11,256,Jörg Butt,48, GK,191,91
+12,12,29943,Holger Badstuber,33, D(CL),189,83
+13,13,17746,Danijel Pranjic,40," D(L),M(C)",171,70
+14,14,164,Luca Toni,45, FW,196,88
+15,15,4801,Anatoliy Tymoshchuk,43, DMC,181,75
+16,16,39722,David Alaba,30," D(CL),M(CL)",180,78
+17,17,18869,Edson Braafheid,39, D(L),176,76
+18,18,374,Miroslav Klose,44, FW,184,84
+19,19,6554,Andreas Ottl,37, M(C),186,78
+20,20,19789,Alexander Baumjohann,35, M(C),178,75
+21,21,6220,Michael Rensing,38, GK,190,93
+22,22,18916,José Sosa,37, M(CLR),179,72
+23,23,5474,Hamit Altintop,39, M(CR),183,83
+24,24,29247,Breno,32, D(C),191,85
+0,0,8096,Stefan Kießling,38, FW,191,81
+1,1,31772,Toni Kroos,32, M(C),183,76
+2,2,76635,Burak Kaplan,32, Midfielder,170,64
+3,3,9719,Tranquillo Barnetta,37, M(CLR),178,70
+4,4,6427,Simon Rolfes,40, M(C),191,83
+5,5,25008,Arturo Vidal,35, M(CR),180,75
+6,6,8,Sami Hyypiä,48," D(C),DMC",195,88
+7,7,26176,Eren Derdiyok,34, FW,191,90
+8,8,5627,Manuel Friedrich,43, D(C),189,87
+9,9,25716,Renato Augusto,34," M(CLR),FW",186,86
+10,10,13423,Gonzalo Castro,35," D(L),M(CR)",172,72
+11,11,40942,Stefan Reinartz,33, M(C),189,87
+12,12,30993,Daniel Schwaab,34," D(CR),DMC",186,76
+13,13,18315,Michal Kadlec,37, D(CL),185,76
+14,14,36383,Fabian Giefer,32, GK,196,93
+15,15,29940,Lars Bender,33," D(CR),M(CR)",185,78
+16,16,24090,René Adler,37, GK,191,85
+17,17,6670,Patrick Helmes,38," AM(L),FW",182,82
+18,18,3119,Hans Sarpei,46, D(C),178,73
+19,19,6673,Lukas Sinkiewicz,36, Defender,193,92
+20,20,21082,Assimiou Touré,34, Defender,178,78
+21,21,11622,Theofanis Gekas,42, FW,179,76
+22,22,5493,Thomas Zdebel,49, Midfielder,178,78
+23,23,86174,Thanos Petsos,31, M(C),184,80
+1,1,20055,Lucas Barrios,37, FW,187,83
+2,2,21541,Mats Hummels,33, D(C),191,94
+3,3,21988,Jakub Blaszczykowski,36," D(R),M(CR)",175,71
+4,4,9014,Patrick Owomoyela,42, D(R),187,87
+5,5,1518,Mohamed Zidan,40," AM(C),FW",172,71
+6,6,25482,Neven Subotic,33, D(C),193,83
+7,7,842,Sebastian Kehl,42, M(C),187,87
+8,8,31005,Kevin Großkreutz,34," D(LR),M(CLR)",186,78
+9,9,5626,Nelson Haedo Valdez,38," AM(R),FW",178,73
+10,10,22589,Sven Bender,33," D(C),M(C)",186,79
+11,11,43364,Marcel Schmelzer,34," D(CL),M(L)",180,74
+12,12,1430,Dedê,44, D(C),176,69
+13,13,28839,Felipe Santana,36," D(C),DMC",194,88
+14,14,5490,Roman Weidenfeller,42, GK,190,90
+15,15,6401,Tamás Hajnal,41, M(C),167,67
+16,16,12475,Tinga,44, AM(C),170,62
+17,17,74789,Damien Le Tallec,32," D(C),DMC",187,80
+18,18,82699,Marco Stiepermann,31," D(L),M(CLR)",190,86
+19,19,14601,Dimitar Dimitrov Rangelov,39, FW,183,80
+20,20,5759,Markus Feulner,40," D(LR),M(CR)",183,82
+21,21,77436,Julian Koch,31," D(R),DMC",184,79
+22,22,5760,Marc Ziegler,46, Goalkeeper,193,92
+23,23,80382,Mario Götze,30," M(CLR),FW",176,75
+24,24,14179,Uwe Hünemeier,36, D(C),189,87
+0,0,14182,Pirmin Schwegler,35, M(C),178,74
+1,1,5486,Alexander Meier,39," M(C),FW",196,96
+2,2,4681,Chris,44," D(CL),M(R)",185,78
+3,3,6540,Patrick Ochs,38, D(R),179,71
+4,4,2911,Maik Franz,41, D(CLR),190,87
+5,5,13753,Marco Russ,37," D(C),DMC",190,88
+6,6,9680,Aleksandar Vasoski,42, D(L),180,78
+7,7,6268,Benjamin Köhler,42," D(C),M(CR),FW",172,66
+8,8,4212,Ioannis Amanatidis,40, FW,181,80
+9,9,23523,Ricardo Clark,39, M(C),178,73
+10,10,5533,Halil Altintop,39," AM(C),FW",186,75
+11,11,25869,Ümit Korkmaz,37, AM(L),174,74
+12,12,28553,Caio Cesar,36," AM(C),FW",186,82
+13,13,12356,Markus Steinhöfer,36, D(R),175,69
+14,14,5475,Oka Nikolov,48, GK,187,86
+15,15,2258,Zlatan Bajramovic,43, M(C),182,73
+16,16,71852,Sebastian Jung,32, D(R),179,72
+17,17,7043,Christoph Spycher,44, D(C),175,79
+18,18,4423,Selim Teber,41, M(CR),185,83
+19,19,12392,Nikos Liberopoulos,47, FW,187,82
+20,20,36436,Nikola Petkovic,36, D(C),185,78
+21,21,33133,Juvhel Tsoumou,31, Forward,191,88
+22,22,77438,Cenk Tosun,31, FW,183,78
+23,23,29624,Martin Fenin,35, Forward,181,70
+24,24,7551,Jan Zimmermann,37, GK,190,86
+25,25,21653,Marcel Heller,36, M(LR),175,70
+26,26,81975,Marcel Titsch Rivero,32, M(C),182,76
+27,27,1350,Christoph Preuß,41, Midfielder,181,72
+28,28,77437,Marcos Álvarez,30," AM(L),FW",178,80
+29,29,23592,Ralf Fährmann,33, GK,197,98
+0,0,6099,Zvjezdan Misimovic,40," AM(C),FW",180,79
+2,2,11269,Christian Gentner,37, M(CLR),189,81
+3,3,16315,Josué,43, M(C),170,66
+4,4,15104,Grafite,43, FW,189,88
+5,5,10110,Ricardo Costa,41, D(C),183,80
+6,6,5498,Sascha Riether,39, D(R),176,72
+7,7,10714,Diego Benaglio,39, GK,194,89
+8,8,36152,Marwin Hitz,35, GK,194,89
+9,9,16954,Makoto Hasebe,38," D(CR),M(CR)",180,72
+10,10,5252,Obafemi Martins,37, FW,171,70
+11,11,4550,André Lenz,48, GK,191,92
+12,12,10154,Marcel Schäfer,38," D(L),M(L)",184,75
+13,13,6075,Andrea Barzagli,41, D(CR),187,87
+14,14,28800,Peter Pekarík,35," D(LR),M(R)",177,73
+15,15,5630,Alexander Madlung,40, D(C),196,95
+16,16,21460,Karim Ziani,40, DMC,169,66
+17,17,14173,Jonathan Santana,40, DMC,181,80
+18,18,30577,Fabian Johnson,34," D(LR),M(CLR)",183,74
+19,19,2796,Cristian Zaccardo,40, D(CR),184,77
+20,20,10249,Ashkan Dejagah,36, M(LR),181,77
+21,21,30153,Jan Simunek,35, D(L),187,79
+22,22,758,Sebastian Schindzielorz,43, Midfielder,180,74
+23,23,3667,Thomas Kahlenberg,39, M(C),183,72
+24,24,5763,Daniel Baier,38, M(C),176,75
+25,25,66696,Alexander Esswein,32," AM(CLR),FW",182,85
+5,5,43369,Luiz Gustavo,35," D(C),M(C)",187,78
+18,18,35931,Thomas Kraft,34, GK,187,85
+2,2,29239,Domagoj Vida,33, D(CR),184,76
+3,3,29742,Sidney Sam,34, M(CLR),174,68
+18,18,2989,Hanno Balitsch,41," D(R),M(C)",182,81
+19,19,72595,Nicolai Jørgensen,31, FW,190,83
+1,1,34595,Mitchell Langerak,34, GK,193,81
+11,11,11090,Lukasz Piszczek,37," D(CR),M(R)",184,79
+13,13,29400,Robert Lewandowski,34, FW,185,81
+14,14,6587,Antônio da Silva,44, AM(R),178,76
+0,0,24886,Georgios Tzavellas,34, D(CL),183,79
+8,8,65581,Sebastian Rode,31," D(R),M(C)",180,71
+18,18,93961,Kevin Kraus,30, D(C),190,91
+20,20,90966,Sonny Kittel,29," AM(CLR),FW",179,71
+25,25,101378,Julian Dudda,29, Defender,193,88
+0,0,7417,Diego,37, M(CLR),174,78
+3,3,24088,Mario Mandzukic,36," M(L),FW",190,85
+6,6,3725,Arne Friedrich,43," D(CL),DMC",186,78
+7,7,20769,Simon Kjaer,33, D(C),190,86
+12,12,12225,Jan Polák,41, M(C),181,80
+15,15,20753,Cícero,38, M(CLR),181,72
+17,17,90993,Tolga Cigerci,30, M(CLR),185,80
+19,19,10180,Tuncay Sanli,40," M(L),FW",182,70
+21,21,86497,Koo Ja-Cheol,33, M(CLR),183,74
+24,24,22820,Dieumerci Mbokani,36, FW,185,79
+11,11,13755,Rafinha,37," D(CLR),M(R)",172,65
+16,16,13754,Manuel Neuer,36, GK,193,93
+17,17,71692,Takashi Usami,30, AM(LR),178,69
+20,20,29749,Nils Petersen,33, FW,188,84
+13,13,43589,Ömer Toprak,33, D(C),186,83
+16,16,82079,Michael Ortega,31, Midfielder,170,69
+19,19,94934,Danny da Costa,29," D(R),M(R)",187,87
+20,20,110165,Dominik Kohr,28, DMC,183,77
+21,21,67925,Bastian Oczipka,33," D(CL),M(L)",185,85
+22,22,91060,Karim Bellarabi,32," M(CLR),FW",184,81
+24,24,110166,Samed Yesil,28, Forward,180,72
+7,7,101664,Chris Löwe,33," D(CL),M(L)",175,67
+15,15,70524,Ivan Perisic,33," M(CLR),FW",186,80
+20,20,91159,Moritz Leitner,29, M(CR),174,69
+21,21,4461,Florian Kringe,40, M(C),187,83
+4,4,20626,Christian Träsch,35," D(R),M(C)",180,75
+6,6,61610,Ricardo Rodríguez,30," D(CL),M(L)",181,78
+8,8,33840,Felipe,35, D(C),189,79
+10,10,22652,Vieirinha,36," D(R),M(LR)",172,70
+13,13,33699,Yohandry Orozco,31, Midfielder,164,59
+16,16,2369,Aliaksandr Hleb,41, M(C),185,74
+19,19,729,Hasan Salihamidzic,45, DMC,177,71
+20,20,42673,Petr Jirácek,36, M(CL),180,77
+21,21,108090,Bjarne Thoelke,30, D(C),191,84
+24,24,27976,Giovanni Sio,33," AM(LR),FW",180,78
+25,25,77471,Sebastian Polter,31," AM(R),FW",192,94
+26,26,53168,Ibrahim Sissoko,30, AM(CLR),174,71
+27,27,77468,Michael Schulze,33, D(R),185,82
+28,28,38926,Rasmus Jönsson,32, Forward,192,71
+31,31,3099,Thomas Hitzlsperger,40, AM(C),184,82
+32,32,13751,Srdjan Lakic,38, FW,186,84
+33,33,100591,Robin Knoche,30, D(C),189,84
+34,34,108919,Maximilian Arnold,28, M(CR),184,74
+35,35,19314,Hrvoje Cale,37, Defender,184,76
+4,4,10168,Tom Starke,41, GK,194,98
+7,7,14091,Javi Martínez,34," D(C),M(C)",192,86
+15,15,6683,Dante,38, D(C),188,87
+18,18,217,Claudio Pizarro,43," AM(C),FW",184,84
+1,1,106883,Daniel Carvajal,30, D(R),173,73
+6,6,13757,Sebastian Boenisch,35, D(CL),191,90
+8,8,86173,Philipp Wollscheid,33, D(C),194,88
+15,15,35366,Jens Hegeler,34," D(C),M(CR)",193,86
+16,16,33736,Hajime Hosogai,36," D(LR),M(C)",177,68
+18,18,97161,Junior Fernandes,34," AM(LR),FW",184,77
+20,20,104257,Arkadiusz Milik,28," AM(C),FW",186,80
+21,21,121205,Okan Aydin,28, Midfielder,172,62
+2,2,41330,Marco Reus,33," M(CLR),FW",180,71
+13,13,115163,Jonas Hofmann,30, M(CLR),176,73
+15,15,100805,Leonardo Bittencourt,28," M(CLR),FW",171,63
+18,18,5513,Oliver Kirch,40," D(R),M(C)",182,76
+20,20,44800,Julian Schieber,33, FW,187,87
+22,22,66499,Bálint Bajner,31, Forward,194,90
+4,4,43395,Anderson,34, D(C),189,86
+5,5,33134,Carlos Zambrano,33, D(C),185,77
+6,6,38820,Takashi Inui,34, AM(CLR),169,63
+9,9,66424,Kevin Trapp,32, GK,189,88
+10,10,14166,Stefan Aigner,35," AM(CLR),FW",183,73
+12,12,20151,Constant Djakpa,35, D(L),177,74
+13,13,6810,Heiko Butscher,42," D(C),DMC",189,88
+14,14,116466,Marc Stendera,26, M(C),173,72
+15,15,116465,Marc Oliver Kempf,27, D(C),186,87
+16,16,7101,Olivier Occean,40, FW,185,86
+18,18,14164,Martin Lanig,38, M(C),190,79
+19,19,18104,Vadim Demidov,35, D(C),185,80
+20,20,26474,Stefano Celozzi,33," D(R),DMC,M(R)",171,74
+21,21,20489,Karim Matmour,37," M(CR),FW",184,78
+22,22,20107,Erwin Hoffer,35, FW,177,72
+25,25,103658,Aykut Özer,29, GK,188,80
+26,26,24276,Dorge Kouemaha,39, AM(L),188,86
+1,1,14172,Naldo,40, D(C),198,91
+3,3,102166,Fagner,33, D(R),168,67
+15,15,5720,Emanuel Pogatetz,39, D(C),191,90
+16,16,34323,Bas Dost,33, FW,196,89
+20,20,63012,Slobodan Medojevic,31, DMC,182,77
+25,25,98825,Ferhan Hasani,32, Forward,189,76
+21,21,116470,Lukas Raeder,28, Goalkeeper,194,87
+22,22,69609,Jan Kirchhoff,31," D(C),DMC",195,82
+23,23,141906,Ylli Sallahi,28, D(L),179,81
+24,24,108914,Mitchell Weiser,28," D(R),M(R)",177,70
+4,4,7905,Emir Spahic,42, D(C),186,81
+8,8,6624,Roberto Hilbert,37," D(R),M(R)",182,80
+11,11,82961,Giulio Donati,32," D(LR),M(R)",178,76
+14,14,21019,Andrés Guardado,35," D(L),M(CL)",169,60
+16,16,141556,Julian Brandt,26," M(CLR),FW",185,83
+18,18,106486,Konstantinos Stafylidis,28," D(LR),DMC,M(L)",178,74
+19,19,32078,Robbie Kruse,33," AM(CLR),FW",179,70
+21,21,134756,Levin Öztunali,26, M(CLR),184,81
+23,23,141925,Ryu Seung-Woo,28, Midfielder,172,67
+7,7,115165,Erik Durm,30," D(LR),M(LR)",182,70
+14,14,119563,Milos Jojic,30, M(CLR),177,79
+23,23,115509,Marvin Ducksch,28, FW,188,79
+24,24,123996,Marian Sarr,27, Defender,188,83
+25,25,116944,Koray Günter,28, D(C),184,79
+2,2,74603,Joselu,32, FW,192,80
+9,9,15539,Stephan Schröck,36," D(R),M(R)",170,71
+14,14,31839,Johannes Flum,34," D(C),M(C)",190,82
+17,17,69477,Václav Kadlec,30," AM(R),FW",181,77
+20,20,13746,Jan Rosenthal,36," M(C),FW",186,76
+21,21,102352,Marvin Bakalorz,33, M(C),180,78
+25,25,8124,Tobias Weis,37, M(C),170,67
+26,26,80426,Felix Wiedwald,32, GK,190,82
+9,9,115573,Junior Malanda,28, DMC,181,78
+13,13,82362,Daniel Caligiuri,34," D(R),M(CLR),FW",182,80
+15,15,91029,Willi Evseev,30, Midfielder,177,73
+18,18,77114,Timm Klose,34, D(C),193,87
+22,22,133431,Stefan Kutschke,33, FW,194,95
+23,23,51428,Max Grün,35, GK,190,85
+2,2,4961,Xabi Alonso,40, M(C),183,80
+5,5,106894,Juan Bernat,29," D(L),M(CL)",177,67
+10,10,29888,Medhi Benatia,35, D(C),189,94
+24,24,255779,Sinan Kurt,26, Midfielder,178,74
+25,25,234324,Gianluca Gaudino,25, M(C),179,74
+26,26,278877,Lukas Görtler,28," AM(R),FW",183,75
+2,2,132273,Wendell,29," D(CL),M(L)",178,72
+7,7,33063,Kyriakos Papadopoulos,30, D(C),185,87
+9,9,110373,Hakan Çalhanoglu,28," M(CLR),FW",178,76
+13,13,125095,Tin Jedvaj,26, D(CLR),185,81
+17,17,83588,Josip Drmic,30," AM(LR),FW",183,81
+21,21,101112,Vladlen Yurchenko,28, M(C),181,74
+15,15,110182,Matthias Ginter,28," D(CR),DMC",191,86
+16,16,80994,Kevin Kampl,31, M(CLR),178,66
+18,18,262879,Jeremy Dudziak,27," D(LR),M(CL)",176,70
+19,19,24420,Adrián Ramos,36, FW,184,78
+22,22,238732,Mitsuru Maruoka,26, Midfielder,173,64
+23,23,110185,Joseph-Claude Gyau,30," D(R),M(LR)",175,75
+25,25,70141,Ciro Immobile,32, FW,185,78
+2,2,74016,Haris Seferovic,30," AM(LR),FW",189,85
+4,4,243758,David Kinsombi,26," D(C),M(C)",183,74
+7,7,69467,Timothy Chandler,32," D(R),M(LR)",187,84
+11,11,71862,Aleksandar Ignjovski,31," D(LR),M(CLR)",177,71
+23,23,148484,Luca Waldschmidt,26," AM(CLR),FW",181,74
+25,25,5517,Timo Hildebrand,43, GK,186,80
+10,10,70105,Josuha Guilavogui,32," D(C),M(C)",188,77
+20,20,10161,Aaron Hunt,36," M(CLR),FW",183,73
+1,1,68889,Douglas Costa,32, M(CLR),172,70
+2,2,125883,Kingsley Coman,26," M(LR),FW",180,76
+18,18,283323,Joshua Kimmich,27," D(CR),DMC,M(R)",177,75
+20,20,13762,Serdar Tasci,35, D(C),186,80
+22,22,35506,Sven Ulreich,34, GK,192,87
+24,24,298436,Milos Pantovic,26, AM(CLR),186,77
+2,2,134946,Jonathan Tah,26, D(C),195,98
+6,6,296769,Benjamin Henrichs,25," D(LR),DMC,M(LR)",183,79
+10,10,102365,Christoph Kramer,31, DMC,191,76
+12,12,25657,Charles Aránguiz,33, M(C),171,68
+19,19,41881,Admir Mehmedi,31," M(CLR),FW",183,78
+20,20,98101,André Ramalho,30," D(C),DMC",182,78
+22,22,13443,David Yelldell,40, Goalkeeper,194,92
+23,23,296770,Marlon Frey,26, DMC,181,78
+26,26,34732,Dario Kresic,38, Goalkeeper,196,96
+8,8,142318,Julian Weigl,27," D(C),DMC",186,72
+18,18,66209,Park Joo-Ho,35," D(L),DMC",175,71
+21,21,312843,Felix Passlack,24," D(LR),M(CR)",170,74
+22,22,63936,Roman Bürki,31, GK,187,85
+2,2,7421,Szabolcs Huszti,39, M(CLR),173,72
+6,6,23199,David Abraham,36, D(C),188,83
+8,8,64846,Lukás Hrádecky,32, GK,192,83
+10,10,35433,Marco Fabián,33," AM(CR),FW",170,64
+12,12,19956,Änis Ben-Hatira,34, M(CLR),183,82
+15,15,82646,Luc Castaignos,29, FW,188,85
+18,18,297236,Yanni Regäsel,26, D(R),176,72
+19,19,300318,Mijat Gacinovic,27, M(CLR),175,67
+23,23,292096,Joel Gerezgiher,26, Midfielder,176,71
+26,26,129171,Kaan Ayhan,27," D(CR),DMC",184,84
+29,29,301109,Nico Rinderknecht,24, Midfielder,184,79
+0,0,115161,Marcel Halstenberg,30," D(CL),M(L)",188,87
+1,1,37940,Stefan Ilsanker,33," D(CR),DMC",189,85
+2,2,104917,Willi Orbán,29, D(C),186,87
+3,3,141716,Emil Forsberg,30," AM(CLR),FW",177,76
+4,4,18639,Marvin Compper,37, D(C),185,80
+5,5,91067,Dominik Kaiser,34, M(CR),171,69
+6,6,133886,Diego Demme,30, DMC,172,71
+7,7,92051,Marcel Sabitzer,28," M(CLR),FW",178,76
+8,8,132943,Yussuf Poulsen,28," AM(R),FW",192,84
+9,9,86191,Atinç Nukan,29, D(C),196,86
+10,10,143600,Lukas Klostermann,26," D(CLR),M(R)",187,88
+11,11,69630,Stefan Hierländer,31, Midfielder,180,73
+12,12,137852,Davie Selke,27, FW,194,88
+13,13,93937,Massimo Bruno,29, AM(CLR),178,74
+14,14,115565,Anthony Jung,30," D(CL),M(L)",186,83
+15,15,76513,Georg Teigl,31," D(R),M(R)",183,77
+16,16,299057,Ken Gipson,26, Defender,178,69
+17,17,67369,Péter Gulácsi,32, GK,191,86
+18,18,21083,Fabio Coltorti,41, GK,197,98
+19,19,110266,Rani Khedira,28," D(C),DMC",189,86
+20,20,132946,Tim Sebastian,38, D(C),188,79
+21,21,143463,Zsolt Kalmár,27, AM(CL),185,78
+22,22,243509,Nils Quaschner,28," AM(L),FW",184,81
+23,23,330505,Idrissa Touré,24, Midfielder,188,76
+1,1,96449,Julian Draxler,29," AM(CLR),FW",185,72
+8,8,73797,Koen Casteels,30, GK,197,78
+14,14,31552,Max Kruse,34," M(CLR),FW",180,76
+20,20,279575,Bruno Henrique,31," AM(CLR),FW",183,74
+22,22,142227,Paul Seguin,27," D(R),DMC",185,82
+23,23,296650,Ismail Azzaoui,24, AM(CLR),177,72
+24,24,243532,Francisco Rodríguez,27, AM(C),178,78
+26,26,98940,Carlos Ascues,30," D(C),DMC",185,82
+28,28,303106,Leandro Putaro,25, AM(R),187,77
+19,19,299450,Renato Sanches,25, M(CR),176,70
+14,14,27124,Julian Baumgartlinger,34, DMC,181,85
+15,15,92812,Kevin Volland,30," AM(CLR),FW",179,85
+17,17,139623,Joel Pohjanpalo,28, FW,186,83
+20,20,40560,Aleksandar Dragovic,31, D(CR),186,84
+23,23,327682,Leon Bailey,25," M(LR),FW",178,77
+0,0,299513,Ousmane Dembélé,25," AM(CLR),FW",178,67
+2,2,83686,Marc Bartra,31," D(CR),DMC",184,70
+4,4,115375,Raphaël Guerreiro,28," D(L),M(CL)",170,71
+16,16,317999,Emre Mor,25," AM(CLR),FW",169,64
+21,21,238916,Mikel Merino,26, M(C),188,83
+24,24,306672,Dzenis Burnic,24, M(C),180,73
+1,1,115996,Omar Mascarell,29, DMC,181,76
+6,6,238901,Jesús Vallejo,25, D(CR),184,79
+9,9,39336,Heinz Lindner,32, GK,188,82
+12,12,329618,Aymen Barkok,24, AM(CR),189,82
+14,14,101735,Ante Rebic,28," AM(CLR),FW",185,78
+15,15,129289,Andersson Ordóñez,28, Defender,186,86
+16,16,91840,Michael Hector,30," D(C),DMC",193,82
+17,17,99989,Branimir Hrgota,29," AM(CLR),FW",185,76
+19,19,132348,Danny Blum,31," AM(LR),FW",183,83
+20,20,312666,Marius Wolf,27," D(R),M(CLR)",188,81
+22,22,79522,Taleb Tawatha,30," D(L),M(L)",176,81
+24,24,131050,Shani Tarashaj,27, Forward,176,76
+25,25,285993,Max Besuschkow,25, DMC,187,81
+4,4,302588,Bernardo,27," D(LR),M(L)",186,76
+12,12,327721,Dayot Upamecano,23, D(C),186,90
+13,13,146633,Benno Schmitz,27, D(CLR),182,75
+18,18,333361,Federico Palacios,27," AM(CL),FW",170,68
+20,20,244303,Oliver Burke,25," AM(LR),FW",188,74
+14,14,130899,Yannick Gerhardt,28," D(L),M(CL)",184,81
+15,15,104919,Yunus Malli,30," M(CLR),FW",179,72
+18,18,44142,Daniel Didavi,32," AM(CR),FW",180,77
+19,19,301452,Jannes Horn,25," D(CL),M(L)",186,79
+20,20,329624,Hendrik Hansen,27, D(C),195,82
+23,23,93307,Paul-Georges Ntep,30," AM(LR),FW",180,80
+24,24,133959,Riechedly Bazoer,25," D(C),DMC",184,74
+26,26,278721,Borja Mayoral,25, FW,182,74
+28,28,298792,Josip Brekalo,24," AM(CLR),FW",175,70
+29,29,298510,Victor Osimhen,23, FW,185,78
+30,30,329625,Justin Möbius,25, Midfielder,179,73
+0,0,71182,James Rodríguez,31," AM(CLR),FW",180,75
+3,3,306637,Niklas Dorsch,24, DMC,178,76
+14,14,356070,Lukas Mai,22, D(C),190,84
+16,16,134894,Corentin Tolisso,28," D(R),M(CR)",181,81
+17,17,22669,Sandro Wagner,34, FW,194,92
+19,19,333227,Marco Friedl,24," D(CL),M(L)",187,82
+20,20,129983,Niklas Süle,27, D(CR),195,99
+22,22,38649,Sebastian Rudy,32," D(R),M(CR)",180,74
+25,25,356566,Franck Evina,22, Forward,180,77
+26,26,346731,Kwasi Okyere Wriedt,28, FW,188,82
+27,27,354599,Meritan Shabani,23, Midfielder,185,78
+8,8,125654,Lucas Alario,29, FW,184,78
+12,12,302402,Panagiotis Retsos,24, D(CLR),186,79
+14,14,35336,Ramazan Özcan,38, GK,185,83
+4,4,145267,Maximilian Philipp,28," AM(CLR),FW",183,79
+14,14,41672,Andriy Yarmolenko,32," AM(CR),FW",189,81
+15,15,129620,Jeremy Toljan,28," D(LR),M(LR)",182,74
+18,18,342548,Dan-Axel Zagadou,23, D(CL),196,90
+22,22,135092,Mahmoud Dahoud,26, M(C),178,68
+23,23,297390,Manuel Akanji,27, D(CR),188,91
+26,26,299254,Alexander Isak,22, FW,192,77
+27,27,307202,Jacob Bruun Larsen,24, AM(CL),183,77
+28,28,355110,Sergio Gómez,22, D(L),171,68
+3,3,94885,Jetro Willems,28," D(L),DMC,M(L)",169,65
+5,5,236544,Sébastien Haller,28, FW,190,82
+7,7,11867,Kevin-Prince Boateng,35," M(CLR),FW",187,85
+10,10,108770,Simon Falette,30, D(C),185,89
+12,12,19087,Jonathan de Guzmán,35, M(CLR),173,70
+14,14,126948,Carlos Salcedo,28, D(CR),183,85
+17,17,315755,Luka Jovic,24, FW,182,85
+18,18,22418,Gelson Fernandes,36, DMC,179,70
+25,25,344166,Daichi Kamada,26," AM(CLR),FW",184,76
+27,27,356064,Marijan Cavar,24, Midfielder,184,70
+5,5,299451,Ademola Lookman,24," AM(CLR),FW",174,71
+9,9,245643,Jean-Kévin Augustin,25," AM(R),FW",177,69
+12,12,117980,Bruma,27, AM(CLR),173,70
+17,17,248010,Konrad Laimer,25," D(R),M(CR)",180,72
+22,22,103542,Yvon Mvogo,28, GK,188,88
+0,0,35199,Ignacio Camacho,32," D(C),M(C)",182,75
+1,1,104899,John Brooks,29, D(C),193,78
+4,4,243276,William,27," D(LR),M(R)",176,67
+5,5,353983,Paul Jaeckel,24," D(C),DMC",186,83
+9,9,132775,Marcel Tisserand,29," D(CLR),M(R)",190,80
+14,14,335030,Gian-Luca Itter,23, D(CL),183,74
+15,15,16243,Paul Verhaegh,39," D(R),M(R)",178,74
+19,19,320002,Felix Uduokhai,25, D(C),193,89
+24,24,119172,Renato Steffen,30, M(CLR),170,65
+25,25,349837,Elvis Rexhbecaj,24, M(C),182,78
+26,26,344071,Landry Dimata,25, FW,185,81
+28,28,298512,Kaylen Hinds,24, Forward,179,80
+9,9,115519,Leon Goretzka,27, M(CR),189,82
+20,20,320040,Alphonso Davies,21," D(L),M(LR)",183,75
+21,21,366868,Woo-Yeong Jeong,23," AM(CR),FW",179,69
+18,18,107465,Isaac Kiese Thelin,30, FW,190,83
+19,19,339845,Paulinho,22, AM(CLR),177,77
+3,3,73744,Thomas Delaney,31, DMC,182,79
+4,4,25191,Axel Witsel,33," D(C),M(C)",186,81
+5,5,320834,Achraf Hakimi,23," D(LR),M(R)",181,73
+8,8,95953,Paco Alcácer,29," AM(R),FW",175,72
+10,10,248112,Abdou Diallo,26, D(CL),187,79
+1,1,81842,Frederik Rønnow,30, GK,188,81
+2,2,105995,Filip Kostic,29," M(LR),FW",184,84
+4,4,262262,Almamy Touré,26," D(CR),M(R)",183,81
+6,6,249960,Lucas Torró,28, DMC,190,77
+7,7,83659,Martin Hinteregger,30, D(C),186,82
+14,14,323450,Evan Ndicka,23, D(CL),192,80
+15,15,271856,Gonçalo Paciência,28, FW,184,81
+23,23,295838,Allan,25, DMC,176,75
+25,25,35738,Nicolai Müller,34," M(CLR),FW",173,66
+2,2,315275,Tyler Adams,23," D(R),M(CR)",175,72
+9,9,299077,Nordi Mukiele,24," D(CR),M(R)",187,84
+14,14,345388,Marcelo Saracchi,24, D(L),185,69
+15,15,298837,Amadou Haidara,24, M(CLR),175,72
+19,19,362758,Matheus Cunha,23," AM(CL),FW",184,76
+1,1,115479,Wout Weghorst,30, FW,197,84
+4,4,97145,Jérôme Roussillon,29," D(L),M(L)",175,80
+11,11,346498,Pavao Pervan,34, GK,194,88
+13,13,80388,Daniel Ginczek,31," AM(R),FW",191,85
+18,18,365389,John Yeboah,22, AM(R),170,66
+20,20,93671,Felix Klaus,30, AM(CLR),179,79
+7,7,259648,Benjamin Pavard,26," D(CLR),M(R)",186,81
+15,15,344198,Michaël Cuisance,23, AM(C),181,74
+16,16,317354,Álvaro Odriozola,26, D(R),176,66
+19,19,383956,Joshua Zirkzee,21, FW,193,84
+20,20,139186,Lucas Hernández,26, D(CL),184,79
+21,21,379696,Sarpreet Singh,23, AM(CLR),175,71
+23,23,366855,Leon Dajaku,21, M(R),180,75
+26,26,395401,Chris Richards,22, D(C),188,87
+27,27,395252,Jamal Musiala,19, M(CL),180,68
+28,28,389378,Oliver Batista Meier,21, AM(CL),180,0
+4,4,353397,Moussa Diaby,23," M(CLR),FW",170,68
+6,6,115166,Kerem Demirbay,29, M(C),183,73
+9,9,299684,Exequiel Palacios,23, M(C),177,67
+11,11,141781,Daley Sinkgraven,27," D(L),M(CL)",179,67
+12,12,261021,Nadiem Amiri,25, M(CLR),180,77
+13,13,394786,Florian Wirtz,19, AM(C),176,70
+18,18,369446,Edmond Tapsoba,23, D(C),194,85
+2,2,315227,Erling Haaland,22, FW,194,88
+5,5,101537,Thorgan Hazard,29," M(CLR),FW",175,71
+18,18,384368,Mateu Morey,22," D(R),M(R)",173,67
+19,19,91034,Nico Schulz,29," D(L),M(L)",181,83
+23,23,389087,Giovanni Reyna,19, AM(CLR),185,79
+25,25,362788,Leonardo Balerdi,23, D(C),187,85
+26,26,386592,Tobias Raschl,22, DMC,177,75
+7,7,299460,André Silva,26, FW,185,84
+16,16,317630,Djibril Sow,25, DMC,184,77
+26,26,367165,Dejan Joveljic,23, FW,181,75
+1,1,300945,Christopher Nkunku,24," M(CLR),FW",175,73
+8,8,243565,Patrik Schick,26," AM(R),FW",191,85
+9,9,261212,Dani Olmo,24," AM(CLR),FW",179,72
+24,24,395714,Dennis Borkowski,20, FW,184,72
+25,25,367182,Tom Krauß,21, DMC,182,72
+27,27,331459,Hannes Wolf,23, M(CLR),179,69
+0,0,114855,Paulo Otávio,27," D(L),M(L)",173,68
+1,1,115230,Kevin Mbabu,27," D(R),M(R)",184,83
+12,12,262856,Xaver Schlager,24, M(C),174,76
+15,15,336048,Marin Pongracic,25, D(C),190,95
+19,19,381541,Victor Sá,28, AM(CLR),175,69
+23,23,394749,Omar Marmoush,23," AM(L),FW",183,81
+24,24,392719,Luca Horn,23, Midfielder,177,73
+25,25,392720,Mamoudou Karamoko,23, Forward,188,88
+10,10,413272,Josip Stanisic,22, D(R),186,77
+16,16,104747,Bouna Sarr,30," D(R),M(CLR)",177,69
+17,17,29809,Eric Choupo-Moting,33," M(CLR),FW",191,90
+22,22,260770,Alexander Nübel,25, GK,193,86
+23,23,408824,Tiago Dantas,21, DMC,170,58
+24,24,412841,Christopher Scott,20, Midfielder,174,71
+25,25,382492,Tanguy Nianzou,20, D(C),187,83
+27,27,323148,Marc Roca,25, DMC,184,77
+11,11,329103,Lennart Grill,23, GK,192,85
+21,21,88112,Santiago Arias,30, D(R),178,72
+22,22,136945,Demarai Gray,26," AM(CLR),FW",180,74
+25,25,392644,Jeremie Frimpong,21," D(R),M(R)",171,63
+28,28,116104,Niklas Lomb,29, GK,186,84
+29,29,403744,Emrehan Gedikli,19, Forward,187,84
+8,8,403747,Ansgar Knauff,20, M(R),180,73
+11,11,379868,Jude Bellingham,19, M(CLR),186,75
+13,13,104376,Thomas Meunier,31," D(R),M(R)",191,90
+21,21,406701,Youssoufa Moukoko,17, Forward,179,72
+23,23,379307,Reinier,20, AM(C),185,78
+25,25,301066,Steffen Tigges,24, Forward,193,90
+1,1,397335,Elias Bördner,20, Goalkeeper,188,92
+8,8,112210,Amin Younes,29, AM(CL),168,67
+14,14,366558,Tuta,23, D(C),185,81
+18,18,333365,Ajdin Hrustic,26, M(CLR),183,74
+20,20,42234,Steven Zuber,31," D(L),M(CLR)",182,79
+22,22,335756,Ragnar Ache,24, FW,183,81
+11,11,302497,Alexander Sørloth,26," AM(R),FW",195,90
+17,17,331579,Justin Kluivert,23, AM(LR),171,67
+18,18,393039,Lazar Samardzic,20, Midfielder,177,70
+20,20,262854,Hwang Hee-Chan,26," AM(CLR),FW",177,77
+21,21,397894,Joscha Wosz,20, Midfielder,174,68
+22,22,321236,Josep Martínez,24, Goalkeeper,191,78
+2,2,401130,Maxence Lacroix,22, D(C),190,88
+4,4,356183,Ridle Baku,24," D(R),M(CR)",176,72
+18,18,397260,Tim Siersleben,22, D(C),187,80
+21,21,401131,Bartosz Bialek,20, Forward,191,84
+17,17,342489,Omar Richards,24," D(L),M(L)",174,69
+23,23,397465,Malik Tillman,20, Forward,187,71
+24,24,430702,Lucas Copado,18, Forward,0,0
+26,26,424368,Gabriel Vidovic,18, Midfielder,180,0
+27,27,430703,Paul Wanner,16, Midfielder,185,72
+29,29,342549,Christian Früchtl,22, Goalkeeper,193,84
+9,9,122140,Robert Andrich,27, M(C),187,83
+12,12,404832,Piero Hincapié,20, D(CL),183,66
+14,14,352830,Mitchel Bakker,22," D(L),M(L)",185,85
+16,16,389409,Amine Adli,22," AM(CL),FW",174,60
+17,17,384516,Odilon Kossounou,21, D(CR),191,79
+18,18,129197,Sardar Azmoun,27," AM(C),FW",186,78
+23,23,286602,Andrey Lunev,30, GK,190,80
+24,24,427262,Iker Bravo,17, Forward,182,75
+26,26,426662,Zidan Sertdemir,17, Midfielder,182,71
+4,4,437020,Tom Rothe,17, Defender,188,0
+5,5,351354,Donyell Malen,23," AM(L),FW",176,68
+10,10,436425,Jamie Bynoe-Gittens,18, Forward,175,0
+15,15,336028,Gregor Kobel,24, GK,195,88
+25,25,352891,Lennard Maloney,22, D(C),187,89
+28,28,394981,Immanuel Pherai,21, AM(CL),175,74
+29,29,437021,Lion Semic,19, Defender,0,0
+30,30,422762,Antonios Papadopoulos,23, Midfielder,185,83
+1,1,373154,Diant Ramaj,21, Goalkeeper,189,81
+3,3,145777,Rafael Borré,27, FW,174,70
+4,4,403646,Jesper Lindstrøm,22," AM(CR),FW",182,66
+13,13,130897,Christopher Lenz,27," D(L),M(L)",181,81
+14,14,402665,Kristijan Jakic,25, DMC,181,75
+19,19,320977,Jens Petter Hauge,22, AM(CLR),183,75
+23,23,328269,Sam Lammers,25, FW,189,77
+26,26,35452,Jens Grahl,33, GK,192,88
+2,2,402664,Josko Gvardiol,20, D(CL),185,80
+5,5,372855,Mohamed Simakan,22, D(CR),187,82
+6,6,369875,Dominik Szoboszlai,21, AM(CL),186,74
+20,20,397893,Hugo Novoa,19, Forward,182,70
+22,22,404568,Brian Brobbey,20, FW,180,78
+23,23,428658,Solomon Bonnah,19, Defender,0,0
+24,24,409030,Ilaix Moriba,19, M(C),185,73
+25,25,18929,Philipp Tschauner,36, GK,196,100
+26,26,415929,Sidney Raebiger,17, Midfielder,176,70
+0,0,353565,Jonas Wind,23," AM(C),FW",190,82
+14,14,364235,Sebastiaan Bornauw,23, D(C),191,81
+16,16,425229,Micky van de Ven,21, Defender,193,81
+17,17,399957,Aster Vranckx,19, M(C),183,78
+20,20,299490,Dodi Lukébakio,24," AM(CLR),FW",187,77
+24,24,367783,Felix Nmecha,21, Midfielder,188,73
+25,25,393083,Kevin Paredes,19, M(L),168,54
+1,1,3510,Diego Forlán,43, FW,180,75
+2,2,8128,Tiago,41, M(C),184,75
+3,3,6176,José Antonio Reyes,39, M(CLR),176,72
+4,4,32258,Sergio Asenjo,33, GK,189,87
+5,5,2336,Juanito,46," D(L),DMC",183,76
+6,6,9253,Antonio López,41, D(L),173,65
+7,7,18277,Paulo Assunção,42, M(C),173,70
+8,8,14259,José Manuel Jurado,36, M(CLR),173,72
+9,9,1114,Simão,42, M(L),170,64
+10,10,4782,Mariano Pernía,45, Defender,178,79
+11,11,32273,Luis Perea,43, D(CLR),180,76
+13,13,20883,Cléber Santana,41, M(C),187,80
+14,14,2751,Tomas Ujfalusi,44," D(LR),DMC",185,76
+15,15,43990,Eduardo Salvio,32, M(CR),173,71
+16,16,11386,Raúl García,36," M(CLR),FW",184,83
+17,17,14263,Juan Valera,37, D(R),184,76
+19,19,35771,Álvaro Domínguez,33, D(CL),189,83
+20,20,19442,Roberto Jiménez,36, GK,192,94
+21,21,6536,Pablo Ibáñez,41, D(L),192,80
+22,22,73265,Leandro Cabrera,31, D(CL),190,80
+24,24,3789,Florent Sinama-Pongolle,37," AM(L),FW",176,70
+25,25,82708,Ibrahima Baldé,33, FW,188,72
+26,26,68706,Keko,30, M(R),172,68
+27,27,80764,Koke,30, M(CLR),176,77
+28,28,67480,Rubén Pérez,33, M(C),178,73
+29,29,81681,Joel Robles,32, GK,195,78
+30,30,106872,Borja Bastón,30, FW,186,83
+31,31,85499,Jorge Molino,34, Forward,182,77
+32,32,6023,John Heitinga,38, D(C),182,72
+0,0,11119,Lionel Messi,35," AM(CR),FW",170,72
+1,1,5780,Dani Alves,39," D(R),M(CR)",172,70
+2,2,2302,Xavi,42, DMC,170,68
+4,4,6646,Eric Abidal,43, D(C),186,75
+5,5,9486,Andrés Iniesta,38, M(CL),171,68
+7,7,1320,Carles Puyol,44, D(C),178,80
+8,8,4871,Maxwell,41, D(L),176,73
+9,9,2664,Seydou Keita,42, M(C),183,75
+10,10,44721,Sergio Busquets,34, DMC,189,76
+12,12,12712,Gerard Piqué,35, D(C),194,85
+15,15,6072,Gabriel Milito,42," D(C),DMC",179,78
+18,18,31402,Bojan,32," AM(CLR),FW",170,65
+19,19,2828,Rafael Márquez,43, D(C),183,76
+20,20,67469,Jeffrén Suárez,34," AM(L),FW",176,73
+21,21,12245,Dmytro Chygrynskiy,35, D(C),189,85
+22,22,82598,Jonathan dos Santos,32, M(CR),172,74
+23,23,74938,Andreu Fontàs,32," D(C),DMC",185,89
+2,2,897,Ruud van Nistelrooy,46," AM(L),FW",188,80
+3,3,9909,Sergio Ramos,36, D(CR),184,82
+4,4,20241,Marcelo,34," D(L),M(L)",174,75
+6,6,10105,Pepe,39, D(C),188,81
+7,7,3577,Kaká,40," M(CL),FW",186,78
+8,8,23758,Esteban Granero,35, M(CLR),180,78
+9,9,11104,Álvaro Arbeloa,39, D(LR),184,79
+10,10,2288,Christoph Metzelder,41, DMC,194,92
+12,12,14079,Ezequiel Garay,35, D(C),189,90
+13,13,1063,Guti,45, AM(C),182,78
+14,14,17651,Fernando Gago,36, M(C),178,73
+15,15,12575,Raúl Albiol,37, D(C),187,74
+16,16,18285,Lassana Diarra,37, M(C),173,73
+17,17,14296,Karim Benzema,34, FW,185,81
+18,18,2776,Iker Casillas,41, GK,185,84
+19,19,23170,Royston Ricky Drenthe,35, M(CLR),167,72
+20,20,4026,Mahamadou Diarra,41, DMC,182,80
+21,21,1106,Raúl,45," AM(CL),FW",180,68
+22,22,84963,Juanfran,34," D(R),M(R)",180,72
+23,23,55299,Pedro Mosquera,34, M(C),184,75
+0,0,34524,Juan Cala,32, D(C),185,78
+1,1,86793,Antonio Luna,31," D(L),M(L)",178,68
+2,2,6967,Luís Fabiano,41, FW,183,81
+3,3,31388,Diego Perotti,34," M(CLR),FW",179,70
+4,4,9684,Ivica Dragutinovic,46," D(C),DMC",186,83
+7,7,19754,Sergio Sánchez,36, D(CR),185,84
+8,8,13471,Adriano,37," D(CLR),M(L)",172,75
+9,9,47,Frederic Kanoute,45," AM(CL),FW",192,82
+10,10,9445,Renato,43, M(C),177,71
+11,11,4203,Didier Zokora,41, M(C),179,72
+12,12,2494,Julien Escudé,43," D(C),DMC",183,79
+13,13,11118,Abdoulay Konko,38," D(LR),M(R)",184,71
+14,14,67124,Marc Valiente,35, D(C),187,71
+16,16,2602,Andrés Palop,48, GK,184,75
+17,17,4387,Fernando Navarro,40, D(CL),177,70
+19,19,7829,Romaric,39," D(C),M(C)",187,88
+20,20,11381,Diego Capel,34, AM(L),173,69
+21,21,5854,Marius Stankevicius,41," D(CLR),DMC",190,83
+22,22,84026,Rodri,32," AM(C),FW",175,74
+23,23,2352,Aldo Duscher,43," D(C),DMC",174,72
+24,24,19482,Lolo,38," D(C),M(C)",182,72
+25,25,25644,Javi Varas,40, GK,182,74
+26,26,75498,Enrique Carreño,35, Forward,183,80
+27,27,71309,José Carlos Fernández,35, M(LR),177,68
+28,28,8943,Arouna Koné,38," AM(LR),FW",181,78
+29,29,22998,Lautaro Acosta,34," AM(LR),FW",168,68
+30,30,2565,Javier Chevantón,42, FW,178,70
+0,0,6319,David Villa,40," AM(L),FW",175,69
+2,2,44288,Jordi Alba,33," D(L),M(L)",170,68
+3,3,9426,César,51, GK,185,82
+4,4,33724,Éver Banega,34, M(C),174,77
+5,5,5881,Jeremy Mathieu,38, D(CL),189,82
+6,6,29571,Pablo Hernández,37, M(CLR),173,64
+7,7,879,David Albelda,45, M(C),181,77
+8,8,3283,Joaquín,41," M(CLR),FW",179,75
+10,10,6687,Miguel Brito,42, D(R),179,78
+11,11,23957,Bruno,41," D(R),M(R)",181,76
+12,12,2339,Carlos Marchena,43, D(C),183,79
+13,13,35202,Ángel Dealbert,39, D(C),185,80
+14,14,5999,David Navarro,42, D(C),188,82
+15,15,9418,Miguel Ángel Moyá,38, GK,188,83
+16,16,588,Rubén Baraja,47, DMC,183,76
+17,17,11471,Nikola Zigic,41, FW,202,96
+18,18,9255,Alexis Ruano,37, D(CLR),182,75
+19,19,83748,Joel Johnson,30, Midfielder,177,72
+20,20,956,Vicente,41, AM(C),175,72
+21,21,44272,Lillo,33, D(CLR),176,71
+22,22,14525,Hedwiges Maduro,37, DMC,185,79
+23,23,12476,Manuel Fernandes,36, M(CL),176,75
+24,24,10717,Chori Domínguez,41," AM(C),FW",176,69
+25,25,44317,Miku,37, FW,186,86
+26,26,106868,Míchel,34, M(CR),182,68
+0,0,26059,Diego Godín,36, D(C),187,78
+1,1,14231,Bruno Soriano,38, M(C),184,73
+2,2,9580,Marcos Senna,46," D(C),DMC,M(R)",177,76
+3,3,13802,Giuseppe Rossi,35, FW,173,72
+4,4,9866,Nilmar,38, FW,180,73
+6,6,1676,Joan Capdevila,44, D(L),182,78
+7,7,4674,Ángel,41, D(R),180,71
+8,8,9577,Javi Venta,46, D(R),180,74
+9,9,9578,Gonzalo Rodríguez,38, D(C),182,79
+10,10,28521,Iván Marcano,35, D(CL),189,77
+11,11,9460,Cani,41, M(CLR),180,75
+12,12,4508,Joseba Llorente,42, FW,184,72
+13,13,23937,Damián Escudero,35, AM(CL),176,74
+14,14,1593,Ariel Ibagaza,45," AM(C),FW",166,65
+15,15,10445,Diego López,40, GK,196,89
+16,16,68,Robert Pires,48, AM(L),187,80
+17,17,61014,Mateo Musacchio,32, D(C),180,73
+18,18,15664,David Fuster,40, AM(R),178,71
+19,19,17168,Sebastián Eguren,41," D(C),M(CR)",186,84
+20,20,73081,Matilla,34, DMC,176,72
+21,21,14546,Marco Ruben,35, FW,179,72
+22,22,79914,Marcos Gullón,33," D(C),M(C)",185,79
+23,23,44187,Jonathan Pereira,35, FW,167,61
+24,24,72286,Kiko Olivas,34, D(C),184,76
+11,11,19177,Mario Suárez,35," D(C),M(C)",188,80
+18,18,74494,Elias,37, M(CR),173,65
+19,19,93655,Jorge Pulido,31, D(CR),186,72
+22,22,10332,Juanfran,37, D(R),181,71
+23,23,101102,Alberto Noguera,32, Midfielder,173,68
+11,11,90782,Sergi Roberto,30," D(R),M(CR)",178,68
+19,19,14191,Pinto,46, GK,185,82
+24,24,12480,Ibrahim Afellay,36, M(CLR),180,76
+25,25,91387,Martín Montoya,31," D(LR),M(R)",175,73
+13,13,13764,Sami Khedira,35, M(C),189,90
+17,17,23285,Antonio Adán,35, GK,190,94
+18,18,106875,Nacho,32, D(CLR),180,76
+23,23,44189,Sergio Canales,31, M(CLR),176,65
+24,24,3403,Jerzy Dudek,49, Goalkeeper,188,83
+25,25,23634,Pedro León,35, M(LR),183,70
+28,28,75526,Jesús,34, GK,190,87
+29,29,101532,Tomás Mejías,33, GK,195,84
+30,30,95551,Álex Fernández,29, M(CL),182,72
+31,31,106874,Juankar,32," D(L),M(L)",179,70
+0,0,22732,Ivan Rakitic,34, M(C),184,78
+9,9,30635,Martín Cáceres,35," D(CLR),M(R)",180,78
+11,11,29390,Gary Medel,35," D(C),DMC",171,65
+15,15,17432,Mouhamadou Dabo,35, D(LR),176,65
+16,16,25485,Tiberio Guarente,36, DMC,180,67
+25,25,14224,Alejandro Alfaro,35, M(R),175,72
+26,26,14126,Luca Cigarini,36, M(C),175,72
+28,28,67327,Bernardo Espinosa,33, D(C),192,85
+7,7,42834,Alberto Costa,37, M(C),176,77
+10,10,33866,Vicente Guaita,35, GK,190,81
+12,12,9294,Aritz Aduriz,41, FW,181,77
+14,14,22167,Mehmet Topal,36," D(C),M(C)",187,82
+19,19,22033,Jonas,38," AM(CLR),FW",181,73
+25,25,34239,Sofiane Feghouli,32, M(CR),177,75
+26,26,82989,Isco,30," M(CLR),FW",176,79
+4,4,19112,Borja Valero,37, M(CL),175,73
+8,8,79909,Mario Gaspar,31," D(CR),M(R)",182,74
+14,14,79913,Catalá,37, D(CL),175,72
+16,16,79911,Carlos Tomás,34, Defender,183,78
+17,17,28416,Jefferson Montero,33, M(L),173,70
+20,20,44425,Mubarak Wakaso,32, M(CLR),171,66
+21,21,119500,Cicinho,42, D(R),172,68
+22,22,14144,Nicki Bille Nielsen,34, FW,181,75
+23,23,75468,Joan Oriol,35, D(L),175,69
+24,24,23238,Natxo Insa,36, DMC,178,66
+25,25,26298,Jozy Altidore,32, FW,185,79
+26,26,73396,Cristóbal Márquez,38, Midfielder,180,77
+1,1,10053,Gabi,39, M(C),180,74
+2,2,21501,Arda Turan,35, AM(CLR),177,76
+12,12,22504,Miranda,38, D(C),186,78
+16,16,14089,Adrián López,34," M(CLR),FW",183,73
+17,17,43982,Silvio,34, D(LR),178,72
+20,20,81928,Pizzi,32, M(CLR),177,71
+22,22,109228,Pedro Martín,30, Forward,189,79
+11,11,91580,Isaac Cuenca,31," D(R),M(LR)",181,74
+23,23,91800,Cristian Tello,31, M(LR),178,65
+27,27,98317,Gerard Deulofeu,28," AM(CLR),FW",177,73
+28,28,75177,Marc Muniesa,30, D(CL),179,72
+12,12,20592,Fábio Coentrão,34," D(L),M(LR)",178,66
+22,22,67206,José Callejón,35," M(LR),FW",178,73
+24,24,106028,Jesé,29," AM(LR),FW",178,72
+10,10,44486,Coke,35," D(CLR),M(R)",182,78
+17,17,14265,Manu del Moral,38," M(CLR),FW",185,84
+18,18,6111,Piotr Trochowski,38, M(CL),169,72
+20,20,112224,Deivid,33," D(C),DMC",188,75
+21,21,16374,Emiliano Armenteros,36, AM(CLR),179,78
+22,22,37001,Papa Baba Diawara,34, FW,182,76
+24,24,91214,José Campaña,29, M(CLR),179,70
+27,27,73861,Hiroshi Ibusuki,31, Forward,195,89
+3,3,26877,Adil Rami,36, D(C),190,90
+10,10,28186,Daniel Parejo,33, M(C),182,74
+12,12,79558,Víctor Ruiz,33, D(C),184,95
+14,14,14085,Antonio Barragán,35," D(CR),M(R)",182,76
+17,17,30641,Diego Alves,37, GK,190,90
+23,23,23062,Pablo Piatti,33, M(CLR),163,63
+1,1,69965,Jaume Costa,34," D(LR),M(L)",171,62
+7,7,14063,Cristián Zapata,35, D(C),187,82
+15,15,28785,Hernán Pérez,33, M(LR),180,71
+17,17,91574,Gonzalo Castellani,35, AM(C),184,84
+20,20,24650,Javier Camuñas,42," AM(CL),FW",173,71
+22,22,82083,Alejandro Martinuccio,34, FW,173,62
+23,23,87098,Joselu,31, Forward,170,69
+24,24,101238,Moi Gómez,28, M(CLR),176,71
+25,25,79936,Gerard Bordas,41, Midfielder,177,70
+27,27,80758,Florian Lejeune,31, D(C),189,89
+1,1,28043,Domingo Cisma,40, D(L),183,79
+15,15,13639,Cata Díaz,43, D(C),182,74
+17,17,44587,Daniel Aquino,32, Forward,178,68
+20,20,19361,Cristian Rodríguez,36, AM(CL),177,92
+21,21,2842,Emre,42, M(C),169,68
+23,23,115911,Kader,30, Defender,183,78
+24,24,113708,Óliver Torres,27, M(CLR),178,70
+2,2,88526,Casemiro,30, DMC,185,84
+29,29,123232,Diego Llorente,29," D(C),DMC",186,75
+30,30,115997,José Rodríguez,27," D(C),M(CR)",180,72
+7,7,18004,Julián,31, GK,195,91
+11,11,74682,Cicinho,36, D(R),174,63
+12,12,33966,Beto,40, GK,182,81
+13,13,91978,Geoffrey Kondogbia,29," D(C),DMC",188,80
+17,17,33557,Alberto Botía,33, D(C),187,80
+20,20,87525,Bryan Rabello,28, Midfielder,167,70
+22,22,85100,Miroslav Stevanovic,32, M(R),180,72
+25,25,116218,Israel Puerto,29, Defender,187,75
+26,26,116215,Álex Rubio,29, Forward,182,77
+27,27,102168,Javi Hervás,33, Midfielder,176,78
+15,15,14386,João Pereira,38, D(R),172,70
+20,20,91304,Jonathan Viera,32," AM(CLR),FW",171,66
+19,19,135914,José Giménez,27, D(CR),185,80
+21,21,116227,Léo Baptistão,30," AM(CLR),FW",185,72
+24,24,3172,Daniel Aranzubia,43, GK,184,80
+2,2,50835,Neymar,30," AM(CLR),FW",175,68
+19,19,140088,Adama Traoré,26," M(CLR),FW",178,86
+23,23,140089,Jean Marie Dongou,27, Forward,182,76
+12,12,87094,Asier Illarramendi,32, M(C),179,75
+22,22,77636,Willian José,30, FW,189,93
+2,2,18539,Stéphane Mbia,36," D(C),M(C)",189,82
+3,3,43824,Daniel Carriço,34," D(C),DMC",180,79
+4,4,34052,Vicente Iborra,34, M(C),190,80
+5,5,149123,Antonio Cotán,27, Midfielder,175,69
+7,7,71687,Carlos Bacca,36, FW,181,77
+8,8,91430,Vitolo,32," M(CLR),FW",185,80
+11,11,19193,Nicolás Pareja,38, D(C),181,75
+17,17,19453,Kevin Gameiro,35, FW,172,70
+18,18,96207,Diogo Figueiras,31," D(LR),M(R)",168,64
+20,20,107023,Jairo Samperio,29, M(LR),173,69
+21,21,110911,Sebastián Cristóforo,29, M(C),175,68
+23,23,140812,Carlos Fernández,26," AM(C),FW",185,72
+26,26,42692,Raul Andrei Rusescu,34," AM(C),FW",181,73
+28,28,110297,Denis Cheryshev,31," AM(L),FW",179,74
+29,29,141354,Moi Delgado,28, Defender,173,66
+30,30,148570,Mode,28, Defender,0,0
+8,8,27745,Javi Fuego,38, M(C),181,76
+12,12,135238,Fede Cartabia,29, AM(CLR),170,69
+16,16,130356,Rúben Vezo,28, D(CR),182,80
+19,19,69481,Dorlan Pabón,34," AM(CLR),FW",172,73
+22,22,119817,José Gayà,27," D(L),M(L)",172,66
+24,24,35237,Eduardo Vargas,32," AM(CLR),FW",170,74
+25,25,5565,Hélder Postiga,40, FW,180,76
+27,27,11234,Philippe Senderos,37, D(C),190,86
+28,28,106895,Portu,30," AM(CLR),FW",167,66
+30,30,130567,Vinícius Araújo,29," AM(L),FW",176,72
+6,6,14219,Ikechukwu Uche,38, FW,172,70
+7,7,74608,Javier Aquino,32, AM(R),165,62
+8,8,22056,Bojan Jokic,36," D(CL),M(L)",176,77
+12,12,102234,Manu Trigueros,30," M(CLR),FW",178,75
+13,13,105784,Aleksandar Pantic,30, D(C),184,77
+14,14,141633,Nahuel Leiva,25, AM(LR),176,70
+15,15,44389,Chechu Dorado,40, D(C),180,70
+17,17,106860,Juan Carlos Sánchez,35, GK,182,72
+18,18,15762,Jérémy Perbet,37, FW,184,85
+19,19,83504,Tomás Pina,34, M(C),184,78
+22,22,79946,Edu Ramos,30, Midfielder,176,77
+23,23,108767,Pablo Iñíguez,28, Defender,186,75
+24,24,106528,Joan Román,29, Midfielder,175,65
+5,5,18538,Jesús Gámez,37, D(LR),177,75
+7,7,80241,Antoine Griezmann,31," AM(CLR),FW",176,73
+8,8,23001,Cristian Ansaldi,36," D(CLR),M(CLR)",181,76
+12,12,76662,Jan Oblak,29, GK,188,87
+15,15,20665,Guilherme Siqueira,36, D(L),182,81
+19,19,108186,Raúl Jiménez,31, FW,190,76
+22,22,12473,Alessio Cerci,35," M(R),FW",178,78
+23,23,141293,Héctor Hernández,27, FW,180,73
+17,17,106590,Rafinha,30, M(CLR),174,71
+20,20,135242,Sandro Ramírez,27," AM(LR),FW",175,71
+21,21,74533,Douglas,32," D(R),M(R)",171,70
+22,22,143158,Munir El Haddadi,27," AM(LR),FW",175,69
+23,23,91254,Jordi Masip,33, GK,180,76
+18,18,65901,Keylor Navas,35, GK,185,80
+19,19,115098,Lucas Silva,29, DMC,182,80
+23,23,142802,Álvaro Medrán Just,28, M(C),173,71
+0,0,67424,Grzegorz Krychowiak,32," D(C),M(C)",186,83
+8,8,29582,Benoît Trémoulinas,36," D(L),M(L)",173,65
+9,9,82630,Aleix Vidal,33," D(R),M(LR)",177,70
+12,12,109338,Sergio Rico,29, GK,195,90
+13,13,83081,Alejandro Arribas,33, D(C),182,76
+16,16,44417,Timothée Kolodziejczak,30," D(CL),M(L)",185,75
+22,22,141021,Mariano Barbosa,38, GK,188,79
+24,24,238931,Juan Muñoz,26, Forward,179,72
+25,25,142114,Luismi,30, Midfielder,180,73
+9,9,118123,André Gomes,29, M(CLR),188,84
+11,11,22117,Enzo Pérez,36, M(CR),178,77
+13,13,83459,Rodrigo,31," M(CLR),FW",182,77
+14,14,75204,Lucas Orbán,33, D(CL),184,76
+17,17,125532,Bruno Zuculini,29, DMC,182,74
+18,18,116164,Carles Gil,29, AM(CR),171,65
+19,19,125547,Rodrigo de Paul,28," AM(CLR),FW",180,70
+20,20,121771,Filipe Augusto,29, DMC,182,78
+21,21,142080,Rober Ibáñez,29, AM(R),175,67
+22,22,261670,Tropi,27, Midfielder,173,69
+23,23,83117,Yoel Rodríguez,34, GK,186,78
+2,2,243271,Adrián Marín,25," D(L),M(L)",181,73
+12,12,261718,Sergio Marcos,30, M(C),178,68
+14,14,125543,Luciano Vietto,28," AM(CLR),FW",174,69
+17,17,97659,Gerard Moreno,30," AM(CR),FW",180,77
+18,18,98113,Espinosa González,30, AM(CLR),173,67
+23,23,28133,Antonio Rukavina,38," D(LR),M(R)",177,74
+26,26,276489,Alfonso Pedraza,26," D(L),M(L)",184,73
+28,28,278172,Fran Sol,30, FW,181,77
+13,13,115472,Yannick Carrasco,29," M(CLR),FW",185,73
+14,14,25956,Augusto Fernández,36, M(CR),177,73
+18,18,127604,Ángel Correa,27," AM(CLR),FW",171,70
+19,19,27494,Jackson Martínez,35, FW,185,79
+20,20,303114,Nacho Monsalve,28, Defender,180,74
+23,23,130446,Matías Kranevitter,29, DMC,178,74
+20,20,135243,Sergi,27, DMC,182,73
+21,21,80774,Marc-André ter Stegen,30, GK,187,85
+23,23,294123,Gerard Gumbau,27, DMC,187,77
+11,11,144511,Lucas Vázquez,31," D(R),M(R)",173,70
+15,15,23154,Kiko Casilla,35, GK,190,86
+23,23,254582,Marcos Llorente,27," D(R),M(CR),FW",184,74
+2,2,40771,Mariano,36," D(R),M(R)",185,77
+3,3,89856,Sergio Escudero,33," D(L),M(L)",176,65
+4,4,58467,Yevhen Konoplyanka,32," AM(CL),FW",178,78
+6,6,39935,Steven Nzonzi,33, M(C),196,75
+11,11,316957,Diego González,27, D(CL),185,83
+13,13,10623,Michael Krohn-Dehli,39, M(CLR),171,70
+17,17,78892,Marco Andreolli,36, D(C),187,81
+23,23,316152,Curro Sánchez,26, Midfielder,173,71
+29,29,317642,David Carmona,25, Defender,175,72
+31,31,316956,José Joaquín Matos,27, Defender,168,64
+2,2,136810,Jaume Doménech,31, GK,185,73
+6,6,125953,Aderllan Santos,33, D(C),193,83
+7,7,83250,Aymen Abdennour,33, D(C),187,85
+12,12,294056,Danilo Barbosa,26," D(C),DMC",183,74
+21,21,127137,Zakaria Bakkali,26, AM(LR),168,71
+24,24,125838,Santi Mina,26," AM(LR),FW",181,77
+25,25,317597,Sito,25, Midfielder,180,70
+27,27,108033,Wilfried Zahibo,29, DMC,189,77
+28,28,300778,Fran Villalba,24, AM(L),171,63
+2,2,92516,Alphonse Areola,29, GK,195,94
+15,15,238773,Samu Castillejo,27, AM(CLR),182,67
+18,18,86513,Cédric Bakambu,31," AM(LR),FW",182,73
+20,20,135233,Samu García,32," AM(R),FW",179,72
+23,23,2247,Daniele Bonera,41, D(CR),183,84
+10,10,77059,Sime Vrsaljko,30," D(LR),M(R)",181,76
+14,14,70735,Nicolás Gaitán,34," M(CLR),FW",173,66
+10,10,89931,Samuel Umtiti,28, D(CL),182,75
+11,11,131382,Marlon Santos,27, D(C),182,80
+13,13,89925,Lucas Digne,29," D(CL),M(L)",178,74
+22,22,303268,Carles Aleñá,24, AM(CLR),180,73
+23,23,90811,Jasper Cillessen,33, GK,185,83
+17,17,137467,Marco Asensio,26, AM(CLR),182,76
+22,22,323236,Mariano Díaz,29, FW,180,76
+23,23,312851,Álvaro Tejero,26, D(R),174,69
+3,3,102439,Franco Vázquez,33," AM(CLR),FW",187,82
+4,4,243262,David Soria,29, GK,192,85
+5,5,94868,Pablo Sarabia,30," D(L),M(CLR),FW",174,70
+11,11,236511,Clément Lenglet,27, D(C),186,81
+14,14,40266,Hiroshi Kiyotake,32, AM(CLR),172,66
+16,16,89946,Wissam Ben Yedder,32," AM(C),FW",170,68
+17,17,40237,Ganso,32, AM(C),184,79
+19,19,35689,Gabriel Mercado,35, D(CR),180,81
+20,20,125378,Joaquín Correa,28," AM(CL),FW",189,75
+25,25,303907,Walter Montoya,29, AM(CR),172,73
+27,27,22627,Salvatore Sirigu,35, GK,192,80
+10,10,312580,Toni Lato,24, D(L),171,64
+13,13,71647,Simone Zaza,31, FW,186,84
+16,16,313542,Carlos Soler,25, M(CLR),180,76
+20,20,25714,Fabián Orellana,36, AM(CLR),170,64
+28,28,300779,Nacho Gil,27, AM(L),168,63
+29,29,300369,Rafa Mir,25, FW,191,86
+0,0,70216,Cote,33, D(L),182,74
+5,5,78906,Roberto Soriano,31, AM(CLR),182,76
+8,8,32565,Andrés Fernández,35, GK,187,82
+14,14,99907,Álvaro González,32, D(C),182,75
+17,17,83651,Nicola Sansone,31," AM(LR),FW",175,68
+23,23,34123,Alfred N'Diaye,32," D(C),M(C)",193,90
+24,24,295591,Aitor Cantalapiedra,26, AM(R),177,67
+25,25,306786,Mario González,26, FW,183,76
+26,26,249908,Leonardo Suárez,26, FW,167,60
+8,8,125616,Axel Werner,26, GK,192,85
+16,16,355152,Carlos Isaac,24, Defender,184,74
+24,24,356736,Arona Sané,27, Midfielder,173,0
+25,25,333359,Toni Moya,24, DMC,180,78
+14,14,318432,Yerry Mina,27, D(C),195,94
+18,18,296363,Nélson Semedo,28," D(LR),M(R)",177,67
+24,24,279698,José Arnáiz,27, FW,175,70
+12,12,303115,Theo Hernández,24," D(L),M(L)",184,81
+23,23,320833,Luca Zidane,24, GK,183,78
+3,3,125629,Guido Pizarro,32, DMC,186,80
+10,10,90446,Lionel Carole,31," D(CL),M(L)",182,79
+15,15,34333,Miguel Layún,34," D(LR),M(CLR)",180,76
+20,20,317353,Borja Lasso,28, Midfielder,177,70
+21,21,71293,Sébastien Corchia,31," D(R),M(R)",176,69
+22,22,84190,Luis Muriel,31," AM(CL),FW",179,79
+25,25,93672,Johannes Geis,29," D(C),DMC",181,81
+27,27,108176,Roque Mesa,33, DMC,172,74
+29,29,241822,Guilherme Arana,25," D(L),M(L)",176,66
+30,30,357790,José Lara,22, Midfielder,162,57
+4,4,247995,Gonçalo Guedes,25," AM(CLR),FW",179,68
+7,7,109565,Jeison Murillo,30, D(C),182,78
+10,10,335790,Nacho Vidal,27, D(R),180,75
+14,14,76202,Neto,33, GK,190,84
+20,20,296367,Nemanja Maksimovic,27, M(C),189,78
+7,7,297203,Pablo Fornals,26, M(CLR),178,67
+11,11,334221,Dani Raba,26, AM(CR),184,76
+15,15,134695,Enes Ünal,25, FW,187,78
+22,22,135344,Roger Martínez,28, FW,180,76
+24,24,344259,Pau Torres,25, D(C),191,80
+26,26,111560,Salem Al Dawsari,31, Midfielder,171,72
+27,27,331699,Darío Poveda,25, Forward,185,75
+28,28,346201,Ramiro Guerra,25, Midfielder,183,75
+30,30,136305,Rúben Semedo,28, D(C),189,84
+31,31,344260,Chuca,25, Midfielder,182,75
+6,6,372469,Sergio Camello,21, Forward,177,69
+10,10,363495,Borja Garcés,23, Forward,175,71
+16,16,132962,Thomas Lemar,26, AM(CLR),171,63
+19,19,363494,Andrés Solano,24, Defender,176,69
+24,24,296576,Gelson Martins,27, M(LR),173,72
+25,25,25091,Nikola Kalinic,34, FW,187,79
+26,26,363493,Francisco Montero,23, D(C),185,76
+27,27,369090,Víctor Mollejo,21, Forward,176,63
+28,28,366204,Joaquín Muñoz,23, Forward,173,60
+7,7,361710,Jean-Clair Todibo,22, D(C),192,88
+14,14,372828,Abel Ruiz,22, FW,180,75
+15,15,281010,Moussa Wagué,23, D(R),177,70
+17,17,146780,Malcom,25, AM(CLR),171,74
+19,19,284114,Arthur,26, DMC,171,73
+22,22,372827,Riqui Puig,23, M(C),169,56
+28,28,374869,Carles Pérez,24, AM(CR),173,75
+29,29,373838,Álex Collado,23, AM(CR),177,66
+12,12,337782,Vinícius Júnior,22," AM(L),FW",176,73
+21,21,344644,Federico Valverde,24, M(CLR),182,78
+22,22,362276,Javi Sánchez,25, D(C),186,71
+25,25,238327,Cristo González,24, Forward,179,69
+10,10,298545,Joris Gnagnon,25, D(C),182,89
+11,11,90778,Sergi Gómez,30, D(CR),185,80
+12,12,301024,Maximilian Wöber,24, D(CL),188,85
+14,14,243554,Juan Soriano,25, GK,185,78
+15,15,79560,Maxime Gonalons,33," D(C),M(C)",187,76
+16,16,83333,Quincy Promes,30," M(CLR),FW",174,71
+17,17,68732,Tomás Vaclík,33, GK,188,85
+19,19,118885,Ibrahim Amadou,29," D(C),DMC",183,81
+21,21,203436,Marko Rog,27, M(C),180,73
+25,25,372380,Javi Díaz,25, Goalkeeper,184,75
+10,10,94831,Cristiano Piccini,29, D(R),189,86
+13,13,27254,Daniel Wass,33," D(LR),M(CLR)",181,74
+16,16,322095,Mouctar Diakhaby,25, D(C),189,78
+17,17,38277,Facundo Roncaglia,35, D(CLR),179,76
+21,21,323250,Rubén Sobrino,30," AM(LR),FW",185,73
+24,24,367780,Lee Kang-In,21," AM(CR),FW",173,68
+3,3,236504,Karl Toko-Ekambi,30," AM(LR),FW",185,74
+4,4,121454,Ramiro Mori,31," D(C),DMC",186,79
+5,5,349660,Manu Morlanes,23, DMC,178,75
+7,7,363665,Samuel Chukwueze,23, AM(CR),172,70
+14,14,300840,Miguelón,26, D(R),170,68
+16,16,328517,Santiago Cáseres,25, DMC,177,77
+19,19,369884,Xavier Quintillá,26, D(L),183,70
+25,25,28721,Manuel Iturra,38, DMC,174,73
+5,5,102173,Felipe,33, D(C),190,83
+9,9,374813,Manu Sánchez,22, D(L),179,70
+10,10,326646,Renan Lodi,24," D(L),M(L)",173,68
+12,12,103476,Héctor Herrera,32, M(C),185,80
+15,15,362431,João Félix,22," AM(CL),FW",181,70
+16,16,344156,Mario Hermoso,27, D(CL),184,75
+24,24,390240,Germán Valera,20, Forward,170,68
+26,26,382631,Rodrigo Riquelme,22, Midfielder,174,0
+27,27,296563,Ivan Saponjic,25, FW,190,86
+29,29,391051,Óscar Clemente,23, Midfielder,175,0
+10,10,279423,Frenkie de Jong,25," D(C),DMC",180,74
+15,15,382234,Ansu Fati,19, AM(L),178,66
+19,19,351252,Junior Firpo,26," D(L),M(L)",184,78
+24,24,384711,Ronald Araújo,23, D(CR),188,79
+25,25,73494,Martin Braithwaite,31," AM(CLR),FW",177,73
+9,9,296337,Ferland Mendy,27," D(L),M(L)",180,73
+12,12,337879,Éder Militão,24, D(CR),186,78
+17,17,347862,Rodrygo,21, AM(CLR),174,64
+0,0,115587,Lucas Ocampos,28," M(CLR),FW",187,84
+3,3,136220,Bono,31, GK,192,78
+7,7,238941,Joan Jordán,28, M(C),184,74
+8,8,134984,Diego Carlos,29, D(C),186,79
+10,10,301019,Jules Koundé,23, D(CR),178,70
+11,11,68585,Luuk de Jong,32," AM(C),FW",188,86
+16,16,323547,Youssef En-Nesyri,25, FW,189,73
+19,19,77417,Nemanja Gudelj,30," D(C),M(C)",187,81
+23,23,107636,Munas Dabbur,30," AM(C),FW",183,78
+24,24,127970,Rony Lopes,26," AM(CLR),FW",174,68
+25,25,338365,Alejandro Pozo,23," D(R),M(R)",174,70
+7,7,344119,Maximiliano Gómez,26, FW,186,91
+14,14,367180,Thierry Correia,23," D(R),M(R)",176,69
+16,16,392686,Hugo Guillamón,22," D(C),DMC",178,62
+17,17,101596,Alessandro Florenzi,31," D(R),M(CLR)",173,67
+18,18,377204,Manu Vallejo,25, FW,167,72
+25,25,395937,Adrián Guerrero,24, Midfielder,174,66
+27,27,387480,Vicente Esquerdo,23, Midfielder,182,75
+2,2,349561,André-Frank Zambo Anguissa,26, M(C),184,78
+6,6,118479,Rubén Peña,31," D(R),M(LR)",170,65
+17,17,300365,Javier Ontiveros,25, AM(LR),170,75
+22,22,391082,Fernando Niño,21, FW,191,0
+23,23,395242,Álex Baena,21, Midfielder,0,0
+24,24,391561,Sofian Chakla,29, D(C),188,77
+23,23,140090,Moussa Dembele,26, FW,183,73
+24,24,391977,Ricard Sánchez,22, Defender,175,0
+9,9,397469,Óscar Mingueza,23, D(CR),184,75
+10,10,402197,Pedri,19, AM(C),174,60
+14,14,379205,Sergiño Dest,21," D(LR),M(R)",175,62
+20,20,30226,Miralem Pjanic,32, M(C),178,72
+21,21,368409,Trincão,22, AM(CR),184,70
+13,13,409467,Antonio Blanco,22, Midfielder,176,0
+15,15,395788,Miguel Gutiérrez,21, D(L),180,73
+19,19,402862,Victor Chust,22, D(C),182,77
+22,22,401175,Marvin Park,22, Midfielder,0,0
+24,24,401174,Sergio Arribas,20, Midfielder,173,0
+28,28,354526,Hugo Duro,22," AM(L),FW",177,70
+6,6,303729,Marcos Acuña,30," D(L),M(CL)",172,69
+9,9,22546,Papu Gómez,34," M(CL),FW",167,68
+19,19,353783,Óscar Rodríguez,24, AM(CLR),174,67
+24,24,299321,Oussama Idrissi,26, AM(LR),175,78
+10,10,346183,Uros Racic,24, DMC,193,81
+18,18,400357,Yunus Musah,19, AM(CR),178,75
+19,19,369560,Álex Blanco,23, M(L),175,70
+20,20,369713,Christian Oliva,26, DMC,178,77
+23,23,392548,Guillem Molina,22, Defender,183,71
+24,24,131051,Jason,28, M(R),178,65
+26,26,329681,Patrick Cutrone,24, FW,183,75
+28,28,396456,Koba Koindredi,20, Midfielder,184,0
+29,29,369558,Ferro,25, D(C),191,72
+16,16,298694,Pervis Estupiñán,24, D(L),175,73
+17,17,403865,Yeremi Pino,19, AM(R),172,0
+25,25,377285,Takefusa Kubo,21," AM(CLR),FW",173,64
+27,27,408370,Álex Millán,22, FW,0,0
+28,28,125375,Gerónimo Rulli,30, GK,189,84
+9,9,361812,Reinildo,28," D(CL),M(L)",180,73
+22,22,427360,Carlos Martín,20, Forward,0,0
+24,24,89928,Benjamin Lecomte,31, GK,186,78
+25,25,422918,Giuliano Simeone,19, Forward,0,0
+26,26,422917,Javier Serrano,19, Midfielder,0,0
+8,8,427283,Ez Abde,20, Forward,0,0
+13,13,428500,Ilias Akhomach,18, Forward,0,0
+15,15,422937,Gavi,18, AM(CL),173,70
+23,23,422939,Nico González,20, DMC,188,85
+25,25,396158,Ferran Jutglà,23, FW,176,77
+33,33,399627,Yusuf Demir,19, Forward,173,69
+34,34,422938,Alejandro Balde,18, D(L),175,69
+35,35,430512,Estanis Pedrola,19, Forward,0,0
+36,36,427284,Álvaro Sanz,21, Midfielder,0,0
+37,37,430511,Mika Mármol,21, Defender,0,0
+3,3,345031,Andriy Lunin,23, GK,191,80
+12,12,369109,Eduardo Camavinga,19, DMC,182,68
+25,25,437646,Mario Gila,22, Defender,185,74
+28,28,404570,Sergio Santos,21, Defender,178,0
+29,29,430083,Peter,20, Midfielder,0,0
+30,30,432209,Juan Latasa,21, Forward,0,0
+8,8,259393,Marko Dmitrovic,30, GK,194,94
+11,11,90310,Jesús Corona,29," D(R),M(CLR),FW",173,59
+20,20,316883,Gonzalo Montiel,25," D(CR),M(R)",178,69
+21,21,422955,Pedro Ortiz,22, Midfielder,184,0
+24,24,282994,Ludwig Augustinsson,28," D(L),M(L)",181,74
+27,27,422956,José Ángel Carmona,20, Defender,183,0
+28,28,407567,Iván Romero,21, Forward,172,0
+29,29,428620,Luismi Cruz,21, Midfielder,166,0
+30,30,429515,Valentino Fattore,21, Defender,0,0
+32,32,395187,Juanlu Sánchez,19, Midfielder,183,68
+3,3,344639,Omar Alderete,25, D(C),188,77
+5,5,401633,Giorgi Mamardashvili,21, GK,199,0
+8,8,408732,Jesús Vázquez,19, D(L),0,0
+14,14,101084,Dimitri Foulquier,29," D(CLR),M(R)",183,72
+18,18,402185,Marcos André,25, FW,184,78
+23,23,118127,Hélder Costa,28, AM(CLR),178,73
+28,28,429421,Rubén Iranzo,19, Defender,182,0
+30,30,301034,Eray Cömert,24, D(C),183,80
+31,31,437260,Mario Dominguez,18, Midfielder,0,0
+32,32,437259,Yellu,18, Midfielder,0,0
+33,33,425591,Cristhian Mosquera,18, Defender,188,0
+4,4,323625,Arnaut Danjuma,25," AM(L),FW",178,74
+16,16,90115,Aïssa Mandi,30, D(CLR),184,78
+17,17,365122,Boulaye Dia,25," AM(R),FW",180,75
+25,25,426050,Nicolas Jackson,21, Forward,186,0
+27,27,404242,Carlo García,21, Midfielder,181,0
+28,28,396540,Nikita Iosifov,21, Midfielder,175,0
+0,0,28963,Anthony Mounier,34, AM(CLR),174,65
+1,1,2833,Fabio Grosso,44, D(CL),190,82
+2,2,9242,Cris,45, D(C),184,76
+3,3,2134,Jean-Alain Boumsong,42," D(CL),DMC",190,94
+4,4,6778,Jérémy Toulalan,39," D(C),M(C)",183,86
+9,9,14342,Lisandro López,39," AM(CL),FW",174,74
+12,12,5369,Michel Bastos,39," D(L),M(CLR)",179,71
+13,13,5973,Jean Makoun,39, M(C),173,65
+14,14,2223,Anthony Réveillere,42, D(LR),181,76
+15,15,43610,Lamine Gassama,32, D(R),181,74
+16,16,6476,Mathieu Bodmer,39," D(C),M(C)",190,90
+17,17,14308,Bafétimbi Gomis,37, FW,184,77
+18,18,16807,César Delgado,41," M(C),FW",174,69
+19,19,13561,Éderson,36, AM(CLR),181,74
+20,20,69875,Sidney Govou,43," D(C),M(CLR)",178,77
+21,21,11100,Francois Clerc,39, D(R),187,77
+23,23,42696,Yannis Tafer,31, Midfielder,181,73
+24,24,79562,Clément Grenier,31, M(CL),186,72
+25,25,78970,Ishak Belfodil,30," AM(LR),FW",192,86
+27,27,2446,Rémy Vercoutre,42, GK,185,78
+0,0,3932,Mamadou Niang,42," AM(CLR),FW",178,80
+1,1,4172,Souleymane Diawara,43, D(C),187,88
+2,2,2132,Benoit Cheyrou,41, M(C),182,78
+3,3,13641,Lucho González,41, M(C),185,81
+4,4,58436,Elinton Andrade,43, Goalkeeper,190,85
+5,5,13852,Taye Ismaila Taiwo,37, D(CL),182,87
+6,6,2466,Gabriel Heinze,44," D(CL),DMC",178,72
+7,7,7796,Brandão,42, FW,189,86
+9,9,10194,Hatem Ben Arfa,35," M(CR),FW",178,65
+10,10,24929,Mathieu Valbuena,37, M(CLR),167,58
+11,11,27079,Charles Kaboré,34, M(C),182,78
+12,12,6784,Laurent Bonnart,42, D(L),171,62
+13,13,1747,Édouard Cissé,44," D(C),M(CR)",186,76
+14,14,6743,Hilton,45, D(C),180,78
+15,15,23133,Fabrice Abriel,43, M(C),176,69
+16,16,17433,Bakari Koné,41, FW,167,61
+17,17,29545,Steve Mandanda,37, GK,185,82
+18,18,19856,Garry Bocaly,34, D(R),180,74
+19,19,67491,Jordan Ayew,31," AM(CLR),FW",182,80
+20,20,2607,Cyril Rool,47, Midfielder,178,72
+21,21,494,Fernando Morientes,46, FW,185,76
+22,22,33861,Pape M'Bow,34, Defender,190,74
+0,0,14195,Nenê,41," AM(CLR),FW",181,70
+1,1,17744,Sébastien Puygrenier,40, D(C),187,90
+2,2,7665,Diego Pérez,42, M(C),178,80
+4,4,34212,Thomas Mangani,35, M(C),183,79
+5,5,25608,Stéphane Ruffier,35, GK,188,93
+6,6,43834,Nicolas Nkoulou,32, D(C),184,77
+7,7,82125,Adriano Pereira,40, D(CLR),179,70
+8,8,10196,Francois Modesto,44," D(C),DMC",183,80
+9,9,18840,Alejandro Alonso,40," D(C),M(CR)",170,68
+10,10,29573,Vincent Muratori,35, D(L),179,71
+11,11,3808,Djimi Traore,42, D(C),191,87
+12,12,5691,Eduardo Costa,39, AM(CR),186,85
+13,13,27968,Cédric Mongongu,33, D(C),188,82
+14,14,25607,Juan Pablo Pino,35, DMC,176,70
+15,15,43192,Jean-Jacques Gosso,39, M(C),177,75
+16,16,71668,Lukman Haruna,31, M(C),180,73
+17,17,39724,Moussa Maâzou,34," AM(L),FW",187,80
+18,18,17734,Igor Lolo,40, D(LR),180,77
+19,19,22702,Mathieu Coutadeur,36, M(C),170,69
+20,20,69386,Yohan Mollo,33," M(CLR),FW",175,78
+21,21,22114,Frédéric Nimani,33, Forward,191,87
+22,22,26538,Djamel Bakar,33," AM(LR),FW",171,71
+23,23,69808,Yohann Thuram-Ulien,33, GK,188,90
+24,24,19530,Serge Gakpé,35," AM(LR),FW",177,79
+26,26,43420,Yannick Sagbo,34, FW,183,78
+27,27,4149,Jerko Leko,42, Midfielder,188,76
+0,0,4528,Lionel Letizi,49, Goalkeeper,187,80
+1,1,25606,Ismaël Gace,36, D(C),180,77
+2,2,11896,Didier Digard,36, M(C),183,76
+4,4,18117,Renato Civelli,38, D(C),195,92
+5,5,22457,Drissa Diakité,37," D(R),M(R)",176,69
+6,6,23284,Onyekachi Apam,35, D(C),176,84
+8,8,6296,Emerse Faé,38," D(C),M(C),FW",174,71
+10,10,34966,Kafoumba Coulibaly,36," D(CR),M(CR)",179,74
+11,11,38734,Larrys Mabiala,34, D(C),189,84
+12,12,10600,David Hellebuyck,43," M(CR),FW",178,73
+13,13,5774,Chaouki Ben Saada,38, M(C),176,72
+14,14,6672,Julien Sablé,42, M(C),181,73
+15,15,2445,Grégory Paisley,45," D(C),DMC",185,85
+16,16,2222,Olivier Echouafni,50, DMC,183,71
+17,17,13304,Gérald Cid,39, DMC,188,74
+18,18,2681,Mamadou Bagayoko,43, AM(L),190,79
+19,19,25512,Alain Cantareil,39, D(C),178,70
+20,20,29587,Mahamane Traoré,34, M(C),176,66
+21,21,30117,Mickaël Poté,37, Forward,180,80
+22,22,21766,Eric Mouloungui,38," M(CLR),FW",186,73
+23,23,2661,Habib Bamogo,40, Forward,176,72
+24,24,83263,Julien Berthomier,32, Defender,181,74
+25,25,69652,Abeiku Quansah,31, Midfielder,175,68
+0,0,14061,Stéphane Sessegnon,38, M(CLR),172,72
+1,1,21755,Guillaume Hoarau,38, FW,192,85
+2,2,14240,Christophe Jallet,38," D(LR),M(L)",178,70
+3,3,19248,Mevlüt Erdinç,35, FW,181,85
+4,4,10193,Jérémy Clément,38, M(C),180,76
+5,5,1735,Sylvain Armand,42, D(CL),182,82
+6,6,20751,Ceará,42, D(LR),175,75
+7,7,42948,Apoula Edel,36, GK,184,80
+9,9,1551,Zoumana Camara,43, D(C),182,76
+10,10,497,Claude Makelele,49," D(C),M(CR)",174,70
+11,11,1117,Péguy Luyindula,43," AM(C),FW",178,72
+12,12,2349,Gregory Coupet,49, GK,181,80
+13,13,1043,Ludovic Giuly,46," D(C),M(C)",164,62
+14,14,6409,Sammy Traore,46," D(L),DMC",192,82
+15,15,14116,Clément Chantôme,35, M(C),180,71
+16,16,32166,Younousse Sankharé,33, M(C),184,80
+17,17,605,Mateja Kezman,43, AM(L),182,74
+18,18,29576,Granddi N'Goyi,34, M(C),185,77
+19,19,68278,Jean-Eudes Maurice,36, Forward,180,73
+20,20,5991,Grégory Bourillon,38," D(C),DMC",187,74
+21,21,66291,Tripy Makonda,32, D(C),180,70
+0,0,82622,Abdoulaye Diallo,30, GK,191,82
+1,1,22618,Sylvain Marveaux,36," AM(CLR),FW",172,69
+2,2,3972,Rod Fanni,40, D(CR),186,78
+3,3,15224,Kader Mangane,39," D(C),DMC",193,90
+4,4,10785,Asamoah Gyan,36, FW,180,76
+5,5,33886,Yann M'Vila,32, M(C),182,80
+6,6,19664,Nicolas Douchez,42, GK,186,81
+7,7,33591,Fabien Lemoine,35, M(C),175,71
+8,8,5772,Petter Hansson,45," D(C),DMC",186,82
+9,9,6159,Carlos Bocanegra,43, D(C),178,77
+10,10,6890,Jimmy Briand,37," M(LR),FW",181,84
+11,11,1445,Bruno Cheyrou,44, DMC,187,83
+12,12,1050,Jerome Leroy,47," AM(C),FW",183,75
+13,13,9342,Alexander Tettey,36, M(C),180,76
+14,14,23618,Romain Danzé,36," D(R),M(CR)",184,73
+15,15,69807,Kévin Théophile-Catherine,32, D(CLR),183,86
+16,16,3373,Junichi Inamoto,43, Midfielder,181,77
+17,17,6078,Olivier Thomert,42, AM(C),188,84
+18,18,17592,Ismael Bangoura,37, FW,174,75
+19,19,6685,Lucien Aubey,38, Defender,180,75
+20,20,19529,Moussa Sow,36," M(LR),FW",180,75
+21,21,27355,Jires Kembo-Ekoko,34," M(LR),FW",179,75
+22,22,71382,Tongo Doumbia,33, M(C),190,85
+23,23,1950,Mickael Pagis,49, Forward,180,83
+4,4,8006,Yoann Gourcuff,36, M(CL),185,82
+15,15,17430,Pape Malickou Diakhaté,38, D(C),184,78
+20,20,42248,Jérémy Pied,33," D(LR),M(CLR)",174,69
+24,24,90277,Harry Novillo,30, Forward,182,80
+25,25,81952,Enzo Reale,30, M(C),175,69
+0,0,21719,Mamadou Samassa,36," AM(CLR),FW",188,82
+2,2,30060,André Ayew,32," M(CLR),FW",176,72
+11,11,14239,André-Pierre Gignac,36, FW,186,84
+20,20,32957,Leyti N'Diaye,37, D(L),188,84
+23,23,40637,Guy Gnabouyou,32, Forward,183,82
+7,7,2270,Pascal Feindouno,41, Midfielder,176,69
+8,8,92795,Layvin Kurzawa,30," D(L),M(L)",182,74
+15,15,29585,Chris Malonga,35, AM(CL),182,72
+16,16,66194,Benjamin Moukandjo,33," M(LR),FW",180,75
+18,18,11130,Daniel Niculae,40," AM(CLR),FW",185,76
+20,20,90278,Nampalys Mendy,30, M(C),167,73
+21,21,4557,Grégory Lacombe,40, AM(R),164,58
+23,23,18416,Sebastien Chabbert,44, Goalkeeper,183,82
+25,25,66239,Georgie Welcome,37, FW,192,76
+26,26,83025,Frédéric Bulot,31, AM(LR),182,70
+29,29,93917,Valère Germain,32," AM(CLR),FW",181,75
+33,33,86512,Kevin Malcuit,31," D(R),M(R)",178,77
+5,5,69171,Nemanja Pejcinovic,34, D(CR),185,81
+13,13,35887,Abdou Traoré,34, M(C),180,79
+19,19,1734,Danijel Ljuboja,44," AM(LR),FW",187,80
+20,20,41083,Adeílson,36, Forward,185,80
+21,21,3971,David Bellion,39, FW,181,78
+25,25,101904,Stéphane Bahoken,30, FW,185,78
+26,26,98100,Lloyd Palun,33, D(R),184,73
+27,27,83270,Kévin Malaga,35, Defender,189,79
+28,28,93576,Cyril Hennion,30, Midfielder,180,74
+31,31,97187,Esmaël Gonçalves,31, FW,184,73
+10,10,18213,Siaka Tiéné,40," D(L),M(L)",176,72
+17,17,94932,Loïck Landre,30, D(C),182,75
+19,19,94933,Neeskens Kebano,30, AM(CLR),170,65
+22,22,96321,Jean-Christophe Bahebeck,29," AM(LR),FW",182,76
+2,2,36413,Jean-Armel Kana-Biyik,33, D(C),184,86
+4,4,78027,Yacine Brahimi,32, M(CLR),172,68
+6,6,67370,John Boye,35, D(C),184,73
+8,8,80757,Samuel Souprayen,33, D(L),187,78
+10,10,12888,Abdoulrazak Boukari,35," M(CL),FW",187,70
+13,13,3022,Stéphane Dalmat,43," M(CR),FW",181,76
+14,14,8009,Víctor Montaño,38, FW,177,76
+17,17,35556,Johann Carrasso,34, GK,188,82
+20,20,80471,Yassine Jebbour,31, D(LR),180,70
+21,21,30150,Georges Mandjeck,33, M(C),185,75
+24,24,75495,Abdoul Camara,32, AM(LR),178,70
+25,25,42995,John Verhoek,33, FW,188,87
+26,26,93207,Frank Julienne,31, Forward,171,68
+1,1,4777,John Mensah,39," D(CL),DMC",178,79
+10,10,33630,Bakary Koné,34, D(C),188,80
+22,22,44755,Gueida Fofana,31," D(R),DMC",182,74
+23,23,114168,Yassine Benzia,28," AM(CLR),FW",179,77
+26,26,105036,Sidy Koné,30, Midfielder,185,73
+2,2,22115,Jérémy Morel,38, D(CL),172,71
+7,7,4028,Alou Diarra,41," D(C),M(C)",190,79
+11,11,22797,Morgan Amalfitano,37, M(CLR),176,68
+17,17,105040,Billel Omrani,29, Forward,187,92
+19,19,104450,Chris Gadi,30, Forward,177,71
+21,21,110307,Wesley Jobello,28, AM(R),179,68
+22,22,113648,Momar Bangoura,28, Midfielder,176,65
+23,23,34143,Jean Philippe Sabo,35, Defender,174,69
+1,1,36641,Fabián Monzón,35," D(L),M(L)",179,75
+9,9,110269,Diacko Fofana,28, Defender,175,73
+11,11,1841,Camel Meriem,42, M(C),174,70
+14,14,23324,Elliot Grandin,34, M(C),178,67
+16,16,34070,Kevin Anin,36, M(C),189,80
+18,18,22337,Franck Dja Djédjé,36, M(L),176,72
+19,19,67929,Kevin Gomis,33, D(C),187,85
+23,23,44632,Raúl Fernández,36, GK,185,85
+24,24,90116,Guié Guié,36, FW,180,70
+27,27,26542,Xavier Pentecote,36, AM(LR),183,82
+29,29,109812,Alexy Bosetti,29," AM(R),FW",170,66
+1,1,10407,Jérémy Ménez,35," M(CLR),FW",182,79
+2,2,41220,Javier Pastore,33, AM(CLR),187,78
+4,4,17778,Blaise Matuidi,35, M(CL),180,75
+5,5,4649,Thiago Motta,40, M(C),187,83
+6,6,14488,Milan Bisevac,39, D(C),185,81
+7,7,9576,Mohamed Sissoko,37, M(C),191,87
+18,18,22227,Diego Lugano,41, D(C),188,84
+2,2,23236,Julien Féret,40, M(C),187,76
+3,3,15334,Jonathan Pitroipa,36," M(LR),FW",176,60
+7,7,90061,Vincent Pajot,32, M(C),180,68
+12,12,96486,Chris Mavinga,31, D(CL),183,81
+13,13,29586,Benoît Costil,35, GK,188,88
+15,15,5844,Youssouf Hadji,42, FW,183,77
+25,25,105139,Cheick Diarra,30, FW,176,79
+0,0,71833,Anthony Lopes,31, GK,184,81
+5,5,2113,Steed Malbranque,42, M(C),171,75
+20,20,95423,Rachid Ghezzal,30, AM(CLR),182,70
+21,21,19663,Arnold Mvuemba,37, DMC,172,67
+25,25,95422,Jordan Ferri,30, M(C),173,73
+26,26,129827,Fares Bahlouli,27, Midfielder,182,82
+29,29,108585,Alassane Plea,29," AM(CLR),FW",181,79
+5,5,21073,Jacques-Alaixys Romao,38," D(C),M(C)",180,77
+9,9,43670,Lucas Mendes,32, D(CL),184,80
+12,12,4835,Joey Barton,40, M(C),172,70
+17,17,80519,Kassim Abdallah,35, D(R),186,79
+18,18,31793,Foued Kadir,38, M(CLR),180,73
+19,19,111968,Rafidine Abdullah,28, DMC,180,75
+20,20,21809,Modou Sougou,37," AM(CR),FW",178,65
+22,22,104244,Florian Raspentino,33," AM(LR),FW",179,73
+23,23,121865,Fabrice Apruzesse,37, Forward,170,75
+3,3,90106,Éric Bauthéac,35, AM(LR),168,65
+5,5,34918,Joris Delle,32, GK,190,85
+7,7,14838,Darío Cvitanich,38," AM(C),FW",174,72
+8,8,93721,Valentin Eysseric,30," AM(CLR),FW",181,73
+15,15,95424,Grégoire Puel,30," D(R),M(R)",180,71
+16,16,34218,Romain Genevois,34, D(CR),182,79
+18,18,43684,Kevin Diaz,34, Midfielder,174,65
+20,20,22116,Luigi Bruins,35, AM(CL),180,75
+22,22,119822,Neal Maupay,26," AM(C),FW",173,69
+25,25,125847,Lucas Rougeaux,28, D(CR),185,87
+27,27,120523,Albert Rafetraniaina,26, DMC,176,66
+30,30,115835,Fabien Dao Castellana,29, Midfielder,169,62
+14,14,91961,Marco Verratti,29, M(C),165,60
+17,17,44178,Gregory van der Wiel,34," D(CR),M(R)",183,69
+18,18,16844,Ezequiel Lavezzi,37," AM(CLR),FW",173,75
+24,24,116609,Adrien Rabiot,27," DMC,M(L)",188,71
+25,25,587,David Beckham,47," M(C),FW",183,78
+27,27,124287,Antoine Conté,28, D(CR),179,72
+30,30,19731,Ronan Le Crom,48, GK,186,77
+0,0,43868,Cheikh N'Diaye,37, Goalkeeper,192,81
+1,1,90103,Romain Alessandrini,33," AM(CLR),FW",173,70
+4,4,116317,Abdoulaye Doucouré,29, M(C),184,75
+14,14,10452,Herita Ilunga,40, D(C),180,74
+19,19,129648,Steven Moreira,28," D(LR),M(R)",178,72
+21,21,83572,Sadio Diallo,31," M(CL),FW",182,75
+24,24,107678,Abdoulaye Sané,29, Forward,184,73
+25,25,116318,Axel Ngando,29, AM(C),179,71
+26,26,129998,Kevin Beauverger,28, Defender,171,68
+27,27,31142,Anders Konradsen,32, DMC,183,76
+29,29,128589,Ejike Uzoenyi,30, Midfielder,168,62
+4,4,43977,Miguel Lopes,35, D(CR),183,83
+5,5,10426,Henri Bedimo,38, D(L),180,80
+6,6,109941,Mehdi Zeffane,30," D(LR),M(R)",176,73
+15,15,134893,Nabil Fekir,29," AM(CLR),FW",173,72
+17,17,81949,Mathieu Gorgelin,32, GK,187,83
+22,22,121974,Naby Sarr,29, D(C),196,94
+26,26,1776,Gaël Danic,40, AM(CLR),176,65
+8,8,14058,Dimitri Payet,35," M(CLR),FW",175,77
+11,11,99143,Florian Thauvin,29," M(CLR),FW",179,70
+15,15,90123,Brice Dja Djédjé,31," D(R),DMC,M(R)",170,71
+16,16,81959,Giannelli Imbula,30, M(C),186,78
+17,17,123481,Mario Lemina,29, DMC,184,85
+18,18,105032,Saber Khalifa,35," AM(LR),FW",183,73
+22,22,122346,Laurent Abergel,29, DMC,170,65
+23,23,105198,Brice Samba,28, GK,186,79
+3,3,16161,João Moutinho,36, M(C),170,61
+7,7,34230,Mounir Obbadi,39, M(C),172,65
+10,10,29214,Danijel Subasic,37, GK,191,84
+14,14,89947,Nicolas Isimat-Mirin,30, D(C),187,82
+15,15,17946,Andrea Raggi,38, D(CLR),187,82
+17,17,33663,Elderson Echiéjilé,34, D(L),184,76
+19,19,70104,Emmanuel Rivière,32, FW,182,76
+21,21,134870,Jessy Pi,28, DMC,179,76
+23,23,120818,Nabil Dirar,36," D(LR),M(CR)",187,82
+24,24,4484,Andreas Wolf,40," D(CL),DMC",182,82
+26,26,2645,Flavio Roma,48, Goalkeeper,191,86
+27,27,36675,Delvin N'Dinga,34, M(C),181,75
+28,28,137330,Borja López,28, D(C),192,78
+7,7,4107,Christian Brüls,33, AM(CLR),179,74
+10,10,134902,Jordan Amavi,28," D(L),M(L)",176,70
+17,17,116615,Mouez Hassen,27, GK,186,70
+23,23,137021,Saïd Benrahma,27, AM(CLR),172,67
+24,24,123254,Bryan Constant,28, Midfielder,183,76
+25,25,137435,Anthony Mandréa,25, GK,186,78
+26,26,146712,Paulin Puel,25, Midfielder,179,73
+27,27,137837,Franck Honorat,26," M(LR),FW",180,70
+28,28,92515,Lucas Veronese,31, GK,187,72
+13,13,101949,Marquinhos,28," D(CR),DMC",183,75
+17,17,12376,Yohan Cabaye,36, M(C),174,71
+21,21,128048,Hervin Ongenda,27, AM(L),170,65
+2,2,16032,Ola Toivonen,36," AM(C),FW",189,78
+3,3,29594,Cheikh M'Bengue,34," D(CL),M(L)",182,79
+17,17,134905,Cédric Hountondji,28, D(C),194,81
+20,20,25612,Emerson Conceição,36, D(L),185,83
+22,22,30524,Kamil Grosicki,34, AM(LR),180,78
+24,24,91094,Silvio Romero,34," AM(R),FW",176,76
+25,25,68855,Nélson Oliveira,31, FW,186,81
+26,26,129819,Wesley Saïd,27," AM(CLR),FW",171,75
+27,27,129999,Adrien Hunou,28," AM(CLR),FW",179,66
+28,28,134881,Zana Allée,28, Midfielder,164,63
+13,13,85677,Lindsay Rose,30, D(C),184,79
+24,24,109913,Mohamed Yattara,29, FW,185,76
+17,17,71831,Abdelaziz Barrada,33, M(CR),179,73
+18,18,113937,Baptiste Aloe,28, D(C),184,77
+19,19,231151,Stéphane Sparagna,27," D(C),DMC",186,83
+21,21,231152,Jérémie Porsan-Clemente,24, Forward,179,69
+22,22,141264,Bill Tuiloma,27, D(CR),178,79
+23,23,119859,Gaël Andonian,27, Defender,185,74
+24,24,256226,Bilal Boutobba,24, Midfielder,172,65
+9,9,132669,Wallace,27, D(C),191,85
+17,17,67180,Lacina Emeghara Traoré,32, FW,203,87
+20,20,101922,Matheus Carvalho,30, Forward,177,69
+23,23,4065,Maarten Stekelenburg,39, GK,197,92
+25,25,243076,Aboubakar Kamara,27," AM(R),FW",177,81
+26,26,21251,Alain Sibiri Traoré,33," M(C),FW",176,73
+2,2,260809,Olivier Boscagli,24," D(CL),DMC",181,68
+8,8,121496,Carlos Eduardo,32, M(C),177,68
+10,10,23619,Simon Pouplin,37, GK,187,78
+16,16,74328,Niklas Hult,32," D(L),M(CL)",173,63
+22,22,238921,Vincent Koziello,26, M(C),168,58
+24,24,121997,Julien Vercauteren,29, Forward,171,66
+29,29,259809,Sada Thioub,27, M(LR),179,75
+22,22,247800,Presnel Kimpembe,27, D(C),183,77
+1,1,121720,Mexer,34, D(C),188,79
+7,7,43415,Benjamin André,32," D(R),M(CLR)",180,76
+9,9,43031,Fallou Diagne,33," D(CR),DMC",185,75
+13,13,110424,Pedro Henrique,32," AM(LR),FW",179,72
+17,17,107891,Sanjin Prcic,28, M(C),181,75
+19,19,30781,Mouhamadou Bezannier,35, FW,192,80
+20,20,76984,Philipp Hosiner,33, FW,179,79
+21,21,69611,Ermir Lenjani,33," D(L),M(L)",175,65
+9,9,34190,Mapou Yanga-Mbiwa,33, D(CR),184,77
+13,13,300705,Lucas Tousart,25, DMC,185,84
+16,16,25599,Claudio Beauvue,34," AM(CLR),FW",175,70
+17,17,106596,Sergi Darder,28, M(CL),180,71
+19,19,274906,Olivier Kemen,26, M(C),177,76
+22,22,125004,Maxwel Cornet,25," D(L),M(LR),FW",179,69
+25,25,301326,Gaetan Perrin,26, Forward,169,63
+26,26,289111,Aldo Kalulu,26," AM(LR),FW",166,60
+28,28,122363,Zakarie Labidi,27, Forward,178,71
+29,29,300291,Romain Del Castillo,26," AM(LR),FW",172,60
+5,5,85693,Rémy Cabella,32," M(CLR),FW",171,68
+7,7,33878,Mauricio Isla,34," D(R),M(CR)",176,75
+11,11,9279,Rolando,37, D(C),189,77
+12,12,9766,Steven Fletcher,35, FW,186,76
+20,20,19845,Yohann Pelé,39, GK,196,89
+24,24,12722,Paolo De Ceglie,36," D(L),M(CL)",184,75
+26,26,302333,Antoine Rabillard,26, Forward,181,76
+14,14,10116,Vágner Love,38, FW,171,72
+16,16,244297,Adama Traoré,27, M(CR),178,72
+18,18,108105,Paul Nardi,28, GK,187,77
+19,19,125379,Guido Carrillo,31, FW,191,87
+20,20,129903,Mario Pasalic,27, M(CL),188,82
+23,23,70087,Stephan El Shaarawy,29," AM(CLR),FW",178,72
+24,24,130435,Jemerson,30," D(CR),DMC",184,77
+25,25,137386,Ivan Cavaleiro,28," AM(CLR),FW",175,73
+27,27,300713,Kylian Mbappé,23," AM(LR),FW",178,73
+29,29,146765,Boschilia,26, AM(CLR),172,63
+30,30,302496,Mohamed Ilyes Chaibi,25, Forward,176,65
+1,1,120763,Ricardo Pereira,28," D(LR),M(R)",175,70
+3,3,27756,Paul Baysse,34, D(CR),187,85
+6,6,136262,Jean Michaël Seri,31, M(C),168,69
+7,7,236523,Maxime Le Marchand,32, D(CL),185,78
+10,10,236520,Mickaël Le Bihan,32, FW,185,85
+16,16,140569,Yoan Cardinale,28, GK,181,84
+19,19,125326,Rémi Walter,27, M(CR),174,73
+20,20,274912,Jonathan Correia,28, Midfielder,175,65
+21,21,140494,Wallyson Mallmann,28, AM(C),183,77
+24,24,123253,Gautier Lloris,27, Defender,192,87
+25,25,302449,Dorian Caddy,27, Forward,186,87
+26,26,288901,Alexandre Mendy,28, FW,184,94
+27,27,127135,Dada,29, Midfielder,168,64
+31,31,302321,Antony Ranieri,25, Forward,165,64
+25,25,302931,Kevin Rimane,31, Defender,181,0
+26,26,315558,Yakou Meite,26," AM(LR),FW",184,82
+27,27,315560,Timothee Taufflieb,29, Midfielder,172,75
+7,7,67474,Pedro Mendes,31, D(CR),186,78
+8,8,77931,Yacouba Sylla,31, DMC,184,79
+11,11,34011,Ludovic Baal,36," D(L),M(L)",176,75
+13,13,91989,Juan Quintero,29, AM(C),168,67
+23,23,302294,Sébastien Salles-Lamonge,26, Midfielder,170,67
+27,27,139837,Kermit Erasmus,32, Forward,167,63
+29,29,297541,Nicolas Janvier,24, M(C),171,71
+6,6,202251,Emanuel Mammana,26, D(C),183,70
+14,14,33661,Maciej Rybus,33," D(LR),M(LR)",173,75
+21,21,323068,Jordy Gaspar,25, Defender,179,58
+24,24,328096,Jean-Philippe Mateta,25, FW,192,88
+26,26,322096,Houssem Aouar,24, M(CL),175,70
+2,2,25565,William Vainqueur,33, DMC,179,73
+4,4,44883,Grégory Sertic,33," D(C),M(C)",183,76
+5,5,62108,Hiroki Sakai,32," D(CLR),M(R)",185,78
+10,10,33286,Tomás Hubocan,37, D(CLR),184,70
+11,11,115508,Morgan Sanson,28, M(CLR),180,73
+13,13,288883,Maxime Lopez,24, M(CR),167,58
+16,16,129114,Doria,27, D(C),189,82
+22,22,280677,Zinedine Machach,26, AM(C),185,77
+23,23,261992,Aaron Leya Iseka,24," AM(C),FW",182,85
+24,24,296342,Saîf-Eddine Khaoui,27, AM(CR),180,68
+2,2,248123,Jorge,26," D(L),M(L)",183,78
+11,11,10454,Djibril Sidibé,30," D(CLR),M(R)",182,71
+12,12,322564,Loic Badiashile,24, Goalkeeper,186,0
+13,13,44208,Kamil Glik,34, D(C),190,80
+14,14,298733,Kevin N'Doram,26, DMC,184,76
+25,25,118351,Corentin Jean,27," AM(LR),FW",170,65
+26,26,333419,Irvin Cardona,25," AM(L),FW",185,76
+27,27,256538,Seydou Sy,26, GK,192,80
+28,28,4500,Morgan De Sanctis,45, GK,190,86
+1,1,123873,Wylan Cyprien,27, M(C),180,75
+4,4,322748,Dalbert,29," D(L),DMC,M(L)",181,70
+7,7,80465,Arnaud Souquet,30," D(CR),M(R)",179,74
+11,11,78195,Younès Belhanda,32, M(CL),177,78
+15,15,130304,Walter Benítez,29, GK,191,91
+20,20,261267,Anastasios Donis,26," AM(CR),FW",178,76
+21,21,329246,Patrick Burner,26, D(R),168,61
+23,23,236515,Arnaud Lusamba,25, AM(C),180,74
+24,24,322749,Vincent Marcel,25, Midfielder,180,65
+25,25,333437,Bassem Srarfi,25," D(L),M(LR)",176,71
+26,26,322094,Jonathan Ikoné,24," AM(CLR),FW",175,67
+27,27,319886,Lorenzo Callegari,24, Midfielder,174,71
+5,5,288892,Ramy Bensebaïni,27," D(CL),DMC,M(L)",186,82
+6,6,135144,Dimitri Cavaré,27," D(R),M(R)",184,84
+11,11,139586,Firmin Ndombe Mubele,28," AM(R),FW",175,74
+18,18,330612,Afonso Figueiredo,29, D(L),169,63
+21,21,322750,Adama Diakhaby,26," AM(LR),FW",184,65
+22,22,332144,James Léa Siliki,26, M(CL),183,70
+5,5,27761,Marcelo,35, D(C),191,85
+8,8,121718,Marçal,33," D(CL),M(L)",178,74
+12,12,145996,Kenny Tete,26," D(CR),M(R)",180,71
+18,18,336074,Myziane Maolida,23," AM(LR),FW",183,80
+20,20,242261,Christopher Martins,25, DMC,188,72
+22,22,348654,Amine Gouiri,22," AM(L),FW",180,72
+23,23,345987,Willem Geubbels,21, Forward,185,72
+25,25,279511,Pape Cheikh Diop Gueye,25, DMC,180,68
+10,10,331790,Boubacar Kamara,22," D(CL),DMC",184,68
+12,12,32432,Konstantinos Mitroglou,34, FW,188,86
+23,23,344741,Yusuf Sari,23, AM(R),168,55
+14,14,344041,Moussa Sylla,22," AM(R),FW",181,70
+16,16,109117,Terence Kongolo,28, D(CL),188,70
+17,17,136294,Keita Baldé,27," AM(LR),FW",181,80
+18,18,136345,Youri Tielemans,25, M(C),176,72
+20,20,351758,Julien Serrano,24," D(L),M(L)",171,55
+26,26,105161,Soualiho Meité,28, M(C),187,80
+27,27,332270,Pietro Pellegri,21, FW,196,78
+28,28,135891,Allan Saint-Maximin,25," AM(CLR),FW",173,67
+29,29,347858,Jordi Mboula,23, AM(R),183,74
+31,31,299375,Gil Dias,25," D(L),M(LR)",183,75
+3,3,301243,Pierre Lees-Melou,29, M(CLR),185,69
+4,4,147810,Racine Coly,26," D(L),M(L)",185,70
+7,7,124721,Adrien Tameze,28, M(C),180,78
+12,12,4923,Wesley Sneijder,38, AM(CL),171,67
+22,22,300634,Jean-Victor Makengo,24, AM(CL),177,75
+23,23,318485,Ihsan Sacko,25, AM(L),183,70
+26,26,344645,Ignatius Ganago,23," AM(LR),FW",179,82
+27,27,342545,Hicham Mahou,23, Midfielder,177,64
+30,30,331466,Romain Perraud,24," D(L),M(L)",173,68
+6,6,56057,Yuri Berchiche,32," D(L),M(L)",181,79
+22,22,349755,Stanley Nsoki,23, D(CL),184,77
+25,25,353991,Timothy Weah,22," AM(LR),FW",185,66
+26,26,357811,Yacine Adli,22, M(C),186,73
+1,1,129282,Benjamin Bourigeaud,28, M(CLR),178,68
+2,2,289018,Hamari Traoré,30," D(R),M(R)",175,73
+4,4,71381,Wahbi Khazri,31," M(CLR),FW",176,80
+5,5,322670,Ismaïla Sarr,24," AM(CLR),FW",185,76
+7,7,283271,Tomás Koubek,30, GK,197,98
+10,10,345386,Gerzino Nyamsi,25, D(C),194,91
+11,11,297540,Jérémy Gelin,25," D(C),DMC",183,77
+19,19,121765,Brandon Thomas,27, FW,173,71
+20,20,83297,Diafra Sakho,32, FW,184,79
+22,22,78623,Raïs M'Bolhi,36, GK,191,88
+24,24,296232,Faitout Maouassa,24," D(L),M(LR)",170,76
+25,25,335686,Jordan Tell,25, Forward,185,74
+6,6,146724,Léo Dubois,28," D(LR),M(R)",178,65
+13,13,243511,Jason Denayer,27," D(CR),DMC",184,70
+15,15,329356,Martin Terrier,25," AM(CL),FW",184,71
+22,22,370370,Yassin Fekir,25, Midfielder,0,0
+23,23,357535,Lenny Pintor,22, Forward,179,66
+24,24,354072,Oumar Solet,22, D(C),192,88
+10,10,35954,Kevin Strootman,32, DMC,186,78
+15,15,251134,Duje Caleta-Car,26, D(C),192,89
+22,22,302441,Nemanja Radonjic,26, M(CLR),185,77
+23,23,349704,Christopher Rocchia,24, Defender,172,70
+0,0,300608,Ronaël Pierre-Gabriel,24, D(CLR),177,76
+2,2,328968,Fodé Ballo-Touré,25," D(L),M(L)",182,70
+6,6,32598,Adrien Silva,33, M(C),171,72
+8,8,296230,Youssef Aït Bennasser,26, DMC,184,75
+12,12,143524,Antonio Barreca,27," D(L),M(L)",183,70
+13,13,244560,Aleksandr Golovin,26, M(CLR),180,69
+16,16,139111,Jean-Eudes Aholou,28, DMC,186,71
+20,20,367162,Giulian Biancone,22," D(CLR),M(LR)",187,0
+21,21,365406,Benoît Badiashile,21, D(C),194,75
+28,28,361284,Sofiane Diop,22, AM(CLR),175,65
+30,30,365831,Han-Noah Massengo,21, M(C),178,0
+32,32,70484,Pelé,30, M(C),182,75
+33,33,316670,Samuel Grandsir,26, AM(LR),170,65
+39,39,363535,Wilson Isidor,22, AM(L),184,0
+41,41,349368,Romain Faivre,24, AM(CLR),180,75
+0,0,361816,Youcef Atal,26," D(R),M(R)",176,69
+2,2,112220,Christophe Hérelle,30, D(CR),188,75
+21,21,351344,Andy Pelmard,22, D(CR),180,69
+22,22,372370,Assil Jaziri,23, Midfielder,0,0
+23,23,368271,Eddy Sylvestre,23, AM(R),174,69
+24,24,373108,Pedro Brazão,19, AM(C),172,64
+27,27,349700,Mohamed Lamine Diaby,21, Forward,188,82
+28,28,329559,Maxime Pelican,24, Forward,178,65
+29,29,369714,Paul Wade,22, Midfielder,179,67
+5,5,372926,Metehan Guclu,23, Forward,182,0
+6,6,346744,Antoine Bernède,23, Midfielder,177,69
+10,10,373555,Loïc Mbe Soh,21, D(C),186,0
+14,14,255167,Thilo Kehrer,25," D(CLR),M(R)",186,76
+15,15,93700,Leandro Paredes,28, DMC,180,75
+17,17,3328,Gianluigi Buffon,44, GK,192,84
+25,25,361283,Colin Dagba,24, D(R),170,62
+3,3,58761,M'Baye Niang,27," AM(LR),FW",184,75
+4,4,34176,Damien da Silva,34, D(C),184,82
+12,12,328463,Souleyman Doumbia,25," D(L),M(L)",183,73
+16,16,260812,Jordan Siebatcheu,26, FW,191,86
+19,19,121124,Jakob Johansson,32, DMC,187,86
+23,23,293985,Denis Poha,25, DMC,173,71
+25,25,372280,Sacha Boey,22, D(R),178,70
+27,27,355994,Armand Laurienté,23," AM(LR),FW",171,59
+1,1,338780,Bruno Guimarães,24, DMC,182,74
+8,8,32676,Ciprian Tatarusanu,36, GK,198,90
+11,11,117776,Thiago Mendes,30," D(CR),M(CR)",176,78
+12,12,277239,Jeff Reine-Adélaïde,24," AM(CLR),FW",183,75
+13,13,389064,Melvin Bard,21, D(L),173,65
+16,16,368272,Maxence Caqueret,22, DMC,174,63
+18,18,143193,Youssouf Koné,27," D(CL),M(L)",174,71
+20,20,231135,Joachim Andersen,26, D(C),192,90
+23,23,386153,Rayan Cherki,19, AM(R),176,0
+24,24,355659,Jean Lucas,24, M(C),181,78
+1,1,375340,Lucas Perrin,23, D(C),187,0
+3,3,231144,Valentin Rongier,27," D(R),M(C)",172,67
+7,7,125262,Darío Benedetto,32, FW,177,75
+20,20,383628,Marley Aké,21, Forward,177,0
+21,21,380613,Isaac Lihadji,20, Forward,177,0
+22,22,365193,Florian Chabrolle,24, Midfielder,171,68
+1,1,108055,Islam Slimani,34, FW,188,83
+5,5,362470,Youssouf Fofana,23, DMC,176,0
+8,8,121417,Guillermo Maripán,28, D(C),193,84
+12,12,236546,Ruben Aguilar,29," D(R),M(R)",172,71
+19,19,365641,Jonathan Panzo,21, D(C),185,72
+20,20,345409,Henry Onyekuru,25," AM(LR),FW",175,70
+28,28,353423,Aurélien Tchouaméni,22, DMC,185,80
+29,29,371447,Lyle Foster,22, Forward,185,70
+2,2,297577,Adam Ounas,25," AM(CLR),FW",172,65
+5,5,322163,Kasper Dolberg,24, FW,187,82
+8,8,327905,Alexis Claude-Maurice,24, AM(CL),174,62
+9,9,347815,Yannis Clementia,25, Goalkeeper,188,80
+11,11,377583,Hicham Boudaoui,22, M(CR),175,61
+21,21,381664,Ibrahim Cissé,23, Defender,188,84
+22,22,366379,Khéphren Thuram,21, DMC,192,81
+30,30,283282,Riza Durmisi,28," D(L),M(L)",168,68
+3,3,80464,Idrissa Gueye,32, M(C),174,66
+6,6,382491,Adil Aouchiche,20, AM(CL),181,72
+7,7,106964,Mauro Icardi,29, FW,181,75
+8,8,361433,Marcin Bulka,22, Goalkeeper,199,0
+19,19,373556,Arthur Zagre,20, D(L),168,55
+1,1,300447,Raphinha,25," AM(LR),FW",176,68
+9,9,29590,Romain Salin,38, GK,189,71
+16,16,296241,Flavien Tait,29, M(CLR),175,70
+19,19,92792,Jonas Martin,32, M(CL),184,77
+21,21,379615,Lucas da Cunha,21, AM(R),174,66
+23,23,361815,Yann Gboho,21, AM(C),178,63
+25,25,357533,Rafik Guitane,23, AM(CR),170,60
+2,2,319756,Lucas Paquetá,25," AM(CR),FW",180,72
+6,6,320590,Tinotenda Kadewere,26," AM(R),FW",183,72
+15,15,397366,Sinaly Diomandé,21, D(C),184,74
+17,17,107275,Mattia De Sciglio,29," D(CLR),M(LR)",182,78
+20,20,377582,Djamel Benlamri,32, D(C),185,83
+25,25,408912,Florent Da Silva,19, Midfielder,0,0
+26,26,406785,Yahya Soumaré,22, Defender,173,55
+27,27,403850,Malo Gusto,19," D(R),M(R)",0,0
+28,28,415171,Habib Keïta,20, M(C),182,0
+6,6,323240,Pol Lirola,25," D(R),M(LR)",183,70
+13,13,399047,Pape Gueye,23, DMC,189,79
+15,15,388567,Luis Henrique,20, M(LR),181,78
+19,19,37188,Yuto Nagatomo,36," D(LR),M(LR)",170,68
+24,24,410337,Bamba Dieng,22," AM(L),FW",178,0
+26,26,409339,Cheick Souaré,20, Midfielder,170,0
+28,28,294149,Olivier Ntcham,26, M(CLR),180,80
+10,10,320313,Caio Henrique,25," D(L),M(CL)",178,68
+14,14,300426,Axel Disasi,24, D(C),190,86
+18,18,335692,Krépin Diatta,23," M(LR),FW",173,68
+19,19,398374,Enzo Millot,20, Midfielder,174,66
+21,21,398372,Chrislain Matsima,20, Defender,192,0
+22,22,398373,Eliot Matazo,20, DMC,0,0
+25,25,303208,Radoslaw Majecki,22, GK,194,75
+27,27,369712,Florentino,23, DMC,183,73
+29,29,383864,Strahinja Pavlovic,21, D(C),194,86
+2,2,239881,Hassane Kamara,28," D(L),M(LR)",168,67
+10,10,361822,William Saliba,21, D(C),192,83
+13,13,345527,Jordan Lotomba,23," D(LR),M(R)",177,71
+17,17,357138,Robson Bambu,24, D(C),185,69
+19,19,398415,Flavius Daniliuc,21, D(CR),185,0
+21,21,393128,Alexis Trouillet,21, Midfielder,175,65
+22,22,410258,Malik Sellouki,22, Midfielder,0,0
+25,25,382587,Evann Guessand,21, FW,185,79
+26,26,398414,Dan Ndoye,21, Forward,183,78
+27,27,398949,Salim Ben Seghir,19, Forward,174,57
+6,6,328990,Moise Kean,22," AM(LR),FW",183,67
+14,14,94891,Danilo Pereira,31," D(C),DMC",188,83
+20,20,399773,Timothée Pembélé,20," D(R),M(R)",182,75
+22,22,384005,Arnaud Kalimuendo,20, FW,175,63
+26,26,397811,Kays Ruiz-Atil,20, Midfielder,178,60
+27,27,399771,Bandiougou Fadiga,21, Midfielder,0,0
+28,28,410257,Edouard Michut,19, Midfielder,0,0
+29,29,413185,Kenny Nagera,20, Forward,177,70
+30,30,399772,Xavi Simons,19, Midfielder,168,58
+1,1,388098,Jérémy Doku,20, AM(LR),171,66
+2,2,362434,Nayef Aguerd,26, D(C),188,76
+3,3,236506,Serhou Guirassy,26," AM(L),FW",187,82
+9,9,116207,Daniele Rugani,28, D(C),190,84
+13,13,398300,Brandon Soppy,20," D(R),M(R)",0,0
+14,14,398301,Adrien Truffert,20," D(L),M(L)",173,61
+15,15,97213,Alfred Gomis,29, GK,196,83
+23,23,414249,Matthis Abline,19, Forward,176,0
+25,25,404616,Lesley Ugochukwu,18, Midfielder,188,0
+29,29,362433,Georginio Rutter,20, FW,182,83
+31,31,415415,Andy Diouf,19, Midfielder,0,0
+0,0,387417,Tetê,22, AM(R),175,70
+10,10,415172,Castello Lukeba,19, D(C),0,0
+13,13,127464,Julian Pollersbeck,28, GK,195,87
+21,21,132704,Henrique,28," D(L),M(L)",173,71
+27,27,425366,Bradley Barcola,20, Forward,0,0
+2,2,242791,Gerson,25, M(CLR),184,78
+7,7,255071,Cengiz Ünder,25, AM(CLR),173,66
+8,8,319364,Luan Peres,28, D(CL),190,74
+9,9,322668,Amine Harit,25," AM(CLR),FW",180,67
+13,13,145427,Pau López,27, GK,189,77
+16,16,397468,Konrad De la Fuente,21, AM(L),170,63
+26,26,409892,Oussama Targhalline,20, Midfielder,0,0
+5,5,408033,Vanderson,21," D(R),M(R)",180,0
+16,16,349699,Ismail Jakobs,23," D(L),M(L)",183,75
+21,21,357081,Myron Boadu,21, FW,183,67
+22,22,426647,Felix Lemarechal,19, Midfielder,0,0
+24,24,426648,Maghnes Akliouche,20, Midfielder,0,0
+26,26,431684,Tiago Ribeiro,20, Midfielder,185,68
+1,1,79976,Andy Delort,30," AM(R),FW",182,82
+12,12,329647,Pablo Rosario,25, DMC,188,73
+23,23,328987,Calvin Stengs,23, AM(CR),182,74
+26,26,362801,Billal Brahimi,22, Forward,183,0
+18,18,262515,Gianluigi Donnarumma,23, GK,196,90
+19,19,395221,Nuno Mendes,20," D(L),M(L)",176,70
+25,25,372927,Éric Ebimbe,21, AM(CR),183,66
+27,27,421405,El Chadaille Bitshiabu,17, Defender,196,0
+28,28,437309,Djeidi Gassama,19, Forward,0,0
+29,29,425077,Sekou Yansané,19, Forward,0,0
+32,32,234358,Alexandre Letellier,31, GK,193,93
+33,33,421404,Nathan Bitumazala,19, Midfielder,0,0
+34,34,413187,Ismaël Gharbi,18, Midfielder,0,0
+2,2,140051,Gaëtan Laborde,28," AM(CLR),FW",181,78
+3,3,369887,Lovro Majer,24, AM(CR),179,75
+5,5,422135,Kamaldeen Sulemana,20, AM(L),0,0
+8,8,236558,Baptiste Santamaría,27, DMC,183,78
+10,10,398416,Loïc Badé,22, D(C),191,89
+12,12,320738,Birger Meling,27," D(LR),DMC",173,64
+13,13,362738,Dogan Alemdar,19, GK,189,0
+14,14,405170,Warmed Omari,22, D(C),180,59
+17,17,402874,Lorenz Assignon,22, D(R),179,67
+24,24,422885,Mathys Tel,17, Forward,183,0
+25,25,425118,Loum Tchaouna,19, Forward,0,0
+27,27,431340,Jeanuël Belocian,17, Defender,180,0
+0,0,1792,Ronaldinho,42, AM(C),182,80
+2,2,500,Alessandro Nesta,46, D(C),186,80
+4,4,2579,Andrea Pirlo,43, M(C),177,68
+5,5,5869,Luca Antonini,40," D(CL),M(L)",182,70
+6,6,191,Massimo Ambrosini,45, M(C),182,72
+7,7,4644,Marco Borriello,40, FW,180,73
+8,8,2955,Kakha Kaladze,44," D(C),DMC",186,76
+9,9,1690,Clarence Seedorf,46, M(C),177,80
+10,10,23206,Ignazio Abate,35," D(R),M(R)",180,73
+12,12,9956,Marco Storari,45, GK,187,76
+13,13,2533,Christian Abbiati,45, GK,191,92
+14,14,591,Gennaro Gattuso,44," D(C),M(C)",177,77
+15,15,9868,Dida,48, GK,195,85
+16,16,798,Giuseppe Favalli,50, DMC,181,77
+17,17,160,Gianluca Zambrotta,45, D(CR),181,76
+19,19,546,Massimo Oddo,46," D(R),M(R)",182,76
+21,21,8013,Klaas Jan Huntelaar,39, FW,186,83
+22,22,871,Marek Jankulovski,45, D(C),184,76
+23,23,5912,Mancini,42, Midfielder,183,78
+24,24,158,Filippo Inzaghi,49, FW,181,74
+25,25,70148,Rodney Strasser,32, M(C),178,80
+26,26,83219,Andrea De Vito,30, Defender,179,74
+27,27,70576,Gianmarco Zigoni,31, Forward,188,80
+0,0,1657,Thomas Manfredini,42, D(C),182,84
+1,1,12141,Jaime Valdés,41, AM(C),172,66
+3,3,6638,Gianpaolo Bellini,42, D(LR),178,75
+4,4,10705,Edgar Barreto,38, M(C),180,79
+5,5,10433,Ferreira Pinto,42," D(C),M(R)",178,70
+6,6,11348,Leonardo Talamonti,40, D(CL),183,77
+7,7,18723,Federico Peluso,38," D(CL),M(L)",187,82
+8,8,151,Cristiano Doni,49, AM(CL),185,79
+9,9,12542,Daniele Capelli,36, D(CR),184,82
+10,10,42879,Andrea Consigli,35, GK,189,82
+11,11,23043,Simone Padoin,38," D(LR),M(CLR)",179,73
+12,12,12492,György Garics,38," D(R),M(R)",183,76
+13,13,5612,Simone Tiribocchi,44," AM(L),FW",180,79
+14,14,13720,Paolo Bianco,45, D(C),184,77
+15,15,1969,Diego De Ascentis,46, M(CR),178,77
+16,16,15845,Maximiliano Pellegrino,42," D(L),DMC",189,81
+17,17,1136,Nicola Amoruso,48," AM(L),FW",186,75
+18,18,17953,Ferdinando Coppola,44, GK,188,86
+20,20,10860,Fabio Caserta,43," D(C),DMC",180,71
+21,21,13901,Robert Acquafresca,35, FW,184,67
+22,22,1963,Sergio Volpi,48, Midfielder,174,69
+23,23,15438,Fabio Ceravolo,35, FW,180,73
+24,24,35640,Ivan Radovanovic,34," D(C),DMC",186,80
+25,25,40384,Giacomo Bonaventura,33, M(CLR),180,75
+27,27,74921,Manolo Gabbiadini,30," AM(CLR),FW",181,75
+28,28,6167,Paolo Zanetti,39, Midfielder,184,76
+29,29,32396,Nicola Madonna,35, Defender,182,72
+30,30,23313,Christian Tiboni,34, Forward,189,78
+0,0,460,Lúcio,44, D(C),188,84
+2,2,10090,Diego Milito,43, FW,183,78
+6,6,9838,Esteban Cambiasso,42," D(C),M(C)",177,78
+7,7,2668,Javier Zanetti,49," D(R),DMC,M(R)",178,75
+8,8,575,Walter Samuel,44, D(C),183,83
+10,10,1692,Dejan Stankovic,44," D(C),M(CR),FW",181,75
+12,12,4029,Cristian Chivu,41, D(C),184,83
+13,13,44642,Davide Santon,31, D(LR),187,77
+14,14,6093,Goran Pandev,39," M(CR),FW",184,75
+15,15,532,Iván Córdoba,46," D(L),DMC",173,70
+16,16,20068,McDonald Mariga,35, DMC,188,86
+17,17,14149,Julio César,43, GK,186,80
+18,18,6166,Sulley Muntari,38, M(C),179,76
+19,19,242,Marco Materazzi,49, DMC,193,92
+20,20,5964,Ricardo Quaresma,38, AM(CLR),175,68
+22,22,34693,Marko Arnautovic,33," AM(CLR),FW",192,83
+23,23,82962,Alen Stevanovic,31, AM(L),180,75
+24,24,73948,Rene Krhin,32, DMC,189,80
+25,25,9933,David Suazo,42, AM(R),183,75
+0,0,9991,Giorgio Chiellini,38, D(C),187,85
+2,2,484,Alessandro Del Piero,47," AM(CL),FW",173,73
+3,3,13551,Felipe Melo,39," D(C),M(C)",185,84
+5,5,2855,Vincenzo Iaquinta,42," AM(C),FW",191,84
+6,6,1032,Fabio Cannavaro,49," D(L),DMC",176,75
+7,7,2959,Nicola Legrottaglie,45, D(C),185,73
+8,8,4042,Mauro Camoranesi,45," D(C),DMC",172,73
+10,10,20211,Claudio Marchisio,36, M(C),180,74
+11,11,878,David Trezeguet,44," AM(CL),FW",190,85
+12,12,34112,Antonio Candreva,35, M(CLR),180,70
+14,14,5795,Amauri,42, FW,186,83
+15,15,30582,Sebastian Giovinco,35," AM(C),FW",165,59
+16,16,800,Jonathan Zebina,44, D(C),184,80
+18,18,15407,Cristian Molinaro,39," D(L),M(L)",182,82
+22,22,4596,Zdenek Grygera,42, D(R),185,79
+24,24,2621,Antonio Chimenti,52, Goalkeeper,184,77
+25,25,79316,Luca Marrone,32," D(C),DMC",186,75
+27,27,2856,Alexander Manninger,45, GK,189,85
+28,28,83231,Manuel Giandonato,30, Midfielder,188,77
+29,29,14123,Michele Paolucci,36, Midfielder,182,80
+0,0,5070,Hugo Campagnaro,42, D(CR),181,85
+1,1,13475,Marek Hamsik,35," M(C),FW",183,79
+3,3,22093,Gianluca Grava,45," D(C),M(R)",172,68
+4,4,9730,Fabio Quagliarella,39, FW,180,79
+5,5,24997,Walter Gargano,38, DMC,167,73
+6,6,6165,Michele Pazienza,40, DMC,178,75
+7,7,2943,Christian Maggio,40," D(R),M(R)",184,79
+9,9,538,Paolo Cannavaro,41, D(C),185,83
+10,10,9966,Salvatore Aronica,44, D(C),181,78
+11,11,23498,Fabiano Santacroce,36, D(C),181,72
+12,12,9952,Matteo Contini,42, D(C),184,76
+13,13,26682,Juan Camilo Zuñiga,36," D(LR),M(L)",172,72
+14,14,18258,Jesús Dátolo,38, M(CL),179,77
+15,15,12747,Leandro Rinaudo,39, D(C),191,78
+16,16,14484,Germán Denis,41, FW,182,87
+19,19,22890,Mariano Bogliacino,42," AM(C),FW",177,72
+20,20,9980,Erminio Rullo,38, Defender,179,78
+21,21,2862,Inácio Piá,40, Forward,178,68
+22,22,83389,Raffaele Maiello,31, M(C),177,73
+1,1,183,Francesco Totti,45," AM(CL),FW",180,82
+2,2,4580,Mirko Vucinic,38, FW,186,76
+3,3,3729,Juan,43, D(C),182,74
+4,4,5202,Daniele De Rossi,39," D(C),M(C)",184,83
+5,5,1045,John Arne Riise,41, D(L),188,77
+7,7,10333,Nicolás Burdisso,41, D(C),183,81
+8,8,5785,Marco Cassetti,45," D(C),M(R)",187,80
+9,9,5698,Rodrigo Taddei,42, M(C),177,69
+11,11,12874,Marco Motta,36," D(R),M(R)",188,81
+12,12,2303,Philippe Mexes,40, D(C),187,82
+13,13,1964,Simone Perrotta,45," D(C),M(CR),FW",178,72
+14,14,24526,Julio Sergio,43, GK,187,80
+15,15,2568,Matteo Brighi,41, M(C),179,78
+16,16,14118,Stefano Guberti,37," AM(CL),FW",180,68
+17,17,19161,Artur Moraes,41, GK,193,90
+20,20,9444,Julio Baptista,40," AM(C),FW",183,86
+21,21,22108,Ricardo Faty,36," D(C),DMC",192,82
+22,22,7459,Adrian Florin Pit,39, Midfielder,188,80
+23,23,14255,Stefano Okaka,33, FW,186,82
+26,26,470,Max Tonetto,47, Defender,174,67
+27,27,4609,Bogdan Lobont,44, GK,185,78
+28,28,82967,Stefano Pettinari,30, Forward,185,75
+2,2,5689,Mario Yepes,46, D(C),186,83
+17,17,70699,Dídac Vilá,33," D(L),M(L)",185,74
+19,19,711,Antonio Cassano,40," AM(CL),FW",175,80
+26,26,6022,Marco Amelia,40, GK,190,90
+27,27,83220,Alexander Merkel,30, M(CR),179,73
+29,29,17491,Urby Emanuelson,36," D(L),M(CLR)",176,68
+31,31,96002,Giacomo Beretta,30, Forward,185,80
+33,33,91541,Nnamdi Oduamadi,31, Forward,171,65
+2,2,27421,Andrea Ranocchia,34, D(C),195,81
+7,7,9975,Giampaolo Pazzini,38, FW,180,77
+13,13,10610,Houssine Kharja,39," D(C),M(C),FW",181,77
+18,18,91312,Felice Natalino,30, Defender,187,74
+19,19,41237,Jonathan Biabiany,34," M(LR),FW",177,73
+21,21,3155,Luca Castellazzi,47, GK,192,89
+24,24,67432,Joel Obi,31, M(CR),176,71
+26,26,91311,Nwankwo Obiora,31, DMC,183,77
+29,29,74162,Denis Alibec,31, FW,187,77
+3,3,10119,Milos Krasic,37, M(R),182,74
+10,10,25079,Alessandro Matri,38, FW,183,80
+13,13,93459,Frederik Sørensen,30, D(CR),194,87
+14,14,9894,Simone Pepe,39, M(C),178,73
+15,15,20664,Leonardo Bonucci,35, D(C),190,85
+22,22,24240,Jorge Martínez,39, FW,181,80
+27,27,83451,Filippo Boniperti,30, Midfielder,180,74
+29,29,30836,Davide Lanzafame,35, M(CL),180,78
+30,30,78909,Niccolò Giannetti,31, Forward,181,74
+31,31,92330,Alberto Libertazzi,30, Forward,186,82
+11,11,4229,Emilson Cribari,42," D(L),M(L)",187,79
+13,13,24108,Hassan Yebda,38, M(C),187,77
+17,17,10708,Giuseppe Mascara,43," AM(CL),FW",175,66
+18,18,44094,Luigi Vitale,34, FW,180,71
+21,21,2072,Cristiano Lucarelli,46," AM(C),FW",188,85
+22,22,69730,Nicolao Dumitru,30, Forward,184,76
+23,23,156,Manuele Blasi,42, DMC,178,67
+8,8,10367,Simone Loria,45, D(C),186,82
+13,13,10414,Fábio Simplício,42," D(C),M(C),FW",171,75
+16,16,71585,Guillermo Burdisso,33, D(C),188,84
+19,19,2619,Paolo Castellini,43, D(C),184,74
+21,21,15651,Leandro Greco,36, M(C),184,75
+23,23,2162,Adriano,40, Forward,189,95
+24,24,98567,Gianluca Caprari,29," AM(CLR),FW",176,72
+25,25,14254,Aleandro Rosi,35," D(R),M(R)",180,77
+3,3,10015,Djamel Mesbah,37," D(L),M(L)",179,75
+17,17,19553,Antonio Nocerino,37, M(C),175,74
+26,26,13554,Maximiliano López,38, FW,185,81
+6,6,20596,Maximiliano Moralez,35," M(CLR),FW",160,52
+7,7,14157,Andrea Masiello,36, D(CR),185,75
+8,8,9943,Cristian Raimondi,41," D(R),M(R)",182,78
+9,9,14137,Guglielmo Stendardo,41, D(C),190,89
+10,10,52467,Giorgio Frezzolini,46, Goalkeeper,187,81
+11,11,79442,Ezequiel Schelotto,33," D(R),M(LR)",187,77
+12,12,24175,Carlos Carmona,35, DMC,179,68
+14,14,22130,Ciro Polito,43, Goalkeeper,184,83
+16,16,12455,Michele Ferri,41, D(R),185,81
+17,17,59281,Riccardo Cazzola,37, M(C),189,80
+19,19,4397,Stefano Lucchini,41, D(C),186,76
+21,21,67261,Guido Marilungo,33, FW,176,72
+25,25,58830,Alessandro Carrozza,40, Midfielder,174,73
+26,26,27532,Leonardo Pettinari,36, Forward,177,73
+28,28,9941,Massimo Mutarelli,44, AM(C),178,74
+29,29,83718,Nadir Minotti,30, Midfielder,181,70
+4,4,22701,Fredy Guarín,36, M(CR),183,77
+9,9,41489,Ricardo Álvarez,34, M(CR),188,84
+16,16,31355,Andrea Poli,32, M(CL),182,77
+18,18,14524,Mauro Zárate,35," M(CLR),FW",176,76
+22,22,28485,Jonathan,36," D(R),M(R)",170,72
+23,23,33875,Marco Faraoni,30," D(R),M(R)",180,71
+27,27,6145,Angelo Palombo,40," D(C),DMC",177,77
+28,28,83755,Samuele Longo,30, FW,186,81
+29,29,84603,Juan Jesus,31, D(CL),185,83
+14,14,72296,Emanuele Giaccherini,37, M(CLR),167,60
+18,18,31161,Marcelo Estigarribia,34," D(L),M(CLR)",181,71
+24,24,14044,Eljero Elia,35," AM(LR),FW",176,70
+6,6,15401,Gökhan Inler,38, DMC,183,79
+9,9,11134,Antonio Rosati,39, GK,195,88
+11,11,14831,Blerim Dzemaili,36, M(C),179,73
+12,12,36096,Miguel Britos,37, D(CL),188,82
+13,13,38581,Ignacio Fideleff,33, Defender,187,81
+14,14,44847,Federico Fernández,33, D(C),190,83
+20,20,5852,Mario Santana,40, M(L),180,72
+23,23,41277,Cristian Chávez,35," AM(L),FW",171,70
+24,24,112183,Massimiliano Ammendola,32, Midfielder,173,64
+1,1,10376,Gianluca Curci,37, GK,192,90
+11,11,40802,Marquinho,36, M(CL),182,79
+13,13,20766,Daniel Osvaldo,36," AM(C),FW",182,81
+22,22,91173,Tallo Gadji-Celi Carmel Junior,29, FW,185,80
+24,24,98140,Federico Viviani,30, DMC,180,75
+28,28,110509,Giammario Piscitella,29, Forward,175,68
+1,1,9974,Riccardo Montolivo,37, M(C),182,79
+7,7,26854,Kevin Constant,35," D(L),M(CL)",184,80
+10,10,54968,Francesco Acerbi,34, D(C),192,88
+28,28,31792,Bakaye Traoré,37, M(C),185,72
+6,6,14069,Cristiano Del Grosso,39," D(L),M(L)",175,70
+7,7,1604,Lionel Scaloni,44, D(R),182,80
+12,12,17950,Michele Canini,37, D(C),187,84
+18,18,19023,Davide Brivio,34," D(L),M(L)",185,82
+19,19,57560,Luigi Giorgi,35, M(CR),186,80
+20,20,14070,Davide Biondini,39, M(C),180,77
+23,23,87310,Marko Livaja,29," AM(C),FW",182,84
+24,24,120030,Antonio Palma,28, Midfielder,177,70
+25,25,6420,Franco Brienza,43, M(CR),168,68
+26,26,97214,Giuseppe De Luca,30, FW,168,70
+27,27,23473,James Troisi,34, Midfielder,176,75
+28,28,23908,Carlos Matheu,37, D(C),183,80
+29,29,70561,Matteo Scozzarella,34, DMC,170,65
+30,30,32236,Facundo Parra,37, FW,182,74
+34,34,9979,Igor Budan,42," AM(C),FW",185,80
+3,3,14871,Rodrigo Palacio,40," AM(CLR),FW",180,75
+9,9,31177,Álvaro Pereira,36," D(L),M(L)",180,78
+15,15,9972,Samir Handanovic,38, GK,193,92
+18,18,19679,Matías Silvestre,37, D(C),187,78
+19,19,118141,Simone Pasa,28, Midfielder,184,78
+21,21,4179,Tommaso Rocchi,45, FW,177,75
+23,23,118140,Marco Benassi,28, M(CR),183,80
+25,25,12564,Gaby Mudingayi,40, M(C),180,80
+28,28,18963,Zdravko Kuzmanovic,34, M(C),186,80
+29,29,19676,Juan Carrizo,38, GK,187,87
+30,30,129906,Lukas Spendlhofer,29, Defender,187,82
+32,32,118146,Luca Garritano,28, Midfielder,172,67
+33,33,118793,Francesco Forte,29, Forward,187,75
+35,35,113762,Alfred Duncan,29, DMC,178,78
+4,4,35549,Kwadwo Asamoah,33," D(L),M(CL)",173,75
+25,25,123359,Stefano Beltrame,29, DMC,183,73
+26,26,30580,Rubinho,40, GK,186,82
+5,5,12462,Valon Behrami,37, M(C),183,80
+9,9,661,Alessandro Gamberini,41, D(C),185,78
+13,13,83390,Lorenzo Insigne,31," AM(CL),FW",163,59
+16,16,6107,Giandomenico Mesto,40," D(R),M(R)",180,74
+17,17,24419,Pablo Armero,35," D(L),M(L)",174,81
+19,19,67835,Omar El Kaddouri,32, AM(CL),185,82
+21,21,5997,Marco Donadel,39, M(C),179,73
+22,22,9892,Emanuele Calaiò,40, FW,179,73
+26,26,44087,Roberto Colombo,47, Goalkeeper,190,80
+27,27,122370,Roberto Insigne,28, AM(C),172,65
+4,4,18139,Castán,35, D(C),184,80
+6,6,83644,Iván Piris,33, D(CLR),173,76
+7,7,23567,Vasilis Torosidis,37," D(CLR),M(R)",185,80
+9,9,118158,Alessio Romagnoli,27, D(CL),185,75
+11,11,22825,Michael Bradley,35," D(C),M(C)",185,87
+14,14,35177,Panagiotis Tachtsidis,31, DMC,193,86
+17,17,67434,Mattia Destro,31, FW,181,73
+18,18,13356,Federico Balzaretti,40, D(L),178,70
+19,19,76953,Dodô,30," D(L),M(L)",181,79
+21,21,90180,Mauro Goicoechea,34, GK,186,82
+23,23,118157,Nicolás López,28," AM(CLR),FW",175,68
+0,0,24642,Adel Taarabt,33," M(CL),FW",185,77
+1,1,109149,Bryan Cristante,27," D(C),M(C)",186,80
+13,13,24605,Keisuke Honda,36, M(CR),182,74
+18,18,12032,Valter Birsa,36," M(CLR),FW",184,83
+29,29,101657,Gabriel Vasconcelos,29, GK,193,86
+30,30,90878,Riccardo Saponara,30, AM(CL),184,73
+31,31,122296,Andrea Petagna,27, FW,190,85
+0,0,95504,Marco Sportiello,30, GK,192,87
+8,8,29574,Yohan Benalouane,35, D(CR),185,86
+9,9,10930,Giulio Migliaccio,41, DMC,182,72
+10,10,137832,Mattia Caldara,28, D(C),187,80
+18,18,83717,Moussa Koné,32, DMC,180,71
+20,20,83716,Daniele Baselli,30, M(C),182,70
+26,26,113989,Constantin Nica,29, D(R),185,81
+27,27,149513,Joakim Olausson,27, Midfielder,183,70
+29,29,107623,Rubén Bentancourt,29, Forward,184,80
+0,0,17108,Hernanes,37, M(C),180,78
+16,16,64271,Danilo D'Ambrosio,34," D(CLR),M(LR)",180,75
+18,18,85692,Saphir Taïder,30, M(CL),180,73
+24,24,101953,Wallace Oliveira,28, D(R),175,72
+25,25,72786,Rubén Botta,32," AM(CLR),FW",175,65
+27,27,149543,Federico Bonazzoli,25," AM(C),FW",182,79
+10,10,23547,Angelo Ogbonna,34, D(C),191,86
+4,4,23100,Dries Mertens,35," AM(CLR),FW",169,61
+8,8,92894,Bruno Uvini,31, D(C),187,85
+9,9,82062,Faouzi Ghoulam,31, D(L),186,80
+19,19,40765,Henrique,35, D(CR),185,84
+21,21,11377,Toni Doblas,42, GK,184,78
+23,23,41073,Duván Zapata,31, FW,189,88
+24,24,74554,Rafael Cabral,32, GK,186,88
+27,27,108942,Josip Radosevic,28, DMC,178,80
+28,28,90952,Davide Bariti,31, Midfielder,173,65
+29,29,149098,Igor Lasicki,27, Defender,184,75
+6,6,52380,Radja Nainggolan,34, M(C),176,65
+12,12,68034,Adem Ljajic,30," AM(CLR),FW",182,80
+13,13,77397,Lukasz Skorupski,31, GK,187,84
+14,14,64075,Rafael Tolói,31, D(C),185,75
+26,26,141269,Luca Mazzitelli,26, DMC,184,76
+28,28,112227,Federico Ricci,28, AM(LR),175,63
+1,1,14040,Luca Antonelli,35," D(L),M(CL)",184,79
+8,8,22605,Gabriel Paletta,36, D(C),190,88
+13,13,23065,Salvatore Bocchetti,35, D(C),186,81
+28,28,260498,Davide Calabria,25," D(LR),M(R)",177,70
+30,30,137069,Alessandro Mastalli,26, Midfielder,175,75
+33,33,141870,Davide Di Molfetta,26, Forward,176,70
+34,34,260906,Gian Felicioli,24, Defender,182,74
+0,0,5734,Mauricio Pinilla,38, FW,185,75
+2,2,9937,Giuseppe Biava,45, D(C),180,73
+3,3,22486,Boukary Dramé,37," D(L),M(L)",180,78
+16,16,109085,Salvatore Molina,30," DMC,M(LR)",177,74
+22,22,79498,Marco D'Alessandro,31, M(LR),173,71
+23,23,30585,Nicolò Cherubin,35, D(CL),188,83
+26,26,2863,Rolando Bianchi,39, FW,188,78
+27,27,240989,Alberto Grassi,27, DMC,183,75
+28,28,85087,Richmond Boakye,29, FW,186,80
+29,29,122055,Lorenzo Rosseti,28, Forward,188,77
+30,30,92329,Leonardo Spinazzola,29," D(LR),M(L)",186,75
+31,31,31104,Vlada Avramov,43, GK,188,80
+13,13,87449,Marcelo Brozovic,29, M(CR),181,68
+19,19,9973,Felipe,38, D(CL),188,75
+24,24,121968,Isaac Donkor,27, Defender,180,71
+26,26,118142,Ibrahima Mbaye,27," D(LR),M(LR)",187,70
+28,28,248154,Gaston Camara,26, Midfielder,177,69
+29,29,249865,Assane Gnoukouri,25, M(C),180,77
+32,32,137840,George Puscas,26, FW,188,77
+33,33,255929,Federico Dimarco,24," D(CL),M(L)",175,75
+11,11,77350,Rômulo,35," D(R),M(CR)",178,72
+14,14,90000,Roberto Pereyra,31," M(CLR),FW",182,77
+20,20,97265,Stefano Sturaro,29, M(CL),181,80
+25,25,143992,Federico Mattiello,27, M(LR),182,73
+27,27,259527,Mattia Vitale,24, Midfielder,180,69
+0,0,90880,Kalidou Koulibaly,31, D(C),195,89
+5,5,92691,David López,32," D(C),DMC",183,81
+8,8,40966,Ivan Strinic,35, D(L),186,78
+16,16,38236,Michu,36," AM(C),FW",191,76
+23,23,255292,Sebastiano Luperto,26, D(C),191,75
+24,24,18208,Mariano Andújar,39, GK,194,87
+0,0,44643,Davide Astori,35, D(C),188,80
+1,1,21499,José Holebas,38," D(CL),M(L)",184,77
+4,4,70149,Kostas Manolas,31, D(C),189,83
+18,18,97452,Juan Iturbe,29, AM(LR),172,64
+19,19,93854,Salih Uçan,28, M(C),182,65
+20,20,74805,Victor Ibarbo,32," AM(LR),FW",186,69
+21,21,244301,Daniele Verde,26, AM(CLR),168,64
+25,25,27909,Seydou Doumbia,34, FW,178,74
+26,26,240886,Michele Somma,27, Defender,182,76
+29,29,148546,Lorenzo Pellegrini,26, M(CL),186,77
+30,30,135057,Antonio Sanabria,26, FW,180,70
+31,31,14636,Nicolás Spolli,39, D(C),193,88
+5,5,32514,Juraj Kucka,35, M(CLR),186,86
+16,16,67428,Andrea Bertolacci,31, M(C),179,75
+19,19,140116,José Mauri,26, DMC,169,63
+20,20,14105,Luiz Adriano,35," AM(CL),FW",184,80
+28,28,273539,Manuel Locatelli,24, M(C),185,75
+29,29,97262,Rodrigo Ely,28, D(C),188,83
+2,2,85070,Marten de Roon,31," D(C),DMC",185,76
+3,3,136279,Roberto Gagliardini,28, DMC,190,77
+9,9,100962,Berat Djimsiti,29, D(C),190,83
+13,13,294137,Andrea Conti,28," D(R),M(R)",184,76
+14,14,302691,Remo Freuler,30, DMC,180,80
+20,20,90287,Jasmin Kurtic,33, M(CL),186,88
+22,22,30310,Alessandro Diamanti,39," M(CR),FW",180,75
+28,28,129546,Davide Bassi,37, GK,190,82
+29,29,121222,Gaetano Monachello,28, Forward,184,79
+31,31,295006,Boris Radunovic,26, GK,194,84
+21,21,22377,Éder,35," AM(CLR),FW",179,72
+24,24,312847,Fabio Della Giovanna,25, Defender,184,74
+25,25,294136,Rey Manaj,25, FW,182,76
+26,26,296723,Ionut Radu,25, GK,188,70
+1,1,114863,Paulo Dybala,28," AM(CR),FW",177,75
+2,2,100995,Alex Sandro,31," D(CL),M(L)",180,80
+27,27,297001,Andrea Favilli,25, FW,190,78
+4,4,82438,Allan,31, DMC,173,73
+10,10,108345,Elseid Hysaj,28," D(LR),M(R)",182,75
+11,11,128746,Mirko Valdifiori,36, DMC,185,70
+21,21,70675,Vasco Regini,32, D(CL),185,79
+17,17,61083,Ervin Zukanovic,35, D(CL),188,85
+20,20,297546,Umar Sadiq,25, FW,192,75
+27,27,108117,Norbert Gyömbér,30," D(CR),DMC",189,74
+29,29,300624,Marco Tumminello,23, Forward,180,76
+31,31,297195,Lorenzo Di Livio,25, Midfielder,176,72
+16,16,29655,Leonel Vangioni,35, D(L),177,73
+17,17,95872,Gianluca Lapadula,32, FW,178,69
+19,19,103383,Gustavo Gómez,29, D(C),185,86
+20,20,23413,Matías Fernández,36, AM(C),178,72
+10,10,240990,Pierluigi Gollini,27, GK,194,94
+12,12,277269,Franck Kessie,25, M(C),183,74
+15,15,44304,Etrit Berisha,33, GK,194,82
+17,17,332554,Filippo Melegoni,23, AM(CR),186,74
+18,18,329665,Alessandro Bastoni,23, D(C),190,75
+21,21,135890,Hans Hateboer,28," D(R),M(R)",185,72
+26,26,261788,Bryan Cabezas,25, Midfielder,182,72
+29,29,33834,Alberto Paloschi,32, FW,182,82
+30,30,71126,Aleksandar Pesic,30, FW,191,87
+10,10,125476,João Mário,29, M(CLR),179,73
+13,13,315537,Senna Miangue,25," D(CL),M(L)",192,83
+22,22,130886,Gabriel Barbosa,26," AM(LR),FW",178,74
+23,23,317544,Andrea Pinamonti,23, FW,188,72
+26,26,142204,Trent Sainsbury,30, D(C),184,76
+22,22,31991,Tomás Rincón,34, M(CR),177,76
+24,24,242432,Marko Pjaca,27," AM(CL),FW",186,83
+25,25,241020,Rolando Mandragora,25, DMC,183,76
+26,26,254692,Emil Audero,25, GK,190,83
+9,9,98631,Nikola Maksimovic,30," D(CR),M(R)",193,82
+11,11,128740,Lorenzo Tonelli,32, D(C),183,78
+12,12,118169,Piotr Zielinski,28, M(CL),180,75
+18,18,294044,Amadou Diawara,25, DMC,183,75
+22,22,95822,Leonardo Pavoletti,33, FW,188,80
+11,11,102073,Bruno Peres,32," D(LR),M(LR)",178,72
+15,15,106931,Mário Rui,31," D(L),M(L)",170,67
+6,6,22205,Lucas Biglia,36, DMC,178,64
+22,22,356728,Emanuele Torrasi,23, Midfielder,0,0
+1,1,43194,Josip Ilicic,34," AM(CLR),FW",190,79
+7,7,141726,Robin Gosens,28," D(L),M(CL)",183,76
+8,8,141169,Timothy Castagne,26," D(CLR),M(LR)",185,80
+10,10,125810,José Luis Palomino,32, D(C),188,87
+13,13,350076,Musa Barrow,23," AM(CL),FW",183,77
+15,15,244804,Gianluca Mancini,26," D(C),DMC",190,77
+16,16,316603,Luca Vido,25, Forward,182,75
+17,17,113196,Andreas Cornelius,29, FW,193,91
+22,22,286828,Riccardo Orsolini,25," M(CR),FW",183,73
+23,23,78693,Francesco Rossi,31, Goalkeeper,193,83
+24,24,344206,Nicolas Haas,26, M(C),178,74
+2,2,302918,Milan Skriniar,27, D(C),187,80
+10,10,125268,Lisandro López,33, D(C),193,80
+11,11,135625,Matías Vecino,31, M(C),187,81
+20,20,298060,Yann Karamoh,24," AM(LR),FW",185,77
+8,8,24814,Benedikt Höwedes,34, D(CLR),188,77
+14,14,122402,Federico Bernardeschi,28," M(CLR),FW",185,77
+23,23,83981,Carlo Pinsoglio,32, Goalkeeper,194,85
+14,14,70319,Luigi Sepe,31, GK,191,90
+8,8,294993,Elio Capradossi,26, Defender,185,78
+19,19,232249,Rick Karsdorp,27," D(R),M(R)",184,80
+20,20,125376,Jonathan Silva,28," D(CL),M(L)",178,72
+22,22,33495,Héctor Moreno,34, D(CL),183,76
+23,23,344655,Mirko Antonucci,23, Forward,178,72
+24,24,101767,Gregoire Defrel,31," AM(CR),FW",180,79
+4,4,339504,Krzysztof Piatek,27, FW,183,77
+21,21,135584,Diego Laxalt,29," D(L),M(CL)",178,68
+8,8,135198,Ali Adnan,28," D(L),M(L)",185,85
+15,15,143467,Luca Valzania,26, M(C),184,72
+17,17,362599,Arkadiusz Reca,27," D(L),M(L)",187,81
+18,18,133808,Emiliano Rigoni,29," M(CLR),FW",180,87
+20,20,369414,Roberto Piccoli,21, FW,187,78
+22,22,362600,Matteo Pessina,25, AM(CR),187,77
+24,24,341525,Ibañez,23, D(C),185,73
+6,6,122683,Matteo Politano,29," AM(CLR),FW",171,67
+11,11,82399,Stefan de Vrij,30, D(C),189,78
+16,16,299344,Lautaro Martínez,25, FW,174,72
+15,15,372824,Paolo Gozzi,21, Defender,180,0
+21,21,78880,Mattia Perin,29, GK,188,85
+22,22,275831,Grigoris Kastanos,24, AM(CR),176,71
+24,24,279541,Matheus Pereira,24, Midfielder,181,68
+27,27,375437,Manolo Portanova,22, AM(CL),0,0
+28,28,371257,Hans Nicolussi Caviglia,22, Midfielder,180,0
+29,29,318750,Stephy Mavididi,24," AM(LR),FW",182,71
+0,0,294193,Fabián Ruiz,26, M(CL),189,70
+13,13,11624,Orestis Karnezis,37, GK,189,79
+14,14,241022,Alex Meret,25, GK,190,82
+24,24,82144,Simone Verdi,30," AM(CLR),FW",171,62
+25,25,369883,Gianluca Gaetano,22, Midfielder,181,71
+6,6,17949,Antonio Mirante,39, GK,193,79
+15,15,332398,Nicolò Zaniolo,23," AM(CR),FW",190,79
+20,20,41554,Robin Olsen,32, GK,198,89
+23,23,332268,Luca Pellegrini,23," D(L),M(L)",178,72
+24,24,367278,Zan Celar,23, Forward,186,80
+25,25,243516,Ante Coric,25, Midfielder,172,68
+3,3,259102,Ismaël Bennacer,24, DMC,175,70
+11,11,349207,Rafael Leão,23," AM(L),FW",188,81
+13,13,337443,Matteo Gabbia,22, D(C),185,78
+20,20,367260,Marco Brescianini,22, Midfielder,188,0
+21,21,365308,Alexis Saelemaekers,23, M(R),180,72
+23,23,294163,Rade Krunic,28, M(CL),184,74
+24,24,317652,Léo Duarte,26, D(C),183,76
+30,30,395219,Lorenzo Colombo,20, Forward,186,74
+31,31,95499,Antonio Donnarumma,32, Goalkeeper,192,96
+32,32,388493,Daniel Maldini,20, Forward,188,83
+4,4,295456,Ruslan Malinovskyi,29," M(CR),FW",181,79
+22,22,388482,Ebrima Colley,22, AM(R),180,70
+23,23,395600,Bosko Sutalo,22, D(C),188,72
+26,26,387695,Jacopo Da Riva,21, Midfielder,187,81
+28,28,349184,Raoul Bellanova,22, M(R),188,82
+29,29,361777,Lennart Czyborra,23," D(L),M(L)",181,72
+3,3,136306,Stefano Sensi,27, AM(C),168,62
+12,12,148684,Nicolò Barella,25, AM(C),175,68
+14,14,93935,Cristiano Biraghi,30," D(L),M(L)",185,78
+22,22,114323,Valentino Lazaro,26," D(R),M(CLR)",180,75
+24,24,371397,Sebastiano Esposito,20, FW,186,76
+25,25,388505,Lucien Agoumé,20, DMC,185,72
+26,26,390738,Lorenzo Pirola,20, Defender,185,72
+27,27,10372,Daniele Padelli,36, GK,191,82
+29,29,22378,Tommaso Berni,39, GK,185,80
+5,5,362555,Merih Demiral,24, D(C),192,86
+10,10,320374,Matthijs de Ligt,23, D(C),188,89
+22,22,333120,Gianluca Frabotta,23, D(L),176,70
+24,24,333196,Simone Muratore,24, Midfielder,186,74
+25,25,322584,Luca Zanimacchia,24, Forward,178,72
+26,26,386591,Marco Olivieri,23, Forward,177,0
+27,27,392687,Daouda Peeters,23, Midfielder,185,0
+28,28,334100,Giacomo Vrioni,23, Forward,188,85
+4,4,122469,Giovanni Di Lorenzo,29," D(CLR),M(R)",183,83
+16,16,111892,Stanislav Lobotka,27, DMC,170,68
+17,17,318511,Hirving Lozano,27," AM(LR),FW",175,70
+20,20,339579,Eljif Elmas,22, M(CLR),182,68
+10,10,101017,Jordan Veretout,29, M(C),177,67
+15,15,386519,Riccardo Calafiori,20, Defender,0,0
+26,26,357388,Gonzalo Villar,24, DMC,181,73
+28,28,342606,Daniel Fuzato,25, GK,190,88
+29,29,344262,Yildirim Çetin,25, D(C),189,90
+16,16,391836,Pierre Kalulu,22, D(CR),179,69
+18,18,343501,Sandro Tonali,22, DMC,181,79
+15,15,363652,Joakim Maehle,25," D(LR),M(LR)",185,79
+18,18,129354,Aleksey Miranchuk,26," M(CR),FW",182,74
+22,22,135098,Johan Mojica,30," D(L),M(L)",185,66
+24,24,402046,Matteo Ruggeri,20, M(L),187,69
+25,25,302893,Fabio Depaoli,25," D(R),DMC,M(R)",178,71
+26,26,255776,Viktor Kovalenko,26, M(C),182,75
+27,27,410046,Davide Ghislandi,21, Midfielder,0,0
+28,28,408053,Emmanuel Gyabuaa,20, Midfielder,175,70
+1,1,322971,Federico Chiesa,24," M(CLR),FW",175,70
+15,15,338275,Weston McKennie,24," D(C),M(CLR)",185,84
+19,19,369426,Nicolò Fagioli,21, Midfielder,178,71
+25,25,406702,Alessandro Di Pardo,23, Defender,182,76
+26,26,412831,Félix Correia,21, Forward,180,44
+29,29,400097,Radu Dragusin,20, D(C),0,0
+16,16,295358,Amir Rrahmani,28, D(CL),192,87
+19,19,408821,Antonio Cioffi,19, Forward,0,0
+25,25,141525,Nikita Contini,26, Goalkeeper,190,82
+17,17,403913,Nicola Zalewski,20, M(L),164,0
+20,20,386668,Ebrima Darboe,21, DMC,0,0
+21,21,343778,Marash Kumbulla,22, D(C),191,78
+23,23,364716,Bryan Reynolds,21, D(R),188,75
+28,28,407590,Edoardo Bove,20, Midfielder,0,0
+6,6,141646,Mike Maignan,27, GK,191,89
+9,9,401098,Junior Messias,31," AM(CR),FW",174,70
+27,27,411943,Luca Stanga,20, Defender,0,0
+7,7,343308,Teun Koopmeiners,24," D(C),M(C)",183,77
+17,17,126278,Juan Musso,28, GK,191,93
+19,19,298515,Giuseppe Pezzella,24," D(L),M(L)",185,81
+20,20,395847,Matteo Lovato,22, D(C),188,83
+23,23,405133,Giorgio Scalvini,18, D(C),0,0
+25,25,434316,Moustapha Cissé,19, Forward,0,0
+26,26,431602,Alasanne Sidibe,20, Midfielder,0,0
+28,28,430899,Giorgio Cittadini,20, Defender,0,0
+30,30,431604,Tommaso De Nipoti,19, Forward,0,0
+31,31,400090,Valentin Mihaila,22, AM(L),173,61
+8,8,322153,Denzel Dumfries,26," D(R),M(R)",188,80
+23,23,429193,Mattia Zanotti,19, Defender,0,0
+24,24,403803,Martín Satriano,21, FW,187,75
+25,25,22466,Felipe Caicedo,34, FW,183,84
+5,5,315369,Dusan Vlahovic,22, FW,190,75
+18,18,252419,Denis Zakaria,25," D(C),DMC",191,81
+23,23,425080,Fabio Miretti,19, M(C),0,0
+26,26,363936,Kaio Jorge,20, FW,176,64
+28,28,425079,Matìas Soulé,19, Midfielder,176,0
+31,31,395637,Martin Palumbo,20, Midfielder,0,0
+18,18,362440,Davide Marfella,23, Goalkeeper,0,0
+21,21,423515,Alessandro Zanoli,21, D(R),0,0
+6,6,70614,Sérgio Oliveira,30, DMC,181,72
+10,10,23089,Rui Patrício,34, GK,190,84
+13,13,397846,Matías Viña,24," D(L),M(L)",181,70
+17,17,427130,Cristian Volpato,18, Midfielder,187,0
+20,20,262707,Eldor Shomurodov,27, FW,190,81
+24,24,426915,Felix Afena-Gyan,19, Forward,0,0
+29,29,431397,Dimitrios Keramitsis,18, Defender,193,0
