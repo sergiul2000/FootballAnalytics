@@ -225,6 +225,103 @@ def compute_points_per_game_pythagorian_estimation(limit_for_goals_iteration, al
 
 
 def apply_pythagorian_league_table_stats(league, year):
+    path = f'dataframes/understat/league_table/{league}/{league}_league_table_in_season_{year}_{year+1}.csv'
+    # path = f'./converted_files/league_table.csv'
+
+    df = pd.read_csv(path)
+    # print(df.head(5))
+    df_to_analyze = df[['Team',
+                        #  'Year_start', 'Year_end',
+                        'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
+
+    df_to_analyze.rename(columns={'M': 'Matches',
+                                  'W': 'Wins',
+                                  'D': 'Draws',
+                                  'L': 'Loses',
+                                  'G': 'GoalsScored',
+                                  'GA': 'GoalsReceived',
+                                  'PTS': 'Points',
+                                  }, inplace=True)
+
+    beta = -0.5  # distribution parameter
+
+    '''
+    Skewness of pythagoric exponent
+    Using Pearson's formula
+    3 * (Mean – Median) / Standard Deviation
+    VEZI ALTE FORMULE PENTRU SKEWNESS
+    '''
+    mean = df_to_analyze['GoalsScored'].mean()
+    median = df_to_analyze['GoalsScored'].median()
+    standard_deviation = df_to_analyze['GoalsScored'].std()
+    y = round(3*(mean-median)/standard_deviation, 2)
+    # print(f"SKEWNESS {y}")
+
+    K = gamma(1+(1/y))
+    # print(f"K {K}")
+
+    df_to_analyze['AvgGS'] = df_to_analyze['GoalsScored'] / \
+        df_to_analyze['Matches']
+    df_to_analyze['AvgGA'] = df_to_analyze['GoalsReceived'] / \
+        df_to_analyze['Matches']
+
+    # alpha GS
+    df_to_analyze['alphaGS'] = df_to_analyze['GoalsScored'].apply(
+        lambda GS: round((GS-beta)/K), 2)
+    # alpha GR
+    df_to_analyze['alphaGA'] = df_to_analyze['GoalsReceived'].apply(
+        lambda GA: round((GA-beta)/K), 2)
+
+    # alpha GS * K
+    df_to_analyze['alphaGGS'] = df_to_analyze['alphaGS'].apply(
+        lambda alphaGS: round(alphaGS * K, 2))
+    # alpha GR * K
+    df_to_analyze['alphaGGA'] = df_to_analyze['alphaGA'].apply(
+        lambda alphaGA: round(alphaGA * K, 2))
+
+    # df_to_analyze['AvgGS_Int'] = df_to_analyze['AvgGA'].astype('int')
+    # df_to_analyze['AvgGA_Int'] = df_to_analyze['AvgGA'].astype('int')
+
+    for index, row in df_to_analyze.iterrows():
+        # print(row)
+
+        points_per_game_expectancy, win_expectancy, draw_expectancy = compute_points_per_game_pythagorian_estimation(
+            1000, row['alphaGS'], row['alphaGGS'], row['alphaGA'], row['alphaGGA'], K, y)
+        points = int(row['Matches'] * points_per_game_expectancy)
+        win_expectancy = int(row['Matches'] * win_expectancy)
+        draw_expectancy = int(row['Matches'] * draw_expectancy) + 1
+        lose_expectancy = row['Matches'] - \
+            int(win_expectancy) - (int(draw_expectancy))
+
+        df_to_analyze.at[index, 'Estimated_Wins'] = win_expectancy
+        df_to_analyze.at[index, 'Estimated_Draws'] = draw_expectancy
+        df_to_analyze.at[index, 'Estimated_Loses'] = lose_expectancy
+        df_to_analyze.at[index, 'Estimated_Points_Extended'] = points
+
+    df_to_analyze['Delta_Points_Extended'] = df_to_analyze['Points'] - \
+        df_to_analyze['Estimated_Points_Extended']
+
+    print(df_to_analyze)
+
+    df_to_save = df_to_analyze[['Team',
+                                # 'Year_start', 'Year_end',
+                                'Matches', 'Wins', 'Draws', 'Loses', 'GoalsScored', 'GoalsReceived', 'Points',
+                                'Estimated_Wins', 'Estimated_Draws', 'Estimated_Loses', 'Estimated_Points_Extended', 'Delta_Points_Extended']]
+    df_to_save.to_csv("initial_report.csv")
+    # df_to_save.to_csv(f"./converted_files/extended_pythagorian.csv")
+
+    # df_to_analyze['Win_Pythagorean'] = sum(exp(total_goal) for total_goal in range(0, df_to_analyze['AvgGS_Int']))
+    # df_to_analyze['Draw_Pythagorean'] =
+    # print(df_to_analyze['Win_Pythagorean'])
+
+    # df_to_analyze['Points_Pythagorean'] = (3 * df_to_analyze['Win_Probability'])+ df_to_analyze['Draw_Probability']
+
+    # c variaza numarul de goluri 0, N
+
+    # print(df_to_analyze)
+
+
+def apply_pythagorian_league_table_stats_in_one_csv():
     # path = f'dataframes/understat/league_table/{league}/{league}_league_table_in_season_{year}_{year+1}.csv'
     path = f'./converted_files/league_table.csv'
 
@@ -302,26 +399,19 @@ def apply_pythagorian_league_table_stats(league, year):
 
     print(df_to_analyze)
 
-    df_to_save = df_to_analyze[['Team', 'Year_start', 'Year_end', 'Matches', 'Wins', 'Draws', 'Loses', 'GoalsScored', 'GoalsReceived', 'Points',
+    df_to_save = df_to_analyze[['Team',
+                                'Year_start', 'Year_end',
+                                'Matches', 'Wins', 'Draws', 'Loses', 'GoalsScored', 'GoalsReceived', 'Points',
                                 'Estimated_Wins', 'Estimated_Draws', 'Estimated_Loses', 'Estimated_Points_Extended', 'Delta_Points_Extended']]
     # df_to_save.to_csv("initial_report.csv")
     df_to_save.to_csv(f"./converted_files/extended_pythagorian.csv")
-
-    # df_to_analyze['Win_Pythagorean'] = sum(exp(total_goal) for total_goal in range(0, df_to_analyze['AvgGS_Int']))
-    # df_to_analyze['Draw_Pythagorean'] =
-    # print(df_to_analyze['Win_Pythagorean'])
-
-    # df_to_analyze['Points_Pythagorean'] = (3 * df_to_analyze['Win_Probability'])+ df_to_analyze['Draw_Probability']
-
-    # c variaza numarul de goluri 0, N
-
-    # print(df_to_analyze)
 
 
 if __name__ == '__main__':
     # print(sum(20*i for i in range(100, 200)))
 
     apply_pythagorian_league_table_stats('la liga', 2015)
+    apply_pythagorian_league_table_stats_in_one_csv()
     # for year in range(2014,2022):
     #     print(f'{year} - {year+1}')
     #     apply_pythagorian_league_table_stats('bundesliga',year)

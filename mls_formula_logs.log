@@ -1,0 +1,200 @@
+INFO:root:Name Karim Bellarabi | Midfielder Forward
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 1.07 Minutes_played_ratio 2.75 Points_per_minute_played 0.02 Goal_term 0.59
+INFO:root:Assist_term 0.4 Goals_per_minute_played 0.0 Goal_on_goal 0.38
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0.4 Teams_total_clean_sheets_scaled 0.05
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.03 Expected_fouls_commited_per_minute 57.53 MUL 1.99
+INFO:root:Yellow_cards_scaled 0.5 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 5.68 Neg 2.49 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Son Heung-Min | Midfielder Forward
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.93 Minutes_played_ratio 2.55 Points_per_minute_played 0.03 Goal_term 1.03
+INFO:root:Assist_term 0.24 Goals_per_minute_played 0.0 Goal_on_goal 0.58
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0.92 Teams_total_clean_sheets_scaled 0.06
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.02 Expected_fouls_commited_per_minute 28.01 MUL 0.6
+INFO:root:Yellow_cards_scaled 0.4 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 6.34 Neg 1.01 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Wendell | Defender Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.83 Minutes_played_ratio 2.89 Points_per_minute_played 0.03 Goal_term 1.21
+INFO:root:Assist_term 0.75 Goals_per_minute_played 0.0 Goal_on_goal 0.18
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.1
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.06 Expected_fouls_commited_per_minute 62.53 MUL 3.61
+INFO:root:Yellow_cards_scaled 0.8 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 5.99 Neg 4.41 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Roberto Hilbert | Defender Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.7 Minutes_played_ratio 2.6 Points_per_minute_played 0.03 Goal_term 0.0
+INFO:root:Assist_term 2.25 Goals_per_minute_played 0.0 Goal_on_goal 0.0
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.12
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.05 Expected_fouls_commited_per_minute 39.82 MUL 2.04
+INFO:root:Yellow_cards_scaled 0.6 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 5.69 Neg 2.65 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Julian Brandt | Midfielder Forward
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.33 Minutes_played_ratio 1.48 Points_per_minute_played 0.05 Goal_term 0.99
+INFO:root:Assist_term 0.27 Goals_per_minute_played 0.0 Goal_on_goal 0.67
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0.53 Teams_total_clean_sheets_scaled 0.1
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.01 Expected_fouls_commited_per_minute 4.94 MUL 0.07
+INFO:root:Yellow_cards_scaled 0.0 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 4.44 Neg 0.07 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Gonzalo Castro | Defender Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.63 Minutes_played_ratio 2.7 Points_per_minute_played 0.03 Goal_term 0.64
+INFO:root:Assist_term 1.57 Goals_per_minute_played 0.0 Goal_on_goal 0.22
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0.91 Teams_total_clean_sheets_scaled 0.11
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.02 Expected_fouls_commited_per_minute 15.86 MUL 0.31
+INFO:root:Yellow_cards_scaled 0.4 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 6.82 Neg 0.72 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Stefan Kießling | Forward
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 1.03 Minutes_played_ratio 2.53 Points_per_minute_played 0.02 Goal_term 0.29
+INFO:root:Assist_term 0.74 Goals_per_minute_played 0.0 Goal_on_goal 0.55
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0.26 Teams_total_clean_sheets_scaled 0.04
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.03 Expected_fouls_commited_per_minute 68.72 MUL 2.18
+INFO:root:Yellow_cards_scaled 0.4 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 5.47 Neg 2.58 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Stefan Reinartz | Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.3 Minutes_played_ratio 1.9 Points_per_minute_played 0.06 Goal_term 0.59
+INFO:root:Assist_term 0.0 Goals_per_minute_played 0.0 Goal_on_goal 0.22
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.08
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.02 Expected_fouls_commited_per_minute 8.63 MUL 0.18
+INFO:root:Yellow_cards_scaled 0.2 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 3.16 Neg 0.38 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Lars Bender | Defender Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.83 Minutes_played_ratio 2.6 Points_per_minute_played 0.03 Goal_term 0.69
+INFO:root:Assist_term 1.38 Goals_per_minute_played 0.0 Goal_on_goal 0.16
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.12
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.04 Expected_fouls_commited_per_minute 31.55 MUL 1.13
+INFO:root:Yellow_cards_scaled 0.5 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 5.81 Neg 1.63 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Simon Rolfes | Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.43 Minutes_played_ratio 1.71 Points_per_minute_played 0.05 Goal_term 1.09
+INFO:root:Assist_term 0.23 Goals_per_minute_played 0.0 Goal_on_goal 0.28
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.09
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.03 Expected_fouls_commited_per_minute 13.68 MUL 0.4
+INFO:root:Yellow_cards_scaled 0.4 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 3.88 Neg 0.8 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Josip Drmic | Midfielder Forward
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.17 Minutes_played_ratio 1.06 Points_per_minute_played 0.08 Goal_term 0.8
+INFO:root:Assist_term 0.55 Goals_per_minute_played 0.01 Goal_on_goal 1.0
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 1.2 Teams_total_clean_sheets_scaled 0.14
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.03 Expected_fouls_commited_per_minute 5.29 MUL 0.15
+INFO:root:Yellow_cards_scaled 0.1 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 5.0 Neg 0.25 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Tin Jedvaj | Defender
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.6 Minutes_played_ratio 2.52 Points_per_minute_played 0.04 Goal_term 1.71
+INFO:root:Assist_term 4.92 Goals_per_minute_played 0.0 Goal_on_goal 0.43
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.12
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.03 Expected_fouls_commited_per_minute 18.48 MUL 0.49
+INFO:root:Yellow_cards_scaled 0.6 Red_cards 1 Card_per_minute 0.0
+INFO:root:Pos 10.34 Neg 2.09 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Giulio Donati | Defender Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.13 Minutes_played_ratio 1.68 Points_per_minute_played 0.15 Goal_term 0.0
+INFO:root:Assist_term 0.0 Goals_per_minute_played 0.0 Goal_on_goal 0.0
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.18
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.04 Expected_fouls_commited_per_minute 4.04 MUL 0.14
+INFO:root:Yellow_cards_scaled 0.1 Red_cards 1 Card_per_minute 0.0
+INFO:root:Pos 2.15 Neg 1.25 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Emir Spahic | Defender
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.73 Minutes_played_ratio 2.84 Points_per_minute_played 0.03 Goal_term 1.4
+INFO:root:Assist_term 0.0 Goals_per_minute_played 0.0 Goal_on_goal 0.3
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.11
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.04 Expected_fouls_commited_per_minute 39.58 MUL 1.76
+INFO:root:Yellow_cards_scaled 0.5 Red_cards 2 Card_per_minute 0.0
+INFO:root:Pos 5.42 Neg 4.27 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Vladlen Yurchenko | Midfielder
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.0 Minutes_played_ratio 0.62 Points_per_minute_played 1.09 Goal_term 0.0
+INFO:root:Assist_term 0.0 Goals_per_minute_played 0.0 Goal_on_goal 0.0
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.24
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.06 Expected_fouls_commited_per_minute 0.44 MUL 0.02
+INFO:root:Yellow_cards_scaled 0.0 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 1.95 Neg 0.02 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Robbie Kruse | Midfielder Forward
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.0 Minutes_played_ratio 0.39 Points_per_minute_played 1.3 Goal_term 0.0
+INFO:root:Assist_term 4.62 Goals_per_minute_played 0.0 Goal_on_goal 0.0
+INFO:root:Assists_per_minute 0.02 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.38
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.04 Expected_fouls_commited_per_minute 0.16 MUL 0.01
+INFO:root:Yellow_cards_scaled 0.0 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 6.72 Neg 0.01 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Ömer Toprak | Defender
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.9 Minutes_played_ratio 2.87 Points_per_minute_played 0.02 Goal_term 1.63
+INFO:root:Assist_term 0.0 Goals_per_minute_played 0.0 Goal_on_goal 0.38
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0.34 Teams_total_clean_sheets_scaled 0.1
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.04 Expected_fouls_commited_per_minute 52.71 MUL 2.33
+INFO:root:Yellow_cards_scaled 1.0 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 6.26 Neg 3.33 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Kyriakos Papadopoulos | Defender
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.3 Minutes_played_ratio 1.97 Points_per_minute_played 0.07 Goal_term 1.12
+INFO:root:Assist_term 7.11 Goals_per_minute_played 0.0 Goal_on_goal 0.4
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.15
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.05 Expected_fouls_commited_per_minute 14.74 MUL 0.8
+INFO:root:Yellow_cards_scaled 0.5 Red_cards 0 Card_per_minute 0.01
+INFO:root:Pos 11.13 Neg 1.3 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Sebastian Boenisch | Defender
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 0.3 Minutes_played_ratio 2.41 Points_per_minute_played 0.07 Goal_term 0.0
+INFO:root:Assist_term 0.7 Goals_per_minute_played 0.0 Goal_on_goal 0.0
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0.0 Teams_total_clean_sheets_scaled 0.12
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.04 Expected_fouls_commited_per_minute 12.55 MUL 0.45
+INFO:root:Yellow_cards_scaled 0.2 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 3.61 Neg 0.65 Bonus 0.5
+INFO:root:________________________________________________________________________________________________________________________________
+INFO:root:Name Bernd Leno | Goalkeeper
+INFO:root:POSITIVE TERM
+INFO:root:Games_started_ratio 1.13 Minutes_played_ratio 3.0 Points_per_minute_played 0.02 Goal_term 0
+INFO:root:Assist_term 0 Goals_per_minute_played 0.0 Goal_on_goal 0
+INFO:root:Assists_per_minute 0.0 Goals_per_offsides 0 Teams_total_clean_sheets_scaled 0.1
+INFO:root:NEGATIVE TERM
+INFO:root:Fouls_commited_per_minute_scaled 0.0 Expected_fouls_commited_per_minute 3.4 MUL 0.01
+INFO:root:Yellow_cards_scaled 0.1 Red_cards 0 Card_per_minute 0.0
+INFO:root:Pos 4.25 Neg 0.11 Bonus 0
+INFO:root:________________________________________________________________________________________________________________________________

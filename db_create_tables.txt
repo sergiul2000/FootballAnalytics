@@ -5,7 +5,7 @@ DROP TABLE IF EXISTS public.league_table;
 DROP TABLE IF EXISTS public.player_summary_stats;
 DROP TABLE IF EXISTS public.player_defensive_stats;
 DROP TABLE IF EXISTS public.player_passing_stats;
-DROP TABLE IF EXISTS public.player_offensive_stats;
+DROP TABLE IF EXISTS public.player_offensive_stats; 
 DROP TABLE IF EXISTS public.rosters;
 DROP TABLE IF EXISTS public.fixtures;
 DROP TABLE IF EXISTS public.player;
