@@ -14,7 +14,7 @@ for index, row in df.iterrows():
     #     ):row["id_roster"]
     # )
     # rostersHashTable.add(
-    new_key = (row["Team"], row["Player_id"], row["Year_start"], row["Year_end"])
+    new_key = {row["Team"], row["Player_id"], row["Year_start"], row["Year_end"]}
     new_value = row["id_roster"]
     rostersHashTable[new_key] = new_value
 
