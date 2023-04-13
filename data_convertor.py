@@ -102,6 +102,28 @@ def walk_through_fixtures():  # path_to_league_table):
             #         print(filename)
             # print(list_of_files[league])
     df_total = pd.concat(frames)
+    df_total = df_total.rename(
+        columns={
+            "match_id": "1_Match_id",
+            "away_goals": "2_Away_goals",
+            "datetime": "3_Datetime",
+            "home_goals": "4_home_goals",
+            "away_team": "5_Away_team",
+            "home_team": "6_Home_team",
+        }
+    )
+    df_total = df_total.sort_index(axis=1)
+    df_total = df_total.rename(
+        columns={
+            "1_Match_id": "match_id",
+            "2_Away_goals": "away_goals",
+            "3_Datetime": "datetime",
+            "4_home_goals": "home_goals",
+            "5_Away_team": "away_team",
+            "6_Home_team": "home_team",
+        }
+    )
+    print(df_total)
     df_total.to_csv("./converted_files/fixtures.csv")
     # print(df_total)
     # return
@@ -148,10 +170,10 @@ def walk_through_rosters_players_and_player_summary():
                 df_iterator_players.insert(4, "Year_end", str(year_end))
 
                 df_rosters = pd.DataFrame()
-                df_rosters["Team"] = df_iterator_players["Team"]
-                df_rosters["Plyer_id"] = df_iterator_players["player_number"]
-                df_rosters["Year_start"] = df_iterator_players["Year_start"]
                 df_rosters["Year_end"] = df_iterator_players["Year_end"]
+                df_rosters["Year_start"] = df_iterator_players["Year_start"]
+                df_rosters["Player_id"] = df_iterator_players["player_number"]
+                df_rosters["Team"] = df_iterator_players["Team"]
 
                 df_player_summary = pd.DataFrame()
                 df_player_summary["Team"] = df_iterator_players["Team"]
@@ -216,6 +238,9 @@ def walk_through_rosters_players_and_player_summary():
     # print(df_total_players)
 
     df_total_rosters = pd.concat(frames_rosters)
+    list_roster_id = list(range(1, len(df_total_rosters.index) + 1, 1))
+    df_total_rosters.insert(0, "id_roster", list_roster_id)
+    # df_total_rosters["id_roster"] = list_roster_id
     df_total_rosters.to_csv("./converted_files/rosters.csv")
     # print(df_rosters)
 
@@ -243,13 +268,11 @@ def walk_through_player_defensive_stats():
                 df_iterator_players = pd.read_csv(
                     filename_with_path, usecols=range(2, 21)
                 )
+                df_iterator_players = df_iterator_players.sort_index(axis=1)
                 team = filename_with_path.split(f"{year+1}/")[1]
                 team = team.split("_d")[0]
                 team = team.replace("_", " ")
                 # print(team)
-                df_iterator_players.insert(0, "Team", team)
-                df_iterator_players.insert(2, "Year_start", year_start)
-                df_iterator_players.insert(3, "Year_end", str(year_end))
 
                 df_iterator_players = df_iterator_players.drop(
                     columns=[
@@ -266,9 +289,15 @@ def walk_through_player_defensive_stats():
                     ]
                 )
 
+                df_iterator_players.insert(9, "Team", team)
+                df_iterator_players.insert(10, "Year_end", str(year_end))
+                df_iterator_players.insert(11, "Year_start", year_start)
+
                 frames_player_defensive.append(df_iterator_players)
     # print(df_player_summary)
     df_total = pd.concat(frames_player_defensive)
+    # df_total = df_total.sort_index(axis=1)
+    print(df_total)
     df_total.to_csv("./converted_files/players_defensive_stats.csv")
     # print(df_total_players)
 
@@ -416,10 +445,10 @@ def main():
     walk_through_league_tables()
     walk_through_league_tables_for_teams()
     walk_through_rosters_players_and_player_summary()
-    # walk_through_player_defensive_stats()
-    # walk_through_player_offensive_stats()
-    # walk_through_player_passing_stats()
-    # walk_through_fixtures()
+    walk_through_player_defensive_stats()
+    walk_through_player_offensive_stats()
+    walk_through_player_passing_stats()
+    walk_through_fixtures()
 
 
 if __name__ == "__main__":
