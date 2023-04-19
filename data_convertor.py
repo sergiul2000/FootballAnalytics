@@ -230,7 +230,7 @@ def walk_through_rosters_players_and_player_summary():
     df_total_players = pd.concat(frames_players)
     df_total_players = df_total_players.drop_duplicates("player_number")
     df_total_players = df_total_players.rename(
-        columns={"player_number": "#id", "tall": "height"}
+        columns={"player_number": "id", "tall": "height"}
     )
     df_total_players = df_total_players.sort_index(axis=1)
 
@@ -326,9 +326,9 @@ def walk_through_player_offensive_stats():
                 team = team.split("_o")[0]
                 team = team.replace("_", " ")
                 # print(team)
-                df_iterator_players.insert(0, "Team", team)
-                df_iterator_players.insert(2, "Year_start", year_start)
-                df_iterator_players.insert(3, "Year_end", str(year_end))
+                df_iterator_players = df_iterator_players.rename(
+                    columns={"player_number": "id_player"}
+                )
 
                 df_iterator_players = df_iterator_players.drop(
                     columns=[
@@ -347,6 +347,10 @@ def walk_through_player_offensive_stats():
                         "mins",
                     ]
                 )  # , "rating"])
+                df_iterator_players = df_iterator_players.sort_index(axis=1)
+                df_iterator_players.insert(6, "Team", team)
+                df_iterator_players.insert(7, "Year_end", str(year_end))
+                df_iterator_players.insert(8, "Year_start", year_start)
 
                 frames_player_offensive.append(df_iterator_players)
     # print(df_player_summary)
@@ -448,7 +452,6 @@ def main():
     walk_through_player_defensive_stats()
     walk_through_player_offensive_stats()
     walk_through_player_passing_stats()
-    walk_through_fixtures()
 
 
 if __name__ == "__main__":
