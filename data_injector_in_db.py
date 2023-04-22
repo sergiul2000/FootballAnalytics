@@ -39,6 +39,8 @@ def insert_into_players_defensive():
         x = requests.post(URL, json=obj)
         print(x.text)
         iterator += 1
+        if iterator == 1000:
+            break
 
 
 def insert_into_players_offensive():
