@@ -9,7 +9,7 @@ for index, row in df.iterrows():
     new_value = row["id_roster"]
     rostersHashTable[new_key] = new_value
 
-f = open("rostersHashMap.py", "w")
+f = open("rostersHashMap.py", "w", encoding="utf-8")
 f.write("rostersHashTable = " + str(rostersHashTable))
 f.close()
 # print(rostersHashTable)

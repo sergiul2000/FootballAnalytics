@@ -9,6 +9,7 @@ import requests
 # )
 
 from rostersHashMap import rostersHashTable
+from player_name_hashmap import player_name_hashmap
 
 
 def insert_into_players_defensive():
@@ -28,7 +29,9 @@ def insert_into_players_defensive():
             "offsides_won_per_game": row["offsides_won_per_game"],
             "outfielder_blocks_per_game": row["outfielder_blocks_per_game"],
             "own_goals": row["own_goals"],
+            "player_name": player_name_hashmap[row["player_number"]],
             "tackles_per_game": row["tackles_per_game"],
+            "player_name": player_name_hashmap[row["player_number"]],
             "team_name": row["Team"],
             "year_end": row["Year_end"],
             "year_start": row["Year_start"],
@@ -39,8 +42,8 @@ def insert_into_players_defensive():
         x = requests.post(URL, json=obj)
         print(x.text)
         iterator += 1
-        if iterator == 1000:
-            break
+        # if iterator == 1000:
+        #     break
 
 
 def insert_into_players_offensive():
@@ -58,6 +61,7 @@ def insert_into_players_offensive():
             "fouled_per_game": row["fouled_per_game"],
             "id_player": row["id_player"],
             "offsides_per_game": row["offsides_per_game"],
+            "player_name": player_name_hashmap[row["id_player"]],
             "team_name": row["Team"],
             "year_end": row["Year_end"],
             "year_start": row["Year_start"],
@@ -68,6 +72,42 @@ def insert_into_players_offensive():
         x = requests.post(URL, json=obj)
         print(x.text)
         iterator += 1
+
+
+def insert_into_players_summary():
+    iterator = 1
+    df = pd.read_csv("./converted_files/player_summary_stats.csv")
+    for index, row in df.iterrows():
+        # print(row)
+        URL = "http://localhost:8080/football-analytics/playerSummary"
+
+        obj = {
+            "summary_id": iterator,
+            "player_name": player_name_hashmap[row["player_number"]],
+            "team_name": row["Team"],
+            "year_end": row["Year_end"],
+            "year_start": row["Year_start"],
+            "games": row["games"],
+            "start_games": row["start_games"],
+            "sub_games": row["sub_games"],
+            "mins": row["mins"],
+            "goals": row["goals"],
+            "assists": row["assists"],
+            "mins": row["yellow_cards"],
+            "goals": row["red_cards"],
+            "assists": row["shots_per_game"],
+            "goals": row["pass_success_percentage"],
+            "assists": row["aerials_won"],
+            "assists": row["man_of_the_match"],
+            "assists": row["rating"],
+            "id_roster": rostersHashTable[
+                (row["Team"], row["player_number"], row["Year_start"], row["Year_end"])
+            ],
+        }
+        x = requests.post(URL, json=obj)
+        print(x.text)
+        iterator += 1
+        break
 
 
 def insert_into_teams():
@@ -134,8 +174,9 @@ def main():
     # insert_into_leagues()
     # insert_into_player()
     # insert_into_rosters()
-    insert_into_players_defensive()
+    # insert_into_players_defensive()
     # insert_into_players_offensive()
+    insert_into_players_summary()
 
 
 if __name__ == "__main__":
