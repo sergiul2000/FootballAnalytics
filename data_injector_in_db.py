@@ -87,19 +87,20 @@ def insert_into_players_summary():
             "team_name": row["Team"],
             "year_end": row["Year_end"],
             "year_start": row["Year_start"],
+            "id_player": row["player_number"],
             "games": row["games"],
             "start_games": row["start_games"],
             "sub_games": row["sub_games"],
             "mins": row["mins"],
             "goals": row["goals"],
             "assists": row["assists"],
-            "mins": row["yellow_cards"],
-            "goals": row["red_cards"],
-            "assists": row["shots_per_game"],
-            "goals": row["pass_success_percentage"],
-            "assists": row["aerials_won"],
-            "assists": row["man_of_the_match"],
-            "assists": row["rating"],
+            "yellow_cards": row["yellow_cards"],
+            "red_cards": row["red_cards"],
+            "shots_per_game": row["shots_per_game"],
+            "pass_success_percentage": row["pass_success_percentage"],
+            "aerials_won": row["aerials_won"],
+            "man_of_the_match": row["man_of_the_match"],
+            "rating": row["rating"],
             "id_roster": rostersHashTable[
                 (row["Team"], row["player_number"], row["Year_start"], row["Year_end"])
             ],
@@ -107,7 +108,7 @@ def insert_into_players_summary():
         x = requests.post(URL, json=obj)
         print(x.text)
         iterator += 1
-        break
+        # break
 
 
 def insert_into_teams():
@@ -175,8 +176,8 @@ def main():
     # insert_into_player()
     # insert_into_rosters()
     # insert_into_players_defensive()
-    # insert_into_players_offensive()
-    insert_into_players_summary()
+    insert_into_players_offensive()
+    # insert_into_players_summary()
 
 
 if __name__ == "__main__":
