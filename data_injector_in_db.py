@@ -12,6 +12,43 @@ from rostersHashMap import rostersHashTable
 from player_name_hashmap import player_name_hashmap
 
 
+def insert_into_league_table():
+    iterator = 1
+    df = pd.read_csv("./converted_files/league_table.csv")
+    for index, row in df.iterrows():
+        # print(row)
+        URL = "http://localhost:8080/football-analytics/leagueTable"
+        # print(row)
+        # break
+        obj = {
+            "league_table_id": iterator,
+            "league_name": row["League"],
+            "team_name": row["Team"],
+            "year_end": row["Year_end"],
+            "year_start": row["Year_start"],
+            "matches": row["M"],
+            "wins": row["W"],
+            "draws": row["D"],
+            "loses": row["L"],
+            "goals": row["G"],
+            "goalsAgainst": row["GA"],
+            "pts": row["PTS"],
+            "xGoals": row["xG"],
+            "npxGoals": row["NPxG"],
+            "xGoalsAgainst": row["xGA"],
+            "npxGoalsAgainst": row["NPxGA"],
+            "npxGoalsDifference": row["NPxGD"],
+            "ppda": row["PPDA"],
+            "oppda": row["OPPDA"],
+            "dc": row["DC"],
+            "odc": row["ODC"],
+        }
+        x = requests.post(URL, json=obj)
+        print(x.text)
+        iterator += 1
+        # break
+
+
 def insert_into_players_defensive():
     iterator = 1
     df = pd.read_csv("./converted_files/players_defensive_stats.csv")
@@ -72,6 +109,7 @@ def insert_into_players_offensive():
         x = requests.post(URL, json=obj)
         print(x.text)
         iterator += 1
+        # break
 
 
 def insert_into_players_summary():
@@ -101,6 +139,35 @@ def insert_into_players_summary():
             "aerials_won": row["aerials_won"],
             "man_of_the_match": row["man_of_the_match"],
             "rating": row["rating"],
+            "id_roster": rostersHashTable[
+                (row["Team"], row["player_number"], row["Year_start"], row["Year_end"])
+            ],
+        }
+        x = requests.post(URL, json=obj)
+        print(x.text)
+        iterator += 1
+        # break
+
+
+def insert_into_players_passing():
+    iterator = 1
+    df = pd.read_csv("./converted_files/players_passing_stats.csv")
+    for index, row in df.iterrows():
+        # print(row)
+        URL = "http://localhost:8080/football-analytics/playerPassing"
+
+        obj = {
+            "passing_id": iterator,
+            "player_name": player_name_hashmap[row["player_number"]],
+            "team_name": row["Team"],
+            "id_player": row["player_number"],
+            "year_end": row["Year_end"],
+            "year_start": row["Year_start"],
+            "key_passes_per_game": row["key_passes_per_game"],
+            "passes_per_game": row["passes_per_game"],
+            "crosses_per_game": row["crosses_per_game"],
+            "long_ball_per_game": row["long_ball_per_game"],
+            "through_balls_per_game": row["through_balls_per_game"],
             "id_roster": rostersHashTable[
                 (row["Team"], row["player_number"], row["Year_start"], row["Year_end"])
             ],
@@ -176,8 +243,10 @@ def main():
     # insert_into_player()
     # insert_into_rosters()
     # insert_into_players_defensive()
-    insert_into_players_offensive()
+    # insert_into_players_passing()
+    # insert_into_players_offensive()
     # insert_into_players_summary()
+    insert_into_league_table()
 
 
 if __name__ == "__main__":
