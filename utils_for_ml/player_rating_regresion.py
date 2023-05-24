@@ -69,7 +69,7 @@ my_logger.print_logs_in_file("start")
 df = pd.read_csv("utils_for_ml/unified_players.csv")
 # print(df.sample(n=15))
 df_player_rating_predictions = pd.DataFrame()
-
+# print(df)
 x = df[
     [
         "start_games",
@@ -89,12 +89,20 @@ x = df[
         "xG",
         "xA",
     ]
-].values  # ,'mapped_position','number_of_positions']].values
+]  # .values  # ,'mapped_position','number_of_positions']].values
 y = df["rating"].values
+print(x)
+
+# for index, row in df.iterrows():
+#     x = x_backup
+#     x = x.drop([index])
+#     print(x)
 
 x_train, x_test, y_train, y_test = train_test_split(
     x, y, random_state=20, test_size=0.25, shuffle=True
 )
+
+# print(x_train.take([0, -1], axis=0))
 
 # df_player_rating_predictions['name'] = x_test['name'].values
 # print(x_test)
@@ -353,3 +361,119 @@ my_logger.print_logs_in_file("")
 my_logger.print_logs_in_file("end")
 
 df_player_rating_predictions.to_csv("./converted_files/player_rating_predictors.csv")
+
+from sklearn.feature_selection import RFE
+
+# RECURSIVE FEATURE ELIMINATION FOR DECISION TREE
+###########################################
+# Initialize the RFE object with the regression model and the desired number of features to select
+rfe_dt = RFE(
+    estimator=DT_regressor, n_features_to_select=5
+)  # Change the value of n_features_to_select as per your requirement
+
+# Fit the RFE object to the data
+rfe_dt.fit(x, y)
+
+# Get the selected feature indices and column names
+selected_feature_indices = rfe_dt.support_
+selected_feature_names = x.columns[selected_feature_indices]
+# selected_feature_names = [x[idx] for idx in selected_feature_indices]
+
+
+# Print the selected features
+print("Selected Features of decision tree regressor are:")
+for feature in selected_feature_names:
+    print(feature)
+print()
+print()
+
+
+# RECURSIVE FEATURE ELIMINATION FOR RANDOM FOREST
+###########################################
+# Initialize the RFE object with the regression model and the desired number of features to select
+rfe_rf = RFE(
+    estimator=RF_regressor, n_features_to_select=5, importance_getter="auto"
+)  # Change the value of n_features_to_select as per your requirement
+
+# Fit the RFE object to the data
+rfe_rf.fit(x, y)
+
+# Get the selected feature indices and column names
+selected_feature_indices = rfe_rf.support_
+selected_feature_names = x.columns[selected_feature_indices]
+# selected_feature_names = [x[idx] for idx in selected_feature_indices]
+
+
+# Print the selected features
+print("Selected Features of random forest regressor are:")
+for feature in selected_feature_names:
+    print(feature)
+print()
+print()
+
+# RECURSIVE FEATURE ELIMINATION FOR XGBOOST
+###########################################
+# Initialize the RFE object with the regression model and the desired number of features to select
+rfe_xgb = RFE(
+    estimator=XGB_Regressor, n_features_to_select=5
+)  # Change the value of n_features_to_select as per your requirement
+
+# Fit the RFE object to the data
+rfe_xgb.fit(x, y)
+
+# Get the selected feature indices and column names
+selected_feature_indices = rfe_xgb.support_
+selected_feature_names = x.columns[selected_feature_indices]
+# selected_feature_names = [x[idx] for idx in selected_feature_indices]
+
+
+# Print the selected features
+print("Selected Features of XGBoost regressor are:")
+for feature in selected_feature_names:
+    print(feature)
+print()
+print()
+
+
+# # Fit the RFE object to the data
+# rfe_xgb.fit(x, y)
+
+# # Get the selected feature indices
+# selected_feature_indices = rfe_xgb.support_
+
+# # Get the feature importances from the XGBoost regressor
+# feature_importances = rfe_xgb.estimator_.feature_importances_
+
+# # Sort the selected features based on their importance scores
+# selected_feature_names = x.columns[selected_feature_indices]
+# selected_feature_names = selected_feature_names[np.argsort(feature_importances)][::-1]
+
+# # Print the selected features in order of importance
+# print("Selected Features of XGBoost regressor in order of importance:")
+# for feature in selected_feature_names:
+#     print(feature)
+# print()
+# print()
+
+# RECURSIVE FEATURE ELIMINATION FOR POLYNOMIAL
+###########################################
+# Initialize the RFE object with the regression model and the desired number of features to select
+rfe_polynomial = RFE(
+    estimator=P_Regressor, n_features_to_select=5
+)  # Change the value of n_features_to_select as per your requirement
+
+# Fit the RFE object to the data
+rfe_polynomial.fit(x, y)
+
+# Get the selected feature indices and column names
+selected_feature_indices = rfe_polynomial.support_
+selected_feature_names = x.columns[selected_feature_indices]
+# selected_feature_names = [x[idx] for idx in selected_feature_indices]
+
+
+# Print the selected features
+print("Selected Features of plynomial regressor are:")
+for feature in selected_feature_names:
+    print(feature)
+print()
+print()
