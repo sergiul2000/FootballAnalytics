@@ -90,7 +90,7 @@ x = df[
         "xA",
     ]
 ]  # .values  # ,'mapped_position','number_of_positions']].values
-y = df["rating"].values
+y = df["rating"]
 print(x)
 
 # for index, row in df.iterrows():

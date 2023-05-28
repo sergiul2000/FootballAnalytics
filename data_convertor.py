@@ -170,10 +170,12 @@ def walk_through_rosters_players_and_player_summary():
                 df_iterator_players.insert(4, "Year_end", str(year_end))
 
                 df_rosters = pd.DataFrame()
+                # df_rosters.insert(5, "Year_end", str(year_end))
                 df_rosters["Year_end"] = df_iterator_players["Year_end"]
                 df_rosters["Year_start"] = df_iterator_players["Year_start"]
                 df_rosters["Player_id"] = df_iterator_players["player_number"]
                 df_rosters["Team"] = df_iterator_players["Team"]
+                df_rosters["League"] = league
 
                 df_player_summary = pd.DataFrame()
                 df_player_summary["Team"] = df_iterator_players["Team"]
@@ -446,12 +448,12 @@ def walk_through_understat_files(type_of_file):
 
 def main():
     # print(walk_through_files("league_table"))
-    walk_through_league_tables()
-    walk_through_league_tables_for_teams()
+    # walk_through_league_tables()
+    # walk_through_league_tables_for_teams()
     walk_through_rosters_players_and_player_summary()
-    walk_through_player_defensive_stats()
-    walk_through_player_offensive_stats()
-    walk_through_player_passing_stats()
+    # walk_through_player_defensive_stats()
+    # walk_through_player_offensive_stats()
+    # walk_through_player_passing_stats()
 
 
 if __name__ == "__main__":

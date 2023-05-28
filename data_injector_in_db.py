@@ -42,6 +42,8 @@ def insert_into_league_table():
             "oppda": row["OPPDA"],
             "dc": row["DC"],
             "odc": row["ODC"],
+            "xgoals": row["xG"],
+            "xgoalsAgainst": row["xGA"],
         }
         x = requests.post(URL, json=obj)
         print(x.text)
@@ -232,9 +234,38 @@ def insert_into_rosters():
             "player_id": row["Player_id"],
             "year_start": row["Year_start"],
             "year_end": row["Year_end"],
+            "league_name": row["League"],
         }
         x = requests.post(URL, json=obj)
         print(x.text)
+
+
+def insert_into_simple_pythagorean():
+    df = pd.read_csv("./converted_files/simple_pythagorean.csv")
+    iterator = 1
+    for index, row in df.iterrows():
+        # print(row)
+        URL = "http://localhost:8080/football-analytics/simplePythagorean"
+
+        obj = {
+            "simple_pythagorean_id": iterator,
+            "league_name": row["League"],
+            "team_name": row["Team"],
+            "year_end": row["Year_end"],
+            "year_start": row["Year_start"],
+            "matches": row["Matches"],
+            "wins": row["Wins"],
+            "draws": row["Draws"],
+            "loses": row["Loses"],
+            "goals_scored": row["GoalsScored"],
+            "goals_received": row["GoalsReceived"],
+            "pts": row["Points"],
+            "estimated_points_simple_pythagorean": row["Estimated_Points_Simple"],
+            "delta_points_simple_pythagorean": row["Delta_Points_Simple"],
+        }
+        x = requests.post(URL, json=obj)
+        print(x.text)
+        iterator += 1
 
 
 def main():
@@ -246,7 +277,8 @@ def main():
     # insert_into_players_passing()
     # insert_into_players_offensive()
     # insert_into_players_summary()
-    insert_into_league_table()
+    # insert_into_league_table()
+    insert_into_simple_pythagorean()
 
 
 if __name__ == "__main__":
