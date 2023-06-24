@@ -81,8 +81,16 @@ print(f"Train loss: {train_loss}")
 
 # Predicting the Test set results
 y_pred = model.predict(X_test)
+new_df = pd.DataFrame()
+new_df["Name"] = X_test["name"]
+new_df["Actual rating"] = y_test
+new_df["ANN prediction"] = y_pred
+
 y_pred = y_pred > 0.5
 
 print("*" * 20)
 score = model.evaluate(X_test, y_test, batch_size=32)
 print("Test score:", score)
+
+
+print(new_df)

@@ -1,16 +1,24 @@
 # from sklearn import __all__
 from xgboost import XGBRegressor
+
+# import xgboost as xgb
+
 from sklearn import ensemble
 from sklearn.preprocessing import PolynomialFeatures
 from sklearn.model_selection import KFold, train_test_split
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, accuracy_score
+from sklearn.metrics import mean_squared_error
 from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestRegressor
 from sklearn.model_selection import cross_val_score
 from numpy import mean
 from numpy import absolute
 from numpy import sqrt
+from lazypredict.Supervised import LazyRegressor
+from sklearn.svm import SVR
+from sklearn.model_selection import train_test_split
+from sklearn.preprocessing import MinMaxScaler
+from joblib import dump
 
 # from sklearn.tree import DecisionTreeRegressor
 import math
@@ -60,9 +68,7 @@ def plot_polynomial_regression(y_true, y_pred, title):
     plt.show()
 
 
-my_logger = logger(
-    "D:\\aaLicenta\\licenta\FootballAnalytics\\utils_for_ml\\logs_of_player_rating_regresion.txt"
-)
+my_logger = logger(".\\utils_for_ml\\logs_of_player_rating_regresion.txt")
 
 my_logger.print_logs_in_file("start")
 
@@ -75,6 +81,7 @@ x = df[
         "start_games",
         "sub_games",
         "mins",
+        # "mapped_position",
         "goals",
         "assists",
         "shot_per_game",
@@ -115,7 +122,16 @@ df_player_rating_predictions["player_number"] = df_id.values
 df_player_rating_predictions["name"] = df_names.values
 df_player_rating_predictions["Year_start"] = df_year_start.values
 df_player_rating_predictions["Year_end"] = df_year_end.values
-df_player_rating_predictions["Test points"] = y_test
+df_player_rating_predictions["Test points"] = y
+# Create a MinMaxScaler object
+scaler = MinMaxScaler(feature_range=(0, 10))
+
+# Scale the column
+df["rating_mls_formula"] = scaler.fit_transform(
+    df["rating_mls_formula"].values.reshape(-1, 1)
+)
+
+df_player_rating_predictions["Rating MLS Formula"] = df["rating_mls_formula"]
 
 
 # degree = 3
@@ -145,7 +161,7 @@ MSE = np.square(np.subtract(y_train, y_pred_dt)).mean()
 RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for Decision Tree Regresor on Train: {RMSE}")
 
-my_logger.print_logs_in_file("Accuracy on train")
+my_logger.print_logs_in_file("R2 on train")
 my_logger.print_logs_in_file(str(DT_regressor.score(x_train, y_train)))
 
 plot_prediction_vs_true_values(y_train, y_pred_dt, "train Decision Tree regressor")
@@ -160,7 +176,7 @@ MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for Decision Tree Regresor on Test: {RMSE}")
 
-my_logger.print_logs_in_file("Accuracy on test")
+my_logger.print_logs_in_file("R2 on test")
 my_logger.print_logs_in_file(str(DT_regressor.score(x_test, y_test)))
 my_logger.print_logs_in_file("")
 
@@ -199,7 +215,7 @@ RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for Random Forest on Train: {RMSE}")
 
 
-my_logger.print_logs_in_file("Accuracy on train")
+my_logger.print_logs_in_file("R2 on train")
 my_logger.print_logs_in_file(str(RF_regressor.score(x_train, y_train)))
 
 plot_prediction_vs_true_values(y_train, y_pred_dt, "train Random Forest regressor")
@@ -213,7 +229,7 @@ MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for Random Forest on Test: {RMSE}")
 
-my_logger.print_logs_in_file("Accuracy on test")
+my_logger.print_logs_in_file("R2 on test")
 my_logger.print_logs_in_file(str(RF_regressor.score(x_test, y_test)))
 my_logger.print_logs_in_file("")
 
@@ -237,7 +253,7 @@ MSE = np.square(np.subtract(y_train, y_pred_xgb)).mean()
 RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for XGBoost Regresor on Train: {RMSE}")
 
-my_logger.print_logs_in_file("Accuracy on train")
+my_logger.print_logs_in_file("R2 on train")
 my_logger.print_logs_in_file(str(XGB_Regressor.score(x_train, y_train)))
 
 plot_prediction_vs_true_values(y_train, y_pred_xgb, "train XGBoost regressor")
@@ -252,7 +268,7 @@ MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for XGBoost Regresor on Test: {RMSE}")
 
-my_logger.print_logs_in_file("Accuracy on test")
+my_logger.print_logs_in_file("R2 on test")
 my_logger.print_logs_in_file(str(XGB_Regressor.score(x_test, y_test)))
 my_logger.print_logs_in_file("")
 
@@ -260,6 +276,8 @@ plot_prediction_vs_true_values(y_test, y_pred_test, "test XGBoost regressor")
 
 
 df_player_rating_predictions["XGBoost points"] = y_pred_test
+
+
 ############################################################################################################
 # Polynomial Regressor
 
@@ -285,7 +303,7 @@ RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for Polinomyal regressor on Train: {RMSE}")
 
 
-my_logger.print_logs_in_file("Accuracy on train")
+my_logger.print_logs_in_file("R2 on train")
 my_logger.print_logs_in_file(str(P_Regressor.score(X_poly_train, y_train)))
 
 plot_prediction_vs_true_values(y_train, y_pred_pr, "train polynomial regressor")
@@ -306,15 +324,63 @@ MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
 RMSE = math.sqrt(MSE)
 my_logger.print_logs_in_file(f"RMSE for Polynomial Regresor on Test: {RMSE}")
 
-my_logger.print_logs_in_file("Accuracy on test")
+my_logger.print_logs_in_file("R2 on test")
 my_logger.print_logs_in_file(str(P_Regressor.score(X_poly_test, y_test)))
 
 my_logger.print_logs_in_file("")
 
 plot_prediction_vs_true_values(y_test, y_pred_test, "test polynomial regressor")
 
-
 df_player_rating_predictions["Polynomial points"] = y_pred_test
+
+
+############################################################################################################
+# SVR Regressor
+
+# On train
+
+
+svr = SVR(kernel="rbf", C=1.0, epsilon=0.1)
+svr.fit(x_train, y_train)
+
+svr.fit(x_train, y_train)
+
+y_pred_pr = svr.predict(x_train)
+
+mean_squared_error(y_train, y_pred_pr, squared=False)
+MSE = np.square(np.subtract(y_train, y_pred_pr)).mean()
+
+RMSE = math.sqrt(MSE)
+my_logger.print_logs_in_file(f"RMSE for SVR regressor on Train: {RMSE}")
+
+
+my_logger.print_logs_in_file("R2 on train")
+my_logger.print_logs_in_file(str(svr.score(x_train, y_train)))
+
+plot_prediction_vs_true_values(y_train, y_pred_pr, "train svr regressor")
+
+# On test
+
+svr.fit(x_test, y_test)
+
+y_pred_test = svr.predict(x_test)  # Predictions on Testing data
+
+mean_squared_error(y_test, y_pred_test, squared=False)
+MSE = np.square(np.subtract(y_test, y_pred_test)).mean()
+
+RMSE = math.sqrt(MSE)
+my_logger.print_logs_in_file(f"RMSE for SVR Regresor on Test: {RMSE}")
+
+my_logger.print_logs_in_file("R2 on test")
+my_logger.print_logs_in_file(str(svr.score(x_test, y_test)))
+
+my_logger.print_logs_in_file("")
+
+plot_prediction_vs_true_values(y_test, y_pred_test, "test SVR regressor")
+
+df_player_rating_predictions["SVR points"] = y_pred_test
+
+
 ############################################################################################################
 # K-fold Validation
 
@@ -333,6 +399,9 @@ score_xgb = cross_val_score(
 )
 score_poly = cross_val_score(
     P_Regressor, x, y, scoring="neg_mean_squared_error", cv=crossValidation, n_jobs=-1
+)
+score_svr = cross_val_score(
+    svr, x, y, scoring="neg_mean_squared_error", cv=crossValidation, n_jobs=-1
 )
 
 # view RMSE
@@ -355,8 +424,57 @@ RMSE = sqrt(mean(absolute(score_poly)))
 my_logger.print_logs_in_file(
     f"RMSE for K-fold validation with Polynomial Tree model: {RMSE}"
 )
+
+RMSE = sqrt(mean(absolute(score_svr)))
+my_logger.print_logs_in_file(f"RMSE for K-fold validation with SVR model: {RMSE}")
 my_logger.print_logs_in_file("")
 
+
+# view R2
+# Define cross-validation method to use
+# Use k-fold CV to evaluate model
+
+score_dt = cross_val_score(
+    DT_regressor, x, y, scoring="r2", cv=crossValidation, n_jobs=-1
+)
+score_rf = cross_val_score(
+    RF_regressor, x, y, scoring="r2", cv=crossValidation, n_jobs=-1
+)
+score_xgb = cross_val_score(
+    XGB_Regressor, x, y, scoring="r2", cv=crossValidation, n_jobs=-1
+)
+score_poly = cross_val_score(
+    P_Regressor, x, y, scoring="r2", cv=crossValidation, n_jobs=-1
+)
+score_svr = cross_val_score(svr, x, y, scoring="r2", cv=crossValidation, n_jobs=-1)
+
+# View R2 scores
+
+R2 = mean(score_dt)
+my_logger.print_logs_in_file(
+    f"R2 scores for K-fold validation with Decision Tree model: {R2}"
+)
+
+R2 = mean(score_rf)
+my_logger.print_logs_in_file(
+    f"R2 scores for K-fold validation with Random Forest model: {R2}"
+)
+
+R2 = mean(score_xgb)
+my_logger.print_logs_in_file(
+    f"R2 scores for K-fold validation with XGBoost model: {R2}"
+)
+
+R2 = mean(score_poly)
+my_logger.print_logs_in_file(
+    f"R2 scores for K-fold validation with Polynomial model: {R2}"
+)
+
+R2 = mean(score_svr)
+my_logger.print_logs_in_file(
+    f"R2 scores for K-fold validation with Support Vector Regression model: {R2}"
+)
+my_logger.print_logs_in_file("")
 
 my_logger.print_logs_in_file("end")
 
@@ -477,3 +595,13 @@ for feature in selected_feature_names:
     print(feature)
 print()
 print()
+
+# Lazy predictor
+# clf = LazyRegressor(verbose=0, ignore_warnings=True, custom_metric=None)
+# models, predictions = clf.fit(x_train, x_test, y_train, y_test)
+# print(models)
+
+# dump(XGB_Regressor, "XGBoostRegressor.joblib")
+XGB_Regressor.save_model("xgboost_model_old_version.XGBoostRegressor")
+
+# XGB_Regressor.save_model('XGBoostRegressor.json')
