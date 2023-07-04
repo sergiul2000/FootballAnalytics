@@ -3257,3 +3257,11 @@ Sat Jun 24 10:08:03 2023:  R2 scores for K-fold validation with Polynomial model
 Sat Jun 24 10:08:03 2023:  R2 scores for K-fold validation with Support Vector Regression model: 0.5842529002957048
 
 Sat Jun 24 10:08:03 2023:  end
+Mon Jul  3 14:14:37 2023:  start
+Mon Jul  3 14:14:37 2023:  RMSE for Decision Tree Regresor on Train: 0.21155063551106237
+Mon Jul  3 14:14:37 2023:  R2 on train
+Mon Jul  3 14:14:37 2023:  0.7293608912774722
+Mon Jul  3 14:15:01 2023:  RMSE for Decision Tree Regresor on Test: 0.2507033123661517
+Mon Jul  3 14:15:01 2023:  R2 on test
+Mon Jul  3 14:15:01 2023:  0.6348435877001917
+

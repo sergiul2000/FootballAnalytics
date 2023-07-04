@@ -388,6 +388,7 @@ def apply_pythagorian_league_table_stats(league, year):
         ]
     ]
     df_to_save.to_csv("initial_report.csv")
+    return df_to_save
     # df_to_save.to_csv(f"./converted_files/extended_pythagorian.csv")
 
     # df_to_analyze['Win_Pythagorean'] = sum(exp(total_goal) for total_goal in range(0, df_to_analyze['AvgGS_Int']))

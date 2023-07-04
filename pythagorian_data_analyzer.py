@@ -68,8 +68,10 @@ def merge(list1, list2):
 
 
 def generate_formula_for_all_teams(league, year):
-    path = f"dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv"
-    path = f"converted_files/league_table.csv"
+    if year == 20:
+        path = f"converted_files/league_table.csv"
+    else:
+        path = f"dataframes/league_table/{league}/{league}_league_table_in_season_{year}_{year + 1}.csv"
 
     df = pd.read_csv(path)
     # df_to_analyze = df[['Team', 'M', 'W', 'D', 'L', 'G', 'GA', 'PTS']]
