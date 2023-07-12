@@ -446,14 +446,49 @@ def walk_through_understat_files(type_of_file):
     return list_of_files
 
 
+def walk_through_league_tables_demo():
+    try:
+        os.mkdir("./demo/converted_files")
+    except OSError as error:
+        print(error)
+    list_of_files = walk_through_understat_files("league_table")
+    year_of_file = re.compile(r"20[0-5][0-9]")
+    frames = []
+    df_total = pd.DataFrame()
+    for league in leagues_list:
+        for filename_with_path in list_of_files[league]:
+            # print(filename)
+
+            # DE AICI AR TREBUI SA FIE O FUNCTIE CE SA MODIFICE UN FILE INDIVIDUAL CU UN PARAMETRU DE FILE_PATH, YEAR
+            mo = year_of_file.search(filename_with_path)
+            year_start = mo.group()
+            year_end = int(year_start) + 1
+            # print(year_start)
+            df_iterator = pd.read_csv(filename_with_path, usecols=range(1, 18))
+            df_iterator = df_iterator.sort_index(axis=1)
+            df_iterator.insert(17, "League", league)
+            df_iterator.insert(0, "Year_end", str(year_end))
+            df_iterator.insert(1, "Year_start", year_start)
+            # print()
+            if year_start != "2013":
+                frames.append(df_iterator)
+
+    df_total = pd.concat(frames)
+    team_names = df_total["Team"]
+    df_total = df_total.drop(columns=["Team"])
+    df_total.insert(18, "Team", team_names)
+    df_total.to_csv("./demo/converted_files/league_table.csv")
+
+
 def main():
     # print(walk_through_files("league_table"))
     # walk_through_league_tables()
     # walk_through_league_tables_for_teams()
-    walk_through_rosters_players_and_player_summary()
+    # walk_through_rosters_players_and_player_summary()
     # walk_through_player_defensive_stats()
     # walk_through_player_offensive_stats()
     # walk_through_player_passing_stats()
+    walk_through_league_tables_demo()
 
 
 if __name__ == "__main__":

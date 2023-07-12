@@ -300,6 +300,59 @@ def insert_into_extended_pythagorean():
         # break
 
 
+def insert_into_league_table_demo():
+    iterator = 1
+    df = pd.read_csv("./converted_files/league_table.csv")
+    for index, row in df.iterrows():
+        # print(row)
+        URL = "http://localhost:8080/football-analytics/leagueTable"
+        # print(row)
+        # break
+        obj = {
+            "league_table_id": iterator,
+            "league_name": row["League"],
+            "team_name": row["Team"],
+            "year_end": row["Year_end"],
+            "year_start": row["Year_start"],
+            "matches": row["M"],
+            "wins": row["W"],
+            "draws": row["D"],
+            "loses": row["L"],
+            "goals": row["G"],
+            "goalsAgainst": row["GA"],
+            "pts": row["PTS"],
+            "xGoals": row["xG"],
+            "npxGoals": row["NPxG"],
+            "xGoalsAgainst": row["xGA"],
+            "npxGoalsAgainst": row["NPxGA"],
+            "npxGoalsDifference": row["NPxGD"],
+            "ppda": row["PPDA"],
+            "oppda": row["OPPDA"],
+            "dc": row["DC"],
+            "odc": row["ODC"],
+            "xgoals": row["xG"],
+            "xgoalsAgainst": row["xGA"],
+        }
+        x = requests.post(URL, json=obj)
+        print(x.text)
+        if iterator == 5:
+            break
+        iterator += 1
+
+
+def delete_league_table_demo():
+    iterator = 1
+    # df = pd.read_csv("./converted_files/league_table.csv")
+    for index in range(1, 5):
+        # print(row)
+        URL = f"http://localhost:8080/football-analytics/leagueTable/{iterator}"
+        x = requests.delete(URL)
+        print(x.text)
+        if iterator == 5:
+            break
+        iterator += 1
+
+
 def main():
     # insert_into_teams()
     # insert_into_leagues()
@@ -309,9 +362,12 @@ def main():
     # insert_into_players_passing()
     # insert_into_players_offensive()
     # insert_into_players_summary()
-    insert_into_league_table()
-    insert_into_simple_pythagorean()
-    insert_into_extended_pythagorean()
+    # insert_into_league_table()
+    # insert_into_simple_pythagorean()
+    # insert_into_extended_pythagorean()
+
+    delete_league_table_demo()
+    insert_into_league_table_demo()
 
 
 if __name__ == "__main__":
